@@ -1,0 +1,38 @@
+name: Fetch RSS Feeds
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Every day at 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  fetch-and-process:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch RSS feeds
+        run: node scripts/fetch_rss.js
+
+      - name: Normalize raw data
+        run: node scripts/normalize.js
+
+      - name: Deduplicate and merge
+        run: node scripts/dedupe_merge.js
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "chore: update pipeline data $(date -u +%Y-%m-%d)"
+          git push

@@ -1,0 +1,9 @@
+[
+  {
+    "id": "example-source",
+    "name": "Example Opportunities RSS Feed",
+    "url": "https://example.com/opportunities.rss",
+    "type": "rss",
+    "enabled": true
+  }
+]

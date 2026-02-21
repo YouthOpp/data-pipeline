@@ -1,0 +1,15 @@
+{
+  "name": "data-pipeline",
+  "version": "1.0.0",
+  "description": "Automated pipeline for fetching, normalizing, and merging opportunity data from RSS feeds",
+  "scripts": {
+    "fetch": "node scripts/fetch_rss.js",
+    "normalize": "node scripts/normalize.js",
+    "dedupe": "node scripts/dedupe_merge.js",
+    "pipeline": "npm run fetch && npm run normalize && npm run dedupe"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
