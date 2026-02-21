@@ -1,0 +1,9 @@
+[
+  {
+    "source": "opportunitiesforyouth",
+    "source_url": "https://opportunitiesforyouth.org/feed/",
+    "enabled": true,
+    "language": "en",
+    "default_tags": ["education"]
+  }
+]
