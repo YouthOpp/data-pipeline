@@ -29,4 +29,8 @@ Thumbs.db
 .coverage
 htmlcov/
 
+# Node
+node_modules/
+package-lock.json
+
 # Do NOT ignore data/ — all pipeline outputs are Git-tracked

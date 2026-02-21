@@ -1,0 +1,16 @@
+{
+  "name": "data-pipeline",
+  "version": "1.0.0",
+  "description": "YouthOpp data ingestion pipeline",
+  "private": true,
+  "scripts": {
+    "fetch":     "node scripts/fetch_rss.js",
+    "normalize": "node scripts/normalize.js",
+    "merge":     "node scripts/dedupe_merge.js",
+    "pipeline":  "node scripts/fetch_rss.js && node scripts/normalize.js && node scripts/dedupe_merge.js"
+  },
+  "dependencies": {
+    "axios":      "^1.7.0",
+    "rss-parser": "^3.13.0"
+  }
+}

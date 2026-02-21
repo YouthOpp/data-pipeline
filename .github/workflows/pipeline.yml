@@ -17,22 +17,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v5
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
         with:
-          python-version: "3.11"
+          node-version: "20"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: npm install
 
       - name: Fetch RSS feeds
-        run: python scripts/fetch_rss.py
+        continue-on-error: true   # one bad feed must not block the rest
+        run: node scripts/fetch_rss.js
 
       - name: Normalize feed data
-        run: python scripts/normalize.py
+        continue-on-error: true   # normalize whatever raw data exists
+        run: node scripts/normalize.js
 
       - name: Deduplicate and build latest dataset
-        run: python scripts/dedupe_merge.py
+        run: node scripts/dedupe_merge.js
 
       - name: Commit and push changes (if any)
         run: |
