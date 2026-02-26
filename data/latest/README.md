@@ -11,8 +11,16 @@ This folder contains the **final, de-duplicated Opportunity dataset** that the w
 
 ## Update cadence
 
-These files are regenerated on every pipeline run (every 6 hours via GitHub Actions
-and on every `workflow_dispatch`).
+These files are regenerated on every pipeline run:
+- **Automatically**: Every 6 hours via GitHub Actions
+- **Manually**: Via `workflow_dispatch` or by running locally:
+  ```bash
+  npm run pipeline
+  # or step-by-step:
+  node scripts/fetch_rss.js
+  node scripts/normalize.js
+  node scripts/dedupe_merge.js
+  ```
 
 ## Usage
 

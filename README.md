@@ -30,17 +30,28 @@ data-pipeline/
       opportunities.json    ← ✅ WEBSITE READS THIS (JSON array, deduped, sorted)
       opportunities.jsonl   ← same data in JSON Lines format
   scripts/
-    utils.py                ← shared helpers
-    fetch_rss.py            ← downloads raw feeds
-    normalize.py            ← parses XML → normalized records
-    dedupe_merge.py         ← merges all days → final dataset
+    utils.js                ← shared helpers
+    fetch_rss.js            ← downloads raw feeds
+    normalize.js            ← parses XML → normalized records
+    dedupe_merge.js         ← merges all days → final dataset
   .github/
     workflows/
       pipeline.yml          ← GitHub Actions workflow
-  requirements.txt
+  package.json
   .gitignore
   README.md
 ```
+
+---
+
+## Requirements
+
+- **Node.js** 16.x or higher
+- **npm** 7.x or higher
+
+Dependencies (installed via `npm install`):
+- `axios` - HTTP client for downloading feeds
+- `rss-parser` - RSS/Atom feed parser
 
 ---
 
@@ -48,16 +59,22 @@ data-pipeline/
 
 ```bash
 # 1. Install dependencies
-pip install -r requirements.txt
+npm install
 
 # 2. Download raw feeds
-python scripts/fetch_rss.py
+node scripts/fetch_rss.js
+# or: npm run fetch
 
 # 3. Normalize feed entries
-python scripts/normalize.py
+node scripts/normalize.js
+# or: npm run normalize
 
 # 4. Build the deduplicated latest dataset
-python scripts/dedupe_merge.py
+node scripts/dedupe_merge.js
+# or: npm run merge
+
+# Or run all three steps at once:
+npm run pipeline
 ```
 
 After running, you will find:
@@ -83,7 +100,11 @@ After running, you will find:
 }
 ```
 
-3. Re-run the three scripts (or push to trigger GitHub Actions).
+3. Re-run the pipeline (or push to trigger GitHub Actions):
+
+```bash
+npm run pipeline
+```
 
 - `source` must be a URL-safe slug (lowercase, hyphens only).
 - Set `"enabled": false` to temporarily pause a feed without removing it.
@@ -110,7 +131,7 @@ https://raw.githubusercontent.com/YouthOpp/data-pipeline/main/data/latest/opport
 
 Each record is assigned a **deterministic ID** computed as the SHA-1 hash of
 `"<source>|<url>"`. When multiple pipeline runs capture the same opportunity,
-`dedupe_merge.py` keeps only the most recently seen version (last-write wins)
+`dedupe_merge.js` keeps only the most recently seen version (last-write wins)
 so the `latest` files never contain duplicates.
 
 ---
@@ -122,7 +143,7 @@ so the `latest` files never contain duplicates.
 | `data/raw/.../YYYY-MM-DD.xml` is missing | Feed was unreachable at that time | Wait for the next run or trigger `workflow_dispatch` |
 | `published_at` is `null` for some entries | Feed does not include a date | Safe to ignore; records sort to the end |
 | No records in `opportunities.jsonl` | Feed returned 0 entries or bad XML | Check the raw XML file manually |
-| GitHub Actions fails with "HTTP error" | Source site is temporarily down | The workflow exits with code 1; retry via `workflow_dispatch` |
+| GitHub Actions fails with "HTTP error" | Source site is temporarily down | `fetch_rss.js` has `continue-on-error: true` in CI; downstream steps still run. Retry via `workflow_dispatch` |
 
 ---
 

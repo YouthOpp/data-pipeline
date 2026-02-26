@@ -15,5 +15,23 @@ data/raw/
 
 - Files are **never deleted automatically** — full history is preserved in Git.
 - `latest.xml` is always the most recent successful download for that source.
-- To add a new source, add an entry to `data/sources/sources.json` and re-run
-  `python scripts/fetch_rss.py`.
+- To add a new source, add an entry to `data/sources/sources.json` and re-run:
+  ```bash
+  node scripts/fetch_rss.js
+  ```
+
+## Inspecting raw feeds
+
+```bash
+# View the latest raw XML
+cat data/raw/opportunitiesforyouth/latest.xml
+
+# Count items in the feed
+grep '<item>' data/raw/opportunitiesforyouth/latest.xml | wc -l
+
+# Extract all titles from the feed
+grep -o '<title>.*</title>' data/raw/opportunitiesforyouth/latest.xml
+
+# Check feed size
+ls -lh data/raw/opportunitiesforyouth/
+```
