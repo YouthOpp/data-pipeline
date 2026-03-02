@@ -4,6 +4,7 @@
     "source_url": "https://opportunitiesforyouth.org/feed/",
     "enabled": true,
     "language": "en",
-    "default_tags": ["education"]
+    "default_tags": ["education"],
+    "categories": ["education", "youth"]
   }
 ]

@@ -33,4 +33,5 @@ htmlcov/
 node_modules/
 package-lock.json
 
-# Do NOT ignore data/ — all pipeline outputs are Git-tracked
+# Raw feed data is temporary — not persisted in Git
+data/raw/

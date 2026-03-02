@@ -1,13 +1,15 @@
 {
   "name": "data-pipeline",
-  "version": "1.0.0",
-  "description": "YouthOpp data ingestion pipeline",
+  "version": "2.0.0",
+  "description": "YouthOpp data ingestion pipeline — per-source pipelines with classification",
   "private": true,
   "scripts": {
     "fetch":     "node scripts/fetch_rss.js",
     "normalize": "node scripts/normalize.js",
+    "classify":  "node scripts/classify.js",
     "merge":     "node scripts/dedupe_merge.js",
-    "pipeline":  "node scripts/fetch_rss.js && node scripts/normalize.js && node scripts/dedupe_merge.js"
+    "pipeline":  "node scripts/fetch_rss.js && node scripts/normalize.js && node scripts/classify.js && node scripts/dedupe_merge.js",
+    "source:opportunitiesforyouth": "node scripts/sources/opportunitiesforyouth.js"
   },
   "dependencies": {
     "axios":      "^1.7.0",

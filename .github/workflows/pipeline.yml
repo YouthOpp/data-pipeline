@@ -1,16 +1,22 @@
-name: Data Pipeline
+name: Merge & Sync Data
+
+# This workflow merges all classified data, builds the final deduplicated
+# dataset, and pushes it to the external data repository.
+#
+# Individual source pipelines run on their own staggered schedules
+# (see .github/workflows/source-*.yml).
 
 on:
   workflow_dispatch:
   schedule:
-    # Every 6 hours: 00:00, 06:00, 12:00, 18:00 UTC
-    - cron: "0 */6 * * *"
+    # Run once daily at 03:00 UTC to merge all source data
+    - cron: "0 3 * * *"
 
 permissions:
   contents: write
 
 jobs:
-  run-pipeline:
+  merge-and-sync:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,25 +31,27 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Fetch RSS feeds
-        continue-on-error: true   # one bad feed must not block the rest
-        run: node scripts/fetch_rss.js
-
-      - name: Normalize feed data
-        continue-on-error: true   # normalize whatever raw data exists
-        run: node scripts/normalize.js
+      - name: Re-classify historical normalized data
+        run: node scripts/classify.js
 
       - name: Deduplicate and build latest dataset
         run: node scripts/dedupe_merge.js
+
+      - name: Push data to external data repo
+        if: env.DATA_REPO_URL != ''
+        env:
+          DATA_REPO_URL: ${{ secrets.DATA_REPO_URL }}
+          DATA_BRANCH: main
+        run: bash scripts/push_data.sh
 
       - name: Commit and push changes (if any)
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/
+          git add data/classified/ data/latest/
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore: update opportunities dataset"
+            git commit -m "chore: update merged opportunities dataset"
             git push
           fi

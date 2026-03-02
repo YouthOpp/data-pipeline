@@ -1,0 +1,59 @@
+name: "Source: opportunitiesforyouth"
+
+# Each source has its own workflow with a staggered schedule to avoid
+# GitHub rate limiting. Add new source workflows with offsets of ~1 hour.
+#
+# Schedule overview:
+#   opportunitiesforyouth — :00 (this file)
+#   <next-source>         — :15 or +1h
+#   ...
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Every 6 hours at minute 0: 00:00, 06:00, 12:00, 18:00 UTC
+    - cron: "0 0,6,12,18 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  run-source:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run opportunitiesforyouth pipeline
+        run: node scripts/sources/opportunitiesforyouth.js
+
+      - name: Build latest dataset (merge + dedupe)
+        run: node scripts/dedupe_merge.js
+
+      - name: Push data to external data repo
+        if: env.DATA_REPO_URL != ''
+        env:
+          DATA_REPO_URL: ${{ secrets.DATA_REPO_URL }}
+          DATA_BRANCH: main
+        run: bash scripts/push_data.sh
+
+      - name: Commit classified data (if any)
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/classified/ data/latest/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: update opportunitiesforyouth data"
+            git push
+          fi

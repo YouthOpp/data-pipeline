@@ -1,9 +1,12 @@
 'use strict';
 
 /**
- * dedupe_merge.js — Combine all normalized JSONL files, deduplicate by `id`
- * (last-write wins), sort by published_at descending (nulls last), and write
- * the final dataset to data/latest/.
+ * dedupe_merge.js — Combine all classified JSONL files (by-source), deduplicate
+ * by `id` (last-write wins), sort by published_at descending (nulls last), and
+ * write the final dataset to data/latest/.
+ *
+ * Falls back to data/normalized/opportunities/ if classified data is not yet
+ * available (backward compatibility).
  *
  * Usage:
  *   node scripts/dedupe_merge.js
@@ -17,6 +20,7 @@ const REPO_ROOT  = path.resolve(SCRIPT_DIR, '..');
 
 const { nowIso, readJsonl, writeJson, writeJsonl } = require('./utils');
 
+const CLASSIFIED_BY_SOURCE = path.join(REPO_ROOT, 'data', 'classified', 'by-source');
 const NORM_DIR    = path.join(REPO_ROOT, 'data', 'normalized', 'opportunities');
 const LATEST_DIR  = path.join(REPO_ROOT, 'data', 'latest');
 const LATEST_JSON = path.join(LATEST_DIR, 'opportunities.json');
@@ -36,20 +40,36 @@ function sortKey(record) {
 
 // ---------------------------------------------------------------------------
 
+/**
+ * Recursively collect all .jsonl files under a directory.
+ */
+function collectJsonlFiles(dir) {
+  const files = [];
+  if (!fs.existsSync(dir)) return files;
+
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...collectJsonlFiles(fullPath));
+    } else if (entry.name.endsWith('.jsonl')) {
+      files.push(fullPath);
+    }
+  }
+  return files.sort();
+}
+
 function main() {
-  // Collect all .jsonl files from the normalized directory, sorted by name
-  let jsonlFiles = [];
-  try {
-    jsonlFiles = fs
-      .readdirSync(NORM_DIR)
-      .filter(f => f.endsWith('.jsonl'))
-      .sort()
-      .map(f => path.join(NORM_DIR, f));
-  } catch {
-    // Directory may not exist yet on a fresh repo — that's fine
+  // Prefer classified data; fall back to legacy normalized directory
+  let jsonlFiles = collectJsonlFiles(CLASSIFIED_BY_SOURCE);
+  let dataSource = 'classified/by-source';
+
+  if (jsonlFiles.length === 0) {
+    jsonlFiles = collectJsonlFiles(NORM_DIR);
+    dataSource = 'normalized/opportunities';
   }
 
-  console.log(`[dedupe_merge] Found ${jsonlFiles.length} normalized file(s).`);
+  console.log(`[dedupe_merge] Found ${jsonlFiles.length} file(s) from ${dataSource}.`);
 
   // --- Read & deduplicate (last-write wins) --------------------------------
   const merged   = new Map();
