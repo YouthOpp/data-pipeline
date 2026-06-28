@@ -12,7 +12,7 @@
 	<atom:link href="https://opportunitiesforyouth.org/feed/" rel="self" type="application/rss+xml" />
 	<link>https://opportunitiesforyouth.org</link>
 	<description>Empowering Youth through Access to Information and Opportunities</description>
-	<lastBuildDate>Sun, 28 Jun 2026 03:25:55 +0000</lastBuildDate>
+	<lastBuildDate>Sun, 28 Jun 2026 07:05:57 +0000</lastBuildDate>
 	<language>en-GB</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -985,7 +985,8 @@
 <div class="content">
 <div class="job">
 <div data-layout-id="e1416f57" data-layout-name="Default&amp;#x20;Layout"></div>
-<div class="jobColumnOne" role="region" aria-labelledby="jobColumnOneRegion"><span id="jobColumnOneRegion" class="aria-jobDescRegionHeader-hidden">Job Description</span></p>
+<div class="jobColumnOne" role="region" aria-labelledby="jobColumnOneRegion">
+<p><span id="jobColumnOneRegion" class="aria-jobDescRegionHeader-hidden">Job Description</span></p>
 <div class="customPlugin customPlugin-558fbeb5c04fe704 displayDT">
 <div class="inner"></div>
 </div>
