@@ -12,7 +12,7 @@
 	<atom:link href="https://opportunitiesforyouth.org/feed/" rel="self" type="application/rss+xml" />
 	<link>https://opportunitiesforyouth.org</link>
 	<description>Empowering Youth through Access to Information and Opportunities</description>
-	<lastBuildDate>Mon, 27 Jul 2026 09:48:17 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 27 Jul 2026 11:43:19 +0000</lastBuildDate>
 	<language>en-GB</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -28,12 +28,699 @@
 	<height>32</height>
 </image> 
 <site xmlns="com-wordpress:feed-additions:1">30325319</site>	<item>
+		<title>Africa Deep Tech Challenge 2026: Win Up to $8,000 by Building Offline AI That Runs on Everyday Laptops Across Africa.</title>
+		<link>https://opportunitiesforyouth.org/2026/07/27/africa-deep-tech-challenge-2026-win-up-to-8000-by-building-offline-ai-that-runs-on-everyday-laptops-across-africa/</link>
+		
+		<dc:creator><![CDATA[Unnah Mercy]]></dc:creator>
+		<pubDate>Mon, 27 Jul 2026 11:40:07 +0000</pubDate>
+				<category><![CDATA[Competition]]></category>
+		<category><![CDATA[Africa]]></category>
+		<guid isPermaLink="false">https://opportunitiesforyouth.org/?p=87724</guid>
+
+					<description><![CDATA[<p>Artificial Intelligence is transforming industries worldwide, but one of the biggest barriers preventing widespread AI adoption across Africa is the high cost of cloud computing, expensive infrastructure, unstable internet connectivity, and unreliable electricity. To address these challenges, the Africa Deep Tech Foundation (ADTF) has officially launched the Africa Deep Tech Challenge (ADTC) 2026 – The [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://opportunitiesforyouth.org/2026/07/27/africa-deep-tech-challenge-2026-win-up-to-8000-by-building-offline-ai-that-runs-on-everyday-laptops-across-africa/">Africa Deep Tech Challenge 2026: Win Up to $8,000 by Building Offline AI That Runs on Everyday Laptops Across Africa.</a> appeared first on <a rel="nofollow" href="https://opportunitiesforyouth.org">Opportunities for Youth</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p data-start="1620" data-end="2218">Artificial Intelligence is transforming industries worldwide, but one of the biggest barriers preventing widespread AI adoption across Africa is the high cost of cloud computing, expensive infrastructure, unstable internet connectivity, and unreliable electricity. To address these challenges, the Africa Deep Tech Foundation (ADTF) has officially launched the <strong data-start="1981" data-end="2050">Africa Deep Tech Challenge (ADTC) 2026 – The Laptop LLM Challenge</strong>, a groundbreaking competition designed to encourage innovators to develop AI systems that run efficiently on affordable laptops already available across the continent.</p>
+<p data-start="2220" data-end="2604">Rather than rewarding teams for building the largest language models, ADTC 2026 focuses on creating practical, efficient, and locally deployable AI applications capable of running entirely offline. Participants are invited to demonstrate that cutting-edge AI can be accessible, affordable, and useful for millions of people without requiring expensive cloud services or powerful GPUs.</p>
+<p data-start="2606" data-end="2943">With a total prize pool of <strong data-start="2633" data-end="2644">$20,000</strong>, mentorship opportunities, venture support, GPU credits, and recognition from Africa&#8217;s growing deep technology ecosystem, this challenge provides an excellent opportunity for AI developers, researchers, startups, and students to showcase innovative solutions that solve real-world African problems.</p>
+<p data-start="2945" data-end="3010"><strong data-start="2945" data-end="2970">Application Deadline:</strong> <strong data-start="2971" data-end="3010">August 25, 2026 (Gate 1 Submission)</strong></p>
+<h1 data-section-id="qz5a85" data-start="3017" data-end="3063">What is the Africa Deep Tech Challenge 2026?</h1>
+<p data-start="3065" data-end="3438">The Africa Deep Tech Challenge (ADTC) 2026 is an applied systems engineering competition organized by the Africa Deep Tech Foundation. Unlike traditional AI competitions that emphasize larger models or cloud-hosted systems, this challenge focuses on building practical AI applications capable of operating entirely on consumer-grade laptops commonly used throughout Africa.</p>
+<p data-start="3440" data-end="3772">The challenge encourages participants to optimize language models so they deliver strong performance while operating under strict hardware limitations. The objective is to democratize access to AI by ensuring advanced language models can function efficiently even where internet connectivity and computational resources are limited.</p>
+<p data-start="3774" data-end="3841">The competition emphasizes engineering excellence in areas such as:</p>
+<ul data-start="3843" data-end="4047">
+<li data-section-id="1cufnh2" data-start="3843" data-end="3863">Model quantization</li>
+<li data-section-id="rlyjs" data-start="3864" data-end="3885">Memory optimization</li>
+<li data-section-id="1cti5fc" data-start="3886" data-end="3909">Efficient compilation</li>
+<li data-section-id="1q0k100" data-start="3910" data-end="3948">Retrieval-Augmented Generation (RAG)</li>
+<li data-section-id="3atcnh" data-start="3949" data-end="3976">Offline knowledge systems</li>
+<li data-section-id="130q74j" data-start="3977" data-end="3993">Fast inference</li>
+<li data-section-id="1ebjs1n" data-start="3994" data-end="4022">Responsive user experience</li>
+<li data-section-id="y4d3vv" data-start="4023" data-end="4047">Local data integration</li>
+</ul>
+<p data-start="4049" data-end="4187">The broader vision is to develop AI that people across Africa can own, run, and trust without depending on expensive cloud infrastructure.</p>
+<h1 data-section-id="194agx9" data-start="4194" data-end="4222">Why This Challenge Matters</h1>
+<p data-start="4224" data-end="4395">Across many African countries, accessing cloud-hosted Large Language Models (LLMs) remains expensive due to API costs, internet requirements, and inconsistent electricity.</p>
+<p data-start="4397" data-end="4594">The Africa Deep Tech Foundation believes the solution is not simply creating larger AI models but engineering smarter systems capable of operating on hardware that millions of Africans already own.</p>
+<p data-start="4596" data-end="4652">The competition highlights several important challenges:</p>
+<h2 data-section-id="uikl3r" data-start="4654" data-end="4683">Limited Access to Cloud AI</h2>
+<p data-start="4685" data-end="4779">Many users cannot rely on continuous internet access or afford subscription-based AI services.</p>
+<p data-start="4781" data-end="4798">Examples include:</p>
+<ul data-start="4800" data-end="4922">
+<li data-section-id="cd4v12" data-start="4800" data-end="4821">University students</li>
+<li data-section-id="1jhcf5u" data-start="4822" data-end="4845">Healthcare facilities</li>
+<li data-section-id="1hti5t3" data-start="4846" data-end="4864">Small businesses</li>
+<li data-section-id="19oudro" data-start="4865" data-end="4874">Farmers</li>
+<li data-section-id="i6xipf" data-start="4875" data-end="4900">Community organizations</li>
+<li data-section-id="4urgxh" data-start="4901" data-end="4922">Local entrepreneurs</li>
+</ul>
+<p data-start="4924" data-end="4972">Offline AI significantly reduces these barriers.</p>
+<h2 data-section-id="1u7f1zu" data-start="4979" data-end="5008">AI for Affordable Hardware</h2>
+<p data-start="5010" data-end="5164">Instead of requiring expensive GPUs, the challenge targets affordable laptops costing between <strong data-start="5104" data-end="5121">$150 and $500</strong>, making AI deployment far more accessible.</p>
+<h2 data-section-id="3byalp" data-start="5171" data-end="5198">Efficient AI Engineering</h2>
+<p data-start="5200" data-end="5283">Participants are expected to optimize every aspect of model performance, including:</p>
+<ul data-start="5285" data-end="5399">
+<li data-section-id="bnplar" data-start="5285" data-end="5296">RAM usage</li>
+<li data-section-id="1f7o9c4" data-start="5297" data-end="5315">Processing speed</li>
+<li data-section-id="16po99j" data-start="5316" data-end="5333">User experience</li>
+<li data-section-id="asxph5" data-start="5334" data-end="5353">Memory allocation</li>
+<li data-section-id="6zz4q1" data-start="5354" data-end="5373">Model compression</li>
+<li data-section-id="oybqs5" data-start="5374" data-end="5399">Local retrieval systems</li>
+</ul>
+<h1 data-section-id="hi4wuj" data-start="5406" data-end="5435">Competition Problem Domains</h1>
+<p data-start="5437" data-end="5566">Participants must choose one primary application area while demonstrating at least one meaningful cross-disciplinary integration.</p>
+<p data-start="5568" data-end="5594">Available domains include:</p>
+<h2 data-section-id="21eite" data-start="5596" data-end="5638">1. Mathematics and Scientific Reasoning</h2>
+<p data-start="5640" data-end="5670">Possible applications include:</p>
+<ul data-start="5672" data-end="5772">
+<li data-section-id="1bz8mun" data-start="5672" data-end="5702">Mathematical problem solving</li>
+<li data-section-id="1b9z2tm" data-start="5703" data-end="5721">Proof assistance</li>
+<li data-section-id="1t25jbl" data-start="5722" data-end="5747">Scientific calculations</li>
+<li data-section-id="9scz41" data-start="5748" data-end="5772">Quantitative reasoning</li>
+</ul>
+<h2 data-section-id="sjhy5b" data-start="5779" data-end="5815">2. Healthcare and Medical Support</h2>
+<p data-start="5817" data-end="5845">Potential solutions include:</p>
+<ul data-start="5847" data-end="5949">
+<li data-section-id="ornmdx" data-start="5847" data-end="5876">Clinical question answering</li>
+<li data-section-id="1n6jto1" data-start="5877" data-end="5896">Patient education</li>
+<li data-section-id="1col3al" data-start="5897" data-end="5921">Healthcare information</li>
+<li data-section-id="bte02x" data-start="5922" data-end="5949">Medical triage assistance</li>
+</ul>
+<h2 data-section-id="wsd45l" data-start="5956" data-end="5973">3. Agriculture</h2>
+<p data-start="5975" data-end="6020">Innovators can develop AI tools that support:</p>
+<ul data-start="6022" data-end="6128">
+<li data-section-id="1kwloph" data-start="6022" data-end="6039">Crop management</li>
+<li data-section-id="1uoaltf" data-start="6040" data-end="6060">Livestock advisory</li>
+<li data-section-id="g4tyak" data-start="6061" data-end="6082">Weather information</li>
+<li data-section-id="1axovqk" data-start="6083" data-end="6106">Agricultural planning</li>
+<li data-section-id="1w58kmx" data-start="6107" data-end="6128">Market intelligence</li>
+</ul>
+<h2 data-section-id="10yy3wc" data-start="6135" data-end="6157">4. Creative Writing</h2>
+<p data-start="6159" data-end="6189">Possible applications include:</p>
+<ul data-start="6191" data-end="6281">
+<li data-section-id="1d55hgt" data-start="6191" data-end="6209">Story generation</li>
+<li data-section-id="qblqsy" data-start="6210" data-end="6230">Editing assistance</li>
+<li data-section-id="32gmzx" data-start="6231" data-end="6239">Poetry</li>
+<li data-section-id="hmui3x" data-start="6240" data-end="6262">Multilingual writing</li>
+<li data-section-id="hbzgo8" data-start="6263" data-end="6281">Content creation</li>
+</ul>
+<h2 data-section-id="15glbld" data-start="6288" data-end="6311">5. Coding Assistants</h2>
+<p data-start="6313" data-end="6360">Developers may create offline tools capable of:</p>
+<ul data-start="6362" data-end="6449">
+<li data-section-id="17krj7" data-start="6362" data-end="6379">Code generation</li>
+<li data-section-id="17715i6" data-start="6380" data-end="6391">Debugging</li>
+<li data-section-id="1w5lzxq" data-start="6392" data-end="6415">Programming tutorials</li>
+<li data-section-id="3gsp76" data-start="6416" data-end="6449">Software development assistance</li>
+</ul>
+<h2 data-section-id="13667bs" data-start="6456" data-end="6485">6. Enterprise Productivity</h2>
+<p data-start="6487" data-end="6529">Business-focused applications may include:</p>
+<ul data-start="6531" data-end="6616">
+<li data-section-id="si36tl" data-start="6531" data-end="6553">Knowledge management</li>
+<li data-section-id="18tlp25" data-start="6554" data-end="6578">Internal documentation</li>
+<li data-section-id="3c3t1f" data-start="6579" data-end="6597">SME productivity</li>
+<li data-section-id="1buoxkk" data-start="6598" data-end="6616">Workflow support</li>
+</ul>
+<h2 data-section-id="1pzqm5w" data-start="6623" data-end="6649">7. Autonomous AI Agents</h2>
+<p data-start="6651" data-end="6714">Participants can develop intelligent offline agents capable of:</p>
+<ul data-start="6716" data-end="6819">
+<li data-section-id="i9wuck" data-start="6716" data-end="6737">Workflow automation</li>
+<li data-section-id="1r33zgx" data-start="6738" data-end="6770">Privacy-focused task execution</li>
+<li data-section-id="f345a" data-start="6771" data-end="6792">Local orchestration</li>
+<li data-section-id="1vknqwm" data-start="6793" data-end="6819">Offline decision support</li>
+</ul>
+<p style="text-align: center;"><a href="https://secure.devpost.com/users/register?return_to=https%3A%2F%2Fadtc-2026.devpost.com%2Fregister%3Fflow%255Bdata%255D%255Bchallenge_id%255D%3D30091%26flow%255Bname%255D%3Dregister_for_challenge" target="_blank" rel="noopener">REGISTER  HERE</a></p>
+<h1 data-section-id="wa59pw" data-start="6826" data-end="6849">Hardware Requirements</h1>
+<p data-start="6851" data-end="6931">Every submission must successfully operate on the official ADTC Standard Laptop.</p>
+<p data-start="6933" data-end="6972">Target hardware specifications include:</p>
+<div class="TyagGW_tableContainer">
+<div class="group TyagGW_tableWrapper flex flex-col-reverse w-fit" tabindex="-1">
+<table class="w-fit min-w-(--thread-content-width)" data-start="6974" data-end="7291">
+<thead data-start="6974" data-end="7001">
+<tr data-start="6974" data-end="7001">
+<th class="last:pe-10" data-start="6974" data-end="6986" data-col-size="sm">Component</th>
+<th class="last:pe-10" data-start="6986" data-end="7001" data-col-size="md">Requirement</th>
+</tr>
+</thead>
+<tbody data-start="7031" data-end="7291">
+<tr data-start="7031" data-end="7084">
+<td data-start="7031" data-end="7037" data-col-size="sm">CPU</td>
+<td data-col-size="md" data-start="7037" data-end="7084">Intel Core i5 (10th–12th Generation x86-64)</td>
+</tr>
+<tr data-start="7085" data-end="7104">
+<td data-start="7085" data-end="7091" data-col-size="sm">RAM</td>
+<td data-start="7091" data-end="7104" data-col-size="md">8 GB DDR4</td>
+</tr>
+<tr data-start="7105" data-end="7136">
+<td data-start="7105" data-end="7128" data-col-size="sm">Maximum Memory Usage</td>
+<td data-col-size="md" data-start="7128" data-end="7136">7 GB</td>
+</tr>
+<tr data-start="7137" data-end="7192">
+<td data-start="7137" data-end="7148" data-col-size="sm">Graphics</td>
+<td data-start="7148" data-end="7192" data-col-size="md">Intel UHD or Iris Xe Integrated Graphics</td>
+</tr>
+<tr data-start="7193" data-end="7217">
+<td data-start="7193" data-end="7203" data-col-size="sm">Storage</td>
+<td data-start="7203" data-end="7217" data-col-size="md">256 GB SSD</td>
+</tr>
+<tr data-start="7218" data-end="7257">
+<td data-start="7218" data-end="7237" data-col-size="sm">Operating System</td>
+<td data-start="7237" data-end="7257" data-col-size="md">Ubuntu 22.04 LTS</td>
+</tr>
+<tr data-start="7258" data-end="7291">
+<td data-start="7258" data-end="7264" data-col-size="sm">GPU</td>
+<td data-start="7264" data-end="7291" data-col-size="md">No discrete GPU allowed</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p data-start="7293" data-end="7392">Any submission exceeding the <strong data-start="7322" data-end="7340">7 GB RAM limit</strong> during evaluation will be immediately disqualified.</p>
+<h1 data-section-id="1dumw5d" data-start="7399" data-end="7423">African Language Bonus</h1>
+<p data-start="7425" data-end="7549">Projects demonstrating meaningful support for at least one African language receive an additional <strong data-start="7523" data-end="7548">15% panel score bonus</strong>.</p>
+<p data-start="7551" data-end="7704">This encourages participants to develop AI systems that better reflect Africa&#8217;s linguistic diversity while improving accessibility for local communities.</p>
+<h1 data-section-id="1p7o3zc" data-start="7711" data-end="7733">Competition Timeline</h1>
+<p data-start="7735" data-end="7787">The competition consists of three evaluation stages.</p>
+<h2 data-section-id="1gih2rm" data-start="7789" data-end="7819">Gate 1 – Submission Package</h2>
+<p data-start="7821" data-end="7854"><strong data-start="7821" data-end="7834">Deadline:</strong> <strong data-start="7835" data-end="7854">August 25, 2026</strong></p>
+<p data-start="7856" data-end="7881">Participants must submit:</p>
+<ul data-start="7883" data-end="8081">
+<li data-section-id="vyczrf" data-start="7883" data-end="7914">Open-source GitHub repository</li>
+<li data-section-id="1limycw" data-start="7915" data-end="7937">Structured REPORT.md</li>
+<li data-section-id="g6jtvu" data-start="7938" data-end="7974">Screenshots or demonstration clips</li>
+<li data-section-id="1f1dpzn" data-start="7975" data-end="8007">Two-minute demonstration video</li>
+<li data-section-id="1fhy9sb" data-start="8008" data-end="8081">Bonus documentation (African language support or budget laptop testing)</li>
+</ul>
+<h2 data-section-id="1em7mdp" data-start="8088" data-end="8130">Gate 2 – Activities and Technical Audit</h2>
+<p data-start="8132" data-end="8175"><strong data-start="8132" data-end="8142">Dates:</strong> September 8 – September 29, 2026</p>
+<p data-start="8177" data-end="8212">Selected teams will participate in:</p>
+<ul data-start="8214" data-end="8347">
+<li data-section-id="1s7gcst" data-start="8214" data-end="8239">30-minute technical Q&amp;A</li>
+<li data-section-id="839bon" data-start="8240" data-end="8263">Reproducibility audit</li>
+<li data-section-id="tjonep" data-start="8264" data-end="8288">Reviewer clarification</li>
+<li data-section-id="1qeiac3" data-start="8289" data-end="8317">Optional benchmark updates</li>
+<li data-section-id="119ownz" data-start="8318" data-end="8347">Optional feedback responses</li>
+</ul>
+<h2 data-section-id="1hbxwdg" data-start="8354" data-end="8379">Gate 3 – Final Package</h2>
+<p data-start="8381" data-end="8411"><strong data-start="8381" data-end="8394">Deadline:</strong> October 17, 2026</p>
+<p data-start="8413" data-end="8436">Finalists must prepare:</p>
+<ul data-start="8438" data-end="8529">
+<li data-section-id="i4r4lw" data-start="8438" data-end="8467">Maximum 10-slide pitch deck</li>
+<li data-section-id="16i5cr3" data-start="8468" data-end="8498">Live presentation attendance</li>
+<li data-section-id="1xc09id" data-start="8499" data-end="8529">Technical setup verification</li>
+</ul>
+<h1 data-section-id="1t6bsfs" data-start="8536" data-end="8554">Scoring Criteria</h1>
+<p data-start="8556" data-end="8650">Every submission undergoes standardized benchmarking using the official ADTC hardware profile.</p>
+<h2 data-section-id="1s4r05n" data-start="8652" data-end="8669">Accuracy – 50%</h2>
+<p data-start="8671" data-end="8687">Judges evaluate:</p>
+<ul data-start="8689" data-end="8787">
+<li data-section-id="16ehpbl" data-start="8689" data-end="8722">Automated benchmark performance</li>
+<li data-section-id="1nh9xc1" data-start="8723" data-end="8739">Prompt quality</li>
+<li data-section-id="1uymo9e" data-start="8740" data-end="8759">Model correctness</li>
+<li data-section-id="1mrlg9t" data-start="8760" data-end="8787">Overall reasoning ability</li>
+</ul>
+<h2 data-section-id="7xohzr" data-start="8794" data-end="8808">Speed – 30%</h2>
+<p data-start="8810" data-end="8890">Measured according to token generation speed relative to the fastest submission.</p>
+<h2 data-section-id="1x8l3om" data-start="8897" data-end="8916">Efficiency – 20%</h2>
+<p data-start="8918" data-end="8959">Rewards lower RAM usage during execution.</p>
+<p data-start="8961" data-end="9022">Lower memory consumption results in higher efficiency scores.</p>
+<h2 data-section-id="1ixxps1" data-start="9029" data-end="9048">Additional Rules</h2>
+<h3 data-section-id="1uo8o46" data-start="9050" data-end="9069">Thermal Penalty</h3>
+<p data-start="9071" data-end="9099">Teams lose <strong data-start="9082" data-end="9095">10 points</strong> if:</p>
+<ul data-start="9101" data-end="9159">
+<li data-section-id="4sb579" data-start="9101" data-end="9131">CPU temperature exceeds 85°C</li>
+<li data-section-id="6uoiid" data-start="9132" data-end="9159">Thermal throttling occurs</li>
+</ul>
+<h3 data-section-id="k3988k" data-start="9161" data-end="9191">Automatic Disqualification</h3>
+<p data-start="9193" data-end="9237">Submissions are immediately disqualified if:</p>
+<ul data-start="9239" data-end="9312">
+<li data-section-id="119o03a" data-start="9239" data-end="9264">The application crashes</li>
+<li data-section-id="s8irn1" data-start="9265" data-end="9293">Out-of-memory errors occur</li>
+<li data-section-id="1pc8i25" data-start="9294" data-end="9312">RAM exceeds 7 GB</li>
+</ul>
+<h1 data-section-id="g7kgct" data-start="9319" data-end="9340">Performance Bonuses</h1>
+<p data-start="9342" data-end="9396">Participants can further improve their scores through:</p>
+<ul data-start="9398" data-end="9468">
+<li data-section-id="xzx1gz" data-start="9398" data-end="9436">Budget Hardware Profile Bonus (+10%)</li>
+<li data-section-id="15sotfo" data-start="9437" data-end="9468">African Language Bonus (+15%)</li>
+</ul>
+<h1 data-section-id="1wwgu3o" data-start="9475" data-end="9500">Local Benchmarking Tool</h1>
+<p data-start="9502" data-end="9620">To help participants prepare for official evaluation, ADTF provides an open-source local profiling tool that measures:</p>
+<ul data-start="9622" data-end="9710">
+<li data-section-id="12yn284" data-start="9622" data-end="9639">CPU utilization</li>
+<li data-section-id="1npm4uk" data-start="9640" data-end="9654">Memory usage</li>
+<li data-section-id="xcqc1s" data-start="9655" data-end="9664">Latency</li>
+<li data-section-id="1yzzrb6" data-start="9665" data-end="9677">Throughput</li>
+<li data-section-id="pahuif" data-start="9678" data-end="9710">Overall hardware compatibility</li>
+</ul>
+<p data-start="9712" data-end="9773">This enables teams to optimize performance before submission.</p>
+<h1 data-section-id="1dqro5q" data-start="9780" data-end="9792">Prize Pool</h1>
+<p data-start="9794" data-end="9906">The competition offers a total prize pool of <strong data-start="9839" data-end="9850">$20,000</strong>, along with additional technical and ecosystem support.</p>
+<h2 data-section-id="szducv" data-start="9908" data-end="9922">Grand Prize</h2>
+<p data-start="9924" data-end="9950">The winning team receives:</p>
+<ul data-start="9952" data-end="10146">
+<li data-section-id="ccg5ox" data-start="9952" data-end="9969"><strong data-start="9954" data-end="9969">$8,000 cash</strong></li>
+<li data-section-id="18rqswv" data-start="9970" data-end="10000">Six-month scale-up residency</li>
+<li data-section-id="b9xu3p" data-start="10001" data-end="10033">Venture Demo Day participation</li>
+<li data-section-id="fkmv02" data-start="10034" data-end="10053">Pilot matchmaking</li>
+<li data-section-id="vsmc1d" data-start="10054" data-end="10081">ADTC Certified Trust-Mark</li>
+<li data-section-id="1bqjxqb" data-start="10082" data-end="10115">Governance and legal mentorship</li>
+<li data-section-id="18umg56" data-start="10116" data-end="10146">Product hardening mentorship</li>
+</ul>
+<h2 data-section-id="1j9klrx" data-start="10153" data-end="10165">Runner-Up</h2>
+<p data-start="10167" data-end="10182">Prize includes:</p>
+<ul data-start="10184" data-end="10271">
+<li data-section-id="1irseal" data-start="10184" data-end="10201"><strong data-start="10186" data-end="10201">$4,000 cash</strong></li>
+<li data-section-id="2bacoz" data-start="10202" data-end="10225">Three-month residency</li>
+<li data-section-id="fkmv02" data-start="10226" data-end="10245">Pilot matchmaking</li>
+<li data-section-id="9k76zc" data-start="10246" data-end="10271">Venture Demo Day access</li>
+</ul>
+<h2 data-section-id="og87x6" data-start="10278" data-end="10303">Best Integration Award</h2>
+<p data-start="10305" data-end="10358">Awarded to the strongest cross-disciplinary solution.</p>
+<p data-start="10360" data-end="10366">Prize:</p>
+<ul data-start="10368" data-end="10385">
+<li data-section-id="14vy9kq" data-start="10368" data-end="10385"><strong data-start="10370" data-end="10385">$3,000 cash</strong></li>
+</ul>
+<h2 data-section-id="6m4l9q" data-start="10392" data-end="10418">Best Localisation Award</h2>
+<p data-start="10420" data-end="10489">Recognizes outstanding African language or local context integration.</p>
+<p data-start="10491" data-end="10497">Prize:</p>
+<ul data-start="10499" data-end="10516">
+<li data-section-id="1vauk0t" data-start="10499" data-end="10516"><strong data-start="10501" data-end="10516">$1,500 cash</strong></li>
+</ul>
+<h2 data-section-id="1sdr8e1" data-start="10523" data-end="10537">GPU Credits</h2>
+<h3 data-section-id="hgtrg7" data-start="10539" data-end="10552">Finalists</h3>
+<ul data-start="10554" data-end="10600">
+<li data-section-id="1hndb9y" data-start="10554" data-end="10578">$250 GPU cloud credits</li>
+<li data-section-id="1h95sxk" data-start="10579" data-end="10600">Up to ten finalists</li>
+</ul>
+<h3 data-section-id="161lqg8" data-start="10602" data-end="10620">Semi-finalists</h3>
+<ul data-start="10622" data-end="10675">
+<li data-section-id="vxanok" data-start="10622" data-end="10645">$50 GPU cloud credits</li>
+<li data-section-id="1oo669p" data-start="10646" data-end="10675">Up to twenty semi-finalists</li>
+</ul>
+<h1 data-section-id="9555rr" data-start="10682" data-end="10702">Ecosystem Partners</h1>
+<p data-start="10704" data-end="10835">The competition is supported by a growing ecosystem of organizations dedicated to strengthening Africa&#8217;s deep technology landscape.</p>
+<p data-start="10837" data-end="10875">Partners include organizations across:</p>
+<ul data-start="10877" data-end="11002">
+<li data-section-id="th4grd" data-start="10877" data-end="10890">AI research</li>
+<li data-section-id="xnmlzk" data-start="10891" data-end="10912">Venture development</li>
+<li data-section-id="1kcf8mz" data-start="10913" data-end="10937">Technology communities</li>
+<li data-section-id="1m4quvd" data-start="10938" data-end="10955">Innovation hubs</li>
+<li data-section-id="c3k3ax" data-start="10956" data-end="10981">Open-source communities</li>
+<li data-section-id="wg0c2b" data-start="10982" data-end="11002">Developer networks</li>
+</ul>
+<h1 data-section-id="ieg5o3" data-start="11009" data-end="11034">Frequently Asked Topics</h1>
+<p data-start="11036" data-end="11087">Participants can expect guidance on topics such as:</p>
+<ul data-start="11089" data-end="11415">
+<li data-section-id="ls28nk" data-start="11089" data-end="11115">Offline model evaluation</li>
+<li data-section-id="1ww8wox" data-start="11116" data-end="11139">Hardware benchmarking</li>
+<li data-section-id="f2pcfb" data-start="11140" data-end="11170">African language eligibility</li>
+<li data-section-id="159nun4" data-start="11171" data-end="11203">Cross-disciplinary integration</li>
+<li data-section-id="jakb5y" data-start="11204" data-end="11229">Open-source model usage</li>
+<li data-section-id="ijehxu" data-start="11230" data-end="11250">Quantization tools</li>
+<li data-section-id="3al0pq" data-start="11251" data-end="11274">Deployment frameworks</li>
+<li data-section-id="jgez2x" data-start="11275" data-end="11299">Model size limitations</li>
+<li data-section-id="1t05epd" data-start="11300" data-end="11321">Accuracy benchmarks</li>
+<li data-section-id="3s0627" data-start="11322" data-end="11342">Thermal monitoring</li>
+<li data-section-id="1cvwn6f" data-start="11343" data-end="11380">Hybrid versus offline architectures</li>
+<li data-section-id="z4fy1c" data-start="11381" data-end="11415">Video demonstration requirements</li>
+</ul>
+<h1 data-section-id="1tq9kpl" data-start="11422" data-end="11442">How to Participate</h1>
+<p data-start="11444" data-end="11495">Entering the challenge involves three simple steps:</p>
+<h3 data-section-id="onaaw5" data-start="11497" data-end="11507">Step 1</h3>
+<p data-start="11509" data-end="11572">Register your project through the official submission platform.</p>
+<h3 data-section-id="onaaw6" data-start="11574" data-end="11584">Step 2</h3>
+<p data-start="11586" data-end="11643">Work individually or build a team of up to three members.</p>
+<h3 data-section-id="onaaw7" data-start="11645" data-end="11655">Step 3</h3>
+<p data-start="11657" data-end="11804">Read the competition rules, use the submission template, benchmark your model locally, and submit your complete Gate 1 package before the deadline.</p>
+<h1 data-section-id="1my2h9t" data-start="11811" data-end="11840">Important Dates at a Glance</h1>
+<ul data-start="11842" data-end="11994">
+<li data-section-id="com0yi" data-start="11842" data-end="11891"><strong data-start="11844" data-end="11875">Gate 1 Submission Deadline:</strong> August 25, 2026</li>
+<li data-section-id="wf96w6" data-start="11892" data-end="11947"><strong data-start="11894" data-end="11914">Technical Audit:</strong> September 8 – September 29, 2026</li>
+<li data-section-id="9ayq5c" data-start="11948" data-end="11994"><strong data-start="11950" data-end="11977">Final Package Deadline:</strong> October 17, 2026</li>
+</ul>
+<p>To learn more about the opportunity Visit <a href="https://africadeeptech.org/challenge-2026/" target="_blank" rel="noopener">HERE.</a></p>
+<h1 data-section-id="fsb6xx" data-start="12001" data-end="12013">Conclusion</h1>
+<p data-start="12015" data-end="12377">The Africa Deep Tech Challenge 2026 represents an ambitious effort to redefine how artificial intelligence is developed and deployed across Africa. By focusing on lightweight, offline-capable AI systems that run on affordable consumer laptops, the competition seeks to remove barriers associated with cloud computing, internet dependence, and expensive hardware.</p>
+<p data-start="12379" data-end="12833">Beyond the attractive cash prizes, participants gain access to mentorship, technical validation, investor exposure, venture support, and recognition within Africa&#8217;s rapidly expanding deep technology ecosystem. Whether you are an AI researcher, software engineer, startup founder, student, or independent innovator, this challenge provides an opportunity to contribute practical AI solutions designed specifically for the realities of African communities.</p>
+<p class="" data-start="12835" data-end="13138" data-is-last-node="" data-is-only-node="">If you are passionate about building accessible, efficient, and impactful artificial intelligence, now is the time to begin developing your solution. Be sure to prepare your open-source project, optimize it for the official hardware requirements, and submit your Gate 1 entry before <strong data-start="13118" data-end="13137">August 25, 2026</strong></p>
+<p data-start="12835" data-end="13138" data-is-last-node="" data-is-only-node="">For more OFY Competition opportunities Click <a href="https://opportunitiesforyouth.org/?s=Competition" target="_blank" rel="noopener">HERE</a>.</p>
+<p>The post <a rel="nofollow" href="https://opportunitiesforyouth.org/2026/07/27/africa-deep-tech-challenge-2026-win-up-to-8000-by-building-offline-ai-that-runs-on-everyday-laptops-across-africa/">Africa Deep Tech Challenge 2026: Win Up to $8,000 by Building Offline AI That Runs on Everyday Laptops Across Africa.</a> appeared first on <a rel="nofollow" href="https://opportunitiesforyouth.org">Opportunities for Youth</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">87724</post-id>	</item>
+		<item>
+		<title>Kaiser Permanente Care Delivery Master&#8217;s Internship 2026 in California &#124; Paid Healthcare Operations Internship</title>
+		<link>https://opportunitiesforyouth.org/2026/07/27/kaiser-permanente-care-delivery-masters-internship-2026-in-california-paid-healthcare-operations-internship/</link>
+		
+		<dc:creator><![CDATA[Evelyn Essuman]]></dc:creator>
+		<pubDate>Mon, 27 Jul 2026 11:17:31 +0000</pubDate>
+				<category><![CDATA[Internships]]></category>
+		<category><![CDATA[America]]></category>
+		<guid isPermaLink="false">https://opportunitiesforyouth.org/?p=87718</guid>
+
+					<description><![CDATA[<p>Are you a graduate student looking to gain practical experience in healthcare leadership and operations? The Kaiser Permanente Care Delivery Master&#8217;s Internship 2026 offers an exciting opportunity to work with one of America&#8217;s leading healthcare organizations while contributing to projects that improve patient care and organizational performance. This paid internship allows interns to collaborate with [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://opportunitiesforyouth.org/2026/07/27/kaiser-permanente-care-delivery-masters-internship-2026-in-california-paid-healthcare-operations-internship/">Kaiser Permanente Care Delivery Master&#8217;s Internship 2026 in California | Paid Healthcare Operations Internship</a> appeared first on <a rel="nofollow" href="https://opportunitiesforyouth.org">Opportunities for Youth</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>Are you a graduate student looking to gain practical experience in healthcare leadership and operations? The <strong>Kaiser Permanente Care Delivery Master&#8217;s Internship 2026</strong> offers an exciting opportunity to work with one of America&#8217;s leading healthcare organizations while contributing to projects that improve patient care and organizational performance.</p>
+<p>This paid internship allows interns to collaborate with senior healthcare leaders, clinical teams, finance professionals, and operational experts on strategic initiatives that shape the future of healthcare delivery.</p>
+<h2>Summary</h2>
+<ul>
+<li><strong>Organization:</strong> Kaiser Permanente</li>
+<li><strong>Program:</strong> Care Delivery Master&#8217;s Internship</li>
+<li><strong>Location:</strong> Pleasanton, California, USA (Hybrid)</li>
+<li><strong>Work Schedule:</strong> Full-time</li>
+<li><strong>Duration:</strong> Internship</li>
+<li><strong>Salary:</strong> <strong>$32.45–$41.99 per hour</strong></li>
+<li><strong>Work Arrangement:</strong> Flexible (Hybrid)</li>
+<li><strong>Target Applicants:</strong> Graduate students and recent graduate degree holders</li>
+<li><strong>Application Status:</strong> Open</li>
+</ul>
+<h1>About the Internship</h1>
+<p>The Care Delivery Master&#8217;s Internship is designed for graduate students who are passionate about improving healthcare systems and patient experiences.</p>
+<p>Interns will join Kaiser Permanente&#8217;s National Operations Strategy &amp; Execution team, where they will contribute to enterprise-wide initiatives focused on improving healthcare quality, operational efficiency, and member experience.</p>
+<p>Projects may include strategic initiatives such as:</p>
+<ul>
+<li>Acute Care at Home</li>
+<li>Care Coordination</li>
+<li>Care Continuum</li>
+<li>Durable Medical Equipment</li>
+<li>Healthcare process improvement</li>
+<li>Business strategy development</li>
+</ul>
+<p>Interns will work alongside experienced healthcare professionals and senior executives while gaining valuable exposure to healthcare innovation.</p>
+<h1>Internship Responsibilities</h1>
+<p>Selected interns will:</p>
+<ul>
+<li>Support strategic healthcare initiatives</li>
+<li>Assist with project planning and execution</li>
+<li>Conduct business and operational analysis</li>
+<li>Develop communication strategies</li>
+<li>Collaborate with finance, operational and clinical teams</li>
+<li>Participate in stakeholder engagement</li>
+<li>Apply design-thinking methodologies</li>
+<li>Analyze processes to improve healthcare performance</li>
+<li>Prepare reports and presentations</li>
+<li>Shadow professionals across different departments</li>
+</ul>
+<h1>Internship Benefits</h1>
+<p>Successful interns will receive:</p>
+<ul>
+<li>Competitive hourly salary of <strong>$32.45–$41.99</strong></li>
+<li>Hands-on experience with a nationally recognized healthcare organization</li>
+<li>Exposure to executive-level healthcare strategy</li>
+<li>Hybrid work flexibility</li>
+<li>Professional networking opportunities</li>
+<li>Career development and mentorship</li>
+<li>Practical project management experience</li>
+<li>Opportunity to contribute to meaningful healthcare improvements</li>
+</ul>
+<h1>Who Can Apply?</h1>
+<p>Applicants should:</p>
+<ul>
+<li>Be pursuing a graduate degree OR have completed a graduate program within the last year</li>
+<li>Hold a Bachelor&#8217;s degree</li>
+<li>Demonstrate interest in healthcare operations and business strategy</li>
+<li>Have strong communication and presentation skills</li>
+<li>Be comfortable using Microsoft Word, Excel, and PowerPoint</li>
+</ul>
+<h1>Preferred Qualifications</h1>
+<p>Although not mandatory, Kaiser Permanente prefers candidates with:</p>
+<ul>
+<li>GPA of <strong>3.0 or above</strong></li>
+<li>Advanced analytical and problem-solving skills</li>
+<li>Project management experience</li>
+<li>Consulting or business analysis skills</li>
+<li>Excellent interpersonal abilities</li>
+<li>Strong written and verbal communication skills</li>
+<li>Ability to work in collaborative environments</li>
+</ul>
+<h1>Target Majors</h1>
+<p>This internship is particularly suitable for students studying:</p>
+<ul>
+<li>Public Health</li>
+<li>Healthcare Administration</li>
+<li>Business Administration</li>
+<li>Health Systems Management</li>
+<li>Health Policy</li>
+<li>Related graduate programs</li>
+</ul>
+<h1>Why Choose Kaiser Permanente?</h1>
+<p>Kaiser Permanente is recognized as one of the largest integrated healthcare organizations in the United States. Interns work on projects that directly improve healthcare delivery while receiving mentorship from experienced professionals.</p>
+<p>The internship combines meaningful work, professional development, and networking opportunities, making it an excellent stepping stone for careers in healthcare management, consulting, and operations.</p>
+<h1>Application Process</h1>
+<p>Interested applicants should:</p>
+<ol>
+<li>Visit the official application page.</li>
+<li>Review the internship requirements.</li>
+<li>Prepare an updated résumé.</li>
+<li>Complete the online application.</li>
+<li>Submit all required documents before the application closes.</li>
+</ol>
+<h1>Application Details</h1>
+<p><strong>Organization:</strong> Kaiser Permanente</p>
+<p><strong>Position:</strong> Care Delivery Master&#8217;s Intern</p>
+<p><strong>Location:</strong> Pleasanton, California (Hybrid)</p>
+<p><strong>Salary:</strong> $32.45–$41.99 per hour</p>
+<p><strong>Employment Type:</strong> Full-time Internship</p>
+<p><strong>Job Number:</strong> 1432632</p>
+<h2>Apply Here</h2>
+<p>Apply through the <a href="https://www.kaiserpermanentejobs.org/job/pleasanton/care-delivery-master-s-intern/641/97483899936" target="_blank" rel="noopener">official Kaiser Permanente Careers website</a>.</p>
+<p><strong>Conclusion</strong></p>
+<p>If you are a graduate student seeking practical experience in healthcare operations and strategic leadership, the <strong>Kaiser </strong><strong>Permanente Care Delivery Master&#8217;s Internship 2026</strong> is an outstanding opportunity. Beyond competitive pay, interns gain hands-on experience working on initiatives that improve patient care, healthcare efficiency, and organizational performance. This internship provides an excellent platform to build professional skills, expand your network, and launch a successful career in healthcare administration and operations.</p>
+<p>Discover more internship opportunities on the <a href="https://opportunitiesforyouth.org/?s=internships+" target="_blank" rel="noopener">OFY webpage</a>.</p>
+<p>The post <a rel="nofollow" href="https://opportunitiesforyouth.org/2026/07/27/kaiser-permanente-care-delivery-masters-internship-2026-in-california-paid-healthcare-operations-internship/">Kaiser Permanente Care Delivery Master&#8217;s Internship 2026 in California | Paid Healthcare Operations Internship</a> appeared first on <a rel="nofollow" href="https://opportunitiesforyouth.org">Opportunities for Youth</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">87718</post-id>	</item>
+		<item>
+		<title>Five Rings Summer Intern 2027  Quantitative Trader Internship in New York &#124; $300,000 Annualized Salary, Sign-On Bonus &#038; Corporate Housing</title>
+		<link>https://opportunitiesforyouth.org/2026/07/27/five-rings-summer-intern-2027-quantitative-trader-internship-in-new-york-300000-annualized-salary-sign-on-bonus-corporate-housing/</link>
+		
+		<dc:creator><![CDATA[Richard Nyirenda]]></dc:creator>
+		<pubDate>Mon, 27 Jul 2026 10:55:34 +0000</pubDate>
+				<category><![CDATA[Africa]]></category>
+		<category><![CDATA[America]]></category>
+		<category><![CDATA[Asia]]></category>
+		<category><![CDATA[Australia and Oceania]]></category>
+		<category><![CDATA[Europe]]></category>
+		<category><![CDATA[Internships]]></category>
+		<category><![CDATA[Jobs]]></category>
+		<category><![CDATA[Latin America and the Caribbean]]></category>
+		<category><![CDATA[Middle East and North Africa]]></category>
+		<category><![CDATA[South America]]></category>
+		<guid isPermaLink="false">https://opportunitiesforyouth.org/?p=87710</guid>
+
+					<description><![CDATA[<p>If you are a highly analytical student with a passion for mathematics, quantitative finance, technology, and financial markets, the Five Rings Summer Intern 2027 – Quantitative Trader Internship offers one of the most competitive internship opportunities in the trading industry. Hosted by Five Rings, a leading proprietary trading firm with offices in New York, Boca [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://opportunitiesforyouth.org/2026/07/27/five-rings-summer-intern-2027-quantitative-trader-internship-in-new-york-300000-annualized-salary-sign-on-bonus-corporate-housing/">Five Rings Summer Intern 2027  Quantitative Trader Internship in New York | $300,000 Annualized Salary, Sign-On Bonus &#038; Corporate Housing</a> appeared first on <a rel="nofollow" href="https://opportunitiesforyouth.org">Opportunities for Youth</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p class="PDq2pG_selectionAnchorContainer" data-start="166" data-end="778">If you are a highly analytical student with a passion for mathematics, quantitative finance, technology, and financial markets, the <strong data-start="298" data-end="364">Five Rings Summer Intern 2027 – Quantitative Trader Internship</strong> offers one of the most competitive internship opportunities in the trading industry. Hosted by <strong data-start="460" data-end="474">Five Rings</strong>, a leading proprietary trading firm with offices in <strong data-start="527" data-end="574">New York, Boca Raton, London, and Amsterdam</strong>, this prestigious internship provides students with hands-on experience in quantitative trading, research, and strategy development while working alongside some of the industry&#8217;s brightest professionals.</p>
+<p data-start="780" data-end="1106">The internship is based in <strong data-start="807" data-end="824">New York City</strong> and runs for <strong data-start="838" data-end="852">nine weeks</strong>, from the beginning of <strong data-start="876" data-end="921">June through the beginning of August 2027</strong>. In addition to gaining invaluable industry experience, interns receive an <strong data-start="997" data-end="1035">annualized base salary of $300,000</strong>, a <strong data-start="1039" data-end="1056">sign-on bonus</strong>, and <strong data-start="1062" data-end="1083">corporate housing</strong> during the internship.</p>
+<p data-start="1108" data-end="1363">One of the most exciting aspects of this opportunity is that <strong data-start="1169" data-end="1239">students from outside the United States are also eligible to apply</strong>, making it an excellent opportunity for talented students from around the world to launch a career in quantitative trading.</p>
+<h1 data-section-id="6nkn4m" data-start="1370" data-end="1388">About Five Rings</h1>
+<p data-start="1390" data-end="1590">Five Rings is a proprietary trading firm founded with the vision of combining <strong data-start="1468" data-end="1508">strategy, innovation, and technology</strong> to compete successfully in today&#8217;s increasingly complex global financial markets.</p>
+<p data-start="1592" data-end="1947">The firm actively trades across numerous domestic and international financial markets, including both traditional and niche markets. By leveraging advanced quantitative research, sophisticated technology, and innovative trading strategies, Five Rings continually identifies new market opportunities while carefully evaluating associated risks and rewards.</p>
+<p data-start="1949" data-end="1965">With offices in:</p>
+<ul data-start="1967" data-end="2050">
+<li data-section-id="19ol180" data-start="1967" data-end="1982">New York, USA</li>
+<li data-section-id="1oxiibu" data-start="1983" data-end="2000">Boca Raton, USA</li>
+<li data-section-id="1bvy0o6" data-start="2001" data-end="2025">London, United Kingdom</li>
+<li data-section-id="99beuc" data-start="2026" data-end="2050">Amsterdam, Netherlands</li>
+</ul>
+<p data-start="2052" data-end="2182">Five Rings has built a reputation for fostering an open, collaborative culture where ideas and knowledge flow freely across teams.</p>
+<p data-start="2184" data-end="2376">The company believes that innovation comes from collaboration, encouraging employees and interns alike to contribute ideas, solve challenging problems, and continuously learn from one another.</p>
+<h1 data-section-id="1j66g9r" data-start="2383" data-end="2420">About the Summer Internship Program</h1>
+<p data-start="2422" data-end="2585">The <strong data-start="2426" data-end="2466">Five Rings Summer Internship Program</strong> is an intensive <strong data-start="2483" data-end="2507">nine-week internship</strong> designed to immerse students in the fast-paced world of quantitative trading.</p>
+<p data-start="2587" data-end="2792">Interns are not treated as observers—they become active contributors, working alongside experienced traders on real research and development projects that influence trading strategies and market decisions.</p>
+<p data-start="2794" data-end="3018">Throughout the internship, participants receive mentorship from experienced professionals while developing technical and analytical skills that prepare them for future careers in quantitative finance and proprietary trading.</p>
+<h1 data-section-id="1gl8h3k" data-start="3025" data-end="3046">Internship Duration</h1>
+<p data-start="3048" data-end="3068">The internship runs:</p>
+<ul data-start="3070" data-end="3129">
+<li data-section-id="5jzaij" data-start="3070" data-end="3098"><strong data-start="3072" data-end="3098">Beginning of June 2027</strong></li>
+<li data-section-id="1vpc4ha" data-start="3099" data-end="3129"><strong data-start="3101" data-end="3129">Beginning of August 2027</strong></li>
+</ul>
+<p data-start="3131" data-end="3146">Total duration:</p>
+<ul data-start="3148" data-end="3161">
+<li data-section-id="1ri6nha" data-start="3148" data-end="3161"><strong data-start="3150" data-end="3161">9 weeks</strong></li>
+</ul>
+<p data-start="3163" data-end="3172">Location:</p>
+<ul data-start="3174" data-end="3208">
+<li data-section-id="k40tv7" data-start="3174" data-end="3208"><strong data-start="3176" data-end="3208">New York City, United States</strong></li>
+</ul>
+<h1 data-section-id="48ftk0" data-start="3215" data-end="3237">What Interns Will Do</h1>
+<p data-start="3239" data-end="3331">Participants will gain practical experience across multiple aspects of quantitative trading.</p>
+<p data-start="3333" data-end="3358">Responsibilities include:</p>
+<ul data-start="3360" data-end="3780">
+<li data-section-id="1dhoad7" data-start="3360" data-end="3403">Working closely with experienced traders.</li>
+<li data-section-id="yyswbd" data-start="3404" data-end="3452">Assisting with quantitative research projects.</li>
+<li data-section-id="141vxwb" data-start="3453" data-end="3501">Participating in trading strategy development.</li>
+<li data-section-id="1rjmsp3" data-start="3502" data-end="3552">Supporting research and development initiatives.</li>
+<li data-section-id="1y9av1i" data-start="3553" data-end="3591">Analyzing financial market behavior.</li>
+<li data-section-id="1do99xg" data-start="3592" data-end="3627">Evaluating trading opportunities.</li>
+<li data-section-id="lbjrpp" data-start="3628" data-end="3666">Learning risk management techniques.</li>
+<li data-section-id="k78cae" data-start="3667" data-end="3715">Collaborating on innovative trading solutions.</li>
+<li data-section-id="1hnlvqh" data-start="3716" data-end="3780">Applying quantitative methods to real-world market challenges.</li>
+</ul>
+<p data-start="3782" data-end="3889">Interns will be encouraged to think critically, ask questions, and contribute ideas throughout the program.</p>
+<h1 data-section-id="zuxwsm" data-start="3896" data-end="3933">Training and Learning Opportunities</h1>
+<p data-start="3935" data-end="3999">The internship combines practical work with structured learning.</p>
+<p data-start="4001" data-end="4032">Participants will benefit from:</p>
+<h3 data-section-id="1jo8g6n" data-start="4034" data-end="4059">Classroom Instruction</h3>
+<p data-start="4061" data-end="4122">Interns attend educational sessions covering key concepts in:</p>
+<ul data-start="4124" data-end="4247">
+<li data-section-id="cyty9y" data-start="4124" data-end="4146">Quantitative trading</li>
+<li data-section-id="x4y4fq" data-start="4147" data-end="4166">Financial markets</li>
+<li data-section-id="1clox43" data-start="4167" data-end="4190">Market microstructure</li>
+<li data-section-id="1i8ds7q" data-start="4191" data-end="4211">Trading strategies</li>
+<li data-section-id="1f1f1eg" data-start="4212" data-end="4229">Risk management</li>
+<li data-section-id="1pem30y" data-start="4230" data-end="4247">Decision-making</li>
+</ul>
+<h3 data-section-id="1dfmrr4" data-start="4249" data-end="4267">Strategy Games</h3>
+<p data-start="4269" data-end="4359">The program includes specially designed in-house strategy games that help interns develop:</p>
+<ul data-start="4361" data-end="4458">
+<li data-section-id="10v4scw" data-start="4361" data-end="4382">Analytical thinking</li>
+<li data-section-id="i2ugdx" data-start="4383" data-end="4412">Competitive decision-making</li>
+<li data-section-id="z2cfdp" data-start="4413" data-end="4433">Strategic planning</li>
+<li data-section-id="1povfmy" data-start="4434" data-end="4458">Problem-solving skills</li>
+</ul>
+<h3 data-section-id="41osr3" data-start="4460" data-end="4476">Mock Trading</h3>
+<p data-start="4478" data-end="4582">Participants practice trading in simulated environments before applying concepts to real-world projects.</p>
+<p data-start="4584" data-end="4630">Mock trading sessions help interns understand:</p>
+<ul data-start="4632" data-end="4709">
+<li data-section-id="bq13xm" data-start="4632" data-end="4649">Market dynamics</li>
+<li data-section-id="817ruh" data-start="4650" data-end="4669">Trading execution</li>
+<li data-section-id="to9e65" data-start="4670" data-end="4687">Risk assessment</li>
+<li data-section-id="1d8ji9x" data-start="4688" data-end="4709">Strategy evaluation</li>
+</ul>
+<h3 data-section-id="1pnnngg" data-start="4711" data-end="4732">Educational Talks</h3>
+<p data-start="4734" data-end="4783">Interns participate in presentations introducing:</p>
+<ul data-start="4785" data-end="4901">
+<li data-section-id="qhz3cv" data-start="4785" data-end="4807">Trading fundamentals</li>
+<li data-section-id="s3gw1o" data-start="4808" data-end="4831">Quantitative research</li>
+<li data-section-id="wyv5vy" data-start="4832" data-end="4852">Financial modeling</li>
+<li data-section-id="sruitc" data-start="4853" data-end="4870">Market behavior</li>
+<li data-section-id="1obk4h1" data-start="4871" data-end="4901">Proprietary trading concepts</li>
+</ul>
+<h1 data-section-id="zt30i3" data-start="4908" data-end="4920">Mentorship</h1>
+<p data-start="4922" data-end="4996">Each intern receives direct mentorship from experienced full-time traders.</p>
+<p data-start="4998" data-end="5026">Mentors provide guidance on:</p>
+<ul data-start="5028" data-end="5146">
+<li data-section-id="7vr7xz" data-start="5028" data-end="5047">Research projects</li>
+<li data-section-id="1bx4ltk" data-start="5048" data-end="5066">Trading concepts</li>
+<li data-section-id="10dpvtl" data-start="5067" data-end="5087">Career development</li>
+<li data-section-id="8gi0k9" data-start="5088" data-end="5106">Technical skills</li>
+<li data-section-id="vprqh4" data-start="5107" data-end="5124">Problem-solving</li>
+<li data-section-id="1eeeuia" data-start="5125" data-end="5146">Professional growth</li>
+</ul>
+<p data-start="5148" data-end="5276">This close interaction allows interns to gain valuable insights from professionals actively working in global financial markets.</p>
+<h1 data-section-id="d87amu" data-start="5283" data-end="5302">Social Activities</h1>
+<p data-start="5304" data-end="5359">Five Rings believes learning extends beyond the office.</p>
+<p data-start="5361" data-end="5446">Interns also participate in a variety of social and networking activities, including:</p>
+<ul data-start="5448" data-end="5576">
+<li data-section-id="1fn6ox" data-start="5448" data-end="5471">Strategic game nights</li>
+<li data-section-id="1oov4zi" data-start="5472" data-end="5487">Group dinners</li>
+<li data-section-id="1kv7jpr" data-start="5488" data-end="5529">Social outings throughout New York City</li>
+<li data-section-id="1yxuhk9" data-start="5530" data-end="5549">Networking events</li>
+<li data-section-id="11jt6zp" data-start="5550" data-end="5576">Team-building activities</li>
+</ul>
+<p data-start="5578" data-end="5690">These experiences help interns build strong professional relationships while enjoying the internship experience.</p>
+<h1 data-section-id="b8y6te" data-start="5697" data-end="5707">Benefits</h1>
+<p data-start="5709" data-end="5784">Selected interns receive an outstanding compensation package that includes:</p>
+<ul data-start="5786" data-end="6084">
+<li data-section-id="pfmdwg" data-start="5786" data-end="5826">Annualized base salary of <strong data-start="5814" data-end="5826">$300,000</strong></li>
+<li data-section-id="3i8a7m" data-start="5827" data-end="5842">Sign-on bonus</li>
+<li data-section-id="18bl4cq" data-start="5843" data-end="5862">Corporate housing</li>
+<li data-section-id="18q0643" data-start="5863" data-end="5893">Hands-on research experience</li>
+<li data-section-id="epx1uw" data-start="5894" data-end="5913">Direct mentorship</li>
+<li data-section-id="4kvmg1" data-start="5914" data-end="5937">Classroom instruction</li>
+<li data-section-id="74oubj" data-start="5938" data-end="5963">Mock trading experience</li>
+<li data-section-id="106ndwk" data-start="5964" data-end="5993">Strategy game participation</li>
+<li data-section-id="1w9y0p5" data-start="5994" data-end="6020">Networking opportunities</li>
+<li data-section-id="d7rttc" data-start="6021" data-end="6047">Professional development</li>
+<li data-section-id="1akuog4" data-start="6048" data-end="6084">Exposure to real financial markets</li>
+</ul>
+<h1 data-section-id="vutqy9" data-start="6091" data-end="6107">Who Can Apply?</h1>
+<p data-start="6109" data-end="6213">Five Rings welcomes applications from talented and motivated students who meet the eligibility criteria.</p>
+<p data-start="6215" data-end="6233">Applicants should:</p>
+<ul data-start="6235" data-end="6597">
+<li data-section-id="akn0l4" data-start="6235" data-end="6296">Be graduating in <strong data-start="6254" data-end="6269">Winter 2027</strong> or <strong data-start="6273" data-end="6295">Spring/Summer 2028</strong>.</li>
+<li data-section-id="1s0fi25" data-start="6297" data-end="6337">Have a strong quantitative background.</li>
+<li data-section-id="aqa5yk" data-start="6338" data-end="6366">Be intellectually curious.</li>
+<li data-section-id="7hrblt" data-start="6367" data-end="6415">Enjoy solving challenging analytical problems.</li>
+<li data-section-id="1ig46hu" data-start="6416" data-end="6432">Learn quickly.</li>
+<li data-section-id="1itmpri" data-start="6433" data-end="6472">Thrive in collaborative environments.</li>
+<li data-section-id="lygofg" data-start="6473" data-end="6501">Be highly detail-oriented.</li>
+<li data-section-id="1817a25" data-start="6502" data-end="6544">Demonstrate initiative and independence.</li>
+<li data-section-id="4n2a8r" data-start="6545" data-end="6597">Be comfortable working in fast-paced environments.</li>
+</ul>
+<p style="text-align: center;"><a href="https://my.greenhouse.io/users/sign_in?initiator=autofill&amp;source=quick_apply" target="_blank" rel="noopener"><strong>APPLY HERE</strong></a></p>
+<h1 data-section-id="1fdejrg" data-start="6604" data-end="6620">Desired Skills</h1>
+<p data-start="6622" data-end="6670">Successful applicants are likely to demonstrate:</p>
+<ul data-start="6672" data-end="6861">
+<li data-section-id="9scz41" data-start="6672" data-end="6696">Quantitative reasoning</li>
+<li data-section-id="to6vds" data-start="6697" data-end="6719">Mathematical ability</li>
+<li data-section-id="1wwlhqz" data-start="6720" data-end="6738">Logical thinking</li>
+<li data-section-id="txf2oj" data-start="6739" data-end="6758">Critical thinking</li>
+<li data-section-id="q1km59" data-start="6759" data-end="6770">Curiosity</li>
+<li data-section-id="o0xd90" data-start="6771" data-end="6781">Teamwork</li>
+<li data-section-id="qc877u" data-start="6782" data-end="6804">Communication skills</li>
+<li data-section-id="1impive" data-start="6805" data-end="6819">Adaptability</li>
+<li data-section-id="1ifkr3o" data-start="6820" data-end="6841">Attention to detail</li>
+<li data-section-id="5bkqeh" data-start="6842" data-end="6861">Strong work ethic</li>
+</ul>
+<h1 data-section-id="xfj8fn" data-start="6868" data-end="6894">International Applicants</h1>
+<p data-start="6896" data-end="7034">Although the internship is based in <strong data-start="6932" data-end="6944">New York</strong>, Five Rings explicitly welcomes applications from <strong data-start="6995" data-end="7033">students outside the United States</strong>.</p>
+<p data-start="7036" data-end="7203">This makes the internship an excellent opportunity for international students interested in gaining experience at one of the world&#8217;s leading proprietary trading firms.</p>
+<h1 data-section-id="5suvzk" data-start="7210" data-end="7235">Application Information</h1>
+<p data-start="7237" data-end="7324">Applicants may submit applications for multiple internship positions within Five Rings.</p>
+<p data-start="7326" data-end="7463">However, the company strongly encourages candidates to apply only to the position that best aligns with their interests and career goals.</p>
+<h1 data-section-id="h5fbg2" data-start="7470" data-end="7478">Salary</h1>
+<p data-start="7480" data-end="7575">The internship offers one of the most competitive compensation packages available for students.</p>
+<p data-start="7577" data-end="7599">Compensation includes:</p>
+<ul data-start="7601" data-end="7679">
+<li data-section-id="1gix4dv" data-start="7601" data-end="7643"><strong data-start="7603" data-end="7630">Annualized Base Salary:</strong> <strong data-start="7631" data-end="7643">$300,000</strong></li>
+<li data-section-id="3i8a7m" data-start="7644" data-end="7659">Sign-on bonus</li>
+<li data-section-id="18bl4cq" data-start="7660" data-end="7679">Corporate housing</li>
+</ul>
+<h1 data-section-id="1e5g22m" data-start="7686" data-end="7708">Why You Should Apply</h1>
+<p data-start="7710" data-end="7763">This internship offers an exceptional opportunity to:</p>
+<ul data-start="7765" data-end="8253">
+<li data-section-id="467ci4" data-start="7765" data-end="7816">Gain hands-on experience in quantitative trading.</li>
+<li data-section-id="1lmeld" data-start="7817" data-end="7859">Learn directly from experienced traders.</li>
+<li data-section-id="1gz1pt8" data-start="7860" data-end="7899">Work on real-world research projects.</li>
+<li data-section-id="14qmcmr" data-start="7900" data-end="7937">Develop advanced analytical skills.</li>
+<li data-section-id="tniiu0" data-start="7938" data-end="7977">Build expertise in financial markets.</li>
+<li data-section-id="14oinmq" data-start="7978" data-end="8011">Receive outstanding mentorship.</li>
+<li data-section-id="tvufyc" data-start="8012" data-end="8047">Expand your professional network.</li>
+<li data-section-id="x4roq5" data-start="8048" data-end="8083">Experience life in New York City.</li>
+<li data-section-id="mnzw54" data-start="8084" data-end="8175">Strengthen your resume with experience at a globally recognized proprietary trading firm.</li>
+<li data-section-id="8la1jp" data-start="8176" data-end="8253">Earn one of the highest-paying internship salaries in the finance industry.</li>
+</ul>
+<p>Visit <strong><a href="https://job-boards.greenhouse.io/fiveringsllc/jobs/5139668008" target="_blank" rel="noopener">HERE</a></strong> to learn more about the Five Rings Summer Intern 2027  Quantitative Trader Internship in New York</p>
+<h1 data-section-id="68esz0" data-start="8260" data-end="8270">Deadline</h1>
+<p data-start="8272" data-end="8346"><strong data-start="8272" data-end="8346">Application Deadline: Not Specified (Applications are currently open).</strong></p>
+<p data-start="8348" data-end="8465">Interested students are encouraged to apply as early as possible, as positions are expected to be highly competitive.</p>
+<h1 data-section-id="fsb6xx" data-start="8472" data-end="8484">Conclusion</h1>
+<p data-start="8486" data-end="8976">The <strong data-start="8490" data-end="8556">Five Rings Summer Intern 2027 – Quantitative Trader Internship</strong> is an outstanding opportunity for ambitious students seeking a career in quantitative finance, trading, or financial technology. With a remarkable <strong data-start="8704" data-end="8737">annualized salary of $300,000</strong>, additional <strong data-start="8750" data-end="8767">sign-on bonus</strong>, <strong data-start="8769" data-end="8790">corporate housing</strong>, world-class mentorship, and hands-on experience working on real trading strategies, the program provides a strong foundation for launching a successful career in the financial markets.</p>
+<p data-start="8978" data-end="9347">Whether you are based in the United States or studying internationally, this internship offers a rare chance to work with one of the industry&#8217;s leading proprietary trading firms while developing the technical, analytical, and professional skills needed to excel in quantitative trading. Eligible students are encouraged to submit their applications as soon as possible.</p>
+<p data-start="8978" data-end="9347">For more internship opportunities visit OFY <a href="https://opportunitiesforyouth.org/?s=jobs" target="_blank" rel="noopener"><strong>HERE</strong></a></p>
+<p>The post <a rel="nofollow" href="https://opportunitiesforyouth.org/2026/07/27/five-rings-summer-intern-2027-quantitative-trader-internship-in-new-york-300000-annualized-salary-sign-on-bonus-corporate-housing/">Five Rings Summer Intern 2027  Quantitative Trader Internship in New York | $300,000 Annualized Salary, Sign-On Bonus &#038; Corporate Housing</a> appeared first on <a rel="nofollow" href="https://opportunitiesforyouth.org">Opportunities for Youth</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">87710</post-id>	</item>
+		<item>
 		<title>Senior Researcher, AI Civics at Data &#038; Society Research Institute (Remote, USA): Salary of $78,000–$97,000, Full Benefits, and Applications Open Until July 30, 2026.</title>
 		<link>https://opportunitiesforyouth.org/2026/07/27/senior-researcher-ai-civics-at-data-society-research-institute-remote-usa-salary-of-78000-97000-full-benefits-and-applications-open-until-july-30-2026/</link>
 		
 		<dc:creator><![CDATA[Unnah Mercy]]></dc:creator>
 		<pubDate>Mon, 27 Jul 2026 09:48:17 +0000</pubDate>
-				<category><![CDATA[unknown]]></category>
+				<category><![CDATA[Jobs]]></category>
+		<category><![CDATA[America]]></category>
 		<guid isPermaLink="false">https://opportunitiesforyouth.org/?p=87713</guid>
 
 					<description><![CDATA[<p>Artificial Intelligence (AI) is rapidly transforming nearly every aspect of society, from education and employment to healthcare, governance, and civic participation. As AI technologies continue to influence public life, organizations around the world are working to ensure these systems remain transparent, accountable, and centered on human dignity. The Data &#38; Society Research Institute is currently [&#8230;]</p>
@@ -330,6 +1017,220 @@
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">87713</post-id>	</item>
+		<item>
+		<title>UNESCO Doctoral Internships 2026–2027 in Paris, France &#124; Fully Supported Research Internship for UCL PhD Students</title>
+		<link>https://opportunitiesforyouth.org/2026/07/27/unesco-doctoral-internships-2026-2027-in-paris-france-fully-supported-research-internship-for-ucl-phd-students/</link>
+		
+		<dc:creator><![CDATA[Feven Erko]]></dc:creator>
+		<pubDate>Mon, 27 Jul 2026 09:20:57 +0000</pubDate>
+				<category><![CDATA[Internships]]></category>
+		<category><![CDATA[PhD]]></category>
+		<guid isPermaLink="false">https://opportunitiesforyouth.org/?p=87737</guid>
+
+					<description><![CDATA[<p>The UNESCO Doctoral Internships 2026–2027 present an outstanding opportunity for doctoral researchers at University College London (UCL) to gain international research experience while contributing to one of UNESCO&#8217;s flagship education initiatives. Hosted at UNESCO Headquarters in Paris, these six-month research internships will allow successful applicants to work directly with the Global Happy Schools Initiative, a [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://opportunitiesforyouth.org/2026/07/27/unesco-doctoral-internships-2026-2027-in-paris-france-fully-supported-research-internship-for-ucl-phd-students/">UNESCO Doctoral Internships 2026–2027 in Paris, France | Fully Supported Research Internship for UCL PhD Students</a> appeared first on <a rel="nofollow" href="https://opportunitiesforyouth.org">Opportunities for Youth</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p data-start="117" data-end="690">The <strong data-start="121" data-end="162">UNESCO Doctoral Internships 2026–2027</strong> present an outstanding opportunity for doctoral researchers at <strong data-start="226" data-end="261">University College London (UCL)</strong> to gain international research experience while contributing to one of UNESCO&#8217;s flagship education initiatives. Hosted at <strong data-start="384" data-end="416">UNESCO Headquarters in Paris</strong>, these six-month research internships will allow successful applicants to work directly with the <strong data-start="514" data-end="549">Global Happy Schools Initiative</strong>, a UNESCO-led programme dedicated to promoting educational equity, wellbeing, peace, inclusion, and values-based education around the world.</p>
+<p data-start="692" data-end="1091">Developed through the partnership between <strong data-start="734" data-end="771">UNESCO&#8217;s Happy Schools Initiative</strong> and <strong data-start="776" data-end="817">UCL&#8217;s Grand Challenge of Inequalities</strong>, the internships provide doctoral students with the opportunity to contribute to cutting-edge research addressing some of today&#8217;s most pressing educational challenges, including peacebuilding, community learning, social cohesion, displacement, and educational inequalities.</p>
+<p data-start="1093" data-end="1371">Successful interns will receive financial support toward accommodation in Paris and travel between London and Paris, making this a valuable opportunity for doctoral students interested in international education, public policy, educational research, and sustainable development.</p>
+<h2 data-section-id="x698so" data-start="1373" data-end="1422">About the UNESCO Doctoral Internship Programme</h2>
+<p data-start="1424" data-end="1648">UNESCO is inviting applications from <strong data-start="1461" data-end="1536">doctoral students currently enrolled at University College London (UCL)</strong> to participate in one of two research internships focused on advancing the <strong data-start="1612" data-end="1647">Global Happy Schools Initiative</strong>.</p>
+<p data-start="1650" data-end="1757">The internships are designed to explore how education systems can create learning environments that foster:</p>
+<ul data-start="1759" data-end="1937">
+<li data-section-id="15lqmru" data-start="1759" data-end="1779">Educational equity</li>
+<li data-section-id="366bgz" data-start="1780" data-end="1811">Student and teacher wellbeing</li>
+<li data-section-id="sli80c" data-start="1812" data-end="1827">Peacebuilding</li>
+<li data-section-id="xen2dl" data-start="1828" data-end="1845">Social cohesion</li>
+<li data-section-id="83o33a" data-start="1846" data-end="1868">Community engagement</li>
+<li data-section-id="nuq1j0" data-start="1869" data-end="1895">Democratic participation</li>
+<li data-section-id="159btzq" data-start="1896" data-end="1917">Inclusive education</li>
+<li data-section-id="pfhnio" data-start="1918" data-end="1937">Lifelong learning</li>
+</ul>
+<p data-start="1939" data-end="2112">Interns will be based at <strong data-start="1964" data-end="1996">UNESCO Headquarters in Paris</strong>, where they will work alongside experts involved in implementing and expanding the Global Happy Schools Initiative.</p>
+<p data-start="2114" data-end="2212">The placements are expected to begin <strong data-start="2151" data-end="2179">no later than March 2027</strong> and will run for <strong data-start="2197" data-end="2211">six months</strong>.</p>
+<h3 data-section-id="49tylt" data-start="2219" data-end="2272">What is the UNESCO Global Happy Schools Initiative?</h3>
+<p data-start="2274" data-end="2485">The <strong data-start="2278" data-end="2313">Global Happy Schools Initiative</strong> is a UNESCO-led programme that promotes educational environments where wellbeing, equity, inclusion, and values-based learning become central components of school systems.</p>
+<p data-start="2487" data-end="2727">Rather than measuring success solely through academic performance, the initiative recognizes that thriving schools are built through positive relationships, supportive learning environments, inclusive practices, and community participation.</p>
+<p data-start="2729" data-end="2886">The initiative seeks to improve both wellbeing and educational outcomes by creating schools where learners, educators, and communities can flourish together.</p>
+<h3 data-section-id="1gwntyr" data-start="2893" data-end="2942">The Four Pillars of the Happy Schools Framework</h3>
+<p data-start="2944" data-end="3093">At the heart of the initiative is the <strong data-start="2982" data-end="3009">Happy Schools Framework</strong>, which organizes positive learning environments around four interconnected pillars.</p>
+<h4 data-section-id="njtomx" data-start="3095" data-end="3107">1. People</h4>
+<p data-start="3109" data-end="3132">This pillar focuses on:</p>
+<ul data-start="3134" data-end="3278">
+<li data-section-id="1h6npzo" data-start="3134" data-end="3158">Positive relationships</li>
+<li data-section-id="4jthe3" data-start="3159" data-end="3180">Emotional wellbeing</li>
+<li data-section-id="1fkr6nw" data-start="3181" data-end="3208">Social-emotional learning</li>
+<li data-section-id="jv43la" data-start="3209" data-end="3218">Respect</li>
+<li data-section-id="lm4rbs" data-start="3219" data-end="3239">Positive attitudes</li>
+<li data-section-id="1jma96s" data-start="3240" data-end="3278">Strong teacher-student relationships</li>
+</ul>
+<p data-start="3280" data-end="3420">Research demonstrates that healthy interpersonal relationships contribute significantly to improved learning outcomes and student wellbeing.</p>
+<h4 data-section-id="17f75aq" data-start="3427" data-end="3440">2. Process</h4>
+<p data-start="3442" data-end="3465">This pillar emphasizes:</p>
+<ul data-start="3467" data-end="3598">
+<li data-section-id="1xdbga6" data-start="3467" data-end="3487">Balanced curricula</li>
+<li data-section-id="why10w" data-start="3488" data-end="3505">Active learning</li>
+<li data-section-id="15llf58" data-start="3506" data-end="3538">Innovative teaching approaches</li>
+<li data-section-id="41wdx9" data-start="3539" data-end="3568">Holistic assessment methods</li>
+<li data-section-id="1f3ib0m" data-start="3569" data-end="3598">Student-centered pedagogies</li>
+</ul>
+<p data-start="3600" data-end="3752">Rather than relying solely on examinations, the framework promotes learning experiences that encourage participation, creativity, and critical thinking.</p>
+<h4 data-section-id="n2c66b" data-start="3759" data-end="3770">3. Place</h4>
+<p data-start="3772" data-end="3850">The Place pillar focuses on creating supportive learning environments through:</p>
+<ul data-start="3852" data-end="3987">
+<li data-section-id="1s51fyz" data-start="3852" data-end="3871">Inclusive schools</li>
+<li data-section-id="12k2ysb" data-start="3872" data-end="3894">Safe physical spaces</li>
+<li data-section-id="j7n4f4" data-start="3895" data-end="3924">Accessible digital learning</li>
+<li data-section-id="qep51y" data-start="3925" data-end="3955">Community-centered education</li>
+<li data-section-id="1wx6jwl" data-start="3956" data-end="3987">Welcoming school environments</li>
+</ul>
+<p data-start="3989" data-end="4066">These environments encourage collaboration, inclusion, and lifelong learning.</p>
+<h4 data-section-id="ij5bsq" data-start="4073" data-end="4089">4. Principles</h4>
+<p data-start="4091" data-end="4122">The Principles pillar promotes:</p>
+<ul data-start="4124" data-end="4209">
+<li data-section-id="177ppng" data-start="4124" data-end="4131">Trust</li>
+<li data-section-id="u6lvfy" data-start="4132" data-end="4143">Inclusion</li>
+<li data-section-id="1898nl9" data-start="4144" data-end="4157">Empowerment</li>
+<li data-section-id="nuq1j0" data-start="4158" data-end="4184">Democratic participation</li>
+<li data-section-id="rm4t" data-start="4185" data-end="4193">Equity</li>
+<li data-section-id="y9ael5" data-start="4194" data-end="4209">Shared values</li>
+</ul>
+<p data-start="4211" data-end="4308">Together, these principles create school cultures where every learner feels valued and supported.</p>
+<h3 data-section-id="gzi38f" data-start="4315" data-end="4348">Countries Already Participating</h3>
+<p data-start="4350" data-end="4437">The Happy Schools Initiative has already been launched in several countries, including:</p>
+<ul data-start="4439" data-end="4514">
+<li data-section-id="1vcssr2" data-start="4439" data-end="4449">Portugal</li>
+<li data-section-id="x50q5g" data-start="4450" data-end="4460">Viet Nam</li>
+<li data-section-id="16sgikc" data-start="4461" data-end="4468">Japan</li>
+<li data-section-id="18xctvq" data-start="4469" data-end="4503">Lao People&#8217;s Democratic Republic</li>
+<li data-section-id="xnnmij" data-start="4504" data-end="4514">Thailand</li>
+</ul>
+<p data-start="4516" data-end="4633">The initiative continues to expand internationally as UNESCO works with governments and education partners worldwide.</p>
+<h3 data-section-id="1gl8h3k" data-start="4640" data-end="4661">Internship Duration</h3>
+<p data-start="4663" data-end="4698">The selected interns will complete:</p>
+<ul data-start="4700" data-end="4815">
+<li data-section-id="h9eyp3" data-start="4700" data-end="4730">Six-month research placement</li>
+<li data-section-id="14n86rg" data-start="4731" data-end="4770">Based at UNESCO Headquarters in Paris</li>
+<li data-section-id="1r3k3z8" data-start="4771" data-end="4815">Expected to begin no later than March 2027</li>
+</ul>
+<h3 data-section-id="wwkkrk" data-start="4822" data-end="4841">Financial Support</h3>
+<p data-start="4843" data-end="4919">Successful applicants will receive financial assistance from UCL, including:</p>
+<ul data-start="4921" data-end="5017">
+<li data-section-id="hw8p63" data-start="4921" data-end="4971">Contribution toward accommodation costs in Paris</li>
+<li data-section-id="qra438" data-start="4972" data-end="5017">Support for travel between London and Paris</li>
+</ul>
+<p data-start="5019" data-end="5130">This funding helps reduce the financial burden associated with undertaking an international research placement.</p>
+<h3 data-section-id="27brc4" data-start="5137" data-end="5151">Visa Support</h3>
+<p data-start="5153" data-end="5276">As the internships will take place in France, successful applicants will receive visa guidance from the <strong data-start="5257" data-end="5275">French Embassy</strong>.</p>
+<p data-start="5278" data-end="5481">Participants will be required to apply for a <strong data-start="5323" data-end="5354">French student trainee visa</strong> through the French Consulate because they will not be enrolled in a French higher education institution during the internship.</p>
+<p data-start="5483" data-end="5508">The Embassy will provide:</p>
+<ul data-start="5510" data-end="5642">
+<li data-section-id="1lx9lz8" data-start="5510" data-end="5544">Information on visa requirements</li>
+<li data-section-id="10eeu1v" data-start="5545" data-end="5590">Guidance throughout the application process</li>
+<li data-section-id="1kfu6dw" data-start="5591" data-end="5642">Support regarding relevant French visa procedures</li>
+</ul>
+<h3 data-section-id="1oied64" data-start="5649" data-end="5730">Internship Opportunity 1: Pedagogies for Peace and the Happy Schools Initiative</h3>
+<p data-start="5732" data-end="5852">The first internship focuses on understanding how the Happy Schools Framework can be expanded into settings affected by:</p>
+<ul data-start="5854" data-end="5958">
+<li data-section-id="15rhqip" data-start="5854" data-end="5870">Armed conflict</li>
+<li data-section-id="ocripy" data-start="5871" data-end="5892">Forced displacement</li>
+<li data-section-id="h1nrj0" data-start="5893" data-end="5912">Social inequality</li>
+<li data-section-id="17jxsq7" data-start="5913" data-end="5934">Fragile communities</li>
+<li data-section-id="1xyzrhu" data-start="5935" data-end="5958">Economic disadvantage</li>
+</ul>
+<p data-start="5960" data-end="6042">The research seeks to explore how schools can become spaces that actively promote:</p>
+<ul data-start="6044" data-end="6156">
+<li data-section-id="sli80c" data-start="6044" data-end="6059">Peacebuilding</li>
+<li data-section-id="nuq1j0" data-start="6060" data-end="6086">Democratic participation</li>
+<li data-section-id="xen2dl" data-start="6087" data-end="6104">Social cohesion</li>
+<li data-section-id="159btzq" data-start="6105" data-end="6126">Inclusive education</li>
+<li data-section-id="igxif8" data-start="6127" data-end="6156">Conflict-sensitive teaching</li>
+</ul>
+<p data-start="6158" data-end="6284">This internship investigates how educational environments can contribute to peaceful societies through values-based education.</p>
+<h3 data-section-id="usu7k7" data-start="6286" data-end="6304">Areas of Focus</h3>
+<p data-start="6306" data-end="6330">The internship includes:</p>
+<ul data-start="6332" data-end="6509">
+<li data-section-id="1w64wnp" data-start="6332" data-end="6363">Research into peace education</li>
+<li data-section-id="1vgai59" data-start="6364" data-end="6402">Analysis of educational inequalities</li>
+<li data-section-id="1oeswcx" data-start="6403" data-end="6441">Examination of displacement contexts</li>
+<li data-section-id="2dz9ks" data-start="6442" data-end="6479">Democratic participation in schools</li>
+<li data-section-id="16l9uhy" data-start="6480" data-end="6509">Social cohesion initiatives</li>
+</ul>
+<h3 data-section-id="rfed59" data-start="6516" data-end="6600">Internship Opportunity 2: Community Learning Hubs and the Happy Schools Initiative</h3>
+<p data-start="6602" data-end="6736">The second internship explores one of the newest components of the Happy Schools Framework—the concept of <strong data-start="6708" data-end="6735">Community Learning Hubs</strong>.</p>
+<p data-start="6738" data-end="6869">UNESCO&#8217;s recent Working Paper No. 19 established five principles connecting community learning hubs to the Happy Schools Framework.</p>
+<p data-start="6871" data-end="7004">However, UNESCO notes that there is still limited evidence demonstrating how schools actually implement these principles in practice.</p>
+<p data-start="7006" data-end="7052">This internship therefore aims to investigate:</p>
+<ul data-start="7054" data-end="7310">
+<li data-section-id="iivt5k" data-start="7054" data-end="7107">How schools operationalize Community Hub principles</li>
+<li data-section-id="1upymuy" data-start="7108" data-end="7166">Which Happy Schools pillars support community engagement</li>
+<li data-section-id="1nkmq0r" data-start="7167" data-end="7232">Challenges schools encounter when functioning as community hubs</li>
+<li data-section-id="1k0czer" data-start="7233" data-end="7310">Ways multi-service community hubs can implement the Happy Schools Framework</li>
+</ul>
+<h3 data-section-id="1nyledx" data-start="7317" data-end="7341">Key Research Questions</h3>
+<p data-start="7343" data-end="7396">The second internship will explore questions such as:</p>
+<ul data-start="7398" data-end="7692">
+<li data-section-id="1fk12no" data-start="7398" data-end="7480">How are Community Hubs implemented in schools using the Happy Schools Framework?</li>
+<li data-section-id="1c377nc" data-start="7481" data-end="7553">Which of the four pillars most effectively support community learning?</li>
+<li data-section-id="1i2yig3" data-start="7554" data-end="7621">What barriers prevent schools from functioning as community hubs?</li>
+<li data-section-id="dr4qou" data-start="7622" data-end="7692">How can non-school community hubs adopt the Happy Schools Framework?</li>
+</ul>
+<h3 data-section-id="1tba1gq" data-start="7699" data-end="7723">What Interns Will Gain</h3>
+<p data-start="7725" data-end="7756">Participants will benefit from:</p>
+<ul data-start="7758" data-end="8101">
+<li data-section-id="5urtyt" data-start="7758" data-end="7793">International research experience</li>
+<li data-section-id="81n1ck" data-start="7794" data-end="7836">Direct collaboration with UNESCO experts</li>
+<li data-section-id="v0dig1" data-start="7837" data-end="7874">Exposure to global education policy</li>
+<li data-section-id="127hrm1" data-start="7875" data-end="7927">Experience conducting applied educational research</li>
+<li data-section-id="16j9pbx" data-start="7928" data-end="7953">Professional networking</li>
+<li data-section-id="1k76yy5" data-start="7954" data-end="7985">International work experience</li>
+<li data-section-id="1v7m8pl" data-start="7986" data-end="8052">Practical understanding of education for sustainable development</li>
+<li data-section-id="1kdadkk" data-start="8053" data-end="8101">Research skills in education and public policy</li>
+</ul>
+<h3 data-section-id="ss67vq" data-start="8108" data-end="8137">Why This Internship Matters</h3>
+<p data-start="8139" data-end="8205">Education systems worldwide face increasing challenges related to:</p>
+<ul data-start="8207" data-end="8305">
+<li data-section-id="1k6lk9q" data-start="8207" data-end="8217">Conflict</li>
+<li data-section-id="1p2a2m7" data-start="8218" data-end="8232">Displacement</li>
+<li data-section-id="1117bfr" data-start="8233" data-end="8245">Inequality</li>
+<li data-section-id="cz1loi" data-start="8246" data-end="8264">Mental wellbeing</li>
+<li data-section-id="e3bdq" data-start="8265" data-end="8287">Community resilience</li>
+<li data-section-id="xen2dl" data-start="8288" data-end="8305">Social cohesion</li>
+</ul>
+<p data-start="8307" data-end="8484">The UNESCO Doctoral Internships provide researchers with an opportunity to contribute directly to solutions that improve learning environments for millions of learners globally.</p>
+<p data-start="8486" data-end="8683">By supporting research into Happy Schools, peace education, and community learning, interns become part of UNESCO&#8217;s broader effort to create equitable, inclusive, and sustainable education systems.</p>
+<p data-start="8486" data-end="8683"><a href="https://www.ucl.ac.uk/grand-challenges/news/2026/jul/call-applications-unesco-doctoral-internships" target="_blank" rel="noopener"><strong>Click HERE</strong></a> to learn more.</p>
+<h3 data-section-id="plflsp" data-start="8690" data-end="8704">How to Apply</h3>
+<p data-start="8706" data-end="8742">Interested doctoral students should:</p>
+<ol data-start="8744" data-end="8950">
+<li data-section-id="kiet56" data-start="8744" data-end="8782">Review the internship descriptions.</li>
+<li data-section-id="120pe5c" data-start="8783" data-end="8855">Choose the internship that best aligns with their research interests.</li>
+<li data-section-id="o88wyt" data-start="8856" data-end="8896">Complete the online application form.</li>
+<li data-section-id="1pinwn3" data-start="8897" data-end="8950">Submit the application before the stated deadline.</li>
+</ol>
+<p data-start="8952" data-end="9023">Applicants are encouraged to prepare a strong application highlighting:</p>
+<ul data-start="9025" data-end="9183">
+<li data-section-id="1gutfu0" data-start="9025" data-end="9054">Doctoral research interests</li>
+<li data-section-id="1t1wgk9" data-start="9055" data-end="9078">Academic achievements</li>
+<li data-section-id="148r4yj" data-start="9079" data-end="9121">Relevant educational research experience</li>
+<li data-section-id="1rvjuuo" data-start="9122" data-end="9152">Interest in UNESCO&#8217;s mission</li>
+<li data-section-id="1gtpkza" data-start="9153" data-end="9183">Motivation for participating</li>
+</ul>
+<h3 data-section-id="1xqj6xi" data-start="9190" data-end="9212">Application Deadline</h3>
+<p data-start="9214" data-end="9263">The application deadline for both internships is:</p>
+<p data-start="9265" data-end="9300"><strong data-start="9265" data-end="9300">Friday, 28 August 2026 at 17:00</strong></p>
+<p data-start="9302" data-end="9342">Late applications may not be considered.</p>
+<p data-start="9302" data-end="9342"><a href="https://www.ucl.ac.uk/grand-challenges/news/2026/jul/call-applications-unesco-doctoral-internships#:~:text=below%20to%20apply.-,Apply%20now,-Share" target="_blank" rel="noopener"><strong>Click HERE</strong></a> to apply.</p>
+<h3 data-section-id="fsb6xx" data-start="9349" data-end="9361">Conclusion</h3>
+<p data-start="9363" data-end="9794">The <strong data-start="9367" data-end="9408">UNESCO Doctoral Internships 2026–2027</strong> offer an exceptional opportunity for UCL doctoral students to contribute to one of UNESCO&#8217;s most innovative global education initiatives while gaining valuable international research experience in Paris. Through six months of immersive research at UNESCO Headquarters, interns will help shape future educational policies centered on wellbeing, peace, inclusion, and community learning.</p>
+<p data-start="9796" data-end="10137">With financial assistance for travel and accommodation, expert mentorship, and the opportunity to work alongside leading education specialists, these internships provide an outstanding platform for doctoral researchers seeking to make a meaningful contribution to global education while strengthening their academic and professional careers.</p>
+<p data-start="9796" data-end="10137"><a href="https://opportunitiesforyouth.org/?s=internship#google_vignette" target="_blank" rel="noopener"><strong>Click HERE</strong></a> for more internship opportunities.</p>
+<p>The post <a rel="nofollow" href="https://opportunitiesforyouth.org/2026/07/27/unesco-doctoral-internships-2026-2027-in-paris-france-fully-supported-research-internship-for-ucl-phd-students/">UNESCO Doctoral Internships 2026–2027 in Paris, France | Fully Supported Research Internship for UCL PhD Students</a> appeared first on <a rel="nofollow" href="https://opportunitiesforyouth.org">Opportunities for Youth</a>.</p>
+]]></content:encoded>
+					
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">87737</post-id>	</item>
 		<item>
 		<title>Community Development Consultant (On-Call) at ICF &#124; Remote USA Job Supporting HUD Community Development Programs</title>
 		<link>https://opportunitiesforyouth.org/2026/07/27/community-development-consultant-on-call-at-icf-remote-usa-job-supporting-hud-community-development-programs/</link>
@@ -1347,792 +2248,5 @@
 		
 		
 		<post-id xmlns="com-wordpress:feed-additions:1">87676</post-id>	</item>
-		<item>
-		<title>The Governor’s Executive Internship 2026 in Colorado: Gain Hands-On Government Experience, Build Professional Skills, and Expand Your Public Service Career</title>
-		<link>https://opportunitiesforyouth.org/2026/07/27/the-governors-executive-internship-2026-in-colorado-gain-hands-on-government-experience-build-professional-skills-and-expand-your-public-service-career/</link>
-		
-		<dc:creator><![CDATA[Dora Kumi]]></dc:creator>
-		<pubDate>Mon, 27 Jul 2026 07:21:42 +0000</pubDate>
-				<category><![CDATA[Internships]]></category>
-		<category><![CDATA[Africa]]></category>
-		<category><![CDATA[America]]></category>
-		<category><![CDATA[Asia]]></category>
-		<category><![CDATA[Australia and Oceania]]></category>
-		<category><![CDATA[Europe]]></category>
-		<category><![CDATA[Fellowship]]></category>
-		<category><![CDATA[Latin America and the Caribbean]]></category>
-		<category><![CDATA[Middle East and North Africa]]></category>
-		<category><![CDATA[South America]]></category>
-		<guid isPermaLink="false">https://opportunitiesforyouth.org/?p=87685</guid>
-
-					<description><![CDATA[<p>The Governor’s Executive Internship is an outstanding opportunity for students and emerging professionals who are passionate about public service, leadership, and government operations. Designed to provide meaningful workplace experience within the Governor&#8217;s Office, this internship allows participants to develop professional skills while gaining first-hand exposure to how state government functions. Rather than simply observing government [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://opportunitiesforyouth.org/2026/07/27/the-governors-executive-internship-2026-in-colorado-gain-hands-on-government-experience-build-professional-skills-and-expand-your-public-service-career/">The Governor’s Executive Internship 2026 in Colorado: Gain Hands-On Government Experience, Build Professional Skills, and Expand Your Public Service Career</a> appeared first on <a rel="nofollow" href="https://opportunitiesforyouth.org">Opportunities for Youth</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[<p data-start="1383" data-end="1786">The Governor’s Executive Internship is an outstanding opportunity for students and emerging professionals who are passionate about public service, leadership, and government operations. Designed to provide meaningful workplace experience within the Governor&#8217;s Office, this internship allows participants to develop professional skills while gaining first-hand exposure to how state government functions. Rather than simply observing government operations, interns become active contributors to projects, research, and day-to-day activities that support the Governor&#8217;s Office. Through practical assignments, mentorship, and networking opportunities, interns gain valuable knowledge about policymaking, public administration, and leadership while building skills that strengthen future career prospects.</p>
-<p data-start="2187" data-end="2482">Whether you aspire to work in government, public administration, policy development, nonprofit organizations, law, communications, or leadership positions in any sector, the Governor&#8217;s Executive Internship provides practical experience that complements academic learning and professional growth.</p>
-<h1 data-section-id="i9sez8" data-start="2534" data-end="2577">About the Governor&#8217;s Executive Internship</h1>
-<p data-start="2579" data-end="2785">The Governor’s Executive Internship Program partners with talented students and developing professionals from diverse backgrounds to provide a comprehensive learning experience inside the Governor’s Office.</p>
-<p data-start="2787" data-end="3026">The internship is designed to bridge the gap between classroom education and professional practice by allowing participants to work alongside experienced government professionals while contributing to meaningful public service initiatives.</p>
-<p data-start="3028" data-end="3208">Interns receive exposure to the internal operations of state government and learn how policies, programs, and executive decisions are developed and implemented to serve the public.</p>
-<p data-start="3210" data-end="3404">The program welcomes applicants from different educational backgrounds, experiences, and perspectives, reflecting the Governor’s Office commitment to diversity, inclusion, and equal opportunity.</p>
-<h1 data-section-id="1nsykie" data-start="3411" data-end="3449">Objectives of the Internship Program</h1>
-<p data-start="3451" data-end="3550">The Governor’s Executive Internship seeks to achieve several important objectives for participants.</p>
-<h2 data-section-id="1bhekv9" data-start="3552" data-end="3602">1. Gain First-Hand Exposure to State Government</h2>
-<p data-start="3604" data-end="3768">Interns become familiar with the daily operations of the Governor&#8217;s Office by participating in real workplace activities rather than simulated learning experiences.</p>
-<p data-start="3770" data-end="3801">Participants gain insight into:</p>
-<ul data-start="3803" data-end="3979">
-<li data-section-id="1pvr3u9" data-start="3803" data-end="3825">Executive leadership</li>
-<li data-section-id="yole6r" data-start="3826" data-end="3853">Government administration</li>
-<li data-section-id="npicuz" data-start="3854" data-end="3884">Public policy implementation</li>
-<li data-section-id="12kc03d" data-start="3885" data-end="3903">State operations</li>
-<li data-section-id="11uh7ov" data-start="3904" data-end="3931">Decision-making processes</li>
-<li data-section-id="aj3ijf" data-start="3932" data-end="3951">Office management</li>
-<li data-section-id="oyrtn2" data-start="3952" data-end="3979">Government communications</li>
-</ul>
-<p data-start="3981" data-end="4076">This experience helps interns understand how executive government functions at the state level.</p>
-<h2 data-section-id="pssd9y" data-start="4083" data-end="4125">2. Participate in Experiential Learning</h2>
-<p data-start="4127" data-end="4199">One of the defining features of the internship is experiential learning.</p>
-<p data-start="4201" data-end="4355">Rather than completing only administrative tasks, interns engage in assignments that demonstrate how the Governor&#8217;s Office works toward making government:</p>
-<ul data-start="4357" data-end="4425">
-<li data-section-id="1bi0ukw" data-start="4357" data-end="4373">More effective</li>
-<li data-section-id="13r6a3o" data-start="4374" data-end="4390">More efficient</li>
-<li data-section-id="utalhp" data-start="4391" data-end="4425">More elegant in serving citizens</li>
-</ul>
-<p data-start="4427" data-end="4603">These practical experiences allow interns to apply theoretical knowledge in real-world situations while learning professional standards expected within government institutions.</p>
-<h2 data-section-id="1gkiqv" data-start="4610" data-end="4645">3. Strengthen Career Development</h2>
-<p data-start="4647" data-end="4731">The internship creates a structured framework that supports long-term career growth.</p>
-<p data-start="4733" data-end="4791">Participants enhance their educational experience through:</p>
-<ul data-start="4793" data-end="4960">
-<li data-section-id="1dy13ep" data-start="4793" data-end="4826">Practical workplace assignments</li>
-<li data-section-id="egsfiy" data-start="4827" data-end="4850">Professional research</li>
-<li data-section-id="26u9vl" data-start="4851" data-end="4877">Real government projects</li>
-<li data-section-id="1q8kybt" data-start="4878" data-end="4902">Collaborative teamwork</li>
-<li data-section-id="17wbw9v" data-start="4903" data-end="4931">Problem-solving activities</li>
-<li data-section-id="12ocfhf" data-start="4932" data-end="4960">Professional communication</li>
-</ul>
-<p data-start="4962" data-end="5084">These experiences help interns develop transferable skills valued by employers across both the public and private sectors.</p>
-<h2 data-section-id="12o6tbj" data-start="5091" data-end="5124">4. Build Professional Networks</h2>
-<p data-start="5126" data-end="5191">Networking is one of the most valuable aspects of the internship.</p>
-<p data-start="5193" data-end="5270">Participants have opportunities to establish professional relationships with:</p>
-<ul data-start="5272" data-end="5395">
-<li data-section-id="1gd2mkv" data-start="5272" data-end="5294">Government officials</li>
-<li data-section-id="90m643" data-start="5295" data-end="5312">Public servants</li>
-<li data-section-id="3pqy8e" data-start="5313" data-end="5330">Executive staff</li>
-<li data-section-id="3k8jlc" data-start="5331" data-end="5353">Policy professionals</li>
-<li data-section-id="81ejmk" data-start="5354" data-end="5378">Administrative leaders</li>
-<li data-section-id="wass3u" data-start="5379" data-end="5395">Fellow interns</li>
-</ul>
-<p data-start="5397" data-end="5503">These connections can become valuable resources for future employment, mentorship, and career development.</p>
-<h1 data-section-id="1pe6dye" data-start="5510" data-end="5535">What Interns Can Expect</h1>
-<p data-start="5537" data-end="5635">Interns participating in the Governor&#8217;s Executive Internship may gain experience in areas such as:</p>
-<ul data-start="5637" data-end="5905">
-<li data-section-id="yole6r" data-start="5637" data-end="5664">Government administration</li>
-<li data-section-id="1pytsjy" data-start="5665" data-end="5694">Executive office operations</li>
-<li data-section-id="1icibnt" data-start="5695" data-end="5710">Public policy</li>
-<li data-section-id="fu3ks1" data-start="5711" data-end="5721">Research</li>
-<li data-section-id="1ughi63" data-start="5722" data-end="5744">Professional writing</li>
-<li data-section-id="1bmv5p7" data-start="5745" data-end="5769">Administrative support</li>
-<li data-section-id="1c9mnyz" data-start="5770" data-end="5786">Communications</li>
-<li data-section-id="b277ju" data-start="5787" data-end="5807">Team collaboration</li>
-<li data-section-id="2fbiwk" data-start="5808" data-end="5824">Public service</li>
-<li data-section-id="19a9p1e" data-start="5825" data-end="5849">Leadership development</li>
-<li data-section-id="mexe6" data-start="5850" data-end="5877">Confidential project work</li>
-<li data-section-id="11yloy5" data-start="5878" data-end="5905">Organizational management</li>
-</ul>
-<p data-start="5907" data-end="6066">Each assignment contributes to a deeper understanding of how executive government offices operate while helping interns build practical workplace competencies.</p>
-<h1 data-section-id="1o52jsq" data-start="6073" data-end="6100">Benefits of Participating</h1>
-<p data-start="6102" data-end="6200">Successful interns can expect numerous professional benefits throughout the internship experience.</p>
-<p data-start="6202" data-end="6216">These include:</p>
-<ul data-start="6218" data-end="6671">
-<li data-section-id="1a26uu0" data-start="6218" data-end="6268">Hands-on experience within the Governor&#8217;s Office</li>
-<li data-section-id="1lvfgcz" data-start="6269" data-end="6314">Exposure to executive government operations</li>
-<li data-section-id="yx4711" data-start="6315" data-end="6345">Practical workplace learning</li>
-<li data-section-id="1dffkqu" data-start="6346" data-end="6380">Career development opportunities</li>
-<li data-section-id="tsbr2n" data-start="6381" data-end="6402">Research experience</li>
-<li data-section-id="16j9pbx" data-start="6403" data-end="6428">Professional networking</li>
-<li data-section-id="ul0lpd" data-start="6429" data-end="6448">Skill enhancement</li>
-<li data-section-id="17fvvx4" data-start="6449" data-end="6499">Experience working with government professionals</li>
-<li data-section-id="1wcudg2" data-start="6500" data-end="6534">Improved communication abilities</li>
-<li data-section-id="gcd00b" data-start="6535" data-end="6577">Stronger writing and proofreading skills</li>
-<li data-section-id="11gwsq1" data-start="6578" data-end="6618">Better understanding of public service</li>
-<li data-section-id="jwgbap" data-start="6619" data-end="6671">Professional growth through meaningful assignments</li>
-</ul>
-<h1 data-section-id="8h9q5e" data-start="6678" data-end="6703">Internship Requirements</h1>
-<p data-start="6705" data-end="6787">Applicants should carefully review the participation requirements before applying.</p>
-<p data-start="6789" data-end="6837">To be considered, candidates should demonstrate:</p>
-<h3 data-section-id="u001wl" data-start="6839" data-end="6853">Commitment</h3>
-<ul data-start="6855" data-end="6953">
-<li data-section-id="1b9bm65" data-start="6855" data-end="6906">Ability to maintain consistent weekly work hours.</li>
-<li data-section-id="9hvlsl" data-start="6907" data-end="6953">Minimum commitment of <strong data-start="6931" data-end="6952">16 hours per week</strong>.</li>
-</ul>
-<h3 data-section-id="1n7es3m" data-start="6955" data-end="6972">Work Schedule</h3>
-<p data-start="6974" data-end="6995">Availability between:</p>
-<ul data-start="6997" data-end="7044">
-<li data-section-id="1f0qtl2" data-start="6997" data-end="7008">8:00 a.m.</li>
-<li data-section-id="flo4ca" data-start="7009" data-end="7020">5:00 p.m.</li>
-<li data-section-id="17abtya" data-start="7021" data-end="7044">Monday through Friday</li>
-</ul>
-<p data-start="7046" data-end="7145">Scheduling may be adjusted according to individual availability while meeting program expectations.</p>
-<h3 data-section-id="wxjyun" data-start="7147" data-end="7170">Professional Skills</h3>
-<p data-start="7172" data-end="7198">Applicants should possess:</p>
-<ul data-start="7200" data-end="7378">
-<li data-section-id="u05186" data-start="7200" data-end="7226">Excellent writing skills</li>
-<li data-section-id="ay4j09" data-start="7227" data-end="7256">Strong communication skills</li>
-<li data-section-id="1jdhfso" data-start="7257" data-end="7289">Excellent proofreading ability</li>
-<li data-section-id="12x9mrv" data-start="7290" data-end="7313">Professional attitude</li>
-<li data-section-id="5bkqeh" data-start="7314" data-end="7333">Strong work ethic</li>
-<li data-section-id="1jnsuq5" data-start="7334" data-end="7351">Self-motivation</li>
-<li data-section-id="a8zano" data-start="7352" data-end="7364">Initiative</li>
-<li data-section-id="1ket2go" data-start="7365" data-end="7378">Reliability</li>
-</ul>
-<h3 data-section-id="yfc4bf" data-start="7380" data-end="7410">Interest in Public Service</h3>
-<p data-start="7412" data-end="7462">Candidates should demonstrate genuine interest in:</p>
-<ul data-start="7464" data-end="7541">
-<li data-section-id="12si271" data-start="7464" data-end="7476">Government</li>
-<li data-section-id="1dazpnr" data-start="7477" data-end="7500">Public administration</li>
-<li data-section-id="182g6pv" data-start="7501" data-end="7519">Civic engagement</li>
-<li data-section-id="149feb3" data-start="7520" data-end="7541">Serving communities</li>
-</ul>
-<h3 data-section-id="69y55c" data-start="7543" data-end="7562">Confidentiality</h3>
-<p data-start="7564" data-end="7667">Interns must be capable of responsibly handling confidential information encountered during their work.</p>
-<h3 data-section-id="tt134r" data-start="7669" data-end="7684">Flexibility</h3>
-<p data-start="7686" data-end="7789">Applicants should also be prepared to work remotely if program requirements make remote work necessary.</p>
-<h1 data-section-id="1ir2ltn" data-start="7796" data-end="7843">Commitment to Diversity and Equal Opportunity</h1>
-<p data-start="7845" data-end="7916">The Governor&#8217;s Office is committed to fostering an inclusive workplace.</p>
-<p data-start="7918" data-end="8049">The internship program welcomes applicants from diverse backgrounds and experiences and provides equal opportunities regardless of:</p>
-<ul data-start="8051" data-end="8195">
-<li data-section-id="1j4eenx" data-start="8051" data-end="8057">Race</li>
-<li data-section-id="16x9hx1" data-start="8058" data-end="8065">Color</li>
-<li data-section-id="1xgaxg7" data-start="8066" data-end="8074">Gender</li>
-<li data-section-id="igcg5e" data-start="8075" data-end="8092">National origin</li>
-<li data-section-id="1d699k1" data-start="8093" data-end="8108">Ethnic origin</li>
-<li data-section-id="6wwz4d" data-start="8109" data-end="8132">Religious affiliation</li>
-<li data-section-id="16kxzwo" data-start="8133" data-end="8153">Sexual orientation</li>
-<li data-section-id="piikya" data-start="8154" data-end="8170">Marital status</li>
-<li data-section-id="1o4g97" data-start="8171" data-end="8176">Age</li>
-<li data-section-id="sirsn3" data-start="8177" data-end="8195">Physical ability</li>
-</ul>
-<p data-start="8197" data-end="8356">The Governor&#8217;s Office and the State of Colorado are equal-opportunity employers dedicated to maintaining a workplace built on fairness, inclusion, and respect.</p>
-<h1 data-section-id="1e5g22m" data-start="8363" data-end="8385">Why You Should Apply</h1>
-<p data-start="8387" data-end="8558">The Governor’s Executive Internship stands out because it combines education with practical experience inside one of the most influential public institutions in the state.</p>
-<p data-start="8560" data-end="8590">Participants gain exposure to:</p>
-<ul data-start="8592" data-end="8767">
-<li data-section-id="1pvr3u9" data-start="8592" data-end="8614">Executive leadership</li>
-<li data-section-id="mxvp47" data-start="8615" data-end="8643">Government decision-making</li>
-<li data-section-id="egsfiy" data-start="8644" data-end="8667">Professional research</li>
-<li data-section-id="hr9key" data-start="8668" data-end="8691">Policy implementation</li>
-<li data-section-id="1dazpnr" data-start="8692" data-end="8715">Public administration</li>
-<li data-section-id="16j9pbx" data-start="8716" data-end="8741">Professional networking</li>
-<li data-section-id="1i1s3j1" data-start="8742" data-end="8767">Workplace collaboration</li>
-</ul>
-<p data-start="8769" data-end="8958">The experience can strengthen future applications for graduate school, public service careers, nonprofit leadership, law school, government employment, and many other professional pathways.</p>
-<p data-start="8960" data-end="9169">For students and young professionals interested in making a meaningful impact through public service, this internship provides valuable insight into the responsibilities and challenges of executive government.</p>
-<h1 data-section-id="plflsp" data-start="9176" data-end="9190">How to Apply</h1>
-<p data-start="9192" data-end="9307">Interested applicants should complete form:<a href="https://docs.google.com/forms/d/e/1FAIpQLSdzu0YISKFMn6M4BRtDf6X7Zo7nG4kp--DXuEWiCjhrPULTQA/viewform" target="_blank" rel="noopener">Fall 2026 Internship Application (Google Form)</a> for  the <strong data-start="9265" data-end="9278">Fall 2026</strong> session before the deadline.</p>
-<p data-start="9309" data-end="9414">Applicants are encouraged to prepare their application materials early to avoid missing the closing date.</p>
-<p data-start="9309" data-end="9414">For more information about this opportunity click <a href="https://www.colorado.gov/governor/internships" target="_blank" rel="noopener"><strong>HERE</strong></a></p>
-<p data-start="9416" data-end="9459"><strong data-start="9416" data-end="9441">Application Deadline:</strong> <strong data-start="9442" data-end="9459">July 31, 2026.</strong></p>
-<h1 data-section-id="fsb6xx" data-start="9466" data-end="9478">Conclusion</h1>
-<p data-start="9480" data-end="9930">The Governor’s Executive Internship offers an exceptional opportunity for students and emerging professionals to gain meaningful experience within the Governor&#8217;s Office while developing practical skills that extend far beyond the internship itself. Through experiential learning, professional mentorship, networking, and exposure to executive government operations, participants build a strong foundation for careers in public service and leadership. Applicants who possess excellent communication skills, a commitment to public service, and a desire to learn in a professional government environment are encouraged to submit their applications before the deadline. This internship represents an excellent stepping stone toward a successful career in government, policy, administration, or any profession where leadership, communication, and problem-solving skills are highly valued.</p>
-<p data-start="9480" data-end="9930">For more <strong>GLOBAL Interships</strong> Click <a href="https://opportunitiesforyouth.org/?s=internship" target="_blank" rel="noopener"><strong>HERE</strong></a></p>
-<p>The post <a rel="nofollow" href="https://opportunitiesforyouth.org/2026/07/27/the-governors-executive-internship-2026-in-colorado-gain-hands-on-government-experience-build-professional-skills-and-expand-your-public-service-career/">The Governor’s Executive Internship 2026 in Colorado: Gain Hands-On Government Experience, Build Professional Skills, and Expand Your Public Service Career</a> appeared first on <a rel="nofollow" href="https://opportunitiesforyouth.org">Opportunities for Youth</a>.</p>
-]]></content:encoded>
-					
-		
-		
-		<post-id xmlns="com-wordpress:feed-additions:1">87685</post-id>	</item>
-		<item>
-		<title>ProPublica Emerging Reporters Program 2026–2027: Receive a $9,000 Stipend, One-on-One Mentorship, and Investigative Journalism Training in the United States</title>
-		<link>https://opportunitiesforyouth.org/2026/07/27/propublica-emerging-reporters-program-2026-2027-receive-a-9000-stipend-one-on-one-mentorship-and-investigative-journalism-training-in-the-united-states/</link>
-		
-		<dc:creator><![CDATA[Bob Waudo]]></dc:creator>
-		<pubDate>Mon, 27 Jul 2026 06:51:27 +0000</pubDate>
-				<category><![CDATA[Fellowship]]></category>
-		<category><![CDATA[America]]></category>
-		<guid isPermaLink="false">https://opportunitiesforyouth.org/?p=87678</guid>
-
-					<description><![CDATA[<p>Aspiring journalists looking to build a strong foundation in investigative reporting now have an outstanding opportunity to accelerate their careers through the ProPublica Emerging Reporters Program 2026–2027. Designed for undergraduate students with a passion for journalism, this prestigious program provides financial support, personalized mentorship from experienced investigative journalists, and access to one of the industry&#8217;s [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://opportunitiesforyouth.org/2026/07/27/propublica-emerging-reporters-program-2026-2027-receive-a-9000-stipend-one-on-one-mentorship-and-investigative-journalism-training-in-the-united-states/">ProPublica Emerging Reporters Program 2026–2027: Receive a $9,000 Stipend, One-on-One Mentorship, and Investigative Journalism Training in the United States</a> appeared first on <a rel="nofollow" href="https://opportunitiesforyouth.org">Opportunities for Youth</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[<p data-start="160" data-end="629">Aspiring journalists looking to build a strong foundation in investigative reporting now have an outstanding opportunity to accelerate their careers through the <strong data-start="321" data-end="372">ProPublica Emerging Reporters Program 2026–2027</strong>. Designed for undergraduate students with a passion for journalism, this prestigious program provides financial support, personalized mentorship from experienced investigative journalists, and access to one of the industry&#8217;s leading journalism conferences.</p>
-<p data-start="631" data-end="950">Every year, ProPublica selects five promising student journalists who demonstrate talent, dedication, and financial need. The program aims to remove barriers that often prevent talented students from pursuing careers in investigative journalism by providing funding, professional guidance, and networking opportunities.</p>
-<p data-start="952" data-end="1183">If you are an undergraduate student committed to making an impact through journalism, this program could provide the resources and support you need to grow professionally while contributing to the future of investigative reporting.</p>
-<h2 data-section-id="2ef679" data-start="1185" data-end="1204">About ProPublica</h2>
-<p data-start="1206" data-end="1502">ProPublica is an independent, nonprofit newsroom dedicated to producing investigative journalism that serves the public interest. The organization is internationally recognized for exposing abuses of power, uncovering corruption, and producing impactful reporting that leads to meaningful change.</p>
-<p data-start="1504" data-end="1720">Its journalism has earned numerous prestigious awards, including Pulitzer Prizes, and its mission is centered on accountability, transparency, and strengthening democracy through high-quality investigative reporting.</p>
-<p data-start="1722" data-end="1923">Recognizing that diversity strengthens journalism, ProPublica created the Emerging Reporters Program to help cultivate the next generation of investigative journalists from a wide range of backgrounds.</p>
-<h2 data-section-id="1iz10yd" data-start="1925" data-end="1967">What Is the Emerging Reporters Program?</h2>
-<p data-start="1969" data-end="2227">The Emerging Reporters Program is a year-long mentorship and professional development initiative specifically designed for undergraduate students who are passionate about journalism but face financial barriers that may limit access to valuable opportunities.</p>
-<p data-start="2229" data-end="2317">Each year, five students are selected to participate in the program, where they receive:</p>
-<ul data-start="2319" data-end="2680">
-<li data-section-id="1g07qk2" data-start="2319" data-end="2350">A total stipend of <strong data-start="2340" data-end="2350">$9,000</strong></li>
-<li data-section-id="z658h3" data-start="2351" data-end="2415">Individual mentorship from accomplished ProPublica journalists</li>
-<li data-section-id="1jk9zdf" data-start="2416" data-end="2468">Professional guidance throughout the academic year</li>
-<li data-section-id="1vkvns" data-start="2469" data-end="2514">Attendance at a major journalism conference</li>
-<li data-section-id="1i7mgll" data-start="2515" data-end="2582">Networking opportunities with experienced investigative reporters</li>
-<li data-section-id="1rzz706" data-start="2583" data-end="2611">Career development support</li>
-<li data-section-id="1guof48" data-start="2612" data-end="2680">Exposure to investigative journalism techniques and best practices</li>
-</ul>
-<p data-start="2682" data-end="2890">The program focuses on helping students strengthen their reporting, storytelling, research, interviewing, and investigative journalism skills while preparing them for successful careers in news organizations.</p>
-<h2 data-section-id="hdp8so" data-start="2892" data-end="2913">Financial Benefits</h2>
-<p data-start="2915" data-end="3013">One of the biggest advantages of the Emerging Reporters Program is its generous financial support.</p>
-<p data-start="3015" data-end="3045">Selected participants receive:</p>
-<ul data-start="3047" data-end="3200">
-<li data-section-id="bgx3oz" data-start="3047" data-end="3076">Total stipend of <strong data-start="3066" data-end="3076">$9,000</strong></li>
-<li data-section-id="12enqzq" data-start="3077" data-end="3200">Two payments of <strong data-start="3095" data-end="3105">$4,500</strong>
-<ul data-start="3108" data-end="3200">
-<li data-section-id="1lbz2tl" data-start="3108" data-end="3155">First payment at the beginning of the program</li>
-<li data-section-id="1x79pky" data-start="3158" data-end="3200">Second payment at the program&#8217;s midpoint</li>
-</ul>
-</li>
-</ul>
-<p data-start="3202" data-end="3398">The stipend is intended to reduce financial pressures that often prevent talented students from gaining journalism experience through internships, campus publications, or local news organizations.</p>
-<h2 data-section-id="m2lqig" data-start="3400" data-end="3422">Additional Benefits</h2>
-<p data-start="3424" data-end="3537">Beyond financial assistance, participants gain access to several valuable professional development opportunities.</p>
-<p data-start="3539" data-end="3553">These include:</p>
-<ul data-start="3555" data-end="3995">
-<li data-section-id="1ivnp1i" data-start="3555" data-end="3621">One-on-one mentorship from experienced investigative journalists</li>
-<li data-section-id="1g1buol" data-start="3622" data-end="3650">Individual career guidance</li>
-<li data-section-id="jyjfj6" data-start="3651" data-end="3690">Professional networking opportunities</li>
-<li data-section-id="1nptjo4" data-start="3691" data-end="3755">Participation in a nationally recognized journalism conference</li>
-<li data-section-id="1jlc3fl" data-start="3756" data-end="3798">Paid conference travel and accommodation</li>
-<li data-section-id="6mhyaz" data-start="3799" data-end="3848">Exposure to investigative journalism techniques</li>
-<li data-section-id="1p635od" data-start="3849" data-end="3884">Feedback on reporting and writing</li>
-<li data-section-id="d1d5h4" data-start="3885" data-end="3945">Long-term professional relationships with industry experts</li>
-<li data-section-id="6b1zw0" data-start="3946" data-end="3995">Increased career readiness for journalism roles</li>
-</ul>
-<h2 data-section-id="1xdjrtg" data-start="3997" data-end="4028">Why Was the Program Created?</h2>
-<p data-start="4030" data-end="4121">ProPublica believes that investigative journalism should reflect the communities it serves.</p>
-<p data-start="4123" data-end="4186">Many aspiring journalists face significant barriers, including:</p>
-<ul data-start="4188" data-end="4334">
-<li data-section-id="p74rwa" data-start="4188" data-end="4211">Financial limitations</li>
-<li data-section-id="lppyfz" data-start="4212" data-end="4239">Limited access to mentors</li>
-<li data-section-id="3wayno" data-start="4240" data-end="4260">Unpaid internships</li>
-<li data-section-id="gqlnqo" data-start="4261" data-end="4306">Lack of professional training opportunities</li>
-<li data-section-id="har15r" data-start="4307" data-end="4334">Limited newsroom exposure</li>
-</ul>
-<p data-start="4336" data-end="4462">Without journalists from diverse backgrounds, important stories and perspectives may never receive the attention they deserve.</p>
-<p data-start="4464" data-end="4643">The Emerging Reporters Program was established to reduce these barriers by supporting talented students who might otherwise struggle to access meaningful journalism opportunities.</p>
-<h2 data-section-id="13a30tu" data-start="4645" data-end="4662">Who Can Apply?</h2>
-<p data-start="4664" data-end="4762">The program is intended for undergraduate students who demonstrate both talent and financial need.</p>
-<p data-start="4764" data-end="4855">Applicants should be passionate about journalism and interested in investigative reporting.</p>
-<p data-start="4857" data-end="4891">Students who have participated in:</p>
-<ul data-start="4893" data-end="5061">
-<li data-section-id="3r8ryz" data-start="4893" data-end="4912">Campus newspapers</li>
-<li data-section-id="17m3rfk" data-start="4913" data-end="4932">Student magazines</li>
-<li data-section-id="1lachc4" data-start="4933" data-end="4954">University websites</li>
-<li data-section-id="1y67wpi" data-start="4955" data-end="4984">College television stations</li>
-<li data-section-id="18ylhx7" data-start="4985" data-end="5009">College radio stations</li>
-<li data-section-id="50row2" data-start="5010" data-end="5036">Local news organizations</li>
-<li data-section-id="1mbfuat" data-start="5037" data-end="5061">Journalism internships</li>
-</ul>
-<p data-start="5063" data-end="5087">are encouraged to apply.</p>
-<p data-start="5089" data-end="5236">However, ProPublica also recognizes that many students cannot access unpaid internships or newsroom opportunities because of financial constraints.</p>
-<p data-start="5238" data-end="5378">Applicants who have found other ways to develop journalism skills are equally encouraged to explain their experiences in their applications.</p>
-<h2 data-section-id="ssopno" data-start="5380" data-end="5407">Eligibility Requirements</h2>
-<p data-start="5409" data-end="5460">Applicants must satisfy the following requirements:</p>
-<ul data-start="5462" data-end="5962">
-<li data-section-id="fa3s9m" data-start="5462" data-end="5492">Be an undergraduate student.</li>
-<li data-section-id="1kzntjk" data-start="5493" data-end="5564">Be entering junior or senior year during the 2026–2027 academic year.</li>
-<li data-section-id="12e1u12" data-start="5565" data-end="5620">Maintain a full course load during the academic year.</li>
-<li data-section-id="xopegd" data-start="5621" data-end="5650">Demonstrate financial need.</li>
-<li data-section-id="1ono1e0" data-start="5651" data-end="5704">Show a strong commitment to journalism as a career.</li>
-<li data-section-id="1df3gpw" data-start="5705" data-end="5738">Be eligible to file U.S. taxes.</li>
-<li data-section-id="1i3g9bx" data-start="5739" data-end="5780">Be able to submit a completed W-9 form.</li>
-<li data-section-id="yeap0e" data-start="5781" data-end="5880">Possess a valid Social Security Number (SSN) or Individual Taxpayer Identification Number (ITIN).</li>
-<li data-section-id="q20xib" data-start="5881" data-end="5962">Be a U.S. citizen or U.S. resident eligible to complete U.S. tax documentation.</li>
-</ul>
-<h2 data-section-id="16jm4h2" data-start="5964" data-end="5987">Preferred Candidates</h2>
-<p data-start="5989" data-end="6098">While all eligible applicants are encouraged to apply, ProPublica places particular emphasis on students who:</p>
-<ul data-start="6100" data-end="6406">
-<li data-section-id="1z05n2" data-start="6100" data-end="6136">Demonstrate exceptional motivation</li>
-<li data-section-id="1pgnnt9" data-start="6137" data-end="6173">Show strong journalistic potential</li>
-<li data-section-id="1y9w3a7" data-start="6174" data-end="6208">Have overcome financial barriers</li>
-<li data-section-id="1pzi9x9" data-start="6209" data-end="6251">Are committed to investigative reporting</li>
-<li data-section-id="uhrxk5" data-start="6252" data-end="6320">Come from communities traditionally underrepresented in journalism</li>
-<li data-section-id="184yq" data-start="6321" data-end="6359">Demonstrate curiosity and initiative</li>
-<li data-section-id="1p4yzye" data-start="6360" data-end="6406">Show dedication to public-interest reporting</li>
-</ul>
-<h2 data-section-id="1swpcjz" data-start="6408" data-end="6427">Program Duration</h2>
-<p data-start="6429" data-end="6475">The 2026–2027 Emerging Reporters Program runs:</p>
-<p data-start="6477" data-end="6518"><strong data-start="6477" data-end="6518">Late September 2026 through June 2027</strong></p>
-<p data-start="6520" data-end="6624">Throughout the program, participants will remain in regular contact with their assigned mentors through:</p>
-<ul data-start="6626" data-end="6712">
-<li data-section-id="1aptjt1" data-start="6626" data-end="6639">Phone calls</li>
-<li data-section-id="d604o4" data-start="6640" data-end="6661">Email communication</li>
-<li data-section-id="1xfpdzc" data-start="6662" data-end="6694">Professional coaching sessions</li>
-<li data-section-id="asxp30" data-start="6695" data-end="6712">Career guidance</li>
-</ul>
-<h2 data-section-id="1o39ynq" data-start="6714" data-end="6738">Mentorship Experience</h2>
-<p data-start="6740" data-end="6809">Each participant is paired with an experienced ProPublica journalist.</p>
-<p data-start="6811" data-end="6883">Rather than selecting mentors themselves, students are matched based on:</p>
-<ul data-start="6885" data-end="6972">
-<li data-section-id="1ncnbkb" data-start="6885" data-end="6907">Journalism interests</li>
-<li data-section-id="1ekhdhs" data-start="6908" data-end="6925">Reporting goals</li>
-<li data-section-id="j57lvu" data-start="6926" data-end="6951">Areas of specialization</li>
-<li data-section-id="qn84m5" data-start="6952" data-end="6972">Career aspirations</li>
-</ul>
-<p data-start="6974" data-end="7094">This personalized matching process helps ensure participants receive guidance aligned with their professional interests.</p>
-<h2 data-section-id="3x0850" data-start="7096" data-end="7132">Journalism Conference Opportunity</h2>
-<p data-start="7134" data-end="7283">An exciting feature of the program is participation in a major journalism conference, such as the Investigative Reporters &amp; Editors (IRE) Conference.</p>
-<p data-start="7285" data-end="7325">Participants do <strong data-start="7301" data-end="7308">not</strong> need to pay for:</p>
-<ul data-start="7327" data-end="7404">
-<li data-section-id="rqvb2f" data-start="7327" data-end="7352">Conference registration</li>
-<li data-section-id="d7gf1s" data-start="7353" data-end="7368">Accommodation</li>
-<li data-section-id="3kqk5v" data-start="7369" data-end="7404">Other conference-related expenses</li>
-</ul>
-<p data-start="7406" data-end="7465">All eligible conference expenses are covered by ProPublica.</p>
-<p data-start="7467" data-end="7508">Conference dates will be announced later.</p>
-<h2 data-section-id="1cclcej" data-start="7510" data-end="7550">Commitment to Diversity and Inclusion</h2>
-<p data-start="7552" data-end="7646">ProPublica is committed to creating a newsroom that better reflects the communities it serves.</p>
-<p data-start="7648" data-end="7810">The organization strongly encourages applications from individuals belonging to communities that have historically been underrepresented in journalism, including:</p>
-<ul data-start="7812" data-end="7885">
-<li data-section-id="17b7v5i" data-start="7812" data-end="7819">Women</li>
-<li data-section-id="qde2vz" data-start="7820" data-end="7837">People of color</li>
-<li data-section-id="w5x8k5" data-start="7838" data-end="7858">LGBTQ+ individuals</li>
-<li data-section-id="115jck3" data-start="7859" data-end="7885">People with disabilities</li>
-</ul>
-<p data-start="7887" data-end="8028">ProPublica maintains an equal opportunity environment and prohibits discrimination and harassment based on legally protected characteristics.</p>
-<h2 data-section-id="13dq7ve" data-start="8030" data-end="8045">How to Apply</h2>
-<p data-start="8047" data-end="8122">Interested students should prepare a competitive application demonstrating:</p>
-<ul data-start="8124" data-end="8325">
-<li data-section-id="17nxkbg" data-start="8124" data-end="8148">Passion for journalism</li>
-<li data-section-id="9yo0et" data-start="8149" data-end="8186">Interest in investigative reporting</li>
-<li data-section-id="5q562d" data-start="8187" data-end="8232">Evidence of journalistic work or experience</li>
-<li data-section-id="61nqob" data-start="8233" data-end="8249">Financial need</li>
-<li data-section-id="qn84m5" data-start="8250" data-end="8270">Career aspirations</li>
-<li data-section-id="ha7u8q" data-start="8271" data-end="8325">Dedication to learning and public-interest reporting</li>
-</ul>
-<p data-start="8327" data-end="8427">Applicants should ensure they meet all eligibility requirements before submitting their application.</p>
-<p style="text-align: center;" data-start="8327" data-end="8427"><a href="https://job-boards.greenhouse.io/propublica/jobs/4577283006?gh_src=e0ijwewi6us" target="_blank" rel="noopener"><strong>APPLY HERE</strong></a></p>
-<h2 data-section-id="b9oye0" data-start="8429" data-end="8459">Questions About the Program</h2>
-<p data-start="8461" data-end="8510">Applicants with additional questions may contact:</p>
-<p data-start="8512" data-end="8555"><strong data-start="8512" data-end="8542">Assistant Managing Editor:</strong> Talia Buford</p>
-<p data-start="8557" data-end="8589"><strong data-start="8557" data-end="8567">Email:</strong> <a class="decorated-link cursor-pointer" rel="noopener" data-start="8568" data-end="8589">talent@propublica.org</a></p>
-<p data-start="8591" data-end="8669">Please note that ProPublica requests <strong data-start="8628" data-end="8646">no phone calls</strong> regarding the program.</p>
-<p data-start="8591" data-end="8669">Visit <a href="https://job-boards.greenhouse.io/propublica/jobs/4577283006?gh_src=e0ijwewi6us" target="_blank" rel="noopener"><strong>HERE</strong></a> to learn more about the ProPublica Emerging Reporters Program 2026–2027</p>
-<h2 data-section-id="4qnxhx" data-start="8671" data-end="8694">Application Deadline</h2>
-<p data-start="8696" data-end="8770"><strong data-start="8696" data-end="8709">Deadline:</strong> <strong data-start="8710" data-end="8770">Monday, August 17, 2026, at 9:00 a.m. Eastern Time (ET).</strong></p>
-<p data-start="8772" data-end="8880">Applicants are encouraged to submit their applications well before the deadline to avoid last-minute issues.</p>
-<h2 data-section-id="8dtpi" data-start="8882" data-end="8895">Conclusion</h2>
-<p data-start="8897" data-end="9748">The ProPublica Emerging Reporters Program 2026–2027 represents an exceptional opportunity for aspiring investigative journalists seeking financial support, mentorship, and professional development. With a generous $9,000 stipend, personalized guidance from accomplished journalists, and fully funded participation in a major journalism conference, the program provides students with invaluable resources to strengthen their reporting skills and launch meaningful careers in journalism. By investing in talented students from diverse backgrounds and removing financial barriers, ProPublica continues to help shape a stronger, more inclusive future for investigative journalism. Eligible students who are passionate about public-interest reporting should take advantage of this unique opportunity and submit a compelling application before the deadline.</p>
-<p data-start="8897" data-end="9748">For more global fellowship opportunities visit OFY<a href="https://opportunitiesforyouth.org/?s=fellowship" target="_blank" rel="noopener"><strong> HERE</strong></a></p>
-<p>The post <a rel="nofollow" href="https://opportunitiesforyouth.org/2026/07/27/propublica-emerging-reporters-program-2026-2027-receive-a-9000-stipend-one-on-one-mentorship-and-investigative-journalism-training-in-the-united-states/">ProPublica Emerging Reporters Program 2026–2027: Receive a $9,000 Stipend, One-on-One Mentorship, and Investigative Journalism Training in the United States</a> appeared first on <a rel="nofollow" href="https://opportunitiesforyouth.org">Opportunities for Youth</a>.</p>
-]]></content:encoded>
-					
-		
-		
-		<post-id xmlns="com-wordpress:feed-additions:1">87678</post-id>	</item>
-		<item>
-		<title>Five Rings Summer Internship 2027 in the USA &#124; Earn a $300,000 Annualized Salary, Sign-On Bonus &#038; Corporate Housing</title>
-		<link>https://opportunitiesforyouth.org/2026/07/27/five-rings-summer-internship-2027/</link>
-		
-		<dc:creator><![CDATA[Ling Peng]]></dc:creator>
-		<pubDate>Mon, 27 Jul 2026 06:41:29 +0000</pubDate>
-				<category><![CDATA[Internships]]></category>
-		<category><![CDATA[Africa]]></category>
-		<category><![CDATA[America]]></category>
-		<category><![CDATA[Asia]]></category>
-		<category><![CDATA[Australia and Oceania]]></category>
-		<category><![CDATA[Europe]]></category>
-		<category><![CDATA[Latin America and the Caribbean]]></category>
-		<category><![CDATA[Middle East and North Africa]]></category>
-		<category><![CDATA[South America]]></category>
-		<guid isPermaLink="false">https://opportunitiesforyouth.org/?p=87701</guid>
-
-					<description><![CDATA[<p>The Five Rings Summer Internship 2027 presents an outstanding opportunity for aspiring software developers who want to gain hands-on experience in one of the world&#8217;s leading proprietary trading firms. Based in New York, this highly competitive internship combines real-world software development projects, classroom learning, mentorship from experienced engineers, and exposure to cutting-edge trading technology. With [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://opportunitiesforyouth.org/2026/07/27/five-rings-summer-internship-2027/">Five Rings Summer Internship 2027 in the USA | Earn a $300,000 Annualized Salary, Sign-On Bonus &#038; Corporate Housing</a> appeared first on <a rel="nofollow" href="https://opportunitiesforyouth.org">Opportunities for Youth</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[<p class="PDq2pG_selectionAnchorContainer" data-start="130" data-end="543">The Five Rings Summer Internship 2027 presents an outstanding opportunity for aspiring software developers who want to gain hands-on experience in one of the world&#8217;s leading proprietary trading firms. Based in New York, this highly competitive internship combines real-world software development projects, classroom learning, mentorship from experienced engineers, and exposure to cutting-edge trading technology.</p>
-<p data-start="545" data-end="852">With an impressive annualized base salary of <strong data-start="590" data-end="602">$300,000</strong>, along with a sign-on bonus and corporate housing, the Five Rings Summer Internship is among the highest-paying internship programs available for university students interested in software engineering, quantitative technology, and financial markets.</p>
-<p data-start="854" data-end="1084">If you are passionate about programming, problem-solving, Linux systems, Python, C/C++, and building high-performance software, this internship could be your gateway into the world of quantitative trading and financial technology.</p>
-<h2 data-section-id="65xxp1" data-start="1086" data-end="1105">About Five Rings</h2>
-<p data-start="1107" data-end="1305"><a href="https://fiverings.com/careers/" target="_blank" rel="noopener">Five Rings</a> is a proprietary trading firm founded with the mission of combining technology, innovation, and strategic thinking to succeed in today&#8217;s increasingly competitive global financial markets.</p>
-<p data-start="1307" data-end="1492">The company specializes in identifying profitable opportunities across both established and niche international markets through sophisticated trading strategies and advanced technology.</p>
-<p data-start="1494" data-end="1532">Today, Five Rings operates offices in:</p>
-<ul data-start="1534" data-end="1626">
-<li data-section-id="19ol180" data-start="1534" data-end="1549">New York, USA</li>
-<li data-section-id="1dwog7x" data-start="1550" data-end="1576">Boca Raton, Florida, USA</li>
-<li data-section-id="1bvy0o6" data-start="1577" data-end="1601">London, United Kingdom</li>
-<li data-section-id="99beuc" data-start="1602" data-end="1626">Amsterdam, Netherlands</li>
-</ul>
-<p data-start="1628" data-end="1808">The firm promotes an open and collaborative workplace where employees are encouraged to exchange ideas across teams, helping develop innovative trading technologies and strategies.</p>
-<p data-start="1810" data-end="1856">Its success is built on a culture that values:</p>
-<ul data-start="1858" data-end="1988">
-<li data-section-id="zno41x" data-start="1858" data-end="1870">Innovation</li>
-<li data-section-id="1hr6uw7" data-start="1871" data-end="1886">Collaboration</li>
-<li data-section-id="1wbxwzx" data-start="1887" data-end="1909">Technical excellence</li>
-<li data-section-id="1ij01o1" data-start="1910" data-end="1931">Continuous learning</li>
-<li data-section-id="a196yo" data-start="1932" data-end="1961">Data-driven decision making</li>
-<li data-section-id="jsdaou" data-start="1962" data-end="1988">Creative problem solving</li>
-</ul>
-<p data-start="1990" data-end="2173">This environment provides interns with exceptional exposure to modern software engineering practices while contributing to projects that directly impact the firm&#8217;s trading operations.</p>
-<h1 data-section-id="h191f5" data-start="2180" data-end="2225">About the Five Rings Summer Internship 2027</h1>
-<p data-start="2227" data-end="2405">The Five Rings Summer Internship is an intensive software development internship designed for students who are interested in combining computer science with financial technology.</p>
-<p data-start="2407" data-end="2596">Rather than assigning interns minor tasks, Five Rings integrates interns directly into real software development projects that are representative of the systems used throughout the company.</p>
-<p data-start="2598" data-end="2646">Throughout the internship, participants receive:</p>
-<ul data-start="2648" data-end="2888">
-<li data-section-id="89kp3z" data-start="2648" data-end="2677">Hands-on project experience</li>
-<li data-section-id="1t3r2za" data-start="2678" data-end="2700">Technical mentorship</li>
-<li data-section-id="4kvmg1" data-start="2701" data-end="2724">Classroom instruction</li>
-<li data-section-id="okj5em" data-start="2725" data-end="2756">Software engineering training</li>
-<li data-section-id="4ygc3s" data-start="2757" data-end="2802">Exposure to quantitative trading technology</li>
-<li data-section-id="ew6k8l" data-start="2803" data-end="2845">Collaboration with experienced engineers</li>
-<li data-section-id="1uppum2" data-start="2846" data-end="2888">Insight into proprietary trading systems</li>
-</ul>
-<p data-start="2890" data-end="3034">Interns are expected to contribute meaningful work while simultaneously developing their technical abilities in a highly supportive environment.</p>
-<h1 data-section-id="48ftk0" data-start="3041" data-end="3063">What Interns Will Do</h1>
-<p data-start="3065" data-end="3217">During the internship, selected candidates will participate in a combination of practical software engineering work and structured learning experiences.</p>
-<p data-start="3219" data-end="3251">Intern responsibilities include:</p>
-<ul data-start="3253" data-end="3707">
-<li data-section-id="2yrr0l" data-start="3253" data-end="3293">Developing production-quality software</li>
-<li data-section-id="ogi3z9" data-start="3294" data-end="3353">Working on projects that directly support trading systems</li>
-<li data-section-id="1cu9y64" data-start="3354" data-end="3395">Writing efficient and maintainable code</li>
-<li data-section-id="14fzfp9" data-start="3396" data-end="3448">Collaborating with experienced software developers</li>
-<li data-section-id="1ml2dbs" data-start="3449" data-end="3499">Learning how technology powers financial markets</li>
-<li data-section-id="1u52rjy" data-start="3500" data-end="3540">Participating in technical discussions</li>
-<li data-section-id="1967gsd" data-start="3541" data-end="3583">Attending educational classroom sessions</li>
-<li data-section-id="atcb61" data-start="3584" data-end="3626">Solving challenging engineering problems</li>
-<li data-section-id="zrmn3g" data-start="3627" data-end="3662">Working within Linux environments</li>
-<li data-section-id="nqqzv4" data-start="3663" data-end="3707">Developing software using Python and C/C++</li>
-</ul>
-<p data-start="3709" data-end="3828">The internship emphasizes practical learning through real-world software engineering rather than simulated assignments.</p>
-<h1 data-section-id="gjxlde" data-start="3835" data-end="3863">Technical Skills Preferred</h1>
-<p data-start="3865" data-end="3952">Five Rings seeks students with strong technical backgrounds and programming experience.</p>
-<h3 data-section-id="1qmagdp" data-start="3954" data-end="3973">Required Skills</h3>
-<p data-start="3975" data-end="3998">Applicants should have:</p>
-<ul data-start="4000" data-end="4176">
-<li data-section-id="1cq8z1w" data-start="4000" data-end="4034">Strong Python programming skills</li>
-<li data-section-id="16jba44" data-start="4035" data-end="4066">Excellent analytical thinking</li>
-<li data-section-id="mujzjz" data-start="4067" data-end="4101">Strong problem-solving abilities</li>
-<li data-section-id="1nf66n3" data-start="4102" data-end="4136">Interest in software engineering</li>
-<li data-section-id="huiyde" data-start="4137" data-end="4176">Passion for learning new technologies</li>
-</ul>
-<h3 data-section-id="19sla4h" data-start="4178" data-end="4198">Preferred Skills</h3>
-<p data-start="4200" data-end="4261">The company also prefers candidates who have experience with:</p>
-<ul data-start="4263" data-end="4322">
-<li data-section-id="de88wi" data-start="4263" data-end="4278">C programming</li>
-<li data-section-id="1xebw8i" data-start="4279" data-end="4296">C++ programming</li>
-<li data-section-id="e0hihx" data-start="4297" data-end="4322">Linux operating systems</li>
-</ul>
-<p data-start="4324" data-end="4441">Although experience with C/C++ and Linux is preferred, proficiency in Python is specifically listed as a requirement.</p>
-<h1 data-section-id="zaqtk4" data-start="4448" data-end="4480">Internship Learning Experience</h1>
-<p data-start="4482" data-end="4615">One of the most valuable aspects of this internship is its balance between structured education and practical engineering experience.</p>
-<p data-start="4617" data-end="4732">Interns receive classroom instruction from experienced professionals while simultaneously working on real projects.</p>
-<p data-start="4734" data-end="4765">Learning opportunities include:</p>
-<ul data-start="4767" data-end="4992">
-<li data-section-id="109xm7h" data-start="4767" data-end="4787">Trading technology</li>
-<li data-section-id="10x0ubm" data-start="4788" data-end="4821">Financial market infrastructure</li>
-<li data-section-id="7kktn6" data-start="4822" data-end="4845">Software architecture</li>
-<li data-section-id="fhumh3" data-start="4846" data-end="4867">Systems programming</li>
-<li data-section-id="9fyg3n" data-start="4868" data-end="4896">High-performance computing</li>
-<li data-section-id="12a3o8s" data-start="4897" data-end="4934">Software development best practices</li>
-<li data-section-id="10df49m" data-start="4935" data-end="4971">Professional engineering workflows</li>
-<li data-section-id="b277ju" data-start="4972" data-end="4992">Team collaboration</li>
-</ul>
-<p data-start="4994" data-end="5092">This combination allows interns to build both technical knowledge and industry-specific expertise.</p>
-<h1 data-section-id="px5r3o" data-start="5099" data-end="5125">Mentorship Opportunities</h1>
-<p data-start="5127" data-end="5234">Every intern is paired with experienced software developers who provide guidance throughout the internship.</p>
-<p data-start="5236" data-end="5257">Mentors help interns:</p>
-<ul data-start="5259" data-end="5468">
-<li data-section-id="ro0p9n" data-start="5259" data-end="5292">Understand company technologies</li>
-<li data-section-id="tc1cdl" data-start="5293" data-end="5321">Improve programming skills</li>
-<li data-section-id="zl5oo6" data-start="5322" data-end="5355">Navigate engineering challenges</li>
-<li data-section-id="1ov88xr" data-start="5356" data-end="5369">Review code</li>
-<li data-section-id="rvc6b5" data-start="5370" data-end="5420">Develop professional software engineering habits</li>
-<li data-section-id="ycwyji" data-start="5421" data-end="5468">Gain exposure to real production environments</li>
-</ul>
-<p data-start="5470" data-end="5581">This mentorship ensures participants receive continuous support while working on meaningful technical projects.</p>
-<h1 data-section-id="4b8816" data-start="5588" data-end="5609">Internship Benefits</h1>
-<p data-start="5611" data-end="5745">The Five Rings Summer Internship offers an exceptional compensation package alongside valuable professional development opportunities.</p>
-<p data-start="5747" data-end="5764">Benefits include:</p>
-<ul data-start="5766" data-end="6082">
-<li data-section-id="pfmdwg" data-start="5766" data-end="5806">Annualized base salary of <strong data-start="5794" data-end="5806">$300,000</strong></li>
-<li data-section-id="3i8a7m" data-start="5807" data-end="5822">Sign-on bonus</li>
-<li data-section-id="18bl4cq" data-start="5823" data-end="5842">Corporate housing</li>
-<li data-section-id="epx1uw" data-start="5843" data-end="5862">Direct mentorship</li>
-<li data-section-id="12uzkgd" data-start="5863" data-end="5883">Classroom learning</li>
-<li data-section-id="q00b3c" data-start="5884" data-end="5920">Real software development projects</li>
-<li data-section-id="1dndog0" data-start="5921" data-end="5971">Experience at a leading proprietary trading firm</li>
-<li data-section-id="1shmxus" data-start="5972" data-end="6011">Networking with experienced engineers</li>
-<li data-section-id="jtx0un" data-start="6012" data-end="6046">Exposure to financial technology</li>
-<li data-section-id="ehktbh" data-start="6047" data-end="6082">Professional growth opportunities</li>
-</ul>
-<p data-start="6084" data-end="6245">The combination of competitive compensation and meaningful work makes this one of the most attractive internship opportunities for software engineering students.</p>
-<h1 data-section-id="1tg946l" data-start="6252" data-end="6277">Salary and Compensation</h1>
-<p data-start="6279" data-end="6381">Five Rings offers one of the highest-paying internship programs in the technology and finance sectors.</p>
-<p data-start="6383" data-end="6404">Participants receive:</p>
-<ul data-start="6406" data-end="6511">
-<li data-section-id="1tchtaj" data-start="6406" data-end="6453"><strong data-start="6408" data-end="6431">Annual Base Salary:</strong> $300,000 (annualized)</li>
-<li data-section-id="3i8a7m" data-start="6454" data-end="6469">Sign-on bonus</li>
-<li data-section-id="1c1q33s" data-start="6470" data-end="6511">Corporate housing during the internship</li>
-</ul>
-<p data-start="6513" data-end="6612">This competitive package reflects the firm&#8217;s commitment to attracting exceptional technical talent.</p>
-<h1 data-section-id="mg5bns" data-start="6619" data-end="6630">Locations</h1>
-<p data-start="6632" data-end="6659">The internship is based in:</p>
-<ul data-start="6661" data-end="6690">
-<li data-section-id="1attadw" data-start="6661" data-end="6690"><strong data-start="6663" data-end="6690">New York, United States</strong></li>
-</ul>
-<p data-start="6692" data-end="6729">Five Rings also maintains offices in:</p>
-<ul data-start="6731" data-end="6764">
-<li data-section-id="88y1z5" data-start="6731" data-end="6743">Boca Raton</li>
-<li data-section-id="1pb8sv4" data-start="6744" data-end="6752">London</li>
-<li data-section-id="19fsrwc" data-start="6753" data-end="6764">Amsterdam</li>
-</ul>
-<h1 data-section-id="8vko7r" data-start="6771" data-end="6792">Application Process</h1>
-<p data-start="6794" data-end="6893">Interested applicants should complete the online application through the Five Rings Careers portal.</p>
-<p data-start="6895" data-end="6941">Applicants will generally be asked to provide:</p>
-<ol data-start="6943" data-end="7229">
-<li data-section-id="bp1lam" data-start="6943" data-end="6966">Personal information</li>
-<li data-section-id="1pa3lzc" data-start="6967" data-end="6982">Resume or CV</li>
-<li data-section-id="gtddox" data-start="6983" data-end="7008">Educational background</li>
-<li data-section-id="14ho3i2" data-start="7009" data-end="7047">Academic transcript or grade report</li>
-<li data-section-id="8avwh0" data-start="7048" data-end="7066">GPA information</li>
-<li data-section-id="10ry51e" data-start="7067" data-end="7091">Department preference</li>
-<li data-section-id="mp3oqa" data-start="7092" data-end="7119">Previous work experience</li>
-<li data-section-id="uc8lv8" data-start="7120" data-end="7165">Information regarding competing job offers</li>
-<li data-section-id="1y1hitm" data-start="7166" data-end="7195">Work authorization details</li>
-<li data-section-id="lo26jv" data-start="7196" data-end="7229">Privacy policy acknowledgment</li>
-</ol>
-<p data-start="7231" data-end="7382">Applicants may apply for multiple positions; however, Five Rings strongly encourages candidates to apply only for the role they are most interested in.</p>
-<h1 data-section-id="c57cg9" data-start="7389" data-end="7421">Required Application Documents</h1>
-<p data-start="7423" data-end="7463">Applicants should prepare the following:</p>
-<ul data-start="7465" data-end="7594">
-<li data-section-id="26kut5" data-start="7465" data-end="7479">Resume or CV</li>
-<li data-section-id="ntdval" data-start="7480" data-end="7517">Academic transcript or grade report</li>
-<li data-section-id="1gfyopv" data-start="7518" data-end="7543">Educational information</li>
-<li data-section-id="1c71798" data-start="7544" data-end="7557">GPA details</li>
-<li data-section-id="5kd6ih" data-start="7558" data-end="7594">Employment history (if applicable)</li>
-</ul>
-<p data-start="7596" data-end="7674">Additional information may be requested during the online application process.</p>
-<h1 data-section-id="1bqljif" data-start="7681" data-end="7698">Important Dates</h1>
-<h3 data-section-id="1fb9u8k" data-start="7700" data-end="7722">Interview Timeline</h3>
-<ul data-start="7724" data-end="7762">
-<li data-section-id="11rybie" data-start="7724" data-end="7762"><strong data-start="7726" data-end="7762">Interviews begin: September 2026</strong></li>
-</ul>
-<h3 data-section-id="1twgd2u" data-start="7764" data-end="7788">Application Deadline</h3>
-<ul data-start="7790" data-end="7839">
-<li data-section-id="k1v0df" data-start="7790" data-end="7839"><strong data-start="7792" data-end="7839">No application deadline has been specified.</strong></li>
-</ul>
-<p data-start="7841" data-end="7949">Interested candidates are encouraged to apply as early as possible since interviews begin in September 2026.</p>
-<h1 data-section-id="1e5g22m" data-start="7956" data-end="7978">Why You Should Apply</h1>
-<p data-start="7980" data-end="8072">The Five Rings Summer Internship provides far more than a traditional internship experience.</p>
-<p data-start="8074" data-end="8092">Participants gain:</p>
-<ul data-start="8094" data-end="8438">
-<li data-section-id="ok2srf" data-start="8094" data-end="8137">Experience developing production software</li>
-<li data-section-id="cc51oj" data-start="8138" data-end="8177">Mentorship from experienced engineers</li>
-<li data-section-id="4ygc3s" data-start="8178" data-end="8223">Exposure to quantitative trading technology</li>
-<li data-section-id="alpa5q" data-start="8224" data-end="8255">High-level technical training</li>
-<li data-section-id="jyjfj6" data-start="8256" data-end="8295">Professional networking opportunities</li>
-<li data-section-id="1kea5t3" data-start="8296" data-end="8327">Industry-leading compensation</li>
-<li data-section-id="1n2c1kj" data-start="8328" data-end="8371">Practical software engineering experience</li>
-<li data-section-id="5iok4c" data-start="8372" data-end="8438">A strong foundation for future careers in technology and finance</li>
-</ul>
-<p data-start="8440" data-end="8652">Whether your long-term goal is software engineering, quantitative development, systems programming, or fintech, this internship provides valuable industry experience that can significantly strengthen your career.</p>
-<p style="text-align: center;" data-start="8440" data-end="8652"><a href="https://job-boards.greenhouse.io/fiveringsllc/jobs/5349707008" target="_blank" rel="noopener"><strong>APPLY NOW</strong></a></p>
-<h1 data-section-id="fsb6xx" data-start="8659" data-end="8671">Conclusion</h1>
-<p data-start="8673" data-end="9074">The Five Rings Summer Internship 2027 is an exceptional opportunity for university students who aspire to work at the intersection of software engineering and financial technology. Through a combination of hands-on development, structured classroom instruction, mentorship from experienced engineers, and exposure to real trading systems, interns gain invaluable technical and professional experience.</p>
-<p data-start="9076" data-end="9483">Combined with an outstanding annualized salary of $300,000, a sign-on bonus, and corporate housing, this internship stands out as one of the most competitive and rewarding programs available. Since interviews begin in September 2026 and no official application deadline has been announced, interested students should submit their applications as early as possible to maximize their chances of consideration.</p>
-<p data-start="9076" data-end="9483">Visit the <a href="https://opportunitiesforyouth.org/" target="_blank" rel="noopener">OFY website</a> for more <a href="https://opportunitiesforyouth.org/?s=internship" target="_blank" rel="noopener">Internship Opportunities</a>.</p>
-<p>The post <a rel="nofollow" href="https://opportunitiesforyouth.org/2026/07/27/five-rings-summer-internship-2027/">Five Rings Summer Internship 2027 in the USA | Earn a $300,000 Annualized Salary, Sign-On Bonus &#038; Corporate Housing</a> appeared first on <a rel="nofollow" href="https://opportunitiesforyouth.org">Opportunities for Youth</a>.</p>
-]]></content:encoded>
-					
-		
-		
-		<post-id xmlns="com-wordpress:feed-additions:1">87701</post-id>	</item>
-		<item>
-		<title>Summer Intern 2027 – Quantitative Researcher (PhD) at Five Rings in New York &#124; $300,000 Salary, Sign-On Bonus &#038; Corporate Housing</title>
-		<link>https://opportunitiesforyouth.org/2026/07/27/summer-intern-2027-quantitative-researcher-phd-at-five-rings-in-new-york-300000-salary-sign-on-bonus-corporate-housing/</link>
-		
-		<dc:creator><![CDATA[Feven Erko]]></dc:creator>
-		<pubDate>Mon, 27 Jul 2026 01:06:28 +0000</pubDate>
-				<category><![CDATA[Continent]]></category>
-		<category><![CDATA[Internships]]></category>
-		<category><![CDATA[PhD]]></category>
-		<guid isPermaLink="false">https://opportunitiesforyouth.org/?p=87670</guid>
-
-					<description><![CDATA[<p>If you are a PhD student with exceptional quantitative and programming skills, the Five Rings Summer Intern 2027 – Quantitative Researcher (PhD) program offers an outstanding opportunity to gain hands-on experience at one of the world&#8217;s leading proprietary trading firms. Based in New York, this highly competitive 9-week paid internship combines cutting-edge quantitative research, real-world [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://opportunitiesforyouth.org/2026/07/27/summer-intern-2027-quantitative-researcher-phd-at-five-rings-in-new-york-300000-salary-sign-on-bonus-corporate-housing/">Summer Intern 2027 – Quantitative Researcher (PhD) at Five Rings in New York | $300,000 Salary, Sign-On Bonus &#038; Corporate Housing</a> appeared first on <a rel="nofollow" href="https://opportunitiesforyouth.org">Opportunities for Youth</a>.</p>
-]]></description>
-										<content:encoded><![CDATA[<p data-start="133" data-end="629">If you are a PhD student with exceptional quantitative and programming skills, the <strong data-start="216" data-end="281">Five Rings Summer Intern 2027 – Quantitative Researcher (PhD)</strong> program offers an outstanding opportunity to gain hands-on experience at one of the world&#8217;s leading proprietary trading firms. Based in <strong data-start="418" data-end="430">New York</strong>, this highly competitive <strong data-start="456" data-end="482">9-week paid internship</strong> combines cutting-edge quantitative research, real-world trading strategy development, mentorship, technical training, and professional networking.</p>
-<p data-start="631" data-end="909">With an <strong data-start="639" data-end="677">annualized base salary of $300,000</strong>, plus a <strong data-start="686" data-end="703">sign-on bonus</strong> and <strong data-start="708" data-end="729">corporate housing</strong>, this internship is designed for talented doctoral students who are passionate about solving complex mathematical problems and applying quantitative research to financial markets.</p>
-<p data-start="911" data-end="1199">Whether your background is in computer science, mathematics, statistics, economics, physics, or another quantitative discipline, this internship provides a unique opportunity to work alongside world-class researchers and traders while gaining practical experience in quantitative finance.</p>
-<h2 data-section-id="6nkn4m" data-start="1206" data-end="1224">About Five Rings</h2>
-<p data-start="1226" data-end="1407">Five Rings is a proprietary trading firm that combines <strong data-start="1281" data-end="1354">technology, quantitative research, innovation, and strategic thinking</strong> to compete successfully in global financial markets.</p>
-<p data-start="1409" data-end="1547">Founded with the goal of building sophisticated trading strategies through advanced research and technology, the firm operates offices in:</p>
-<ul data-start="1549" data-end="1593">
-<li data-section-id="1e5b75n" data-start="1549" data-end="1559">New York</li>
-<li data-section-id="88y1z5" data-start="1560" data-end="1572">Boca Raton</li>
-<li data-section-id="1pb8sv4" data-start="1573" data-end="1581">London</li>
-<li data-section-id="19fsrwc" data-start="1582" data-end="1593">Amsterdam</li>
-</ul>
-<p data-start="1595" data-end="1764">The company trades across numerous domestic and international markets, continually identifying new opportunities, evaluating risks, and developing innovative strategies.</p>
-<p data-start="1766" data-end="1976">One of Five Rings&#8217; defining characteristics is its collaborative culture. Employees are encouraged to exchange ideas freely across teams, creating an environment where innovation and continuous learning thrive.</p>
-<h3 data-start="1766" data-end="1976">About the Summer Internship Program</h3>
-<p data-start="2022" data-end="2227">The Five Rings Quantitative Research Internship is a <strong data-start="2075" data-end="2121">full-time, intensive 9-week summer program</strong> designed specifically for PhD students pursuing careers in quantitative research and algorithmic trading.</p>
-<p data-start="2229" data-end="2249">The internship runs:</p>
-<ul data-start="2251" data-end="2313">
-<li data-section-id="gy3y8j" data-start="2251" data-end="2279">From the beginning of June</li>
-<li data-section-id="1c14ffv" data-start="2280" data-end="2313">Through the beginning of August</li>
-</ul>
-<p data-start="2315" data-end="2465">During the program, interns become integrated members of the research team and contribute directly to projects that influence real trading strategies.</p>
-<p data-start="2467" data-end="2576">Rather than simply observing professionals, interns actively participate in solving real research challenges.</p>
-<h3 data-section-id="48ftk0" data-start="2583" data-end="2605">What Interns Will Do</h3>
-<p data-start="2607" data-end="2661">Throughout the internship, successful candidates will:</p>
-<ul data-start="2663" data-end="3003">
-<li data-section-id="1brra1s" data-start="2663" data-end="2708">Work on real quantitative research projects</li>
-<li data-section-id="i82stb" data-start="2709" data-end="2738">Develop mathematical models</li>
-<li data-section-id="1o1e1kh" data-start="2739" data-end="2770">Analyze financial market data</li>
-<li data-section-id="1gcw2o2" data-start="2771" data-end="2826">Collaborate with experienced quantitative researchers</li>
-<li data-section-id="10bn73g" data-start="2827" data-end="2849">Build research tools</li>
-<li data-section-id="1tp3im7" data-start="2850" data-end="2887">Improve existing trading strategies</li>
-<li data-section-id="qthbnw" data-start="2888" data-end="2932">Explore innovative quantitative techniques</li>
-<li data-section-id="1vffxbz" data-start="2933" data-end="2974">Solve challenging mathematical problems</li>
-<li data-section-id="1x0e078" data-start="2975" data-end="3003">Present ideas and findings</li>
-</ul>
-<p data-start="3005" data-end="3101">Interns work closely with experienced professionals who provide guidance throughout the program.</p>
-<h3 data-section-id="1rjd6j4" data-start="3108" data-end="3130">Dedicated Mentorship</h3>
-<p data-start="3132" data-end="3208">One of the strongest features of the internship is its mentorship structure.</p>
-<p data-start="3210" data-end="3341">Every intern is paired with a mentor who is fully dedicated to supporting their learning and development throughout the internship.</p>
-<p data-start="3343" data-end="3364">Mentors help interns:</p>
-<ul data-start="3366" data-end="3535">
-<li data-section-id="ffdd68" data-start="3366" data-end="3394">Navigate research projects</li>
-<li data-section-id="8pwv8j" data-start="3395" data-end="3421">Improve technical skills</li>
-<li data-section-id="5vshbw" data-start="3422" data-end="3451">Understand trading concepts</li>
-<li data-section-id="18rc2b8" data-start="3452" data-end="3483">Develop quantitative thinking</li>
-<li data-section-id="12cet1j" data-start="3484" data-end="3513">Receive continuous feedback</li>
-<li data-section-id="19zmx17" data-start="3514" data-end="3535">Grow professionally</li>
-</ul>
-<p data-start="3537" data-end="3646">This personalized mentorship allows interns to maximize their learning experience over the nine-week program.</p>
-<h3 data-section-id="zuxwsm" data-start="3653" data-end="3690">Training and Learning Opportunities</h3>
-<p data-start="3692" data-end="3829">Beyond project work, interns participate in structured educational sessions covering essential trading and quantitative finance concepts.</p>
-<p data-start="3831" data-end="3852">The program includes:</p>
-<ul data-start="3854" data-end="4015">
-<li data-section-id="4kvmg1" data-start="3854" data-end="3877">Classroom instruction</li>
-<li data-section-id="1eajies" data-start="3878" data-end="3898">Technical lectures</li>
-<li data-section-id="29z35j" data-start="3899" data-end="3925">Trading concept seminars</li>
-<li data-section-id="pa59hy" data-start="3926" data-end="3958">Strategy development workshops</li>
-<li data-section-id="12g757k" data-start="3959" data-end="3984">In-house strategy games</li>
-<li data-section-id="vsxpwn" data-start="3985" data-end="4015">Practical research exercises</li>
-</ul>
-<p data-start="4017" data-end="4193">These sessions are designed to provide a strong foundation in proprietary trading while helping interns understand how quantitative research supports financial decision-making.</p>
-<h3 data-section-id="wzca5x" data-start="4200" data-end="4237">Collaborative and Social Experience</h3>
-<p data-start="4239" data-end="4314">Five Rings believes that strong collaboration leads to stronger innovation.</p>
-<p data-start="4316" data-end="4422">Throughout the internship, participants enjoy numerous networking and team-building activities, including:</p>
-<ul data-start="4424" data-end="4584">
-<li data-section-id="1gsl0qa" data-start="4424" data-end="4446">Strategy game nights</li>
-<li data-section-id="tltjto" data-start="4447" data-end="4461">Team dinners</li>
-<li data-section-id="1cefybk" data-start="4462" data-end="4493">Social events across New York</li>
-<li data-section-id="1w9y0p5" data-start="4494" data-end="4520">Networking opportunities</li>
-<li data-section-id="ox2clq" data-start="4521" data-end="4584">Informal discussions with experienced researchers and traders</li>
-</ul>
-<p data-start="4586" data-end="4701">These activities help interns build professional relationships while experiencing the firm&#8217;s collaborative culture.</p>
-<h3 data-section-id="1up91jo" data-start="4708" data-end="4727">Who Should Apply?</h3>
-<p data-start="4729" data-end="4854">Five Rings is seeking highly talented PhD students who possess exceptional analytical ability and strong quantitative skills.</p>
-<p data-start="4856" data-end="4880">Ideal candidates should:</p>
-<ul data-start="4882" data-end="5186">
-<li data-section-id="m6ap7j" data-start="4882" data-end="4911">Be currently pursuing a PhD</li>
-<li data-section-id="21xnxm" data-start="4912" data-end="4958">Demonstrate outstanding mathematical ability</li>
-<li data-section-id="1s8psze" data-start="4959" data-end="4998">Enjoy solving highly complex problems</li>
-<li data-section-id="1ixlpcm" data-start="4999" data-end="5017">Think creatively</li>
-<li data-section-id="1px2h58" data-start="5018" data-end="5033">Learn quickly</li>
-<li data-section-id="1a2eyey" data-start="5034" data-end="5084">Work well both independently and collaboratively</li>
-<li data-section-id="z4ujll" data-start="5085" data-end="5105">Be detail-oriented</li>
-<li data-section-id="g3uezy" data-start="5106" data-end="5120">Be proactive</li>
-<li data-section-id="1wze6wk" data-start="5121" data-end="5144">Have strong curiosity</li>
-<li data-section-id="17lfh3a" data-start="5145" data-end="5186">Enjoy challenging research environments</li>
-</ul>
-<h3 data-section-id="tqapec" data-start="5193" data-end="5219">Eligible Fields of Study</h3>
-<p data-start="5221" data-end="5318">Applicants should be pursuing a PhD in one of the following or a related quantitative discipline:</p>
-<ul data-start="5320" data-end="5426">
-<li data-section-id="n5uyxn" data-start="5320" data-end="5338">Computer Science</li>
-<li data-section-id="rnalek" data-start="5339" data-end="5352">Mathematics</li>
-<li data-section-id="tim97n" data-start="5353" data-end="5362">Physics</li>
-<li data-section-id="wt3kb1" data-start="5363" data-end="5375">Statistics</li>
-<li data-section-id="c1jzmc" data-start="5376" data-end="5387">Economics</li>
-<li data-section-id="1e8j7e7" data-start="5388" data-end="5426">Other qualifying quantitative fields</li>
-</ul>
-<p data-start="5428" data-end="5548">Candidates from related disciplines with strong mathematical and computational backgrounds are also encouraged to apply.</p>
-<h3 data-section-id="q5dq2l" data-start="5555" data-end="5575">Programming Skills</h3>
-<p data-start="5577" data-end="5649">Applicants should possess basic programming experience obtained through:</p>
-<ul data-start="5651" data-end="5737">
-<li data-section-id="izno38" data-start="5651" data-end="5670">Academic research</li>
-<li data-section-id="9r4saq" data-start="5671" data-end="5693">Previous internships</li>
-<li data-section-id="1la71io" data-start="5694" data-end="5717">University coursework</li>
-<li data-section-id="7vr7xz" data-start="5718" data-end="5737">Research projects</li>
-</ul>
-<p data-start="5739" data-end="5859">Programming skills are essential since quantitative research relies heavily on computational modeling and data analysis.</p>
-<h3 data-section-id="118mfol" data-start="5866" data-end="5885">Desired Qualities</h3>
-<p data-start="5887" data-end="5940">Five Rings is looking for candidates who demonstrate:</p>
-<ul data-start="5942" data-end="6178">
-<li data-section-id="yb4gjf" data-start="5942" data-end="5978">Exceptional quantitative reasoning</li>
-<li data-section-id="dhkwea" data-start="5979" data-end="6010">Strong mathematical intuition</li>
-<li data-section-id="10v4scw" data-start="6011" data-end="6032">Analytical thinking</li>
-<li data-section-id="w5goxt" data-start="6033" data-end="6057">Intellectual curiosity</li>
-<li data-section-id="1yny65f" data-start="6058" data-end="6087">Independent problem solving</li>
-<li data-section-id="b277ju" data-start="6088" data-end="6108">Team collaboration</li>
-<li data-section-id="a8zano" data-start="6109" data-end="6121">Initiative</li>
-<li data-section-id="1s5h3ha" data-start="6122" data-end="6133">Precision</li>
-<li data-section-id="1ifkr3o" data-start="6134" data-end="6155">Attention to detail</li>
-<li data-section-id="mfg8ou" data-start="6156" data-end="6178">Passion for learning</li>
-</ul>
-<h3 data-section-id="4b8816" data-start="6185" data-end="6206">Internship Benefits</h3>
-<p data-start="6208" data-end="6289">Selected interns receive a highly competitive compensation package that includes:</p>
-<ul data-start="6291" data-end="6619">
-<li data-section-id="pfmdwg" data-start="6291" data-end="6331">Annualized base salary of <strong data-start="6319" data-end="6331">$300,000</strong></li>
-<li data-section-id="3i8a7m" data-start="6332" data-end="6347">Sign-on bonus</li>
-<li data-section-id="18bl4cq" data-start="6348" data-end="6367">Corporate housing</li>
-<li data-section-id="1yfhn9a" data-start="6368" data-end="6390">Dedicated mentorship</li>
-<li data-section-id="18q0643" data-start="6391" data-end="6421">Hands-on research experience</li>
-<li data-section-id="14vq2rn" data-start="6422" data-end="6445">Professional training</li>
-<li data-section-id="1blqnmr" data-start="6446" data-end="6490">Exposure to proprietary trading strategies</li>
-<li data-section-id="1w9y0p5" data-start="6491" data-end="6517">Networking opportunities</li>
-<li data-section-id="ofu0kh" data-start="6518" data-end="6551">Social and team-building events</li>
-<li data-section-id="4kvmg1" data-start="6552" data-end="6575">Classroom instruction</li>
-<li data-section-id="cne81b" data-start="6576" data-end="6619">Real-world quantitative research projects</li>
-</ul>
-<h3 data-section-id="majngf" data-start="6626" data-end="6658">Why This Internship Stands Out</h3>
-<p data-start="6660" data-end="6751">The Five Rings Quantitative Research Internship is much more than a traditional internship.</p>
-<p data-start="6753" data-end="6774">Participants receive:</p>
-<ul data-start="6776" data-end="7063">
-<li data-section-id="yxfoq0" data-start="6776" data-end="6817">Direct exposure to quantitative finance</li>
-<li data-section-id="mlrzmc" data-start="6818" data-end="6870">Practical experience with real research challenges</li>
-<li data-section-id="1gumedg" data-start="6871" data-end="6894">One-on-one mentorship</li>
-<li data-section-id="1xp12z8" data-start="6895" data-end="6931">Collaborative learning environment</li>
-<li data-section-id="1kea5t3" data-start="6932" data-end="6963">Industry-leading compensation</li>
-<li data-section-id="1tlphxk" data-start="6964" data-end="7015">Opportunities to develop advanced research skills</li>
-<li data-section-id="1r4f4u4" data-start="7016" data-end="7063">Access to experienced researchers and traders</li>
-</ul>
-<p data-start="7065" data-end="7255">The combination of technical learning, mentorship, and real-world application makes this one of the most prestigious internships available to PhD students interested in quantitative finance.</p>
-<h3 data-section-id="1tg946l" data-start="7262" data-end="7287">Salary and Compensation</h3>
-<p data-start="7289" data-end="7354">Interns receive an impressive compensation package that includes:</p>
-<ul data-start="7356" data-end="7452">
-<li data-section-id="19234gx" data-start="7356" data-end="7394"><strong data-start="7358" data-end="7381">Annual Base Salary:</strong> <strong data-start="7382" data-end="7394">$300,000</strong></li>
-<li data-section-id="3i8a7m" data-start="7395" data-end="7410">Sign-on bonus</li>
-<li data-section-id="1c1q33s" data-start="7411" data-end="7452">Corporate housing during the internship</li>
-</ul>
-<p data-start="7454" data-end="7559">This reflects Five Rings&#8217; commitment to attracting outstanding quantitative talent from around the world.</p>
-<h3 data-section-id="5suvzk" data-start="7566" data-end="7591">Application Information</h3>
-<p data-start="7593" data-end="7664">Interested candidates should prepare a strong application highlighting:</p>
-<ul data-start="7666" data-end="7817">
-<li data-section-id="1t1wgk9" data-start="7666" data-end="7689">Academic achievements</li>
-<li data-section-id="xqsps7" data-start="7690" data-end="7711">Quantitative skills</li>
-<li data-section-id="1nrqeek" data-start="7712" data-end="7737">Mathematical background</li>
-<li data-section-id="1gd5h67" data-start="7738" data-end="7762">Programming experience</li>
-<li data-section-id="1nr8r99" data-start="7763" data-end="7789">Research accomplishments</li>
-<li data-section-id="1xoq8j0" data-start="7790" data-end="7817">Problem-solving abilities</li>
-</ul>
-<p data-start="7819" data-end="7921">Candidates with demonstrated excellence in research and quantitative analysis are encouraged to apply.</p>
-<p data-start="7923" data-end="8066"><a href="https://job-boards.greenhouse.io/fiveringsllc/jobs/5349219008" target="_blank" rel="noopener"><strong>Click HERE</strong></a> to read more and apply.</p>
-<h3 data-section-id="fsb6xx" data-start="8073" data-end="8085">Conclusion</h3>
-<p data-start="8087" data-end="8531">The <strong data-start="8091" data-end="8156">Five Rings Summer Intern 2027 – Quantitative Researcher (PhD)</strong> internship is an exceptional opportunity for doctoral students who aspire to work at the intersection of mathematics, technology, and financial markets. Through challenging research projects, dedicated mentorship, technical training, and exposure to proprietary trading strategies, interns gain invaluable experience while working alongside leading quantitative researchers.</p>
-<p data-start="8533" data-end="8984">Combined with a generous compensation package—including a <strong data-start="8591" data-end="8621">$300,000 annualized salary</strong>, sign-on bonus, and corporate housing—this internship represents one of the most competitive and rewarding research opportunities available for PhD students in quantitative disciplines. If you have a passion for mathematics, programming, and solving complex problems, this internship provides an excellent platform to advance your career in quantitative finance.</p>
-<p data-start="8533" data-end="8984"><a href="https://opportunitiesforyouth.org/?s=internship" target="_blank" rel="noopener"><strong>Click HERE</strong></a> for more internship opportunities.</p>
-<p>The post <a rel="nofollow" href="https://opportunitiesforyouth.org/2026/07/27/summer-intern-2027-quantitative-researcher-phd-at-five-rings-in-new-york-300000-salary-sign-on-bonus-corporate-housing/">Summer Intern 2027 – Quantitative Researcher (PhD) at Five Rings in New York | $300,000 Salary, Sign-On Bonus &#038; Corporate Housing</a> appeared first on <a rel="nofollow" href="https://opportunitiesforyouth.org">Opportunities for Youth</a>.</p>
-]]></content:encoded>
-					
-		
-		
-		<post-id xmlns="com-wordpress:feed-additions:1">87670</post-id>	</item>
 	</channel>
 </rss>
