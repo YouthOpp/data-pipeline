@@ -1,0 +1,1711 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-06T04:59:33.632Z",
+  "sources": [
+    {
+      "source": "opportunitiesforyouth",
+      "requested_url": "https://opportunitiesforyouth.org/feed/",
+      "adapter": "rss",
+      "enabled": true,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 10,
+      "samples": [
+        {
+          "title": "UNDP ECoWYERT Program 2025–2030: Empowering Women, Youth, Entrepreneurs, and Traders for Regional Trade Growth Across Africa",
+          "url": "https://opportunitiesforyouth.org/2026/10/05/undp-ecowyert-program-2025-2030-empowering-women-youth-entrepreneurs-and-traders-for-regional-trade-growth-across-africa/"
+        },
+        {
+          "title": "Erasmus Mundus Joint Master’s in International Humanitarian Action 2027–2029: Scholarships, Eligibility, Study Structure and How to Apply",
+          "url": "https://opportunitiesforyouth.org/2026/10/05/erasmus-mundus-joint-masters-in-international-humanitarian-action-2027-2029-scholarships-eligibility-study-structure-and-how-to-apply/"
+        },
+        {
+          "title": "KNUST–Heinrich Heine University Düsseldorf Exchange Scholarship 2027: Apply for Up to €4,670 to Study in Germany",
+          "url": "https://opportunitiesforyouth.org/2026/10/05/knust-heinrich-heine-university-dusseldorf-exchange-scholarship-2027-apply-for-up-to-e4670-to-study-in-germany-2/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "opportunitydesk",
+      "requested_url": "https://opportunitydesk.org/feed/",
+      "adapter": "rss",
+      "enabled": true,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 10,
+      "samples": [
+        {
+          "title": "AIxBio Fellowship 2027 at Cambridge (Fully-funded)",
+          "url": "https://opportunitydesk.org/2026/10/05/aixbio-fellowship-2027/"
+        },
+        {
+          "title": "NetHope Humanitarian AI Research Fellowship 2026/2027",
+          "url": "https://opportunitydesk.org/2026/10/05/nethope-humanitarian-ai-research-fellowship-2026-2027/"
+        },
+        {
+          "title": "Switzer Fellowships 2027 for Graduate Students in the U.S.",
+          "url": "https://opportunitydesk.org/2026/10/05/switzer-fellowships-2027/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "scholarshipscorner",
+      "requested_url": "https://scholarshipscorner.website/feed/",
+      "adapter": "rss",
+      "enabled": true,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 10,
+      "samples": [
+        {
+          "title": "University of Sheffield PhD Scholarship 2027 in the UK | Fully Funded",
+          "url": "https://scholarshipscorner.website/university-of-sheffield-phd-scholarship/"
+        },
+        {
+          "title": "Iceland Writers Retreat Award 2027 | Full Funding & Partial Funding",
+          "url": "https://scholarshipscorner.website/iceland-writers-retreat-award/"
+        },
+        {
+          "title": "USTC Winter Camp 2027 in China – Fully Funded Scholarship Available",
+          "url": "https://scholarshipscorner.website/ustc-winter-camp-china/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "fulbright-czech-programmes",
+      "requested_url": "https://fulbright.gov.cz/feed/",
+      "adapter": "reviewed-rss",
+      "enabled": true,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Intercountry travel grant: pozvěte si amerického vědce na pár dní",
+          "url": "https://fulbright.gov.cz/intercountry-travel-grant-pozvete-si-americkeho-vedce-na-par-dni/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "us-nasa-internships",
+      "requested_url": "https://www.nasa.gov/learning-resources/internship-programs/",
+      "adapter": "reviewed-html",
+      "enabled": true,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "NASA Internship Programs - NASA",
+          "url": "https://www.nasa.gov/learning-resources/internship-programs/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "pt-fulbright-masters",
+      "requested_url": "https://www.fulbright.pt/bolsas/bolsa-fulbright-para-mestrado/",
+      "adapter": "reviewed-html",
+      "enabled": true,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Bolsa Fulbright para Mestrado",
+          "url": "https://www.fulbright.pt/bolsas/bolsa-fulbright-para-mestrado/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "nl-fulbright-doctoral",
+      "requested_url": "https://fulbright.nl/naar-de-vs/promovendi/fulbright-beurzen-voor-promovendi/",
+      "adapter": "reviewed-html",
+      "enabled": true,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "fulbright beurzen voor promovendi",
+          "url": "https://fulbright.nl/naar-de-vs/promovendi/fulbright-beurzen-voor-promovendi/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "lu-fnr-afdoc",
+      "requested_url": "https://www.fnr.lu/funding-instruments/afdoc/",
+      "adapter": "reviewed-html",
+      "enabled": true,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "AFdoc - FNR",
+          "url": "https://www.fnr.lu/funding-instruments/afdoc/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "at-oead-ernst-mach",
+      "requested_url": "https://studyinaustria.at/en/news/article/2026/08/ernst-mach-stipendium-weltweit-bewerbung-bis-1-dezember-2026",
+      "adapter": "reviewed-html",
+      "enabled": true,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Ernst Mach Scholarship – Worldwide: Application Deadline 1 December 2026",
+          "url": "https://studyinaustria.at/en/news/article/2026/08/ernst-mach-stipendium-weltweit-bewerbung-bis-1-dezember-2026"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "at-grants-at",
+      "requested_url": "https://grants.at/en",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata canonical does not match source URL"
+    },
+    {
+      "source": "at-university-of-vienna",
+      "requested_url": "https://international.univie.ac.at/en/study-abroad-with-erasmus-and-co/non-eu-student-exchange-program",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Non-EU Student Exchange Program",
+          "url": "https://international.univie.ac.at/en/study-abroad-with-erasmus-and-co/non-eu-student-exchange-program"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "be-study-in-flanders",
+      "requested_url": "https://www.studyinflanders.be/scholarships/master-mind-scholarships",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Master Mind Scholarship",
+          "url": "https://www.studyinflanders.be/scholarships/master-mind-scholarships"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "be-wbi",
+      "requested_url": "https://www.wbi.be/fr/actualites/offre-bourse-stage-entreprise-etudiants",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Offre de bourse | Stage en entreprise pour étudiants",
+          "url": "https://www.wbi.be/fr/actualites/offre-bourse-stage-entreprise-etudiants"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "be-ares",
+      "requested_url": "https://www.ares-ac.be/en/cooperation-au-developpement/bourses",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "HTTP 404"
+    },
+    {
+      "source": "bg-fulbright-bulgaria",
+      "requested_url": "https://www.fulbright.bg/en/research-grants-for-bulgarians/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Fulbright Research Grants",
+          "url": "https://www.fulbright.bg/en/research-grants-for-bulgarians/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "bg-insait",
+      "requested_url": "https://insait.ai/insait-opens-applications-for-surf-2026-summer-research-internship-program/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "INSAIT Opens Applications for SURF 2026 Summer Research Internship Program",
+          "url": "https://insait.ai/insait-opens-applications-for-surf-2026-summer-research-internship-program/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "bg-feba-alumni",
+      "requested_url": "https://www.febalumni.org/en/2026/06/17/feba-alumni-club-obyavyava-konkurs-za-mesechni-stipendii-visoki-akademichni-postizheniya-za-leten-semestr-na-akademichnata-20252026-g-kraen-srok-30-06-2026-g/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Robots policy is unavailable; collection denied"
+    },
+    {
+      "source": "hr-ampeu",
+      "requested_url": "https://en.ampeu.hr/open-calls",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Agency for Mobility and EU Programme",
+          "url": "https://en.ampeu.hr/open-calls"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "hr-croatian-ministry",
+      "requested_url": "https://mzom.gov.hr/glavni-izbornik-368/highlights/calls-417/scholarships-of-the-republic-of-croatia-call-for-applications-in-the-academic-year-2026-2027/7588",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Scholarships of the Republic of Croatia - Call for Applications in the academic year 2026/2027",
+          "url": "https://mzom.gov.hr/glavni-izbornik-368/highlights/calls-417/scholarships-of-the-republic-of-croatia-call-for-applications-in-the-academic-year-2026-2027/7588"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "hr-study-in-croatia",
+      "requested_url": "https://www.studyincroatia.hr/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Study in Croatia",
+          "url": "https://www.studyincroatia.hr/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "cy-cyprus-state-scholarships-foundation",
+      "requested_url": "https://www.gov.cy/mof-cssf/documents/prokiryxi-kratikon-ypotrofion-gia-proptychiakes-spoydes-2025-26/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Robots policy is unavailable; collection denied"
+    },
+    {
+      "source": "cy-onek",
+      "requested_url": "https://youthfunds.onek.org.cy/en/services/youth-initiatives/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Youth Initiatives",
+          "url": "https://youthfunds.onek.org.cy/en/services/youth-initiatives/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "cy-cyprus-diaspora-scholarships",
+      "requested_url": "https://www.gov.cy/mfa/en/service-for-overseas-cypriots-and-repatriated-cypriots/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Robots policy is unavailable; collection denied"
+    },
+    {
+      "source": "cz-study-in-czechia",
+      "requested_url": "https://studyin.gov.cz/scholarships/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Scholarships",
+          "url": "https://studyin.gov.cz/scholarships/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "cz-dzs",
+      "requested_url": "https://www.dzs.cz/program/evropsky-sbor-solidarity/projekty-granty",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Projekty a granty",
+          "url": "https://www.dzs.cz/program/evropsky-sbor-solidarity/projekty-granty"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "cz-charles-university",
+      "requested_url": "https://cuni.cz/UKEN-927.html",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Mobility Fund",
+          "url": "https://cuni.cz/UKEN-927.html"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "dk-study-in-denmark",
+      "requested_url": "https://studyindenmark.dk/study-options/scholarships",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Scholarships",
+          "url": "https://studyindenmark.dk/study-options/scholarships"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "dk-dm-and-ma-travel-grant",
+      "requested_url": "https://dm.dk/students/membership/travel-grant/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Travel Grant",
+          "url": "https://dm.dk/students/membership/travel-grant/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "dk-university-of-copenhagen",
+      "requested_url": "https://studies.ku.dk/masters/tuition-fees--scholarships/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "fetch failed"
+    },
+    {
+      "source": "ee-harno",
+      "requested_url": "https://www.harno.ee/en/scholarships-and-grants/scholarships-studying-and-working-estonia/scholarships-international",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Scholarships for international students, researchers and academic staff",
+          "url": "https://www.harno.ee/en/scholarships-and-grants/scholarships-studying-and-working-estonia/scholarships-international"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "ee-university-of-tartu",
+      "requested_url": "https://ut.ee/en/open-calls",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Open calls and application process",
+          "url": "https://ut.ee/en/open-calls"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "ee-taltech",
+      "requested_url": "https://taltech.ee/arengufond/stipendiumid/2026-sugis",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Toeta ülikooli ja tudengeid",
+          "url": "https://taltech.ee/arengufond/stipendiumid/2026-sugis"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "fi-study-in-finland",
+      "requested_url": "https://www.studyinfinland.fi/funding-your-studies/bachelors-and-masters-scholarships",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Bachelor&#039;s and Master&#039;s Scholarships",
+          "url": "https://www.studyinfinland.fi/funding-your-studies/bachelors-and-masters-scholarships"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "fi-aalto-university",
+      "requested_url": "https://www.aalto.fi/en/aalto-science-institute-asci/how-to-apply-for-the-asci-international-summer-research-programme",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "How to Apply for the AScI International Summer Research Programme",
+          "url": "https://www.aalto.fi/en/aalto-science-institute-asci/how-to-apply-for-the-asci-international-summer-research-programme"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "fi-university-of-helsinki",
+      "requested_url": "https://www.helsinki.fi/en/admissions-and-education/apply-bachelors-and-masters-programmes/tuition-fees-and-scholarship-programme",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Tuition fees and scholarship programme",
+          "url": "https://www.helsinki.fi/en/admissions-and-education/apply-bachelors-and-masters-programmes/tuition-fees-and-scholarship-programme"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "fr-campus-france",
+      "requested_url": "https://campusbourses.campusfrance.org/?lang=en",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "CampusBourses - v1.5.4",
+          "url": "https://campusbourses.campusfrance.org/?lang=en"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "fr-1jeune1solution",
+      "requested_url": "https://www.1jeune1solution.gouv.fr/stages",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Des milliers d‘offres de stages sélectionnées pour vous",
+          "url": "https://www.1jeune1solution.gouv.fr/stages"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "fr-service-civique",
+      "requested_url": "https://www.service-civique.gouv.fr/missions/tu-es-l-engagement",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata Open Graph URL conflicts with source URL"
+    },
+    {
+      "source": "de-daad",
+      "requested_url": "https://www2.daad.de/deutschland/stipendium/datenbank/de/21148-stipendiendatenbank/?detail=57742121",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Stipendien finden",
+          "url": "https://www2.daad.de/deutschland/stipendium/datenbank/de/21148-stipendiendatenbank/?detail=57742121"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "de-stipendiumplus",
+      "requested_url": "https://stipendiumplus.de/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Wir fördern Studierende, Promovierende und Auszubildende",
+          "url": "https://stipendiumplus.de/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "de-rausvonzuhaus",
+      "requested_url": "https://www.rausvonzuhaus.de/faq",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "FAQ - H&auml;ufige Fragen",
+          "url": "https://www.rausvonzuhaus.de/faq"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "gr-iky",
+      "requested_url": "https://www.iky.gr/en/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "blocked",
+      "record_count": 0,
+      "samples": [],
+      "error": "Actual footer-linked IKY terms reviewed 2026-10-05. Section 3 explicitly prohibits public reproduction, republication, copying/storage and extracts or summaries without prior permission; personal-use "
+    },
+    {
+      "source": "gr-onassis-foundation",
+      "requested_url": "https://www.onassis.org/el/initiatives/scholarships/greek-scholars",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata title is missing"
+    },
+    {
+      "source": "gr-fulbright-greece",
+      "requested_url": "https://www.fulbright.gr/el/news-events/1979-greek-scholarship-program-new-timeline",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata has an empty, generic, or excessive h1"
+    },
+    {
+      "source": "hu-stipendium-hungaricum",
+      "requested_url": "https://stipendiumhungaricum.hu/apply/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Apply - Stipendium Hungaricum",
+          "url": "https://stipendiumhungaricum.hu/apply/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "hu-tempus-bilateral-scholarships",
+      "requested_url": "https://en.tka.hu/bilateral-state-scholarships-information-for-applicants",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "The operation was aborted due to timeout"
+    },
+    {
+      "source": "hu-hungarian-diaspora-scholarship",
+      "requested_url": "https://diasporascholarship.hu/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "fetch failed"
+    },
+    {
+      "source": "ie-gradireland",
+      "requested_url": "https://gradireland.com/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Your graduate careers hub",
+          "url": "https://gradireland.com/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "ie-hea",
+      "requested_url": "https://hea.ie/policy/internationalisation/goi-ies/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Government of Ireland International Education Scholarships | Higher Education Authority",
+          "url": "https://hea.ie/policy/internationalisation/goi-ies/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "ie-l-argas",
+      "requested_url": "https://www.leargas.ie/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Léargas manage national and international programmes in youth work, education and training including Erasmus+ , European Solidarity Corps and eTwinning",
+          "url": "https://www.leargas.ie/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "it-scambieuropei",
+      "requested_url": "https://www.scambieuropei.info/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Esperienze all'estero",
+          "url": "https://www.scambieuropei.info/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "it-eurodesk-italia",
+      "requested_url": "https://www.eurodesk.it/notizie",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata has ambiguous h1"
+    },
+    {
+      "source": "it-study-in-italy",
+      "requested_url": "https://www.esteri.it/en/servizi-opportunita/opportunita/borse-di-studio/per-cittadini-stranieri/borsestudio_stranieri/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Scholarships for foreign students and Italian citizens living abroad awarded by the Italian Government",
+          "url": "https://www.esteri.it/en/servizi-opportunita/opportunita/borse-di-studio/per-cittadini-stranieri/borsestudio_stranieri/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "lv-viaa",
+      "requested_url": "https://www.viaa.gov.lv/en/latvian-state-scholarships",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Latvian state scholarships",
+          "url": "https://www.viaa.gov.lv/en/latvian-state-scholarships"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "lv-university-of-latvia",
+      "requested_url": "https://eszf.lu.lv/en/studies/studies-abroad/erasmus/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Erasmus+",
+          "url": "https://eszf.lu.lv/en/studies/studies-abroad/erasmus/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "lv-riga-technical-university",
+      "requested_url": "https://www.rtu.lv/en/studies/doctoral-studies/scholarships-and-grants",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Scholarships and Grants",
+          "url": "https://www.rtu.lv/en/studies/doctoral-studies/scholarships-and-grants"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "lt-study-in-lithuania",
+      "requested_url": "https://studyin.lt/scholarships/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Financial Aid",
+          "url": "https://studyin.lt/scholarships/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "lt-vilnius-university",
+      "requested_url": "https://www.vu.lt/en/students/services-for-students/finance/tuition-fee-waiver-for-full-time-master-degree-studies",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Tuition Fee Waiver for Full-Time Master Degree Studies",
+          "url": "https://www.vu.lt/en/students/services-for-students/finance/tuition-fee-waiver-for-full-time-master-degree-studies"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "lt-kaunas-university-of-technology",
+      "requested_url": "https://admissions.ktu.edu/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Admission and Studies at Kaunas University of Technology",
+          "url": "https://admissions.ktu.edu/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "lu-university-of-luxembourg",
+      "requested_url": "https://www.uni.lu/life-en/financial-support/scholarships/guillaume-dupaix-international-scholarship/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Robots policy is unavailable; collection denied"
+    },
+    {
+      "source": "lu-luxembourg-mfa-internships",
+      "requested_url": "https://mae.gouvernement.lu/en/directions-du-ministere/finances-ressources-humaines/stages.html",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata Open Graph URL conflicts with source URL"
+    },
+    {
+      "source": "lu-luxembourg-cooperation",
+      "requested_url": "https://cooperation.gouvernement.lu/en/s-engager.html",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata Open Graph URL conflicts with source URL"
+    },
+    {
+      "source": "mt-myscholarship",
+      "requested_url": "https://myscholarship.gov.mt/en/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata has an empty, generic, or excessive og:title"
+    },
+    {
+      "source": "mt-university-of-malta",
+      "requested_url": "https://www.um.edu.mt/study/feesfunding/scholarships/postgraduateissischolarships/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata has ambiguous h1"
+    },
+    {
+      "source": "mt-malta-student-grants",
+      "requested_url": "https://stipendsandgrants.gov.mt/en/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "blocked",
+      "record_count": 0,
+      "samples": [],
+      "error": "Footer-linked https://www.gov.mt/en/Pages/Terms-of-use.aspx inspected2026-10-05: express page-scrape/robot/spider/automatic monitoring prohibition; ordinary fair non-endorsing links permitted. Do not "
+    },
+    {
+      "source": "nl-study-in-nl",
+      "requested_url": "https://www.studyinnl.org/finances/scholarships",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Scholarships",
+          "url": "https://www.studyinnl.org/finances/scholarships"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "nl-magnet-me",
+      "requested_url": "https://magnet.me/en/internships/netherlands",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "internships in the Netherlands",
+          "url": "https://magnet.me/en/internships/netherlands"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "nl-leiden-university",
+      "requested_url": "https://www.universiteitleiden.nl/en/scholarships/sea/leiden-university-excellence-scholarship-lexs",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Robots policy is unavailable; collection denied"
+    },
+    {
+      "source": "pl-eurodesk-polska",
+      "requested_url": "https://www.eurodesk.pl/granty",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Granty",
+          "url": "https://www.eurodesk.pl/granty"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "pl-nawa",
+      "requested_url": "https://nawa.gov.pl/en/nawa/news/call-for-applications-banach-nawa-2026",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata Open Graph URL conflicts with source URL"
+    },
+    {
+      "source": "pl-frse",
+      "requested_url": "https://www.frse.org.pl/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata has ambiguous h1"
+    },
+    {
+      "source": "pt-ipdj",
+      "requested_url": "https://ipdj.gov.pt/candidaturas",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Navegação",
+          "url": "https://ipdj.gov.pt/candidaturas"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "pt-fct",
+      "requested_url": "https://www.fct.pt/en/financiamento/programas-de-financiamento/bolsas/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Studentships",
+          "url": "https://www.fct.pt/en/financiamento/programas-de-financiamento/bolsas/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "pt-dges",
+      "requested_url": "https://dges.gov.pt/pt/pagina/prazos-de-candidatura",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Prazos de Candidatura",
+          "url": "https://dges.gov.pt/pt/pagina/prazos-de-candidatura"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "ro-study-in-romania",
+      "requested_url": "https://studyinromania.gov.ro/scholarships",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Looking for scholarships?",
+          "url": "https://studyinromania.gov.ro/scholarships"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "ro-fulbright-romania",
+      "requested_url": "https://fulbright.ro/the-2027-2028-fulbright-us-student-competition/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "The 2027-2028 Fulbright U.S. Student competition is open!",
+          "url": "https://fulbright.ro/the-2027-2028-fulbright-us-student-competition/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "ro-anpcdefp",
+      "requested_url": "https://www.anpcdefp.ro/ce-facem/ne-implicam/erasmus-si-fse/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Erasmus+ și FSE+",
+          "url": "https://www.anpcdefp.ro/ce-facem/ne-implicam/erasmus-si-fse/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "sk-saia-grants",
+      "requested_url": "https://grants.saia.sk/Pages/ProgramZoznam.aspx?s=true",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata has an empty, generic, or excessive h1"
+    },
+    {
+      "source": "sk-national-scholarship-programme",
+      "requested_url": "https://www.scholarships.sk/en/main/o-programe",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "About the programme",
+          "url": "https://www.scholarships.sk/en/main/o-programe"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "sk-study-in-slovakia",
+      "requested_url": "https://www.studyinslovakia.saia.sk/en/main/scholarships",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "fetch failed"
+    },
+    {
+      "source": "si-public-scholarship-fund",
+      "requested_url": "https://www.srips-rs.si/en/sklad/o-nas/javne-objave/javni-razpisi",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata has ambiguous h1"
+    },
+    {
+      "source": "si-cmepius",
+      "requested_url": "https://www.cmepius.si/mednarodno-sodelovanje/moznosti-sodelovanja/bilaterale/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Bilateralne štipendije",
+          "url": "https://www.cmepius.si/mednarodno-sodelovanje/moznosti-sodelovanja/bilaterale/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "si-university-of-ljubljana",
+      "requested_url": "https://www.aluo.uni-lj.si/en/internationally/erasmus-traineeship/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Erasmus+ Traineeship",
+          "url": "https://www.aluo.uni-lj.si/en/internationally/erasmus-traineeship/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "es-injuve",
+      "requested_url": "https://www.injuve.es/convocatorias/becas-empleo/107-becas-sepi-de-iniciacion-en-la-empresa-2026",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Robots policy is unavailable; collection denied"
+    },
+    {
+      "source": "es-fundaci-n-carolina",
+      "requested_url": "https://www.fundacioncarolina.es/convocatoria-de-becas-2026-2027/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "blocked",
+      "record_count": 0,
+      "samples": [],
+      "error": "Actual legal notice prohibits extraction/reuse/reproduction except legally permitted cases or written rights-holder authorization; also requests consent for hyperlinks. Publications-only CC BY-NC-ND n"
+    },
+    {
+      "source": "es-la-caixa-foundation",
+      "requested_url": "https://fundacionlacaixa.org/es/becas",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "blocked",
+      "record_count": 0,
+      "samples": [],
+      "error": "Actual footer-linked legal notice (updated 10 February 2026) requires prior express authorization for reproduction/exploitation and links to pages other than the portal homepage. Robots allows crawlin"
+    },
+    {
+      "source": "se-swedish-institute",
+      "requested_url": "https://apply-scholarships.si.se/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata has ambiguous h1"
+    },
+    {
+      "source": "se-study-in-sweden",
+      "requested_url": "https://studyinsweden.se/scholarships/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Scholarships",
+          "url": "https://studyinsweden.se/scholarships/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "se-lund-university",
+      "requested_url": "https://www.lunduniversity.lu.se/study/admission-degree-studies/scholarships-and-awards/lund-university-global-scholarship",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata has ambiguous h1"
+    },
+    {
+      "source": "us-usajobs-students",
+      "requested_url": "https://recentgrad.usajobs.gov/search/results",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Search results",
+          "url": "https://recentgrad.usajobs.gov/search/results"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "us-nsf-reu",
+      "requested_url": "https://www.nsf.gov/funding/initiatives/reu/students",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "NSF REU: Information for Students",
+          "url": "https://www.nsf.gov/funding/initiatives/reu/students"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "us-careeronestop-scholarship-finder",
+      "requested_url": "https://www.careeronestop.org/toolkit/training/find-scholarships.aspx",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata canonical does not match source URL"
+    },
+    {
+      "source": "us-fulbright-us-student",
+      "requested_url": "https://us.fulbrightonline.org/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "US Fulbright Program - New Home Page",
+          "url": "https://us.fulbrightonline.org/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "at-fulbright-austria",
+      "requested_url": "https://www.fulbright.at/programs/in-austria/students/full-time-study-research-grants",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata has ambiguous h1"
+    },
+    {
+      "source": "be-fulbright-belgium-luxembourg",
+      "requested_url": "https://www.fulbright.be/news/2027-28-competition-open/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Robots policy is unavailable; collection denied"
+    },
+    {
+      "source": "de-fulbright-germany",
+      "requested_url": "https://www.fulbright.de/stipendien/programm/studienstipendium-uni-und-haw",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata canonical does not match source URL"
+    },
+    {
+      "source": "dk-fulbright-center",
+      "requested_url": "https://fulbrightcenter.dk/go-to-the-us/fulbright-grants-for-danish-students/apply/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Apply",
+          "url": "https://fulbrightcenter.dk/go-to-the-us/fulbright-grants-for-danish-students/apply/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "fi-fulbright-finland",
+      "requested_url": "https://www.fulbright.fi/grant-programs-to-us/grants-masters-studies-us/fulbright-finnish-language-and-culture-teaching-assistant-program-flta",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Fulbright Finnish Language and Culture Teaching Assistant Program (FLTA)",
+          "url": "https://www.fulbright.fi/grant-programs-to-us/grants-masters-studies-us/fulbright-finnish-language-and-culture-teaching-assistant-program-flta"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "fr-fulbright-france",
+      "requested_url": "https://fulbright-france.org/fr/node/25",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata canonical does not match source URL"
+    },
+    {
+      "source": "global-visegrad-fund",
+      "requested_url": "https://www.visegradfund.org/scholarships",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Scholarships | International Visegrad Fund",
+          "url": "https://www.visegradfund.org/scholarships"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "hu-fulbright-hungary",
+      "requested_url": "https://fulbright.hu/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata has an empty, generic, or excessive og:title"
+    },
+    {
+      "source": "pl-fulbright-poland",
+      "requested_url": "https://fulbright.edu.pl/junior-research/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Fulbright Junior Research Award 2027-28",
+          "url": "https://fulbright.edu.pl/junior-research/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "se-fulbright-sweden",
+      "requested_url": "https://www.fulbright.se/scholar-program/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata has ambiguous h1"
+    },
+    {
+      "source": "sk-fulbright-slovakia",
+      "requested_url": "https://fulbright.sk/en/us-student",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Fulbright U.S. Student Program",
+          "url": "https://fulbright.sk/en/us-student"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "hu-corvinus-university",
+      "requested_url": "https://www.uni-corvinus.hu/post/hir/applications-are-now-open-for-the-study-scholarship-and-student-organization-scholarship/?lang=en",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Applications are now open for the Study Scholarship and Student Organization Scholarship - Budapesti Corvinus Egyetem",
+          "url": "https://www.uni-corvinus.hu/post/hir/applications-are-now-open-for-the-study-scholarship-and-student-organization-scholarship/?lang=en"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "sk-comenius-university",
+      "requested_url": "https://zona.fmph.uniba.sk/detail-novinky/back_to_page/fmfi-uk-zona/article/vyzva-na-podavanie-ziadosti-o-jednorazove-mimoriadne-stipendium-call-for-applications-for-ex-9/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Robots policy is unavailable or invalid; collection denied"
+    },
+    {
+      "source": "hr-university-of-zagreb",
+      "requested_url": "https://www.unizg.hr/studiji-i-studiranje/upisi-stipendije-priznavanja/stipendije/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "error",
+      "record_count": 0,
+      "samples": [],
+      "error": "Link metadata Open Graph URL conflicts with source URL"
+    },
+    {
+      "source": "hr-demography-language-scholarships",
+      "requested_url": "https://mdu.gov.hr/javni-poziv-za-dodjelu-stipendija-za-ucenje-hrvatskoga-jezika-u-republici-hrvatskoj-za-akademsku-godinu-2026-2027-7582/7582",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Javni poziv za dodjelu stipendija za učenje hrvatskoga jezika u Republici Hrvatskoj za akademsku godinu 2026./2027.",
+          "url": "https://mdu.gov.hr/javni-poziv-za-dodjelu-stipendija-za-ucenje-hrvatskoga-jezika-u-republici-hrvatskoj-za-akademsku-godinu-2026-2027-7582/7582"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "lu-snj-volontaires",
+      "requested_url": "https://www.volontaires.lu/missions-svn/volontaire-en-soutien-a-lorganisation-devenements-et-a-la-communication/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Volontaire en soutien à l’organisation d’événements et à la communication",
+          "url": "https://www.volontaires.lu/missions-svn/volontaire-en-soutien-a-lorganisation-devenements-et-a-la-communication/"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "mt-arts-council",
+      "requested_url": "https://artscouncilmalta.gov.mt/en/funding-and-grants/artivisti/",
+      "adapter": "link-metadata",
+      "enabled": false,
+      "metadata_scope": "factual-title-link-only",
+      "application_state": "not_assessed",
+      "status": "ok",
+      "record_count": 1,
+      "samples": [
+        {
+          "title": "Artivisti - Arts Council Malta",
+          "url": "https://artscouncilmalta.gov.mt/en/funding-and-grants/artivisti/"
+        }
+      ],
+      "error": null
+    }
+  ],
+  "summary": {
+    "selected": 110,
+    "successful": 71,
+    "failed": 35,
+    "blocked": 4
+  }
+}
