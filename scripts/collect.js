@@ -5,8 +5,10 @@ import { collect as collectRSS } from '../adapters/rss.js';
 import { collect as collectReviewedRSS } from '../adapters/reviewed-rss.js';
 import { collect as collectReviewedHTML } from '../adapters/reviewed-html.js';
 import { collect as collectLinkMetadata } from '../adapters/link-metadata.js';
+import { collect as collectOpportunityHTML } from '../adapters/opportunity-html.js';
+import { titleDestinations } from './geography.js';
 import { categoryIds, classifyRecord, validateClassification, buildCategoricalCatalog, validateCategoricalCatalog } from './taxonomy.js';
-export const trustedAdapters = { rss: collectRSS, 'reviewed-rss': collectReviewedRSS, 'reviewed-html': collectReviewedHTML, 'link-metadata': collectLinkMetadata };
+export const trustedAdapters = { rss: collectRSS, 'reviewed-rss': collectReviewedRSS, 'reviewed-html': collectReviewedHTML, 'link-metadata': collectLinkMetadata, 'opportunity-html':collectOpportunityHTML };
 export function validateRecord(record) {
   for (const key of ['id','title','url','source','source_url','first_seen_at','last_seen_at','last_checked_at']) if (typeof record[key] !== 'string' || !record[key]) throw new Error(`Missing ${key}`);
   for (const key of ['url','source_url']) if (!['http:','https:'].includes(new URL(record[key]).protocol) || new URL(record[key]).username || new URL(record[key]).password) throw new Error('Unsafe URL');
@@ -33,8 +35,14 @@ export async function runPipeline(manifests,previous={opportunities:[],sources:[
     try {
       if(manifest.collection_blocked_reason)throw new Error(`Collection blocked: ${manifest.collection_blocked_reason}`);
       if(!Object.hasOwn(trustedAdapters,manifest.adapter))throw new Error('Custom adapters require explicit trusted registration in scripts/collect.js');
-      const items=(await (adapter||trustedAdapters[manifest.adapter])({manifest,fetchText:load,now})).map(record=>classifyRecord(record,manifest));if(!items.length)throw new Error('Empty adapter output');
+      const items=(await (adapter||trustedAdapters[manifest.adapter])({manifest,fetchText:load,now})).map(record=>{
+        const classified=classifyRecord(record,manifest);
+        const geography=classified.host_countries.length?{}:titleDestinations(classified.title,classified.url);
+        return geography.host_countries?.length?{...classified,...geography}:classified;
+      });if(!items.length)throw new Error('Empty adapter output');
       const batchIds=new Set();for(const record of items){validateRecord(record);if(batchIds.has(record.id))throw new Error('Duplicate adapter record ID');batchIds.add(record.id);}
+      // Replace obsolete directory-only rows once their listing adapter succeeds.
+      if(manifest.adapter==='opportunity-html')for(const [id,record] of records)if(record.source===manifest.source&&record.kind==='unknown'&&record.url===manifest.source_url&&!batchIds.has(id))records.delete(id);
       for(const record of items){const prior=records.get(record.id);const content=r=>JSON.stringify(Object.fromEntries(Object.entries(r).filter(([k])=>!['created_at','updated_at','first_seen_at','last_seen_at','last_checked_at'].includes(k))));records.set(record.id,{...record,created_at:prior?.created_at||now,first_seen_at:prior?.first_seen_at||now,updated_at:prior && content(prior)===content(record)?prior.updated_at:now});}
       sources.push({...manifest,last_attempt_at:now,last_checked_at:now,last_success_at:now,status:'ok',record_count:items.length,error:null});successes++;
     }catch(error){sources.push({...manifest,last_attempt_at:now,last_checked_at:old?.last_checked_at||null,last_success_at:old?.last_success_at||null,status:'error',record_count:old?.record_count||0,error:String(error.message).slice(0,200)});}

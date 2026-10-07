@@ -5,7 +5,12 @@ for(const item of manifests){
  classifySource(item,true);
  if(!/^[a-z0-9-]+$/.test(item.source)||ids.has(item.source))throw new Error('Invalid or duplicate source');ids.add(item.source);
  for(const field of ['source_url','website_url'])if(new URL(item[field]).protocol!=='https:' || new URL(item[field]).username || new URL(item[field]).password || /^(localhost|127\.|0\.|10\.|172\.(1[6-9]|2[0-9]|3[01])\.|192\.168\.|169\.254\.|\[)/.test(new URL(item[field]).hostname))throw new Error('Source requires HTTPS');
- if(typeof item.enabled!=='boolean'||!['rss','reviewed-rss','reviewed-html','link-metadata'].includes(item.adapter)||typeof item.language!=='string')throw new Error('Invalid adapter manifest');
+ if(typeof item.enabled!=='boolean'||!['rss','reviewed-rss','reviewed-html','link-metadata','opportunity-html'].includes(item.adapter)||typeof item.language!=='string')throw new Error('Invalid adapter manifest');
+ if(item.adapter==='opportunity-html'){
+  if(!item.research_source_id)throw Error('Opportunity HTML requires a research source link');
+  if(item.listing_path_pattern){if(item.listing_path_pattern.length>200)throw Error('Listing pattern too long');new RegExp(item.listing_path_pattern);}
+  if(item.reviewed_opportunity){const r=item.reviewed_opportunity;if(r.url!==item.source_url||!categoryIds.includes(r.category)||!['programme-overview','institutional-grant','opportunity'].includes(r.kind))throw Error('Invalid reviewed opportunity selection');if(r.host_countries&&(!Array.isArray(r.host_countries)||r.host_countries.some(x=>!/^([A-Z]{2})$/.test(x))||!r.location_evidence))throw Error('Reviewed destination requires evidence');}
+ }
  if(item.collection_blocked_reason!=null && (typeof item.collection_blocked_reason!=='string'||!item.collection_blocked_reason.trim()))throw new Error('Invalid collection block reason');
  if(item.adapter==='link-metadata' && !item.research_source_id)throw new Error('Link metadata requires a research source link');
  if(item.adapter==='reviewed-html') {

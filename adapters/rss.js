@@ -18,5 +18,5 @@ export function normalizeItem(item, manifest, now) {
 export async function collect({ manifest, fetchText, now }) {
   const feed = await new Parser().parseString(await fetchText(manifest.source_url));
   if (!feed.items.length) throw new Error('Empty feed: preserve last successful records');
-  return feed.items.map(item => normalizeItem(item, manifest, now));
+  return feed.items.map(item => {const record=normalizeItem(item,manifest,now);return {...record,kind:record.category==='other'?'unknown':'opportunity'};});
 }

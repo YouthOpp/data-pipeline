@@ -103,7 +103,7 @@ function sensibleTitle(value) {
   return title;
 }
 
-function selectTitle(html) {
+function selectTitle(html, fallback = false) {
   const content = html.replace(/<!--([\s\S]*?)-->/g, '').replace(/<(script|style|template|noscript)\b[^>]*>[\s\S]*?<\/\1\s*>/gi, '');
   const metas = [...content.matchAll(/<meta\b[^>]*>/gi)].map(match => attributes(match[0]));
   const candidates = [
@@ -114,10 +114,10 @@ function selectTitle(html) {
 
   for (const candidate of candidates) {
     if (!candidate.values.length) continue;
-    if (candidate.values.length !== 1) throw new Error(`Link metadata has ambiguous ${candidate.name}`);
+    if (candidate.values.length !== 1) {if(fallback)continue;throw new Error(`Link metadata has ambiguous ${candidate.name}`);}
     if(candidate.name==='h1' && /^(?:navigation|nav|menu|navegação)$/i.test(plainText(decode(candidate.values[0])).trim()))continue;
     const title = sensibleTitle(candidate.values[0]);
-    if (!title) throw new Error(`Link metadata has an empty, generic, or excessive ${candidate.name}`);
+    if (!title) {if(fallback)continue;throw new Error(`Link metadata has an empty, generic, or excessive ${candidate.name}`);}
     return title;
   }
   throw new Error('Link metadata title is missing');
@@ -150,7 +150,7 @@ async function loadRobots(fetchText, sourceUrl) {
   }
 }
 
-export async function collect({ manifest, fetchText, now }) {
+export async function loadPage({ manifest, fetchText }) {
   if (manifest.collection_blocked_reason) throw new Error('Source collection is blocked by its reviewed permission policy');
 
   const sourceUrl = new URL(manifest.source_url);
@@ -160,7 +160,13 @@ export async function collect({ manifest, fetchText, now }) {
 
   const html = await fetchText(sourceUrl.href);
   assertPageIdentity(html, sourceUrl);
-  const title = selectTitle(html);
+  return html;
+}
+
+export async function collect({ manifest, fetchText, now }) {
+  const sourceUrl=new URL(manifest.source_url);
+  const html=await loadPage({manifest,fetchText});
+  const title = selectTitle(html, manifest.title_fallback === true);
   const record = normalizeItem({ title, link: sourceUrl.href }, { ...manifest, default_tags: [] }, now);
   return [{
     ...record,

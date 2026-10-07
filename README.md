@@ -44,3 +44,11 @@ This repository owns adapters, collection scripts and Actions, source research/r
 
 `contributors.json` records one point per attributable non-merge authored commit, deduplicated across public repository histories. Bots and explicitly AI-authored commits are excluded; identity gaps and collection errors remain visible. The same immutable catalog manifest covers this auxiliary dataset.
 
+
+
+
+## Opportunity extraction and acceptance
+
+`opportunity-html` extracts factual title/link records from configured publisher listings or exact programmes selected from the dated research registry. A programme overview does not assert an open application call. Generic directory pages are not counted as opportunities. Title destination phrases add explicit country evidence; publisher geography remains separate from host and applicant countries.
+
+Every publication runs `scripts/verify-catalog.js`, persists per-source coverage in `collection-report.json`, and writes an Actions summary. After upload, `scripts/verify-published.js` verifies downloaded release assets, their hashes and actual source coverage before the website is notified. `REQUIRE_ALL_SOURCES=1` makes incomplete coverage fail; ordinary partial publication preserves last-good records and reports every incomplete source. Issues track publisher-specific access and extraction failures.
