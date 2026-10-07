@@ -79,6 +79,10 @@ export async function collect({manifest,fetchText,now}){
   const error=Error('No opportunity listings extracted; publisher directory is not an opportunity');
   // Short original titles/links only, never publisher article prose, for actionable failure review.
   error.diagnostics={headings:[...html.matchAll(/<h[1-4]\b[^>]*>([\s\S]*?)<\/h[1-4]\s*>/gi)].map(m=>plainText(decode(m[1])).slice(0,180)).filter(Boolean).slice(0,60),links:[...html.matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a\s*>/gi)].map(m=>({url:decode(m[1]),title:plainText(decode(m[2])).slice(0,180)})).filter(m=>Object.values(rules).some(r=>r.test(m.title))).slice(0,60)};
+  const resourceUrl=value=>{try{const url=new URL(decode(value),manifest.source_url);if(url.protocol!=='https:')return null;url.search='';url.hash='';return url.href;}catch{return null;}};
+  error.diagnostics.page_bytes=Buffer.byteLength(html);
+  error.diagnostics.scripts=[...html.matchAll(/<script\b[^>]*src=["']([^"']+)["']/gi)].map(m=>resourceUrl(m[1])).filter(Boolean).slice(0,20);
+  error.diagnostics.frames=[...html.matchAll(/<iframe\b[^>]*src=["']([^"']+)["']/gi)].map(m=>resourceUrl(m[1])).filter(Boolean).slice(0,10);
   throw error;
  }
  return items;
