@@ -1555,7 +1555,33 @@
     "publisher_country": "PT",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "reviewed_links": [
+      {
+        "title": "Programa PEJENE",
+        "url": "https://ipdj.gov.pt/programa-pejene-programa-de-est%C3%A1gios-de-jovens-estudantes-do-ensino-superior-e-nas-empresas",
+        "category": "internships",
+        "reviewed_at": "2026-10-07"
+      },
+      {
+        "title": "Programa INOV Contacto",
+        "url": "https://ipdj.gov.pt/programa-inov-contacto",
+        "category": "internships",
+        "reviewed_at": "2026-10-07"
+      },
+      {
+        "title": "Campos de Trabalho Internacionais",
+        "url": "https://ipdj.gov.pt/campos-de-trabalho-internacionais",
+        "category": "volunteering",
+        "reviewed_at": "2026-10-07"
+      },
+      {
+        "title": "Bolsas Académicas",
+        "url": "https://ipdj.gov.pt/bolsas-acad%C3%A9micas",
+        "category": "scholarships",
+        "reviewed_at": "2026-10-07"
+      }
+    ]
   },
   {
     "source": "pt-fct",
