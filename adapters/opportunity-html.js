@@ -83,6 +83,18 @@ export async function collect({manifest,fetchText,now}){
   error.diagnostics.page_bytes=Buffer.byteLength(html);
   error.diagnostics.scripts=[...html.matchAll(/<script\b[^>]*src=["']([^"']+)["']/gi)].map(m=>resourceUrl(m[1])).filter(Boolean).slice(0,20);
   error.diagnostics.frames=[...html.matchAll(/<iframe\b[^>]*src=["']([^"']+)["']/gi)].map(m=>resourceUrl(m[1])).filter(Boolean).slice(0,10);
+  if(manifest.diagnostic_scripts){
+   error.diagnostics.application_paths=[];
+   for(const script of manifest.diagnostic_scripts){
+    try{
+     // Read explicitly reviewed public application code; never execute it or collect its prose.
+     await new Promise(resolve=>setTimeout(resolve,30000));
+     const code=await loadPage({manifest:{...manifest,source_url:script},fetchText});
+     const paths=[...code.matchAll(/["']((?:https:\/\/|\/)[^"'\s<>]{1,200})["']/g)].map(m=>m[1].split(/[?#]/)[0]).filter(p=>/api|grant|scholar|bourse|search|filter|rest|country/i.test(p));
+     error.diagnostics.application_paths.push({script,paths:[...new Set(paths)].slice(0,100)});
+    }catch(probe){error.diagnostics.application_paths.push({script,error:String(probe.message).slice(0,200)});}
+   }
+  }
   throw error;
  }
  return items;

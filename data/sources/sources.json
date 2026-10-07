@@ -263,7 +263,10 @@
     "publisher_country": "AT",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "diagnostic_scripts": [
+      "https://grants.at/static/app/build/assets/app-BXezEdO3.js"
+    ]
   },
   {
     "source": "at-university-of-vienna",
@@ -818,7 +821,11 @@
     "publisher_country": "FR",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "diagnostic_scripts": [
+      "https://campusbourses.campusfrance.org/js/iwangular.3f8721e3.js",
+      "https://campusbourses.campusfrance.org/js/ilangular.b81726ae.js"
+    ]
   },
   {
     "source": "fr-1jeune1solution",
