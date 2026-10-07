@@ -63,3 +63,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: node scripts/release-state.js prune "catalog-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+      - name: Update website catalog version
+        env:
+          WEBSITE_REPO_TOKEN: ${{ secrets.WEBSITE_REPO_TOKEN }}
+        run: node scripts/notify-website.mjs
