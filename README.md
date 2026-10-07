@@ -1,168 +1,46 @@
-# data-pipeline
+# YouthOpp data pipeline
 
-Automated data pipeline that fetches opportunity RSS/Atom feeds, normalizes the
-items into a consistent JSON dataset, and publishes the result to
-`data/latest/opportunities.json` for the YouthOpp website.
+Open AI agent: built and maintained through transparent AI-assisted development.
 
-The pipeline runs every 6 hours via GitHub Actions and commits any new data
-back to this repository automatically.
+Canonical repositories: [YouthOpp/data-pipeline](https://github.com/YouthOpp/data-pipeline), [YouthOpp/youthopp.github.io](https://github.com/YouthOpp/youthopp.github.io) and [YouthOpp/.github](https://github.com/YouthOpp/.github).
 
----
+A community-contributed source adapter pipeline for YouthOpp, a nonprofit-minded, open-source opportunity index. Students and young graduates can discover original opportunities without browsing many separate publishers. Original publishers remain the authority for deadlines, eligibility and applications.
 
-## Folder structure
+## Run
 
-```
-data-pipeline/
-  data/
-    sources/
-      sources.json          ← list of feed sources (edit this to add new feeds)
-    raw/
-      README.md
-      <source>/
-        YYYY-MM-DD.xml      ← daily raw feed snapshot
-        latest.xml          ← overwritten each run
-    normalized/
-      README.md
-      opportunities/
-        YYYY-MM-DD.jsonl    ← normalized records for that day (JSON Lines)
-    latest/
-      README.md
-      opportunities.json    ← ✅ WEBSITE READS THIS (JSON array, deduped, sorted)
-      opportunities.jsonl   ← same data in JSON Lines format
-  scripts/
-    utils.js                ← shared helpers
-    fetch_rss.js            ← downloads raw feeds
-    normalize.js            ← parses XML → normalized records
-    dedupe_merge.js         ← merges all days → final dataset
-  .github/
-    workflows/
-      pipeline.yml          ← GitHub Actions workflow
-  package.json
-  .gitignore
-  README.md
-```
+Requires Node.js 22 or later. `npm ci --ignore-scripts`, `npm run validate`, `npm test`, then `npm run pipeline`. The build produces `dist/catalog.json` and `dist/collection-report.json`; `npm run contributors` produces `dist/contributors.json`. These outputs are never automatically committed into Git history.
 
----
+To preserve prior records locally, set `PREVIOUS_CATALOG=/path/to/catalog.json`. Scheduled Actions restore the last successful public release before collecting new feeds. A failed or empty source preserves its last good records and their verification timestamps. Total source failure blocks publication. Partial failures are visible in the report and source metadata. A missing record in a bounded RSS feed is not treated as closed; only explicit deadlines produce open/expired status. Otherwise availability is unknown. Retained records may be old: the website must display dates and unknown status, not promise all opportunities remain available.
 
-## Requirements
+## Public data contract
 
-- **Node.js** 16.x or higher
-- **npm** 7.x or higher
+`catalog.json` contains `schema_version: 1`, `generated_at`, `opportunities` and `sources`. Each opportunity keeps original article `url`, feed `source_url`, publisher `source` slug, original-language title and an empty summary (no publisher prose), publication and collection dates. Category is derived from publisher-provided tags or explicit reviewed programme selection. Location, deadline, countries and eligibility remain unknown until explicit evidence is available. Source entries include publisher `website_url`, last attempt, last successful check and errors.
 
-Dependencies (installed via `npm install`):
-- `axios` - HTTP client for downloading feeds
-- `rss-parser` - RSS/Atom feed parser
+## Publication
 
----
+The trusted `main` branch in [YouthOpp/data-pipeline](https://github.com/YouthOpp/data-pipeline) publishes releases; the default-branch schedule runs every six hours, and manual dispatch can refresh it. A versioned release (`catalog-<run-id>-<attempt>`) stores an auditable data snapshot; `catalog-latest` serves the most recent successful catalog. Frontend builds use the committed catalog-release.json pointer to pin and verify an immutable manifest and its catalog/contributor assets; catalog-latest is used only before the first website pointer exists. The pipeline restores verified state and retains the newest 30 published versioned snapshots, preserving the current release and latest pointer. See [Catalog operations](https://youthopps.org/docs/pipeline-operations/) for publication ordering, recovery and retention. No paid backend, API key or database is required. After successful release publication, the workflow commits a small immutable release pointer to website main using the `WEBSITE_REPO_TOKEN` repository secret; Cloudflare's existing Git integration then rebuilds the site. No generated dataset is committed to the frontend. See [Cloudflare setup](https://youthopps.org/docs/cloudflare-pages/).
 
-## Running locally
+PR checks use read-only permissions, no secrets, fixture tests, and no remote collection. Collection and publishing execute only trusted default-branch code. Public RSS is capped at 5 MB and 25 seconds, HTTPS-only without redirects. Add a canonical feed URL if the publisher redirects. GitHub limits still apply.
 
-```bash
-# 1. Install dependencies
-npm install
+## Sources and contribution
 
-# 2. Download raw feeds
-node scripts/fetch_rss.js
-# or: npm run fetch
+See the [adapter contribution guide](https://youthopps.org/docs/pipeline-adapters/). Every registered source has an explicit enabled switch; collection also respects documented policy and access gates. The current configuration enables 110 source definitions: nine prior integrations and 101 exact-page link-metadata sources. Enabled means collection may be attempted; it does not assert a successful fetch, an open application, eligibility or rights to publisher prose. Source-health reports preserve successful, error and blocked outcomes. Link-metadata adapters publish only the reviewed factual title and original link; existing specialized adapters likewise retain no article prose. Portugal leaves original publication null when absent; modification is never publication. Exact-page adapters make one request to the reviewed page; publisher country does not imply applicant eligibility or destination. Feed or page access does not imply ownership of publisher content. YouthOpp publishes factual source titles and original links only; source inclusion can be paused or removed through the [documented issue/PR process](https://youthopps.org/docs/source-removal/). No institution endorsement or charitable registration is implied.
 
-# 3. Normalize feed entries
-node scripts/normalize.js
-# or: npm run normalize
+See the [scoped country evidence renewal](https://youthopps.org/docs/country-renewal-2026-10-05/) for dated research and application/access limits.
 
-# 4. Build the deduplicated latest dataset
-node scripts/dedupe_merge.js
-# or: npm run merge
+The OeAD exact notice requires visible `© OeAD` copyright credit from the source `attribution` field on the source directory, associated record detail and every associated catalogue, home-page and category listing row. Its date-only publication and declared deadline are research/title evidence; catalogue timestamps and application state stay unknown. See the [OeAD access review](https://youthopps.org/docs/oead-access-review-2026-10-05/).
 
-# Or run all three steps at once:
-npm run pipeline
-```
+## Categorical model
 
-After running, you will find:
+See the [data model](https://youthopps.org/docs/data-model/) for the shared directory taxonomy, record/source classification, geography, migration and integrity-covered ID indexes.
 
-- `data/raw/opportunitiesforyouth/<today>.xml` and `latest.xml`
-- `data/normalized/opportunities/<today>.jsonl`
-- `data/latest/opportunities.json` and `opportunities.jsonl`
+## Authoritative technical documentation
 
----
+The rendered [YouthOpp Docs](https://youthopps.org/docs/) are the authoritative prose documentation for this pipeline. Start with [architecture](https://youthopps.org/docs/architecture/), the [adapter and catalog contract](https://youthopps.org/docs/adapter-contract/), [data quality](https://youthopps.org/docs/data-quality/), [contributor scoring](https://youthopps.org/docs/contributor-scoring/) and [source research](https://youthopps.org/docs/source-research/). This repository retains executable contracts—schemas, tests and sanitized fixtures—and machine-readable evidence, rather than a second independent copy of the same technical prose. Dated fork run and release URLs inside research provenance remain unchanged as historical evidence; production collection, contributor scoring and publication use the original YouthOpp repositories.
 
-## Adding a new feed
+## Repository boundary
 
-1. Open `data/sources/sources.json`.
-2. Add a new entry following this template:
+This repository owns adapters, collection scripts and Actions, source research/registry, canonical opportunity data and contributor history. The website only downloads the integrity-verified release and presents it. Tracked `data/sources/` contains maintained source configuration and research; generated datasets live in releases rather than dated raw/normalized/latest Git trees. Only the active ESM collection path remains. The removed legacy datasets were not used by either active workflow or the release consumer; they are not migrated into the canonical index because their full article content and missing classification/verification fields would invent unsupported records. Prior Git history and existing release snapshots remain available. Sanitized extraction fixtures and active validation are retained.
 
-```json
-{
-  "source": "my-source-name",
-  "source_url": "https://example.com/feed/",
-  "enabled": true,
-  "language": "en",
-  "default_tags": ["youth", "opportunity"]
-}
-```
+`contributors.json` records one point per attributable non-merge authored commit, deduplicated across public repository histories. Bots and explicitly AI-authored commits are excluded; identity gaps and collection errors remain visible. The same immutable catalog manifest covers this auxiliary dataset.
 
-3. Re-run the pipeline (or push to trigger GitHub Actions):
-
-```bash
-npm run pipeline
-```
-
-- `source` must be a URL-safe slug (lowercase, hyphens only).
-- Set `"enabled": false` to temporarily pause a feed without removing it.
-
----
-
-## Where the website reads data
-
-Point your website / frontend at:
-
-```
-data/latest/opportunities.json
-```
-
-Raw GitHub URL:
-
-```
-https://raw.githubusercontent.com/YouthOpp/data-pipeline/main/data/latest/opportunities.json
-```
-
----
-
-## How duplicate records are handled
-
-Each record is assigned a **deterministic ID** computed as the SHA-1 hash of
-`"<source>|<url>"`. When multiple pipeline runs capture the same opportunity,
-`dedupe_merge.js` keeps only the most recently seen version (last-write wins)
-so the `latest` files never contain duplicates.
-
----
-
-## Troubleshooting
-
-| Problem | Likely cause | Fix |
-|---|---|---|
-| `data/raw/.../YYYY-MM-DD.xml` is missing | Feed was unreachable at that time | Wait for the next run or trigger `workflow_dispatch` |
-| `published_at` is `null` for some entries | Feed does not include a date | Safe to ignore; records sort to the end |
-| No records in `opportunities.jsonl` | Feed returned 0 entries or bad XML | Check the raw XML file manually |
-| GitHub Actions fails with "HTTP error" | Source site is temporarily down | `fetch_rss.js` has `continue-on-error: true` in CI; downstream steps still run. Retry via `workflow_dispatch` |
-
----
-
-## Data model
-
-Each Opportunity record contains:
-
-| Field | Type | Required | Description |
-|---|---|---|---|
-| `id` | string | ✅ | SHA-1 of `source + "\|" + url` |
-| `title` | string | ✅ | |
-| `url` | string | ✅ | |
-| `source` | string | ✅ | e.g. `"opportunitiesforyouth"` |
-| `source_url` | string | ✅ | Feed URL |
-| `published_at` | ISO 8601 / null | | |
-| `summary` | string / null | | Plain-text excerpt |
-| `tags` | string array | | Feed categories + `default_tags` |
-| `location` | string / null | | |
-| `deadline` | ISO 8601 / null | | |
-| `language` | string / null | | e.g. `"en"` |
-| `created_at` | ISO 8601 | ✅ | When the record was first written |
-| `updated_at` | ISO 8601 | ✅ | When the record was last updated |

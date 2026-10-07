@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss version="2.0">
+  <channel>
+    <title>Fulbright Czech Republic metadata fixture</title>
+    <link>https://fulbright.gov.cz/</link>
+    <description>Sanitized discovery metadata; no publisher article prose</description>
+    <item>
+      <title>Intercountry travel grant: pozvěte si amerického vědce na pár dní</title>
+      <link>https://fulbright.gov.cz/intercountry-travel-grant-pozvete-si-americkeho-vedce-na-par-dni/</link>
+      <pubDate>Thu, 03 Sep 2026 06:59:43 +0000</pubDate>
+      <category>Novinky</category>
+    </item>
+    <item>
+      <title>Stipendia 2027/28: podzimní webináře</title>
+      <link>https://fulbright.gov.cz/stipendia-2027-28-podzimni-webinare/</link>
+      <pubDate>Wed, 02 Sep 2026 06:05:39 +0000</pubDate>
+      <category>Novinky</category>
+    </item>
+    <item>
+      <title>Vítáme nové asistenty do výuky angličtiny</title>
+      <link>https://fulbright.gov.cz/vitame-nove-asistenty-do-vyuky-anglictiny-2/</link>
+      <pubDate>Tue, 01 Sep 2026 06:59:11 +0000</pubDate>
+      <category>Novinky</category>
+    </item>
+    <item>
+      <title>Stipendisté 2026/27: podrobný přehled</title>
+      <link>https://fulbright.gov.cz/stipendiste-2026-27-podrobny-prehled/</link>
+      <pubDate>Tue, 18 Aug 2026 14:25:09 +0000</pubDate>
+      <category>Novinky</category>
+    </item>
+    <item>
+      <title>Podcasty Fulbright 35 a 80</title>
+      <link>https://fulbright.gov.cz/podcasty-fulbright-35-a-80/</link>
+      <pubDate>Fri, 19 Jun 2026 07:51:47 +0000</pubDate>
+      <category>Novinky</category>
+    </item>
+    <item>
+      <title>6.-13.7. budeme mít zavřeno!</title>
+      <link>https://fulbright.gov.cz/6-13-7-budeme-mit-zavreno/</link>
+      <pubDate>Tue, 16 Jun 2026 13:18:28 +0000</pubDate>
+      <category>Novinky</category>
+    </item>
+    <item>
+      <title>Rozlučka s letošními asistenty do výuky angličtiny</title>
+      <link>https://fulbright.gov.cz/rozlucka-s-letosnimi-asistenty-do-vyuky-anglictiny/</link>
+      <pubDate>Wed, 10 Jun 2026 11:09:00 +0000</pubDate>
+      <category>Novinky</category>
+    </item>
+    <item>
+      <title>Oslavili jsme 35. výročí!</title>
+      <link>https://fulbright.gov.cz/oslavili-jsme-35-vyroci/</link>
+      <pubDate>Tue, 02 Jun 2026 09:57:48 +0000</pubDate>
+      <category>Novinky</category>
+    </item>
+    <item>
+      <title>Čeští Fulbrightisté pro rok 2026/27!</title>
+      <link>https://fulbright.gov.cz/cesti-fulbrightiste-pro-rok-2026-27/</link>
+      <pubDate>Tue, 19 May 2026 13:41:16 +0000</pubDate>
+      <category>Novinky</category>
+    </item>
+    <item>
+      <title>Nemusíte letět na Měsíc. Můžete letět na Fulbrighta.</title>
+      <link>https://fulbright.gov.cz/nemusite-letet-na-mesic-muzete-letet-na-fulbrighta/</link>
+      <pubDate>Wed, 01 Apr 2026 07:03:50 +0000</pubDate>
+      <category>Novinky</category>
+    </item>
+  </channel>
+</rss>

@@ -1,49 +1,69 @@
-name: Data Pipeline
-
+name: Collect and publish catalog
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
   schedule:
-    # Every 6 hours: 00:00, 06:00, 12:00, 18:00 UTC
-    - cron: "0 */6 * * *"
-
+    - cron: '17 */6 * * *'
 permissions:
-  contents: write
-
+  contents: read
+concurrency:
+  group: catalog-publication
+  cancel-in-progress: false
 jobs:
-  run-pipeline:
+  collect:
+    if: github.repository == 'YouthOpp/data-pipeline' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js 20
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
         with:
-          node-version: "20"
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Fetch RSS feeds
-        continue-on-error: true   # one bad feed must not block the rest
-        run: node scripts/fetch_rss.js
-
-      - name: Normalize feed data
-        continue-on-error: true   # normalize whatever raw data exists
-        run: node scripts/normalize.js
-
-      - name: Deduplicate and build latest dataset
-        run: node scripts/dedupe_merge.js
-
-      - name: Commit and push changes (if any)
+          sparse-checkout: |
+            scripts
+            adapters
+            tests
+            schemas
+            data/sources
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run validate && npm test
+      - name: Restore durable previous release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: node scripts/release-state.js restore
+      - run: npm run pipeline
+      - name: Collect public contributor history
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: npm run contributors
+      - name: Generate immutable snapshot integrity manifest
+        run: node scripts/release-state.js manifest "catalog-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: catalog-${{ github.run_id }}
+          path: dist/
+      - name: Publish durable version and latest pointer
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
         run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "chore: update opportunities dataset"
-            git push
+          gh release create "catalog-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" dist/catalog.json dist/collection-report.json dist/contributors.json dist/manifest.json --target "$GITHUB_SHA" --title "Catalog ${GITHUB_RUN_ID} attempt ${GITHUB_RUN_ATTEMPT}" --notes "Open AI agent: automated source collection. See collection-report.json for source health."
+          if ! gh release view catalog-latest >/dev/null 2>&1; then
+            gh release create catalog-latest --target "$GITHUB_SHA" --title "Latest catalog" --notes "Open AI agent: latest successful catalog."
           fi
+          gh release upload catalog-latest dist/catalog.json dist/collection-report.json dist/contributors.json --clobber
+          gh release upload catalog-latest dist/manifest.json --clobber
+      - name: Retain newest 30 versioned catalog snapshots
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: node scripts/release-state.js prune "catalog-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+      - name: Update website catalog version
+        env:
+          WEBSITE_REPO_TOKEN: ${{ secrets.WEBSITE_REPO_TOKEN }}
+        run: node scripts/notify-website.mjs
