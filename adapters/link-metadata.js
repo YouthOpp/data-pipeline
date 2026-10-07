@@ -124,7 +124,7 @@ function selectTitle(html, fallback = false) {
 }
 
 function assertPageIdentity(html, sourceUrl) {
-  const identityKey=value=>{const url=new URL(value,sourceUrl);url.hostname=url.hostname.replace(/^www\./,'');url.pathname=url.pathname.replace(/\/$/,'')||'/';url.hash='';return url.href;};
+  const identityKey=value=>{const url=new URL(value,sourceUrl);if(url.protocol==='http:'&&!url.port)url.protocol='https:';url.hostname=url.hostname.replace(/^www\./,'');url.pathname=url.pathname.replace(/\/$/,'')||'/';url.hash='';return url.href;};
   const canonicals = [...html.matchAll(/<link\b[^>]*>/gi)].map(match => attributes(match[0])).filter(attrs => (attrs.rel || '').toLowerCase().split(/\s+/).includes('canonical'));
   if (canonicals.length > 1) throw new Error('Link metadata canonical is ambiguous');
   if (canonicals.length === 1) {

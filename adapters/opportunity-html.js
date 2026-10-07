@@ -13,7 +13,8 @@ const rules={
  competitions:/\b(?:competition\w*|concorso|concorsi|contest\w*|prize|hack\w*)\b/i
 };
 export function extractListing(html,manifest,now){
- const content=html.replace(/<!--[^]*?-->/g,'').replace(/<(script|style|nav|header|footer)\b[^>]*>[^]*?<\/\1\s*>/gi,'');
+ const main=html.match(/<main\b[^>]*>([\s\S]*?)<\/main\s*>/i)?.[1]||html;
+ const content=main.replace(/<!--[^]*?-->/g,'').replace(/<(script|style|nav|footer)\b[^>]*>[^]*?<\/\1\s*>/gi,'');
  const records=new Map();
  const candidates=[...content.matchAll(/<a\b([^>]*?)>([\s\S]*?)<\/a\s*>/gi)].map(m=>({attributes:m[1],label:m[2],heading:false}));
  // Publisher cards often put the programme title in a heading and use a generic link label.
@@ -26,8 +27,8 @@ export function extractListing(html,manifest,now){
  for(const match of candidates){
   const href=match.attributes.match(/\bhref\s*=\s*(["'])(.*?)\1/i)?.[2];if(!href)continue;
   let url;try{url=new URL(decode(href),manifest.source_url);}catch{continue;}
-  if(url.protocol!=='https:'||url.username||url.password||url.origin!==new URL(manifest.source_url).origin||url.hash||url.href===manifest.source_url)continue;
-  if(/\.(?:pdf|jpg|jpeg|png|zip)$/i.test(url.pathname)||/\/(?:category|tag|page|author|contact|privacy|terms|about|feed)(?:\/|$)/i.test(url.pathname))continue;
+  if(url.protocol!=='https:'||url.username||url.password||url.port||!(url.origin===new URL(manifest.source_url).origin||manifest.listing_allowed_hosts?.includes(url.hostname))||url.hash||url.href===manifest.source_url)continue;
+  if(/\.(?:jpg|jpeg|png|zip)$/i.test(url.pathname)||(/\.pdf$/i.test(url.pathname)&&!manifest.listing_allow_pdf)||/\/(?:category|tag|page|author|contact|privacy|terms|about|feed)(?:\/|$)/i.test(url.pathname))continue;
   const title=plainText(decode(match.label,{level:'html5'}));
   if(title.length<(match.heading?12:25)||title.length>300||/^(?:all |tutte |read more|learn more|how to |guide |news |newsletter)/i.test(title))continue;
   const categories=Object.entries(rules).filter(([,rule])=>rule.test(title)).map(([category])=>category);
@@ -43,8 +44,14 @@ export function extractListing(html,manifest,now){
 }
 export async function collect({manifest,fetchText,now}){
  if(manifest.reviewed_opportunity){
-  const items=await collectMetadata({manifest:{...manifest,title_fallback:true},fetchText,now});
   const selected=manifest.reviewed_opportunity;
+  let items;
+  if(selected.title){
+   const html=(await loadPage({manifest,fetchText})).replace(/<(script|style|nav|footer)\b[^>]*>[^]*?<\/\1\s*>/gi,'');
+   const headings=[...html.matchAll(/<h[1-3]\b[^>]*>([\s\S]*?)<\/h[1-3]\s*>/gi)].map(m=>plainText(decode(m[1])));
+   if(!headings.includes(selected.title))throw Error('Reviewed programme title is missing from its live page');
+   items=[normalizeItem({title:selected.title,link:selected.url},manifest,now)];
+  }else items=await collectMetadata({manifest:{...manifest,title_fallback:true},fetchText,now});
   return items.map(r=>({...r,category:selected.category,categories:[selected.category],kind:selected.kind,classification:{method:'reviewed-exact-programme',status:'classified',evidence:[selected.url]},...(selected.host_countries?{host_countries:selected.host_countries,country_evidence:selected.host_countries.map(country=>({country,method:'reviewed-programme-location',url:selected.url,text:selected.location_evidence}))}:{})}));
  }
  const html=await loadPage({manifest,fetchText});

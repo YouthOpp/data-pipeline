@@ -11,6 +11,17 @@ test('card headings identify scholarship programmes behind generic Learn More li
  const html='<h3>Visegrad Scholarship Program</h3><p>Publisher description excluded</p><a href="/scholarships/visegrad-scholarships/">Learn More</a><h3>Visegrad Fellowship Program</h3><a href="/fellowships/">Learn More</a><h3>Unrelated news</h3><a href="/news/">Learn More</a>';
  const records=extractListing(html,manifest,now);assert.equal(records.length,2);assert.equal(records[0].title,'Visegrad Scholarship Program');assert.equal(records[0].summary,'');assert.equal(records[1].category,'fellowships');
 });
+test('programme cards retain article headers and allow only reviewed external call documents',()=>{
+ const html='<main><article><header><a href="/mena-scholarship-programme/">MENA Scholarship Programme (MSP)</a></header></article><h3>IT Kolledži stipendium (BA, MA)</h3><p><a href="https://haldus.example.org/call.pdf">SIIT</a></p></main>';
+ assert.equal(extractListing(html,manifest,now).length,1);
+ const records=extractListing(html,{...manifest,listing_allowed_hosts:['haldus.example.org'],listing_allow_pdf:true},now);assert.equal(records.length,2);assert.ok(records.some(r=>r.title==='IT Kolledži stipendium (BA, MA)'));
+});
+test('reviewed programme title must exist in live headings, including pages with navigation headings',async()=>{
+ const selected={...manifest,source_url:'https://example.org/scholar/',reviewed_opportunity:{url:'https://example.org/scholar/',title:'Fulbright Swedish Scholar Program',category:'scholarships',kind:'programme-overview'}};
+ const load=html=>async url=>url.endsWith('/robots.txt')?'':html;
+ const records=await collect({manifest:selected,now,fetchText:load('<h1>Navigation</h1><h1>Fulbright Swedish Scholar Program</h1>')});assert.equal(records[0].title,selected.reviewed_opportunity.title);
+ await assert.rejects(collect({manifest:selected,now,fetchText:load('<h1>Unrelated programme</h1>')}),/title is missing/);
+});
 test('listing extraction deduplicates real calls and excludes navigation, external links and copied descriptions',()=>{
  const html='<nav><a href="/scholarships-navigation/">All available scholarships to study</a></nav><a href="/training-course-in-germany-2027/">Training course in Germany for young people</a><a href="/training-course-in-germany-2027/">Training course in Germany for young people</a><a href="/contact/">Contact our scholarships administrator</a><a href="https://other.org/internship/">Paid internships for young people</a>';
  const records=extractListing(html,manifest,now);assert.equal(records.length,1);assert.equal(records[0].kind,'opportunity');assert.equal(records[0].category,'training');assert.equal(records[0].summary,'');assert.deepEqual(records[0].eligible_countries,[]);

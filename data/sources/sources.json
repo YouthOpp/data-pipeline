@@ -694,7 +694,11 @@
     "publisher_country": "EE",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "listing_allowed_hosts": [
+      "haldus.taltech.ee"
+    ],
+    "listing_allow_pdf": true
   },
   {
     "source": "fi-study-in-finland",
@@ -959,7 +963,7 @@
   {
     "source": "hu-hungarian-diaspora-scholarship",
     "research_source_id": "hu-hungarian-diaspora-scholarship",
-    "source_url": "https://diasporascholarship.hu/",
+    "source_url": "https://diasporascholarship.hu/en/about/",
     "website_url": "https://diasporascholarship.hu/",
     "enabled": true,
     "adapter": "opportunity-html",
@@ -970,7 +974,18 @@
     "publisher_country": "HU",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://diasporascholarship.hu/en/about/",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "title": "About the Hungarian Diaspora Scholarship",
+      "reviewed_at": "2026-10-07",
+      "host_countries": [
+        "HU"
+      ],
+      "location_evidence": "While studying in Hungary"
+    }
   },
   {
     "source": "ie-gradireland",
@@ -1789,7 +1804,14 @@
     "publisher_country": "US",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.nsf.gov/funding/initiatives/reu/students",
+      "category": "internships",
+      "kind": "programme-overview",
+      "title": "NSF REU: Information for Students",
+      "reviewed_at": "2026-10-07"
+    }
   },
   {
     "source": "us-careeronestop-scholarship-finder",
@@ -1936,7 +1958,7 @@
   {
     "source": "fr-fulbright-france",
     "research_source_id": "fr-fulbright-france",
-    "source_url": "https://fulbright-france.org/fr/node/25",
+    "source_url": "https://fulbright-france.org/fr/bourses/etudiantes-etudiants/programme-etudiant",
     "website_url": "https://fulbright-france.org/fr/node/25",
     "enabled": true,
     "adapter": "opportunity-html",
@@ -1947,7 +1969,18 @@
     "publisher_country": "FR",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://fulbright-france.org/fr/bourses/etudiantes-etudiants/programme-etudiant",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "title": "Programme Étudiant",
+      "reviewed_at": "2026-10-07",
+      "host_countries": [
+        "US"
+      ],
+      "location_evidence": "Master ou Doctorat dans une université américaine"
+    }
   },
   {
     "source": "global-visegrad-fund",
@@ -2011,7 +2044,18 @@
     "publisher_country": "SE",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.fulbright.se/scholar-program/",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "title": "Fulbright Swedish Scholar Program",
+      "reviewed_at": "2026-10-07",
+      "host_countries": [
+        "US"
+      ],
+      "location_evidence": "Research and/or lecture in the United States"
+    }
   },
   {
     "source": "sk-fulbright-slovakia",
@@ -2027,7 +2071,18 @@
     "publisher_country": "SK",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://fulbright.sk/en/us-student",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "title": "Fulbright U.S. Student Program",
+      "reviewed_at": "2026-10-07",
+      "host_countries": [
+        "SK"
+      ],
+      "location_evidence": "Study or conduct research in Slovakia for one academic year"
+    }
   },
   {
     "source": "hu-corvinus-university",
