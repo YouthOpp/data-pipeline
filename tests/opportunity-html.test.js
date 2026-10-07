@@ -11,6 +11,12 @@ test('card headings identify scholarship programmes behind generic Learn More li
  const html='<h3>Visegrad Scholarship Program</h3><p>Publisher description excluded</p><a href="/scholarships/visegrad-scholarships/">Learn More</a><h3>Visegrad Fellowship Program</h3><a href="/fellowships/">Learn More</a><h3>Unrelated news</h3><a href="/news/">Learn More</a>';
  const records=extractListing(html,manifest,now);assert.equal(records.length,2);assert.equal(records[0].title,'Visegrad Scholarship Program');assert.equal(records[0].summary,'');assert.equal(records[1].category,'fellowships');
 });
+test('reviewed links require a live exact title and URL; large calls are not silently truncated at 50',()=>{
+ const selected={...manifest,reviewed_links:[{url:'https://other.org/msp',title:'MENA Scholarship Programme (MSP)',category:'scholarships',reviewed_at:'2026-10-07'}]};
+ assert.equal(extractListing('<nav><a href="https://other.org/msp">MENA Scholarship Programme (MSP)</a></nav>',selected,now)[0].kind,'programme-overview');
+ assert.equal(extractListing('<a href="https://other.org/changed">MENA Scholarship Programme (MSP)</a>',selected,now).length,0);
+ const html=Array.from({length:65},(_,i)=>`<a href="/scholarship-${i}">Verified student scholarship number ${i}</a>`).join('');assert.equal(extractListing(html,manifest,now).length,65);
+});
 test('programme cards retain article headers and allow only reviewed external call documents',()=>{
  const html='<main><article><header><a href="/mena-scholarship-programme/">MENA Scholarship Programme (MSP)</a></header></article><h3>IT Kolledži stipendium (BA, MA)</h3><p><a href="https://haldus.example.org/call.pdf">SIIT</a></p></main>';
  assert.equal(extractListing(html,manifest,now).length,1);

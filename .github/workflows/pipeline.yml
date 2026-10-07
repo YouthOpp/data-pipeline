@@ -85,3 +85,22 @@ jobs:
         env:
           WEBSITE_REPO_TOKEN: ${{ steps.website-token.outputs.token }}
         run: node scripts/notify-website.mjs
+  complete-source-coverage:
+    name: Require fresh opportunity data from every enabled source
+    needs: collect
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - uses: actions/download-artifact@v4
+        with:
+          name: catalog-${{ github.run_id }}
+          path: dist/
+      - name: Check complete source coverage separately from partial catalog publication
+        env:
+          REQUIRE_ALL_SOURCES: '1'
+        run: node scripts/verify-catalog.js

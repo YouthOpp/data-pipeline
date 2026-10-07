@@ -1252,7 +1252,14 @@
     "publisher_country": "LU",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://mae.gouvernement.lu/en/directions-du-ministere/finances-ressources-humaines/stages.html",
+      "title": "Internships",
+      "category": "internships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-07"
+    }
   },
   {
     "source": "lu-luxembourg-cooperation",
@@ -1338,7 +1345,21 @@
     "publisher_country": "NL",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "reviewed_links": [
+      {
+        "url": "https://www.studyinnl.org/finances/mena-scholarship-programme-msp",
+        "title": "MENA Scholarship Programme (MSP)",
+        "category": "scholarships",
+        "reviewed_at": "2026-10-07"
+      },
+      {
+        "url": "https://www.studyinnl.org/finances/nl-scholarship",
+        "title": "NL scholarship (Holland Scholarship)",
+        "category": "scholarships",
+        "reviewed_at": "2026-10-07"
+      }
+    ]
   },
   {
     "source": "nl-magnet-me",
@@ -1506,7 +1527,10 @@
     "publisher_country": "RO",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "listing_allowed_hosts": [
+      "scholarships.studyinromania.gov.ro"
+    ]
   },
   {
     "source": "ro-fulbright-romania",
@@ -1750,7 +1774,12 @@
     "publisher_country": "SE",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "listing_allowed_hosts": [
+      "www.educations.com",
+      "my.rotary.org",
+      "www.unesco.org"
+    ]
   },
   {
     "source": "se-lund-university",
@@ -1832,7 +1861,7 @@
   {
     "source": "us-fulbright-us-student",
     "research_source_id": "us-fulbright-us-student",
-    "source_url": "https://us.fulbrightonline.org/",
+    "source_url": "https://us.fulbrightonline.org/applicants/types-of-awards",
     "website_url": "https://us.fulbrightonline.org/",
     "enabled": true,
     "adapter": "opportunity-html",

@@ -16,6 +16,15 @@ export function extractListing(html,manifest,now){
  const main=html.match(/<main\b[^>]*>([\s\S]*?)<\/main\s*>/i)?.[1]||html;
  const content=main.replace(/<!--[^]*?-->/g,'').replace(/<(script|style|nav|footer)\b[^>]*>[^]*?<\/\1\s*>/gi,'');
  const records=new Map();
+ for(const selected of manifest.reviewed_links||[]){
+  const found=[...html.matchAll(/<a\b([^>]*?)>([\s\S]*?)<\/a\s*>/gi)].some(m=>{
+   const href=m[1].match(/\bhref\s*=\s*(["'])(.*?)\1/i)?.[2];if(!href)return false;
+   try{return new URL(decode(href),manifest.source_url).href===selected.url&&plainText(decode(m[2]))===selected.title;}catch{return false;}
+  });
+  if(!found)continue;
+  const item=normalizeItem({title:selected.title,link:selected.url},manifest,now);
+  records.set(item.id,{...item,category:selected.category,categories:[selected.category],kind:'programme-overview',classification:{method:'reviewed-live-programme-link',status:'classified',evidence:[manifest.source_url,selected.url]}});
+ }
  const candidates=[...content.matchAll(/<a\b([^>]*?)>([\s\S]*?)<\/a\s*>/gi)].map(m=>({attributes:m[1],label:m[2],heading:false}));
  // Publisher cards often put the programme title in a heading and use a generic link label.
  // Stop at the next heading so that a call never inherits a neighbouring card's link.
@@ -37,8 +46,8 @@ export function extractListing(html,manifest,now){
   if(manifest.listing_path_pattern&&!new RegExp(manifest.listing_path_pattern).test(url.pathname))continue;
   const item=normalizeItem({title,link:url.href},manifest,now);
   const record={...item,category:categories[0],categories,kind:'opportunity',classification:{method:'reviewed-listing-title',status:'classified',evidence:[manifest.source_url,url.href]}};
-  const existing=records.get(record.id);if(!existing||record.title.length<existing.title.length)records.set(record.id,record);
-  if(records.size>=50)break;
+  const existing=records.get(record.id);if(!existing||(!manifest.reviewed_links?.some(s=>s.url===record.url)&&record.title.length<existing.title.length))records.set(record.id,record);
+  if(records.size>500)throw Error('Listing exceeds 500 records; source needs a paginated adapter');
  }
  return [...records.values()];
 }
@@ -49,7 +58,7 @@ export async function collect({manifest,fetchText,now}){
   if(selected.title){
    const html=(await loadPage({manifest,fetchText})).replace(/<(script|style|nav|footer)\b[^>]*>[^]*?<\/\1\s*>/gi,'');
    const headings=[...html.matchAll(/<h[1-3]\b[^>]*>([\s\S]*?)<\/h[1-3]\s*>/gi)].map(m=>plainText(decode(m[1])));
-   if(!headings.includes(selected.title))throw Error('Reviewed programme title is missing from its live page');
+   if(!headings.includes(selected.title)){const error=Error('Reviewed programme title is missing from its live page');error.diagnostics={headings:headings.slice(0,30)};throw error;}
    items=[normalizeItem({title:selected.title,link:selected.url},manifest,now)];
   }else items=await collectMetadata({manifest:{...manifest,title_fallback:true},fetchText,now});
   return items.map(r=>({...r,category:selected.category,categories:[selected.category],kind:selected.kind,classification:{method:'reviewed-exact-programme',status:'classified',evidence:[selected.url]},...(selected.host_countries?{host_countries:selected.host_countries,country_evidence:selected.host_countries.map(country=>({country,method:'reviewed-programme-location',url:selected.url,text:selected.location_evidence}))}:{})}));

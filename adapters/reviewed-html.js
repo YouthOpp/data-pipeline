@@ -8,7 +8,7 @@ export async function collect({ manifest, fetchText, now }) {
   const html = await fetchText(manifest.source_url);
   const selected = manifest.reviewed_page;
   const canonicals = [...html.matchAll(/<link\b[^>]*>/gi)].map(match => attributes(match[0])).filter(attrs => attrs.rel?.toLowerCase().split(/\s+/).includes('canonical'));
-  if (canonicals.length !== 1 || canonicals[0].href !== selected.url) throw new Error('Reviewed HTML canonical does not match selected programme URL');
+  if (canonicals.length !== 1 || canonicals[0].href !== selected.url) throw new Error(`Reviewed HTML canonical does not match selected programme URL: ${canonicals.map(c=>c.href).join(', ')}`);
 
   if (selected.metadata_format === 'heading') {
     const content = html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1\s*>/gi, '');

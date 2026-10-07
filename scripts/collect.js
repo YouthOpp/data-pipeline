@@ -21,6 +21,15 @@ export function validateRecord(record) {
   if (record.categories) validateClassification(record);
 }
 export async function fetchText(url, request=fetch) {
+  for(let attempt=0;attempt<2;attempt++){
+    try{return await fetchAttempt(url,request);}
+    catch(error){
+      if(attempt||!(error instanceof TypeError||error.name==='TimeoutError')||!/fetch failed|timeout|timed out/i.test(error.message))throw error;
+      await new Promise(resolve=>setTimeout(resolve,1000));
+    }
+  }
+}
+async function fetchAttempt(url, request) {
   if(new URL(url).protocol !== 'https:' || new URL(url).username || new URL(url).password || /^(localhost|127\.|0\.|10\.|172\.(1[6-9]|2[0-9]|3[01])\.|192\.168\.|169\.254\.|\[)/.test(new URL(url).hostname)) throw new Error('HTTPS source required');
   const origin=new URL(url);const signal=AbortSignal.timeout(25000);let current=origin;let response;
   for(let hop=0;hop<=3;hop++){
