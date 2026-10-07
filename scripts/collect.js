@@ -20,9 +20,19 @@ export function validateRecord(record) {
   if (!categoryIds.includes(record.category)) throw new Error('Invalid category');
   if (record.categories) validateClassification(record);
 }
-export async function fetchText(url) {
+export async function fetchText(url, request=fetch) {
   if(new URL(url).protocol !== 'https:' || new URL(url).username || new URL(url).password || /^(localhost|127\.|0\.|10\.|172\.(1[6-9]|2[0-9]|3[01])\.|192\.168\.|169\.254\.|\[)/.test(new URL(url).hostname)) throw new Error('HTTPS source required');
-  const response = await fetch(url,{signal:AbortSignal.timeout(25000),redirect:'error',headers:{'User-Agent':'YouthOpp/1.0 (+https://github.com/YouthOpp/data-pipeline)'}});
+  const origin=new URL(url);const signal=AbortSignal.timeout(25000);let current=origin;let response;
+  for(let hop=0;hop<=3;hop++){
+    response=await request(current.href,{signal,redirect:'manual',headers:{'User-Agent':'YouthOpp/1.0 (+https://github.com/YouthOpp/data-pipeline)'}});
+    if(![301,302,303,307,308].includes(response.status))break;
+    await response.body?.cancel();
+    if(hop===3)throw Error('Too many source redirects');
+    const location=response.headers.get('location');if(!location)throw Error('Source redirect has no location');
+    const next=new URL(location,current);
+    if(next.protocol!=='https:'||next.username||next.password||next.port!==origin.port||next.hostname.replace(/^www\./,'')!==origin.hostname.replace(/^www\./,''))throw Error('Source redirect leaves its reviewed HTTPS host');
+    current=next;
+  }
   if(!response.ok) throw new Error(`HTTP ${response.status}`);
   const reader=response.body.getReader();let size=0;const chunks=[];
   while(true){const {done,value}=await reader.read();if(done)break;size+=value.length;if(size>5_000_000){await reader.cancel();throw new Error('Feed exceeds 5 MB');}chunks.push(value);}
@@ -45,7 +55,7 @@ export async function runPipeline(manifests,previous={opportunities:[],sources:[
       if(manifest.adapter==='opportunity-html')for(const [id,record] of records)if(record.source===manifest.source&&record.kind==='unknown'&&record.url===manifest.source_url&&!batchIds.has(id))records.delete(id);
       for(const record of items){const prior=records.get(record.id);const content=r=>JSON.stringify(Object.fromEntries(Object.entries(r).filter(([k])=>!['created_at','updated_at','first_seen_at','last_seen_at','last_checked_at'].includes(k))));records.set(record.id,{...record,created_at:prior?.created_at||now,first_seen_at:prior?.first_seen_at||now,updated_at:prior && content(prior)===content(record)?prior.updated_at:now});}
       sources.push({...manifest,last_attempt_at:now,last_checked_at:now,last_success_at:now,status:'ok',record_count:items.length,error:null});successes++;
-    }catch(error){sources.push({...manifest,last_attempt_at:now,last_checked_at:old?.last_checked_at||null,last_success_at:old?.last_success_at||null,status:'error',record_count:old?.record_count||0,error:String(error.message).slice(0,200)});}
+    }catch(error){sources.push({...manifest,last_attempt_at:now,last_checked_at:old?.last_checked_at||null,last_success_at:old?.last_success_at||null,status:'error',record_count:old?.record_count||0,error:String(error.message).slice(0,500),...(error.diagnostics?{diagnostics:error.diagnostics}:{})});}
   }
   // Independent hosts can run together; each host is serialized with conservative spacing.
   const groups=new Map();for(const manifest of enabled){const host=new URL(manifest.source_url).hostname;if(!groups.has(host))groups.set(host,[]);groups.get(host).push(manifest);}

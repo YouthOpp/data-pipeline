@@ -124,20 +124,21 @@ function selectTitle(html, fallback = false) {
 }
 
 function assertPageIdentity(html, sourceUrl) {
+  const identityKey=value=>{const url=new URL(value,sourceUrl);url.hostname=url.hostname.replace(/^www\./,'');url.pathname=url.pathname.replace(/\/$/,'')||'/';url.hash='';return url.href;};
   const canonicals = [...html.matchAll(/<link\b[^>]*>/gi)].map(match => attributes(match[0])).filter(attrs => (attrs.rel || '').toLowerCase().split(/\s+/).includes('canonical'));
   if (canonicals.length > 1) throw new Error('Link metadata canonical is ambiguous');
   if (canonicals.length === 1) {
     if (!canonicals[0].href) throw new Error('Link metadata canonical is empty');
     let canonical;
     try { canonical = new URL(canonicals[0].href, sourceUrl).href; } catch { throw new Error('Link metadata canonical is invalid'); }
-    if (canonical !== sourceUrl.href) throw new Error('Link metadata canonical does not match source URL');
+    if (identityKey(canonical) !== identityKey(sourceUrl.href)) throw new Error(`Link metadata canonical does not match source URL: ${canonical}`);
   }
 
   const openGraphUrls = [...html.matchAll(/<meta\b[^>]*>/gi)].map(match => attributes(match[0])).filter(attrs => (attrs.property || attrs.name || '').toLowerCase() === 'og:url');
   for (const metadata of openGraphUrls) {
     let identity;
     try { identity = new URL(metadata.content, sourceUrl).href; } catch { throw new Error('Link metadata Open Graph URL is invalid'); }
-    if (identity !== sourceUrl.href) throw new Error('Link metadata Open Graph URL conflicts with source URL');
+    if (identityKey(identity) !== identityKey(sourceUrl.href)) throw new Error(`Link metadata Open Graph URL conflicts with source URL: ${identity}`);
   }
 }
 
@@ -146,7 +147,7 @@ async function loadRobots(fetchText, sourceUrl) {
     return await fetchText(new URL('/robots.txt', sourceUrl).href);
   } catch (error) {
     if (String(error?.message).trim() === 'HTTP 404') return '';
-    throw new Error('Robots policy is unavailable; collection denied');
+    throw new Error(`Robots policy is unavailable; collection denied (${String(error?.message).slice(0,150)})`);
   }
 }
 

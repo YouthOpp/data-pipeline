@@ -15,13 +15,21 @@ const rules={
 export function extractListing(html,manifest,now){
  const content=html.replace(/<!--[^]*?-->/g,'').replace(/<(script|style|nav|header|footer)\b[^>]*>[^]*?<\/\1\s*>/gi,'');
  const records=new Map();
- for(const match of content.matchAll(/<a\b([^>]*?)>([\s\S]*?)<\/a\s*>/gi)){
-  const href=match[1].match(/\bhref\s*=\s*(["'])(.*?)\1/i)?.[2];if(!href)continue;
+ const candidates=[...content.matchAll(/<a\b([^>]*?)>([\s\S]*?)<\/a\s*>/gi)].map(m=>({attributes:m[1],label:m[2],heading:false}));
+ // Publisher cards often put the programme title in a heading and use a generic link label.
+ // Stop at the next heading so that a call never inherits a neighbouring card's link.
+ for(const m of content.matchAll(/<h([2-4])\b[^>]*>([\s\S]*?)<\/h\1\s*>([\s\S]*?)(?=<h[1-6]\b|$)/gi)){
+  const link=m[3].slice(0,4000).match(/<a\b([^>]*?)>([\s\S]*?)<\/a\s*>/i);
+  if(link && /^(?:learn more|read more|apply(?: now)?|more|details|siit|lisainfo)$/i.test(plainText(decode(link[2]))))candidates.push({attributes:link[1],label:m[2],heading:true});
+ }
+
+ for(const match of candidates){
+  const href=match.attributes.match(/\bhref\s*=\s*(["'])(.*?)\1/i)?.[2];if(!href)continue;
   let url;try{url=new URL(decode(href),manifest.source_url);}catch{continue;}
   if(url.protocol!=='https:'||url.username||url.password||url.origin!==new URL(manifest.source_url).origin||url.hash||url.href===manifest.source_url)continue;
   if(/\.(?:pdf|jpg|jpeg|png|zip)$/i.test(url.pathname)||/\/(?:category|tag|page|author|contact|privacy|terms|about|feed)(?:\/|$)/i.test(url.pathname))continue;
-  const title=plainText(decode(match[2],{level:'html5'}));
-  if(title.length<25||title.length>300||/^(?:all |tutte |read more|learn more|how to |guide |news |newsletter)/i.test(title))continue;
+  const title=plainText(decode(match.label,{level:'html5'}));
+  if(title.length<(match.heading?12:25)||title.length>300||/^(?:all |tutte |read more|learn more|how to |guide |news |newsletter)/i.test(title))continue;
   const categories=Object.entries(rules).filter(([,rule])=>rule.test(title)).map(([category])=>category);
   if(!categories.length)continue;
   // Listing scope is reviewed per publisher; an anchor must identify a distinct call.
@@ -39,7 +47,13 @@ export async function collect({manifest,fetchText,now}){
   const selected=manifest.reviewed_opportunity;
   return items.map(r=>({...r,category:selected.category,categories:[selected.category],kind:selected.kind,classification:{method:'reviewed-exact-programme',status:'classified',evidence:[selected.url]},...(selected.host_countries?{host_countries:selected.host_countries,country_evidence:selected.host_countries.map(country=>({country,method:'reviewed-programme-location',url:selected.url,text:selected.location_evidence}))}:{})}));
  }
- const items=extractListing(await loadPage({manifest,fetchText}),manifest,now);
- if(!items.length)throw Error('No opportunity listings extracted; publisher directory is not an opportunity');
+ const html=await loadPage({manifest,fetchText});
+ const items=extractListing(html,manifest,now);
+ if(!items.length){
+  const error=Error('No opportunity listings extracted; publisher directory is not an opportunity');
+  // Short original titles/links only, never publisher article prose, for actionable failure review.
+  error.diagnostics={headings:[...html.matchAll(/<h[1-4]\b[^>]*>([\s\S]*?)<\/h[1-4]\s*>/gi)].map(m=>plainText(decode(m[1])).slice(0,180)).filter(Boolean).slice(0,60),links:[...html.matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a\s*>/gi)].map(m=>({url:decode(m[1]),title:plainText(decode(m[2])).slice(0,180)})).filter(m=>Object.values(rules).some(r=>r.test(m.title))).slice(0,60)};
+  throw error;
+ }
  return items;
 }

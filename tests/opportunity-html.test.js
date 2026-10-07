@@ -7,6 +7,10 @@ import {inspectCoverage} from '../scripts/verify-catalog.js';
 
 const now='2026-10-07T12:00:00Z';
 const manifest={source:'fixture',source_url:'https://example.org/',website_url:'https://example.org/',adapter:'opportunity-html',enabled:true,language:'en',publisher_country:'IT'};
+test('card headings identify scholarship programmes behind generic Learn More links',()=>{
+ const html='<h3>Visegrad Scholarship Program</h3><p>Publisher description excluded</p><a href="/scholarships/visegrad-scholarships/">Learn More</a><h3>Visegrad Fellowship Program</h3><a href="/fellowships/">Learn More</a><h3>Unrelated news</h3><a href="/news/">Learn More</a>';
+ const records=extractListing(html,manifest,now);assert.equal(records.length,2);assert.equal(records[0].title,'Visegrad Scholarship Program');assert.equal(records[0].summary,'');assert.equal(records[1].category,'fellowships');
+});
 test('listing extraction deduplicates real calls and excludes navigation, external links and copied descriptions',()=>{
  const html='<nav><a href="/scholarships-navigation/">All available scholarships to study</a></nav><a href="/training-course-in-germany-2027/">Training course in Germany for young people</a><a href="/training-course-in-germany-2027/">Training course in Germany for young people</a><a href="/contact/">Contact our scholarships administrator</a><a href="https://other.org/internship/">Paid internships for young people</a>';
  const records=extractListing(html,manifest,now);assert.equal(records.length,1);assert.equal(records[0].kind,'opportunity');assert.equal(records[0].category,'training');assert.equal(records[0].summary,'');assert.deepEqual(records[0].eligible_countries,[]);
