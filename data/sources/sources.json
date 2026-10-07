@@ -602,7 +602,39 @@
     "publisher_country": "DK",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "reviewed_sections": [
+      {
+        "title": "Nordplus",
+        "category": "scholarships",
+        "reviewed_at": "2026-10-07"
+      },
+      {
+        "title": "Erasmus",
+        "category": "training",
+        "reviewed_at": "2026-10-07"
+      },
+      {
+        "title": "Erasmus Mundus/Joint Master Degree",
+        "category": "scholarships",
+        "reviewed_at": "2026-10-07"
+      },
+      {
+        "title": "Fulbright Denmark",
+        "category": "scholarships",
+        "reviewed_at": "2026-10-07"
+      },
+      {
+        "title": "Danish government scholarships for highly qualified non-EU/EEA students",
+        "category": "scholarships",
+        "reviewed_at": "2026-10-07"
+      },
+      {
+        "title": "The Danish State Educational Support (SU)",
+        "category": "scholarships",
+        "reviewed_at": "2026-10-07"
+      }
+    ]
   },
   {
     "source": "dk-dm-and-ma-travel-grant",
@@ -629,7 +661,7 @@
   {
     "source": "dk-university-of-copenhagen",
     "research_source_id": "dk-university-of-copenhagen",
-    "source_url": "https://studies.ku.dk/masters/tuition-fees--scholarships/",
+    "source_url": "https://www.ku.dk/studies/admission/scholarships-for-full-degree-students",
     "website_url": "https://studies.ku.dk/masters/tuition-fees--scholarships/",
     "enabled": true,
     "adapter": "opportunity-html",
@@ -640,7 +672,19 @@
     "publisher_country": "DK",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "reviewed_sections": [
+      {
+        "title": "Danish government Scholarships",
+        "category": "scholarships",
+        "reviewed_at": "2026-10-07"
+      },
+      {
+        "title": "Fulbright Scholarship for US full-degree master's students",
+        "category": "scholarships",
+        "reviewed_at": "2026-10-07"
+      }
+    ]
   },
   {
     "source": "ee-harno",
@@ -849,7 +893,7 @@
   {
     "source": "de-rausvonzuhaus",
     "research_source_id": "de-rausvonzuhaus",
-    "source_url": "https://www.rausvonzuhaus.de/faq",
+    "source_url": "https://www.rausvonzuhaus.de/lastminute",
     "website_url": "https://www.rausvonzuhaus.de/",
     "enabled": true,
     "adapter": "opportunity-html",
@@ -1275,7 +1319,44 @@
     "publisher_country": "LU",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "reviewed_sections": [
+      {
+        "title": "Internships at the Directorate for Development Cooperation and Humanitarian Affairs",
+        "category": "internships",
+        "reviewed_at": "2026-10-07"
+      },
+      {
+        "title": "Internships at ENDA Santé",
+        "category": "internships",
+        "reviewed_at": "2026-10-07"
+      },
+      {
+        "title": "The Junior Technical Assistant Programme (JTA/ATJ)",
+        "category": "jobs",
+        "reviewed_at": "2026-10-07"
+      },
+      {
+        "title": "The Junior Professional Officer Programme (JPO/JEA)",
+        "category": "jobs",
+        "reviewed_at": "2026-10-07"
+      },
+      {
+        "title": "The UN Volunteer Program (UNV)",
+        "category": "volunteering",
+        "reviewed_at": "2026-10-07"
+      },
+      {
+        "title": "The Junior Professional Programme in delegation (JPD)",
+        "category": "jobs",
+        "reviewed_at": "2026-10-07"
+      },
+      {
+        "title": "The Voluntary Cooperation Service (VCS)",
+        "category": "volunteering",
+        "reviewed_at": "2026-10-07"
+      }
+    ]
   },
   {
     "source": "mt-myscholarship",
@@ -1291,7 +1372,7 @@
     "publisher_country": "MT",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": "The scholarship service footer links https://www.gov.mt/en/Pages/Terms-of-use.aspx (verified 2026-10-07), whose prohibited uses expressly exclude automated page scraping/monitoring. An approved feed/API or publisher authorization is required."
   },
   {
     "source": "mt-university-of-malta",

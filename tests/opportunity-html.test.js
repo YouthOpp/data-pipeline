@@ -7,6 +7,12 @@ import {inspectCoverage} from '../scripts/verify-catalog.js';
 
 const now='2026-10-07T12:00:00Z';
 const manifest={source:'fixture',source_url:'https://example.org/',website_url:'https://example.org/',adapter:'opportunity-html',enabled:true,language:'en',publisher_country:'IT'};
+test('named programmes on one original page have stable distinct IDs and require every live section',async()=>{
+ const selected={...manifest,reviewed_sections:[{title:'The UN Volunteer Program (UNV)',category:'volunteering',reviewed_at:'2026-10-07'},{title:'The Junior Professional Officer Programme (JPO/JEA)',category:'jobs',reviewed_at:'2026-10-07'}]};
+ const load=html=>async url=>url.endsWith('/robots.txt')?'':html;
+ const records=await collect({manifest:selected,now,fetchText:load('<h2>The UN Volunteer Program (UNV)</h2><h2>The Junior Professional Officer Programme (JPO/JEA)</h2>')});assert.equal(new Set(records.map(r=>r.id)).size,2);assert.ok(records.every(r=>r.url===manifest.source_url&&r.kind==='programme-overview'));
+ await assert.rejects(collect({manifest:selected,now,fetchText:load('<h2>The UN Volunteer Program (UNV)</h2>')}),/section is missing/);
+});
 test('card headings identify scholarship programmes behind generic Learn More links',()=>{
  const html='<h3>Visegrad Scholarship Program</h3><p>Publisher description excluded</p><a href="/scholarships/visegrad-scholarships/">Learn More</a><h3>Visegrad Fellowship Program</h3><a href="/fellowships/">Learn More</a><h3>Unrelated news</h3><a href="/news/">Learn More</a>';
  const records=extractListing(html,manifest,now);assert.equal(records.length,2);assert.equal(records[0].title,'Visegrad Scholarship Program');assert.equal(records[0].summary,'');assert.equal(records[1].category,'fellowships');

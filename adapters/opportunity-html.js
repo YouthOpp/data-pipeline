@@ -1,6 +1,7 @@
 import {decode} from 'html-entities';
 import {loadPage,collect as collectMetadata} from './link-metadata.js';
 import {normalizeItem,plainText} from './rss.js';
+import {createHash} from 'node:crypto';
 
 const rules={
  internships:/\b(?:internships?|stage|tirocini?o|praktikum)\b/i,
@@ -52,6 +53,15 @@ export function extractListing(html,manifest,now){
  return [...records.values()];
 }
 export async function collect({manifest,fetchText,now}){
+ if(manifest.reviewed_sections){
+  const html=(await loadPage({manifest,fetchText})).replace(/<(script|style|nav|footer)\b[^>]*>[^]*?<\/\1\s*>/gi,'');
+  const headings=[...html.matchAll(/<h[1-4]\b[^>]*>([\s\S]*?)<\/h[1-4]\s*>/gi)].map(m=>plainText(decode(m[1])));
+  return manifest.reviewed_sections.map(selected=>{
+   if(!headings.includes(selected.title))throw Error(`Reviewed programme section is missing: ${selected.title}`);
+   const record=normalizeItem({title:selected.title,link:manifest.source_url},manifest,now);
+   return {...record,id:createHash('sha256').update(`${manifest.source}|${manifest.source_url}|section:${selected.title}`).digest('hex').slice(0,24),kind:'programme-overview',category:selected.category,categories:[selected.category],classification:{method:'reviewed-live-programme-section',status:'classified',evidence:[manifest.source_url,selected.title]}};
+  });
+ }
  if(manifest.reviewed_opportunity){
   const selected=manifest.reviewed_opportunity;
   let items;
