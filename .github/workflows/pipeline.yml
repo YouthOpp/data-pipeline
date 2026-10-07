@@ -63,7 +63,16 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: node scripts/release-state.js prune "catalog-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+      - name: Create website installation token
+        id: website-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          app-id: ${{ vars.WEBSITE_APP_ID }}
+          private-key: ${{ secrets.WEBSITE_APP_PRIVATE_KEY }}
+          owner: YouthOpp
+          repositories: youthopp.github.io
+          permission-contents: write
       - name: Update website catalog version
         env:
-          WEBSITE_REPO_TOKEN: ${{ secrets.WEBSITE_REPO_TOKEN }}
+          WEBSITE_REPO_TOKEN: ${{ steps.website-token.outputs.token }}
         run: node scripts/notify-website.mjs
