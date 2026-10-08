@@ -2,7 +2,7 @@ name: Collect lu-fnr-afdoc
 on:
   workflow_dispatch:
   schedule:
-    - cron: '43 0/6 * * *'
+    - cron: '23 0/6 * * *'
 permissions:
   contents: read
 concurrency:

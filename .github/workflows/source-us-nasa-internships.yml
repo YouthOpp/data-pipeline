@@ -2,7 +2,7 @@ name: Collect us-nasa-internships
 on:
   workflow_dispatch:
   schedule:
-    - cron: '25 0/6 * * *'
+    - cron: '11 0/6 * * *'
 permissions:
   contents: read
 concurrency:

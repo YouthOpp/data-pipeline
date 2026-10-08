@@ -1,8 +1,8 @@
-name: Collect at-oead-ernst-mach
+name: Collect fi-fulbright-finland
 on:
   workflow_dispatch:
   schedule:
-    - cron: '27 0/6 * * *'
+    - cron: '7 5/6 * * *'
 permissions:
   contents: read
 concurrency:
@@ -38,14 +38,14 @@ jobs:
           path: data-source
           persist-credentials: true
       - name: Collect and validate only this source
-        run: node scripts/publish-source.js 'at-oead-ernst-mach' data-source
+        run: node scripts/publish-source.js 'fi-fulbright-finland' data-source
       - name: Publish source and catalog in one commit
         run: |
           git -C data-source config user.name 'youthopps-bot'
           git -C data-source config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git -C data-source add sources/at-oead-ernst-mach/ catalog.json
+          git -C data-source add sources/fi-fulbright-finland/ catalog.json
           if ! git -C data-source diff --cached --quiet; then
-            git -C data-source commit -m 'data: refresh at-oead-ernst-mach'
+            git -C data-source commit -m 'data: refresh fi-fulbright-finland'
             git -C data-source push origin HEAD:main
           fi
       - name: Notify website of new source snapshot

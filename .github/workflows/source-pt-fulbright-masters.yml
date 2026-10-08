@@ -2,7 +2,7 @@ name: Collect pt-fulbright-masters
 on:
   workflow_dispatch:
   schedule:
-    - cron: '31 0/6 * * *'
+    - cron: '15 0/6 * * *'
 permissions:
   contents: read
 concurrency:

@@ -5,7 +5,7 @@ on:
     paths: ['.github/workflows/source-opportunitydesk.yml']
   workflow_dispatch:
   schedule:
-    - cron: '7 0/6 * * *'
+    - cron: '3 0/6 * * *'
 permissions:
   contents: read
 concurrency:
