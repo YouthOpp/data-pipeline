@@ -3,13 +3,14 @@ import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { setTimeout as delay } from 'node:timers/promises';
 import { runPipeline, fetchText, validateRecord } from '../scripts/collect.js';
+import { loadSourceManifests,loadSourceRegistry } from './source-store.js';
 
 const sourceId = 'de-fulbright-germany';
 const expectedTitle = 'Studienstipendium (Uni und HAW)';
 const mode = process.argv[2] || 'fixture';
 const now = new Date().toISOString();
-const manifests = JSON.parse(await readFile('data/sources/sources.json', 'utf8'));
-const registry = JSON.parse(await readFile('data/sources/source-registry.json', 'utf8')).sources;
+const manifests = await loadSourceManifests(mode === 'snapshot' ? (process.argv[3] || 'data-source') : 'data-source');
+const registry = await loadSourceRegistry(mode === 'snapshot' ? (process.argv[3] || 'data-source') : 'data-source');
 const manifest = manifests.find(item => item.source === sourceId);
 assert.ok(manifest?.enabled, 'Fulbright source must be enabled');
 assert.equal(manifest.adapter, 'opportunity-html');

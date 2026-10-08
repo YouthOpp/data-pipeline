@@ -1,6 +1,8 @@
 import { classifySource, taxonomy, categoryIds } from './taxonomy.js';
 import { readFile } from 'node:fs/promises';
-const manifests=JSON.parse(await readFile('data/sources/sources.json','utf8'));const ids=new Set();
+import {loadSourceManifests,loadSourceRegistry} from './source-store.js';
+const root=process.argv[2]||'data-source';
+const manifests=await loadSourceManifests(root);const ids=new Set();
 for(const item of manifests){
  classifySource(item,true);
  if(!/^[a-z0-9-]+$/.test(item.source)||ids.has(item.source))throw new Error('Invalid or duplicate source');ids.add(item.source);
@@ -45,7 +47,7 @@ for(const item of manifests){
 }
 console.log(`Validated ${ids.size} sources`);
 
-const registry=JSON.parse(await readFile('data/sources/source-registry.json','utf8'));
+const registry={sources:await loadSourceRegistry(root)};
 const registryIds=new Set();const joins=new Set();
 for(const source of registry.sources){classifySource(source);if(!source.id||registryIds.has(source.id))throw Error('Duplicate research source ID');registryIds.add(source.id);if(source.adapter_source_id){if(!ids.has(source.adapter_source_id)||joins.has(source.adapter_source_id))throw Error('Invalid research adapter join');joins.add(source.adapter_source_id);}}
 const schema=JSON.parse(await readFile('schemas/opportunity.schema.json','utf8'));
