@@ -72,7 +72,7 @@ export async function runPipeline(manifests,previous={opportunities:[],sources:[
   const queue=[...groups.values()];let nextGroup=0;
   await Promise.all(Array.from({length:Math.min(4,queue.length)},async()=>{while(nextGroup<queue.length){const group=queue[nextGroup++];for(let i=0;i<group.length;i++){if(i && !adapter && !group[i].collection_blocked_reason)await new Promise(resolve=>setTimeout(resolve,30000));await collectManifest(group[i]);}}}));
   const sourceOrder=new Map(enabled.map((manifest,index)=>[manifest.source,index]));sources.sort((a,b)=>sourceOrder.get(a.source)-sourceOrder.get(b.source));
-  if(!successes)throw new Error('All enabled sources failed; catalog must not be published');
+  if(!successes)throw new Error('All enabled sources failed: '+sources.map(s=>s.source+': '+s.error).join('; '));
   const active=new Set(enabled.map(m=>m.source));
   const opportunities=[...records.values()].filter(r=>active.has(r.source)&&!manifests.find(m=>m.source===r.source)?.excluded_record_urls?.includes(r.url)).map(r=>({...r,status:r.deadline ? (Date.parse(r.deadline)<Date.parse(now)?'expired':'open'):'unknown'})).sort((a,b)=>(b.published_at||'').localeCompare(a.published_at||'')||a.id.localeCompare(b.id));
   const result={schema_version:1,model_version:2,generated_at:now,opportunities,sources,...buildCategoricalCatalog(opportunities,manifests,registry)};validateCategoricalCatalog(result);return result;
