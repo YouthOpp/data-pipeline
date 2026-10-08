@@ -1,0 +1,27 @@
+name: qa-feba-issue-12
+on:
+  push:
+    branches:
+      - qa/issue-12-feba
+    paths:
+      - scripts/probe-feba.js
+      - .github/workflows/qa-feba-issue-12.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sandbox-probe:
+    if: github.repository == 'YouthOpps/data-pipeline'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static validation and sandbox fixture
+        run: |
+          node --check scripts/probe-feba.js
+          FEBA_PROBE_FIXTURE=1 node scripts/probe-feba.js
+      - name: Controlled remote publisher access probe (no publishing)
+        run: node scripts/probe-feba.js
