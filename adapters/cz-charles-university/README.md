@@ -170,3 +170,19 @@ after successful publication, failure preserves last-good data and its success
 timestamp, recording failure metadata when possible. Successful publication
 advances the durable success timestamp. Runtime transport/static review and a
 non-publishing live test do not prove production publication.
+
+## Recovering an older published snapshot
+
+Fresh collections, normal validation and replacement publication remain limited
+to 600 UTF-16 summary units. Only the read of this source's existing validated
+snapshot permits its prior 1,200-character summary bound, so the previously
+published 715-character Mobility Fund summary cannot prevent collecting its
+corrected replacement. Source, identifiers, URLs, timestamps, categories,
+countries, status and record structure retain all existing validation checks.
+
+This read-only compatibility does not authorize publishing a new oversized
+summary or ignoring a source failure. A successful collection replaces data and
+metadata together with strict fresh validation. Collection failure keeps the
+prior data bytes unchanged and can update only failure metadata, preserving the
+previous success timestamp. Publication failure uses the existing safe
+source-snapshot comparison before attempting metadata-only failure reporting.

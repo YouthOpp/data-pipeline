@@ -1825,7 +1825,8 @@ def make_record(
     }
 
 
-def validate_records(records):
+def validate_records(records, *, legacy_snapshot=False):
+    """Validate fresh output strictly; old summary bounds are read-only."""
     if not isinstance(records, list) or not records:
         raise AdapterError(
             "Empty or invalid opportunity collection", "validate"
@@ -1919,11 +1920,15 @@ def validate_records(records):
             "unknown",
         ) or record.get("status") not in ("open", "expired", "unknown"):
             raise AdapterError("Invalid opportunity kind or status", "validate")
-        if (
-            not isinstance(record.get("summary"), str)
-            or len(record["summary"].encode("utf-16-le")) // 2 > 600
-            or re.search("<[^>]+>", record["summary"])
-        ):
+        summary = record.get("summary")
+        if not isinstance(summary, str) or re.search("<[^>]+>", summary):
+            raise AdapterError("Invalid plain summary", "validate")
+        length = (
+            len(summary)
+            if legacy_snapshot
+            else len(summary.encode("utf-16-le")) // 2
+        )
+        if length > (1200 if legacy_snapshot else 600):
             raise AdapterError("Invalid plain summary", "validate")
         for field in ("location", "language", "publisher_country"):
             if (
@@ -2122,7 +2127,7 @@ def main():
         else {}
     )
     if snapshot and snapshot["files"]["data.json"] is not None:
-        validate_records(old)
+        validate_records(old, legacy_snapshot=True)
         if previous.get("source") != SOURCE_ID:
             raise AdapterError(
                 "Remote metadata source mismatch; no files changed", "publish"
