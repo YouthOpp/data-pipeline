@@ -458,7 +458,7 @@
   {
     "source": "hr-study-in-croatia",
     "research_source_id": "hr-study-in-croatia",
-    "source_url": "https://www.studyincroatia.hr/",
+    "source_url": "https://www.studyincroatia.hr/study-in-croatia/exchange-programmes/",
     "website_url": "https://www.studyincroatia.hr/",
     "enabled": true,
     "adapter": "opportunity-html",
@@ -469,7 +469,21 @@
     "publisher_country": "HR",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "reviewed_links": [
+      {
+        "title": "Central European Exchange Programme for University Studies",
+        "url": "https://en.ampeu.hr/ceepus",
+        "category": "scholarships",
+        "reviewed_at": "2026-10-08"
+      },
+      {
+        "title": "Bilateral Programme of Mobility in Higher Education",
+        "url": "https://en.ampeu.hr/bilateral-scolarships",
+        "category": "scholarships",
+        "reviewed_at": "2026-10-08"
+      }
+    ]
   },
   {
     "source": "cy-cyprus-state-scholarships-foundation",
@@ -1528,7 +1542,7 @@
   {
     "source": "pl-frse",
     "research_source_id": "pl-frse",
-    "source_url": "https://www.frse.org.pl/",
+    "source_url": "https://www.frse.org.pl/aktualnosci",
     "website_url": "https://www.frse.org.pl/",
     "enabled": true,
     "adapter": "opportunity-html",
@@ -1539,7 +1553,12 @@
     "publisher_country": "PL",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "listing_path_pattern": "^/aktualnosci/",
+    "listing_title_rules": {
+      "competitions": "^(?:Konkurs(?:\\s|:)|(?:[IVX]+\\s+)?edycja konkursu|Nabór)"
+    },
+    "listing_exclude_title_pattern": "laureat|wyniki|rozstrzygnię|zwycię"
   },
   {
     "source": "pt-ipdj",

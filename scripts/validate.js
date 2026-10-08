@@ -9,6 +9,8 @@ for(const item of manifests){
  if(item.adapter==='opportunity-html'){
   if(!item.research_source_id)throw Error('Opportunity HTML requires a research source link');
   if(item.listing_path_pattern){if(item.listing_path_pattern.length>200)throw Error('Listing pattern too long');new RegExp(item.listing_path_pattern);}
+  if(item.listing_exclude_title_pattern){if(typeof item.listing_exclude_title_pattern!=='string'||item.listing_exclude_title_pattern.length>200)throw Error('Invalid excluded listing title pattern');new RegExp(item.listing_exclude_title_pattern);}
+  if(item.listing_title_rules){if(typeof item.listing_title_rules!=='object'||Array.isArray(item.listing_title_rules)||!Object.keys(item.listing_title_rules).length)throw Error('Invalid reviewed listing title rules');for(const [category,pattern] of Object.entries(item.listing_title_rules)){if(!categoryIds.includes(category)||typeof pattern!=='string'||pattern.length>200)throw Error('Invalid reviewed listing title rule');new RegExp(pattern);}}
   if(item.listing_allowed_hosts&&(!Array.isArray(item.listing_allowed_hosts)||item.listing_allowed_hosts.some(h=>!/^([a-z0-9-]+\.)+[a-z]{2,}$/.test(h)||/^(localhost|127\.|10\.|192\.168\.)/.test(h))))throw Error('Invalid reviewed listing host');
   if(item.listing_allow_pdf!=null&&typeof item.listing_allow_pdf!=='boolean')throw Error('Invalid PDF listing permission');
   if(item.reviewed_links){if(!Array.isArray(item.reviewed_links)||item.reviewed_links.some(r=>!r.title||r.title.length>300||new URL(r.url).protocol!=='https:'||new URL(r.url).username||new URL(r.url).password||!categoryIds.includes(r.category)||!r.reviewed_at))throw Error('Invalid reviewed programme link');}

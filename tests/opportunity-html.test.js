@@ -7,6 +7,11 @@ import {inspectCoverage} from '../scripts/verify-catalog.js';
 
 const now='2026-10-07T12:00:00Z';
 const manifest={source:'fixture',source_url:'https://example.org/',website_url:'https://example.org/',adapter:'opportunity-html',enabled:true,language:'en',publisher_country:'IT'};
+test('native publisher call titles exclude category/date wrappers and winner news',()=>{
+ const selected={...manifest,listing_title_rules:{competitions:'^(?:Konkurs(?:\\s|:)|(?:[IVX]+\\s+)?edycja konkursu|Nabór)'},listing_exclude_title_pattern:'laureat|wyniki|rozstrzygnię|zwycię',listing_path_pattern:'^/aktualnosci/'};
+ const html='<main><a href="/aktualnosci/discovereu"><span>Konkursy Młodzież 01.10.2026 r.</span><h3>Konkurs DiscoverEU: ruszyła runda jesienna!</h3></a><a href="/aktualnosci/winners"><span>Konkursy 01.10.2026 r.</span><h3>Poznaj laureatów EITA 2026!</h3></a><a href="/aktualnosci/closed"><h3>Konkurs rozstrzygnięty: wyniki edycji</h3></a><a href="/aktualnosci/school"><h3>Nabór uzupełniający: Profesjonalna Szkoła Roku</h3></a></main>';
+ const records=extractListing(html,selected,now);assert.equal(records.length,2);assert.equal(records[0].title,'Konkurs DiscoverEU: ruszyła runda jesienna!');assert.ok(records.every(r=>r.category==='competitions'));assert.ok(!records.some(r=>/laureat|wyniki/.test(r.title)));
+});
 test('named programmes on one original page have stable distinct IDs and require every live section',async()=>{
  const selected={...manifest,reviewed_sections:[{title:'The UN Volunteer Program (UNV)',category:'volunteering',reviewed_at:'2026-10-07'},{title:'The Junior Professional Officer Programme (JPO/JEA)',category:'jobs',reviewed_at:'2026-10-07'}]};
  const load=html=>async url=>url.endsWith('/robots.txt')?'':html;

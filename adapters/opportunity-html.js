@@ -26,7 +26,7 @@ export function extractListing(html,manifest,now){
   const item=normalizeItem({title:selected.title,link:selected.url},manifest,now);
   records.set(item.id,{...item,category:selected.category,categories:[selected.category],kind:'programme-overview',classification:{method:'reviewed-live-programme-link',status:'classified',evidence:[manifest.source_url,selected.url]}});
  }
- const candidates=[...content.matchAll(/<a\b([^>]*?)>([\s\S]*?)<\/a\s*>/gi)].map(m=>({attributes:m[1],label:m[2],heading:false}));
+ const candidates=[...content.matchAll(/<a\b([^>]*?)>([\s\S]*?)<\/a\s*>/gi)].map(m=>({attributes:m[1],label:m[2].match(/<h[2-4]\b[^>]*>([\s\S]*?)<\/h[2-4]\s*>/i)?.[1]||m[2],heading:false}));
  // Publisher cards often put the programme title in a heading and use a generic link label.
  // Stop at the next heading so that a call never inherits a neighbouring card's link.
  for(const m of content.matchAll(/<h([2-4])\b[^>]*>([\s\S]*?)<\/h\1\s*>([\s\S]*?)(?=<h[1-6]\b|$)/gi)){
@@ -41,7 +41,9 @@ export function extractListing(html,manifest,now){
   if(/\.(?:jpg|jpeg|png|zip)$/i.test(url.pathname)||(/\.pdf$/i.test(url.pathname)&&!manifest.listing_allow_pdf)||/\/(?:category|tag|page|author|contact|privacy|terms|about|feed)(?:\/|$)/i.test(url.pathname))continue;
   const title=plainText(decode(match.label,{level:'html5'}));
   if(title.length<(match.heading?12:25)||title.length>300||/^(?:all |tutte |read more|learn more|how to |guide |news |newsletter)/i.test(title))continue;
-  const categories=Object.entries(rules).filter(([,rule])=>rule.test(title)).map(([category])=>category);
+  if(manifest.listing_exclude_title_pattern&&new RegExp(manifest.listing_exclude_title_pattern,'i').test(title))continue;
+  const selectedRules=manifest.listing_title_rules?Object.fromEntries(Object.entries(manifest.listing_title_rules).map(([category,pattern])=>[category,new RegExp(pattern,'i')])):rules;
+  const categories=Object.entries(selectedRules).filter(([,rule])=>rule.test(title)).map(([category])=>category);
   if(!categories.length)continue;
   // Listing scope is reviewed per publisher; an anchor must identify a distinct call.
   if(manifest.listing_path_pattern&&!new RegExp(manifest.listing_path_pattern).test(url.pathname))continue;
@@ -90,7 +92,7 @@ export async function collect({manifest,fetchText,now}){
      // Read explicitly reviewed public application code; never execute it or collect its prose.
      await new Promise(resolve=>setTimeout(resolve,30000));
      const code=await loadPage({manifest:{...manifest,source_url:script},fetchText});
-     const paths=[...code.matchAll(/["']((?:https:\/\/|\/)[^"'\s<>]{1,200})["']/g)].map(m=>m[1].split(/[?#]/)[0]).filter(p=>/api|grant|scholar|bourse|search|filter|rest|country/i.test(p));
+     const paths=[...code.matchAll(/["']([^"'\s<>]{1,200})["']/g)].map(m=>m[1].split(/[?#]/)[0]).filter(p=>/api|grant|scholar|bourse|search|filter|rest|country/i.test(p));
      error.diagnostics.application_paths.push({script,paths:[...new Set(paths)].slice(0,100)});
     }catch(probe){error.diagnostics.application_paths.push({script,error:String(probe.message).slice(0,200)});}
    }
