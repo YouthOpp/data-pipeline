@@ -1,6 +1,13 @@
 name: fetch-opportunitydesk
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'adapters/opportunitydesk/**'
+      - '.github/workflows/fetch-opportunitydesk.yml'
   workflow_dispatch:
+  schedule:
+    - cron: '23 */6 * * *'
 permissions:
   contents: read
 concurrency:

@@ -1,5 +1,8 @@
-"""One non-publishing live collection check for this adapter."""
+"""One live, non-publishing collection test with complete JSON stdout."""
+
+import json
 import unittest
+
 import adapter
 
 
@@ -8,6 +11,7 @@ class LiveAdapterTest(unittest.TestCase):
         records = adapter.collect()
         adapter.validate_records(records)
         self.assertTrue(records)
+        print(json.dumps(records, ensure_ascii=False))
 
 
 if __name__ == "__main__":
