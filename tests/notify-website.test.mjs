@@ -17,7 +17,7 @@ test('website pointer commit uses main, revision checks and idempotent content',
   const body=JSON.parse(calls[1][1].body);
   assert.equal(body.branch,'main');assert.equal(body.sha,undefined);
   const pointer=JSON.parse(Buffer.from(body.content,'base64').toString());
-  assert.equal(pointer.repository,'YouthOpp/data-pipeline');assert.equal(pointer.release_tag,'catalog-123-1');assert.match(pointer.manifest_sha256,/^[a-f0-9]{64}$/);
+  assert.equal(pointer.repository,'YouthOpps/data-pipeline');assert.equal(pointer.release_tag,'catalog-123-1');assert.match(pointer.manifest_sha256,/^[a-f0-9]{64}$/);
   assert.ok(calls[0][0].endsWith('?ref=main'));
   fetchMock.mock.mockImplementation(async()=>new Response(JSON.stringify({content:body.content,sha:'revision'})));
   assert.equal(await notifyWebsite({manifestPath,token:'test-token'}),false);
