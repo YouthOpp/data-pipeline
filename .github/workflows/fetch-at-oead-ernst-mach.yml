@@ -1,0 +1,59 @@
+name: fetch-at-oead-ernst-mach
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/fetch-at-oead-ernst-mach.yml
+      - scripts/verify-oead-source.js
+  schedule:
+    - cron: '3 0/6 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: youthopps-source-publishing
+  cancel-in-progress: false
+jobs:
+  collect:
+    if: github.repository == 'YouthOpps/data-pipeline'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install and run sandbox fixture QA first
+        run: |
+          npm ci --ignore-scripts
+          npm run validate
+          npm test
+      - name: Create data-source installation token
+        id: data-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1
+        with:
+          app-id: ${{ vars.WEBSITE_APP_ID }}
+          private-key: ${{ secrets.WEBSITE_APP_PRIVATE_KEY }}
+          owner: YouthOpps
+          repositories: data-source
+          permission-contents: write
+      - uses: actions/checkout@v4
+        with:
+          repository: YouthOpps/data-source
+          token: ${{ steps.data-token.outputs.token }}
+          path: data-source
+          persist-credentials: true
+      - name: Fetch real source once into isolated runner workspace
+        run: node scripts/publish-source.js at-oead-ernst-mach data-source
+      - name: QA gate - verify exact source record and catalog before publishing
+        run: node scripts/verify-oead-source.js data-source
+      - name: Publish only accepted source and unified catalog
+        run: |
+          git -C data-source config user.name 'AI Agent'
+          git -C data-source config user.email 'contact@youthopps.org'
+          git -C data-source add sources/at-oead-ernst-mach/ catalog.json
+          if ! git -C data-source diff --cached --quiet; then
+            git -C data-source commit -m 'data: refresh at-oead-ernst-mach'
+            git -C data-source push origin HEAD:main
+          fi
