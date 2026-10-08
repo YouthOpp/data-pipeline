@@ -458,7 +458,7 @@
   {
     "source": "hr-study-in-croatia",
     "research_source_id": "hr-study-in-croatia",
-    "source_url": "https://www.studyincroatia.hr/study-in-croatia/exchange-programmes/",
+    "source_url": "https://www.studyincroatia.hr/exchange-programmes/",
     "website_url": "https://www.studyincroatia.hr/",
     "enabled": true,
     "adapter": "opportunity-html",
@@ -839,7 +839,8 @@
     "diagnostic_scripts": [
       "https://campusbourses.campusfrance.org/js/iwangular.3f8721e3.js",
       "https://campusbourses.campusfrance.org/js/ilangular.b81726ae.js"
-    ]
+    ],
+    "diagnostic_api": "https://bourses-api.campusfrance.org/sgetgrants/"
   },
   {
     "source": "fr-1jeune1solution",
