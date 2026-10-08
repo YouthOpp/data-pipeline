@@ -37,7 +37,7 @@ export async function collect({manifest,fetchText,now}){
     const endpoint=new URL('/wp-json/wp/v2/posts',origin);
     endpoint.searchParams.set('per_page','100');
     endpoint.searchParams.set('page',String(page));
-    endpoint.searchParams.set('_fields','id,date,link,title,content');
+    endpoint.searchParams.set('_fields','id,date_gmt,link,title,content');
     let posts;try{posts=JSON.parse(await fetchText(endpoint.href));}catch(e){throw Error('FEBA WordPress API failed: '+e.message);}
     if(!Array.isArray(posts))throw Error('Unexpected FEBA API payload');
     examined+=posts.length;
@@ -49,8 +49,9 @@ export async function collect({manifest,fetchText,now}){
       if(url.protocol!=='https:'||url.hostname.replace(/^www\./,'')!=='febalumni.org'||!/^\/\d{4}\/\d{2}\/\d{2}\//.test(url.pathname))continue;
       const category=/стипенд|scholarship/i.test(title)?'scholarships':/академи|обучени|certificate|сертификат|training/i.test(title)?'training':/стаж|internship/i.test(title)?'internships':/volunteer|добровол/i.test(title)?'volunteering':'other';
       if(category==='other')continue;
-      const record=normalizeItem({title,link:url.href},manifest,now);
-      records.set(record.id,{...record,category,categories:[category],kind:'opportunity',tags:[category],published_at:null,host_countries:['BG'],classification:{method:'feba-publisher-api',status:'classified',evidence:[url.href]}});
+      const publishedAt = typeof post.date_gmt === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$/.test(post.date_gmt) && Number.isFinite(Date.parse(post.date_gmt + 'Z')) ? new Date(post.date_gmt + 'Z').toISOString() : null;
+      const record=normalizeItem({title,link:url.href,isoDate:publishedAt||undefined},manifest,now);
+      records.set(record.id,{...record,category,categories:[category],kind:'opportunity',tags:[category],published_at:publishedAt,host_countries:['BG'],classification:{method:'feba-publisher-api',status:'classified',evidence:[url.href]}});
     }
     if(posts.length<100){
       if(!records.size)throw Error('FEBA returned no eligible opportunity records');
