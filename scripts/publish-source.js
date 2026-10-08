@@ -36,5 +36,5 @@ for(const record of allRecords)unique.set(record.id,record);
 const opportunities=[...unique.values()].sort((a,b)=>(b.published_at||'').localeCompare(a.published_at||'')||a.id.localeCompare(b.id));
 const catalog={schema_version:1,model_version:2,generated_at:new Date().toISOString(),opportunities,sources:allSources,...buildCategoricalCatalog(opportunities,allSources,registry)};
 validateCategoricalCatalog(catalog);
-await writeFile(join(root,'catalog.json'),JSON.stringify(catalog)+'\n');
+await writeFile(join(root,'catalog.json'),JSON.stringify(catalog,null,2)+'\n');
 console.log(JSON.stringify({source:sourceId,records:records.length,total:opportunities.length}));
