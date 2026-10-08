@@ -25,6 +25,7 @@ await writeFile(join(directory,'metadata.json'),JSON.stringify(metadata,null,2)+
 const folders=(await readdir(join(root,'sources'),{withFileTypes:true})).filter(e=>e.isDirectory()).map(e=>e.name).sort();
 const allSources=[],allRecords=[];
 for(const id of folders){
+ if(!manifests.some(manifest=>manifest.source===id&&manifest.enabled))continue;
  const source=await load(join(root,'sources',id,'metadata.json'),null);
  const items=await load(join(root,'sources',id,'opportunities.json'),null);
  if(!source||!Array.isArray(items))continue;
