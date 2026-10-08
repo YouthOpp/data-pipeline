@@ -123,22 +123,28 @@ function selectTitle(html, fallback = false) {
   throw new Error('Link metadata title is missing');
 }
 
-function assertPageIdentity(html, sourceUrl) {
+function assertPageIdentity(html, sourceUrl, reviewed) {
   const identityKey=value=>{const url=new URL(value,sourceUrl);if(url.protocol==='http:'&&!url.port)url.protocol='https:';url.hostname=url.hostname.replace(/^www\./,'');url.pathname=url.pathname.replace(/\/$/,'')||'/';url.hash='';return url.href;};
+  if(reviewed){
+    if(!reviewed.heading)throw Error('Reviewed page identity requires a live heading');
+    const headings=[...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1\s*>/gi)].map(m=>plainText(decode(m[1])));
+    if(!headings.includes(reviewed.heading))throw Error('Reviewed page identity heading is missing');
+    for(const value of [reviewed.canonical_url,reviewed.og_url].filter(Boolean))if(new URL(value).origin!==sourceUrl.origin)throw Error('Reviewed page identity leaves its source origin');
+  }
   const canonicals = [...html.matchAll(/<link\b[^>]*>/gi)].map(match => attributes(match[0])).filter(attrs => (attrs.rel || '').toLowerCase().split(/\s+/).includes('canonical'));
   if (canonicals.length > 1) throw new Error('Link metadata canonical is ambiguous');
   if (canonicals.length === 1) {
     if (!canonicals[0].href) throw new Error('Link metadata canonical is empty');
     let canonical;
     try { canonical = new URL(canonicals[0].href, sourceUrl).href; } catch { throw new Error('Link metadata canonical is invalid'); }
-    if (identityKey(canonical) !== identityKey(sourceUrl.href)) throw new Error(`Link metadata canonical does not match source URL: ${canonical}`);
+    if (identityKey(canonical) !== identityKey(reviewed?.canonical_url||sourceUrl.href)) throw new Error(`Link metadata canonical does not match source URL: ${canonical}`);
   }
 
   const openGraphUrls = [...html.matchAll(/<meta\b[^>]*>/gi)].map(match => attributes(match[0])).filter(attrs => (attrs.property || attrs.name || '').toLowerCase() === 'og:url');
   for (const metadata of openGraphUrls) {
     let identity;
     try { identity = new URL(metadata.content, sourceUrl).href; } catch { throw new Error('Link metadata Open Graph URL is invalid'); }
-    if (identityKey(identity) !== identityKey(sourceUrl.href)) throw new Error(`Link metadata Open Graph URL conflicts with source URL: ${identity}`);
+    if (![sourceUrl.href,reviewed?.canonical_url,reviewed?.og_url].filter(Boolean).some(value=>identityKey(identity)===identityKey(value))) throw new Error(`Link metadata Open Graph URL conflicts with source URL: ${identity}`);
   }
 }
 
@@ -160,7 +166,7 @@ export async function loadPage({ manifest, fetchText }) {
   if (robots.crawlDelay) await delay(robots.crawlDelay * 1000);
 
   const html = await fetchText(sourceUrl.href);
-  assertPageIdentity(html, sourceUrl);
+  assertPageIdentity(html, sourceUrl, manifest.reviewed_page_identity);
   return html;
 }
 

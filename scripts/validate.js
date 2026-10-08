@@ -20,6 +20,7 @@ for(const item of manifests){
   if(item.reviewed_opportunity){const r=item.reviewed_opportunity;if(r.url!==item.source_url||!categoryIds.includes(r.category)||!['programme-overview','institutional-grant','opportunity'].includes(r.kind))throw Error('Invalid reviewed opportunity selection');if(r.host_countries&&(!Array.isArray(r.host_countries)||r.host_countries.some(x=>!/^([A-Z]{2})$/.test(x))||!r.location_evidence))throw Error('Reviewed destination requires evidence');}
  }
  if(item.collection_blocked_reason!=null && (typeof item.collection_blocked_reason!=='string'||!item.collection_blocked_reason.trim()))throw new Error('Invalid collection block reason');
+ if(item.reviewed_page_identity){const r=item.reviewed_page_identity;if(!r.heading||!r.reviewed_at||![r.canonical_url,r.og_url].filter(Boolean).length)throw Error('Invalid reviewed page identity');for(const url of [r.canonical_url,r.og_url].filter(Boolean))if(new URL(url).origin!==new URL(item.source_url).origin)throw Error('Reviewed page identity must stay on source origin');}
  if(item.adapter==='link-metadata' && !item.research_source_id)throw new Error('Link metadata requires a research source link');
  if(item.adapter==='reviewed-html') {
   const selected=item.reviewed_page;

@@ -100,7 +100,7 @@ export async function collect({manifest,fetchText,now}){
      await new Promise(resolve=>setTimeout(resolve,30000));
      const code=await loadPage({manifest:{...manifest,source_url:script},fetchText});
      const paths=[...code.matchAll(/(["'])((?:\\.|(?!\1)[^\\\r\n]){1,200})\1/g)].map(m=>m[2].split(/[?#]/)[0]).filter(p=>!/[\s<>]/.test(p)&&/api|grant|scholar|bourse|search|filter|rest|country/i.test(p));
-     const requests=[...code.matchAll(/["']sgetgrants\/["']/g)].slice(0,1).map(m=>code.slice(Math.max(0,m.index-180),m.index+420));
+     const requests=[...code.matchAll(/(?:["']sgetgrants\/["']|\.getPrograms\(|factory\(["']services\.transformer\.ApiListResponse["'])/g)].slice(0,4).map(m=>code.slice(Math.max(0,m.index-180),m.index+600));
      error.diagnostics.application_paths.push({script,paths:[...new Set(paths)].slice(0,100),...(requests.length?{request_contract:requests}:{})});
     }catch(probe){error.diagnostics.application_paths.push({script,error:String(probe.message).slice(0,200)});}
    }

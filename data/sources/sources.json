@@ -458,7 +458,7 @@
   {
     "source": "hr-study-in-croatia",
     "research_source_id": "hr-study-in-croatia",
-    "source_url": "https://www.studyincroatia.hr/exchange-programmes/",
+    "source_url": "https://www.studyincroatia.hr/study-in-croatia/exchange-programmes/",
     "website_url": "https://www.studyincroatia.hr/",
     "enabled": true,
     "adapter": "opportunity-html",
@@ -483,7 +483,12 @@
         "category": "scholarships",
         "reviewed_at": "2026-10-08"
       }
-    ]
+    ],
+    "reviewed_page_identity": {
+      "heading": "Exchange Programmes",
+      "canonical_url": "https://www.studyincroatia.hr/exchange-programmes/",
+      "reviewed_at": "2026-10-08"
+    }
   },
   {
     "source": "cy-cyprus-state-scholarships-foundation",
@@ -861,18 +866,27 @@
   {
     "source": "fr-service-civique",
     "research_source_id": "fr-service-civique",
-    "source_url": "https://www.service-civique.gouv.fr/missions/tu-es-l-engagement",
+    "source_url": "https://www.service-civique.gouv.fr/trouver-ma-mission",
     "website_url": "https://www.service-civique.gouv.fr/",
     "enabled": true,
     "adapter": "opportunity-html",
     "language": "fr/en",
     "default_tags": [],
     "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "scope": "Factual title/link records from the most recent public mission listing page; does not assert that all historical missions have been ingested. No prose, imagery or eligibility inferred.",
     "publisher_country": "FR",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "reviewed_page_identity": {
+      "heading": "Trouver ma mission de Service Civique",
+      "og_url": "https://www.service-civique.gouv.fr/",
+      "reviewed_at": "2026-10-08"
+    },
+    "listing_path_pattern": "^/trouver-ma-mission/[^/]+-[a-f0-9]{24}/?$",
+    "listing_title_rules": {
+      "volunteering": ".+"
+    }
   },
   {
     "source": "de-daad",

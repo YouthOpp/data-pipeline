@@ -1,9 +1,20 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { collect } from '../adapters/link-metadata.js';
+import { loadPage } from '../adapters/link-metadata.js';
 import { validateRecord } from '../scripts/collect.js';
 
 const now = '2026-10-06T08:00:00.000Z';
+test('reviewed canonical aliases and site-wide Open Graph require the exact live page heading',async()=>{
+ const manifest={source_url:'https://example.org/catalog',reviewed_page_identity:{heading:'Programme catalogue',canonical_url:'https://example.org/programmes',og_url:'https://example.org/'}};
+ const load=html=>async url=>url.endsWith('/robots.txt')?'User-agent: *\nAllow: /':html;
+ const html='<h1>Programme catalogue</h1><link rel="canonical" href="https://example.org/programmes"><meta property="og:url" content="https://example.org/">';
+ assert.equal(await loadPage({manifest,fetchText:load(html)}),html);
+ await assert.rejects(loadPage({manifest,fetchText:load(html.replace('Programme catalogue','Unrelated homepage'))}),/heading is missing/);
+ await assert.rejects(loadPage({manifest:{source_url:manifest.source_url},fetchText:load(html)}),/canonical does not match/);
+ await assert.rejects(loadPage({manifest,fetchText:load(html.replace('/programmes','/unrelated'))}),/canonical does not match/);
+ await assert.rejects(loadPage({manifest:{...manifest,reviewed_page_identity:{...manifest.reviewed_page_identity,og_url:'https://other.example/'}},fetchText:load(html)}),/leaves its source origin/);
+});
 const manifest = {
   source: 'example-link',
   source_url: 'https://example.org/programmes/current?view=full',
@@ -181,3 +192,4 @@ test('navigation landmark heading falls back to actual page title',async()=>{
  const [record]=await collect({manifest,now,fetchText:injected({[robotsUrl]:'',[manifest.source_url]:'<h1>Navega&ccedil;&atilde;o</h1><title>Candidaturas | IPDJ</title>'})});
  assert.equal(record.title,'Candidaturas | IPDJ');
 });
+
