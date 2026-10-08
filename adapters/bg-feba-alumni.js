@@ -1,4 +1,26 @@
-import { normalizeItem } from './rss.js';
+export const manifest = Object.freeze({
+  "source": "bg-feba-alumni",
+  "research_source_id": "bg-feba-alumni",
+  "source_url": "https://febalumni.org/news/",
+  "website_url": "https://febalumni.org/",
+  "enabled": true,
+  "adapter": "feba-wordpress",
+  "language": "bg/en",
+  "default_tags": [],
+  "added_at": "2026-10-06",
+  "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+  "publisher_country": "BG",
+  "publisher_type": "unknown",
+  "categories": [
+    "scholarships",
+    "training",
+    "internships",
+    "volunteering"
+  ],
+  "collection_blocked_reason": null
+});
+
+import { normalizeItem } from '../scripts/record.js';
 const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
 const relevant = /стипенд|scholarship|академи|академия|обучени|certificate|сертификат|training|стаж|internship|volunteer|добровол/i;
 const call = /обявява конкурс|краен срок|кандидатств|възможност за|записван|academy|академи|training|certificate|покана|отворена/i;
@@ -24,7 +46,8 @@ export function robotRules(value,path) {
   const rules=selected.flatMap(g=>g.rules).filter(r=>r.path&&path.startsWith(r.path.split('*')[0].replace(/\$$/,''))).sort((a,b)=>b.path.length-a.path.length||(a.directive==='allow'?-1:1));
   return {allowed:!rules.length||rules[0].directive==='allow',delay:Math.max(0,...selected.map(g=>g.delay))};
 }
-export async function collect({manifest,fetchText,now}){
+export async function collect({manifest: selectedManifest = manifest,fetchText,now}){
+  if (selectedManifest.source !== manifest.source) throw Error('Source mismatch');
   const origin=new URL(manifest.source_url);
   if(origin.hostname.replace(/^www\./,'')!=='febalumni.org')throw Error('FEBA host mismatch');
   const robots=await fetchText(new URL('/robots.txt',origin).href).catch(e=>{if(e.message==='HTTP 404')return '';throw e;});

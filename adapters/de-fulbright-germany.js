@@ -1,5 +1,28 @@
+export const manifest = Object.freeze({
+  "source": "de-fulbright-germany",
+  "research_source_id": "de-fulbright-germany",
+  "source_url": "https://www.fulbright.de/stipendien/programm/studienstipendium-uni-und-haw",
+  "website_url": "https://www.fulbright.de/stipendien/programm/studienstipendium-uni-und-haw",
+  "enabled": true,
+  "adapter": "opportunity-html",
+  "language": "de/en",
+  "default_tags": [],
+  "added_at": "2026-10-06",
+  "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+  "publisher_country": "DE",
+  "publisher_type": "unknown",
+  "categories": [],
+  "collection_blocked_reason": null,
+  "reviewed_opportunity": {
+    "url": "https://www.fulbright.de/stipendien/programm/studienstipendium-uni-und-haw",
+    "category": "scholarships",
+    "kind": "programme-overview",
+    "reviewed_at": "2026-10-04"
+  }
+});
+
 import { setTimeout as delay } from 'node:timers/promises';
-import { normalizeItem, plainText } from './rss.js';
+import { normalizeItem, plainText } from '../scripts/record.js';
 import { decode } from 'html-entities';
 
 const ROBOT_NAME = 'youthopp';
@@ -157,7 +180,7 @@ async function loadRobots(fetchText, sourceUrl) {
   }
 }
 
-export async function loadPage({ manifest, fetchText }) {
+async function loadPage({ manifest, fetchText }) {
   if (manifest.collection_blocked_reason) throw new Error('Source collection is blocked by its reviewed permission policy');
 
   const sourceUrl = new URL(manifest.source_url);
@@ -170,7 +193,7 @@ export async function loadPage({ manifest, fetchText }) {
   return html;
 }
 
-export async function collect({ manifest, fetchText, now }) {
+async function collectMetadata({ manifest, fetchText, now }) {
   const sourceUrl=new URL(manifest.source_url);
   const html=await loadPage({manifest,fetchText});
   const title = selectTitle(html, manifest.title_fallback === true);
@@ -189,4 +212,17 @@ export async function collect({ manifest, fetchText, now }) {
     kind: 'unknown',
     classification: { method: 'link-metadata-v1', status: 'unknown', evidence: [] }
   }];
+}
+
+export async function collect({manifest: selectedManifest = manifest, fetchText, now}) {
+  if (selectedManifest.source !== manifest.source) throw new Error('Source mismatch');
+  const records = await collectMetadata({ manifest: { ...manifest, title_fallback: true }, fetchText, now });
+  const reviewed = manifest.reviewed_opportunity;
+  return records.map(record => ({
+    ...record,
+    category: reviewed.category,
+    categories: [reviewed.category],
+    kind: reviewed.kind,
+    classification: { method: 'reviewed-exact-programme', status: 'classified', evidence: [reviewed.url] }
+  }));
 }
