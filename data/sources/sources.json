@@ -4,7 +4,7 @@
     "source_url": "https://opportunitydesk.org/feed/",
     "website_url": "https://opportunitydesk.org/",
     "enabled": true,
-    "adapter": "rss",
+    "adapter": "opportunitydesk",
     "language": "en",
     "default_tags": [],
     "added_at": "2026-10-04",
