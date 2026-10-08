@@ -1,5 +1,8 @@
 name: Collect us-nasa-internships
 on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/source-us-nasa-internships.yml']
   workflow_dispatch:
   schedule:
     - cron: '11 0/6 * * *'
