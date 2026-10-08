@@ -73,6 +73,24 @@ if (mode === 'fixture') {
     return response;
   };
   verifyResult(await runPipeline([manifest], undefined, {now, registry, load: pacedFetch}));
+} else if (mode === 'snapshot') {
+  const root = process.argv[3] || 'data-source';
+  const directory = root + '/sources/' + sourceId;
+  const records = JSON.parse(await readFile(directory + '/opportunities.json', 'utf8'));
+  const metadata = JSON.parse(await readFile(directory + '/metadata.json', 'utf8'));
+  const catalog = JSON.parse(await readFile(root + '/catalog.json', 'utf8'));
+  assert.equal(records.length, 1, 'Stored source must contain exactly one real programme');
+  assert.equal(metadata.source, sourceId);
+  assert.equal(metadata.status, 'ok');
+  assert.equal(metadata.record_count, 1);
+  const matches = catalog.opportunities.filter(item => item.source === sourceId);
+  assert.deepEqual(matches, records, 'Catalog and snapshot differ');
+  assert.equal(catalog.sources.filter(item => item.source === sourceId).length, 1);
+  assert.deepEqual(catalog.indexes.sources[sourceId], [records[0].id]);
+  assert.ok(catalog.indexes.categories.scholarships.includes(records[0].id));
+  assert.equal(records[0].last_checked_at, metadata.last_checked_at);
+  assert.equal(records[0].last_seen_at, metadata.last_checked_at);
+  verifyResult({ opportunities: records, sources: [metadata], indexes: catalog.indexes, source_registry: catalog.source_registry });
 } else {
-  throw new Error('Expected fixture or live mode');
+  throw new Error('Expected fixture, live or snapshot mode');
 }
