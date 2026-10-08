@@ -1,11 +1,10 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
-import {loadSourceManifests} from './source-store.js';
 
 const sourceId = 'at-oead-ernst-mach';
 const root = process.argv[2] || 'data-source';
-const manifests = await loadSourceManifests(root);
+const manifests = JSON.parse(await readFile('data/sources/sources.json', 'utf8'));
 const manifest = manifests.find(item => item.source === sourceId);
 assert.ok(manifest?.enabled, 'Reviewed source must remain enabled');
 assert.equal(manifest.adapter, 'reviewed-html');

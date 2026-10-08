@@ -1,17 +1,16 @@
 import {readFile,writeFile,mkdir,readdir} from 'node:fs/promises';
 import {join} from 'node:path';
 import {runPipeline} from './collect.js';
-import {loadSourceManifests,loadSourceRegistry} from './source-store.js';
 import {buildCategoricalCatalog,validateCategoricalCatalog} from './taxonomy.js';
 
 // One invocation collects exactly one reviewed source and fails without publishing on errors.
 const sourceId=process.argv[2];
 const root=process.argv[3]||'data-source';
 if(!sourceId||!/^[a-z0-9-]+$/.test(sourceId))throw Error('Supply one safe source ID');
-const manifests=await loadSourceManifests(root);
+const manifests=JSON.parse(await readFile('data/sources/sources.json','utf8'));
 const manifest=manifests.find(source=>source.source===sourceId&&source.enabled);
 if(!manifest)throw Error('Source is not enabled');
-const registry=await loadSourceRegistry(root);
+const registry=JSON.parse(await readFile('data/sources/source-registry.json','utf8')).sources;
 const directory=join(root,'sources',sourceId);
 async function load(file,fallback){try{return JSON.parse(await readFile(file,'utf8'));}catch(e){if(e.code==='ENOENT')return fallback;throw e;}}
 const old=await load(join(directory,'opportunities.json'),[]);

@@ -4,8 +4,8 @@ Source adapters and scheduled collection for [YouthOpps](https://youthopps.org).
 
 ## Repositories
 
-- [data-pipeline](https://github.com/YouthOpps/data-pipeline): adapters and collection workflows (source definitions live in data-source metadata).
-- [data-source](https://github.com/YouthOpps/data-source): source configuration and JSON snapshots in `sources/<source-id>/metadata.json`, plus the unified `catalog.json`.
+- [data-pipeline](https://github.com/YouthOpps/data-pipeline): source definitions, adapters, and collection workflows.
+- [data-source](https://github.com/YouthOpps/data-source): source JSON snapshots and the unified `catalog.json`.
 - [youthopps.github.io](https://github.com/YouthOpps/youthopps.github.io): static website using `data-source` as a Git submodule.
 
 ## Collection
@@ -20,7 +20,6 @@ Node.js 22:
 
 ```sh
 npm ci --ignore-scripts
-git clone https://github.com/YouthOpps/data-source.git data-source
 npm run validate
 npm test
 ```

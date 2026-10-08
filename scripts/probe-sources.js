@@ -1,5 +1,4 @@
-import { mkdir, writeFile } from 'node:fs/promises';
-import { loadSourceManifests } from './source-store.js';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { fetchText, trustedAdapters, validateRecord } from './collect.js';
@@ -149,7 +148,7 @@ async function main() {
   const now = new Date().toISOString();
   let report;
   try {
-    const manifests = await loadSourceManifests();
+    const manifests = JSON.parse(await readFile('data/sources/sources.json', 'utf8'));
     report = await probeSources(selectManifests(manifests, process.argv.slice(2)), { now });
   } catch (error) {
     report = {
