@@ -3,7 +3,7 @@
     "source": "opportunitiesforyouth",
     "source_url": "https://opportunitiesforyouth.org/feed/",
     "website_url": "https://opportunitiesforyouth.org/",
-    "enabled": true,
+    "enabled": false,
     "adapter": "rss",
     "language": "en",
     "default_tags": [],
