@@ -52,7 +52,7 @@ An unavailable or changed publisher fails the test. Tests do not write local or 
 
 Each of the six files in `.github/workflows/` runs only its matching adapter with `--publish`. It obtains `DATA_SOURCE_TOKEN` using the existing `WEBSITE_APP_ID` variable and `WEBSITE_APP_PRIVATE_KEY` secret for the data-source GitHub App installation. Runs are limited to this repository's `main` branch and share a publication concurrency group.
 
-The existing six-hour schedules for OeAD, FEBA and Fulbright Germany are preserved. Opportunity Desk, NASA and University of Tartu can be started manually. Actions do not install project dependencies or invoke test files.
+The existing six-hour schedules for OeAD, FEBA and Fulbright Germany are preserved. University of Tartu runs automatically after changes to its adapter or workflow are merged into main and can also be started manually. Opportunity Desk and NASA can be started manually. Actions do not install project dependencies or invoke test files.
 
 The workflow folder is the sole code-layout exception to the independent adapter folders: [GitHub discovers workflows in `.github/workflows/`](https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows).
 

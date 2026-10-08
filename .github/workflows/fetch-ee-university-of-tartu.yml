@@ -1,5 +1,10 @@
 name: fetch-ee-university-of-tartu
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'adapters/ee-university-of-tartu/**'
+      - '.github/workflows/fetch-ee-university-of-tartu.yml'
   workflow_dispatch:
 permissions:
   contents: read
