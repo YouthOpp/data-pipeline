@@ -8,7 +8,7 @@ export async function notifyWebsite({manifestPath='dist/manifest.json',token=pro
  const manifest=JSON.parse(bytes);
  if(manifest.schema_version!==1||!/^catalog-\d+-\d+$/.test(manifest.release_tag))throw new Error('Invalid immutable release manifest');
  const content=JSON.stringify({schema_version:1,repository:'YouthOpps/data-pipeline',release_tag:manifest.release_tag,manifest_sha256:createHash('sha256').update(bytes).digest('hex')},null,2)+'\n';
- const endpoint='https://api.github.com/repos/YouthOpps/youthopp.github.io/contents/catalog-release.json';
+ const endpoint='https://api.github.com/repos/YouthOpps/youthopps.github.io/contents/catalog-release.json';
  const headers={Accept:'application/vnd.github+json',Authorization:`Bearer ${token}`,'X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'};
  async function request(url,options){
   try{return await fetch(url,{headers,redirect:'error',signal:AbortSignal.timeout(30000),...options});}catch{throw new Error('Website catalog version request failed');}
