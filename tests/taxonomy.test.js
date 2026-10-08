@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { classifyTags, classifySource, classifyRecord, buildCategoricalCatalog, validateCategoricalCatalog, taxonomy } from '../scripts/taxonomy.js';
-import { normalizeItem } from '../adapters/rss.js';
+import { normalizeItem } from '../scripts/record.js';
 import { runPipeline } from '../scripts/collect.js';
 const now='2026-10-05T00:00:00Z';
 const source={source:'example',source_url:'https://example.org/feed',website_url:'https://example.org',enabled:true,adapter:'rss',language:'fr',categories:['jobs'],publisher_country:'DE'};

@@ -12,7 +12,7 @@ Source adapters and scheduled collection for [YouthOpps](https://youthopps.org).
 
 Each configured source has one workflow named `.github/workflows/fetch-<source-id>.yml` with a matching `fetch-<source-id>` display name. Runs are scheduled every six hours and can be started manually. Each workflow fetches and validates its own source, writing only `data-source/sources/<source-id>/` and `data-source/catalog.json` as pretty-printed JSON in a single data-source commit when content changes. Collection runs share a concurrency group to serialize publication.
 
-Failed or empty collections do not publish. The website checks data-source hourly using its own `check new data` workflow, commits a changed submodule pointer to its own main branch, and Cloudflare deploys website commits. Pipeline workflows do not access or commit to the website repository.
+Failed or empty collections do not publish. Previously published records from sources without an active action are retained in the unified catalog. The website checks data-source hourly using its own `check new data` workflow, commits a changed submodule pointer to its own main branch, and Cloudflare deploys website commits. Pipeline workflows do not access or commit to the website repository.
 
 ## Development
 

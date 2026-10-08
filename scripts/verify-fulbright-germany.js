@@ -10,7 +10,7 @@ const mode = process.argv[2] || 'fixture';
 const now = new Date().toISOString();
 const manifest = sourceManifest(sourceId);
 const root = mode === 'snapshot' ? (process.argv[3] || 'data-source') : 'data-source';
-const registry = JSON.parse(await readFile(root + '/catalog.json', 'utf8')).source_registry;
+const registry = mode === 'fixture' || mode === 'live' ? [] : JSON.parse(await readFile(root + '/catalog.json', 'utf8')).source_registry;
 assert.ok(manifest?.enabled, 'Fulbright source must be enabled');
 assert.equal(manifest.adapter, 'opportunity-html');
 assert.equal(manifest.reviewed_opportunity?.url, manifest.source_url);

@@ -50,7 +50,7 @@ test('probe fetches a disabled source without changing its production flag and b
     hostDelayMs: 0,
     load: async () => { fetches += 1; return '<html></html>'; },
     adapters: {
-      'link-metadata': async ({ manifest: selected, fetchText }) => {
+      disabled: async ({ manifest: selected, fetchText }) => {
         await fetchText(selected.source_url);
         return Array.from({ length: 4 }, (_, index) => probeRecord(selected, index));
       }
@@ -79,7 +79,7 @@ test('collection block is enforced before dispatch for every adapter', async () 
   const result = await probeSources([blocked], {
     hostDelayMs: 0,
     load: async () => { fetches += 1; return ''; },
-    adapters: { rss: async () => { dispatches += 1; return []; } }
+    adapters: { restricted: async () => { dispatches += 1; return []; } }
   });
 
   assert.equal(dispatches, 0);
@@ -104,8 +104,7 @@ test('same-host sources are sequential while independent hosts are concurrency b
   const result = await probeSources(selected, {
     concurrency: 4,
     hostDelayMs: 0,
-    adapters: {
-      'link-metadata': async ({ manifest: current }) => {
+    adapters: Object.fromEntries(selected.map(item => [item.source, async ({ manifest: current }) => {
         const host = new URL(current.source_url).hostname;
         assert.equal(activeHosts.has(host), false, `parallel request to ${host}`);
         activeHosts.add(host);
@@ -115,8 +114,7 @@ test('same-host sources are sequential while independent hosts are concurrency b
         active -= 1;
         activeHosts.delete(host);
         return [probeRecord(current, 0, { title: current.source, url: current.source_url })];
-      }
-    }
+      }]))
   });
 
   assert.equal(result.summary.successful, selected.length);
@@ -126,12 +124,10 @@ test('same-host sources are sequential while independent hosts are concurrency b
 test('adapter failures are reported without hiding successful probes or copying content', async () => {
   const result = await probeSources([manifest('good'), manifest('bad')], {
     hostDelayMs: 0,
-    adapters: {
-      'link-metadata': async ({ manifest: current }) => {
+    adapters: Object.fromEntries(['good','bad'].map(source => [source, async ({ manifest: current }) => {
         if (current.source === 'bad') throw new Error('HTTP 503 with sensitive response body omitted');
         return [probeRecord(current, 0, { title: 'Verified title', url: current.source_url, summary: 'must not be copied' })];
-      }
-    }
+      }]))
   });
 
   assert.deepEqual(result.summary, { selected: 2, successful: 1, failed: 1, blocked: 0 });
@@ -144,7 +140,7 @@ test('invalid adapter records cannot be reported as a successful probe', async (
   const selected = manifest('invalid');
   const result = await probeSources([selected], {
     hostDelayMs: 0,
-    adapters: { 'link-metadata': async () => [{ title: 'Unvalidated', url: selected.source_url }] }
+    adapters: { invalid: async () => [{ title: 'Unvalidated', url: selected.source_url }] }
   });
 
   assert.deepEqual(result.summary, { selected: 1, successful: 0, failed: 1, blocked: 0 });
@@ -155,7 +151,7 @@ test('robots denials are reported as blocked rather than transient adapter failu
   const selected = manifest('robots-denied');
   const result = await probeSources([selected], {
     hostDelayMs: 0,
-    adapters: { 'link-metadata': async () => { throw new Error('Robots policy disallows collection'); } }
+    adapters: { 'robots-denied': async () => { throw new Error('Robots policy disallows collection'); } }
   });
 
   assert.deepEqual(result.summary, { selected: 1, successful: 0, failed: 0, blocked: 1 });

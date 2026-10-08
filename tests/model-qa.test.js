@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {runPipeline} from '../scripts/collect.js';
-import {normalizeItem} from '../adapters/rss.js';
+import {normalizeItem} from '../scripts/record.js';
 import {validateCategoricalCatalog, classifySource} from '../scripts/taxonomy.js';
 const now='2026-10-05T00:00:00Z';
 const manifest={source:'qa-source',source_url:'https://example.org/feed',website_url:'https://example.org',enabled:true,adapter:'rss',language:'en',publisher_country:'DE',categories:['jobs','grants']};
