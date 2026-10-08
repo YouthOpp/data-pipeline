@@ -1941,24 +1941,23 @@
   {
     "source": "bg-feba-alumni",
     "research_source_id": "bg-feba-alumni",
-    "source_url": "https://www.febalumni.org/en/2026/06/17/feba-alumni-club-obyavyava-konkurs-za-mesechni-stipendii-visoki-akademichni-postizheniya-za-leten-semestr-na-akademichnata-20252026-g-kraen-srok-30-06-2026-g/",
-    "website_url": "https://www.febalumni.org/en/",
-    "enabled": false,
-    "adapter": "opportunity-html",
+    "source_url": "https://febalumni.org/news/",
+    "website_url": "https://febalumni.org/",
+    "enabled": true,
+    "adapter": "feba-wordpress",
     "language": "bg/en",
     "default_tags": [],
     "added_at": "2026-10-06",
     "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
     "publisher_country": "BG",
     "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.febalumni.org/en/2026/06/17/feba-alumni-club-obyavyava-konkurs-za-mesechni-stipendii-visoki-akademichni-postizheniya-za-leten-semestr-na-akademichnata-20252026-g-kraen-srok-30-06-2026-g/",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
+    "categories": [
+      "scholarships",
+      "training",
+      "internships",
+      "volunteering"
+    ],
+    "collection_blocked_reason": null
   },
   {
     "source": "cy-cyprus-diaspora-scholarships",
