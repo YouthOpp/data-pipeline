@@ -24,14 +24,6 @@ jobs:
         with:
           node-version: '22'
           cache: npm
-      - name: Install and validate in runner sandbox
-        run: |
-          npm ci --ignore-scripts
-          npm run validate
-          npm test
-          node scripts/verify-fulbright-germany.js fixture
-      - name: QA real upstream before accessing publication repository
-        run: node scripts/verify-fulbright-germany.js live
       - name: Create data-source installation token
         id: data-token
         uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1
@@ -47,6 +39,14 @@ jobs:
           token: ${{ steps.data-token.outputs.token }}
           path: data-source
           persist-credentials: true
+      - name: Install and validate in runner sandbox
+        run: |
+          npm ci --ignore-scripts
+          npm run validate
+          npm test
+          node scripts/verify-fulbright-germany.js fixture
+      - name: QA real upstream before accessing publication repository
+        run: node scripts/verify-fulbright-germany.js live
       - name: Collect official Fulbright data to isolated checkout
         run: node scripts/publish-source.js de-fulbright-germany data-source
       - name: Verify generated source and catalog

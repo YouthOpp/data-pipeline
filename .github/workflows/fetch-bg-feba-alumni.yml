@@ -8,7 +8,7 @@ on:
       - adapters/feba-wordpress.js
       - scripts/collect.js
       - scripts/validate.js
-      - data/sources/sources.json
+      - sources/bg-feba-alumni/metadata.json
   schedule:
     - cron: '13 0/6 * * *'
 permissions:
@@ -27,22 +27,6 @@ jobs:
         with:
           node-version: '22'
           cache: npm
-      - name: Validate code and source-specific QA
-        run: |
-          npm ci --ignore-scripts
-          npm run validate
-          npm test
-          node --input-type=module <<'NODE'
-          import { readFileSync } from 'node:fs';
-          import { collect } from './adapters/feba-wordpress.js';
-          import { fetchText, validateRecord } from './scripts/collect.js';
-          const manifest = JSON.parse(readFileSync('data/sources/sources.json', 'utf8')).find(x => x.source === 'bg-feba-alumni');
-          const rows = await collect({ manifest, fetchText, now: new Date().toISOString() });
-          for (const row of rows) validateRecord(row);
-          if (!rows.some(row => row.url.includes('/2026/10/05/'))) throw Error('Expected primary FEBA call missing');
-          if (rows.some(row => /отличи|партньори на представянето/i.test(row.title))) throw Error('False-positive alumni news');
-          console.log('FEBA QA verified '+rows.length+' records');
-          NODE
       - name: Create data-source installation token
         id: data-token
         uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1
@@ -58,6 +42,22 @@ jobs:
           token: ${{ steps.data-token.outputs.token }}
           path: data-source
           persist-credentials: true
+      - name: Validate code and source-specific QA
+        run: |
+          npm ci --ignore-scripts
+          npm run validate
+          npm test
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          import { collect } from './adapters/feba-wordpress.js';
+          import { fetchText, validateRecord } from './scripts/collect.js';
+          const manifest = JSON.parse(readFileSync('data-source/sources/bg-feba-alumni/metadata.json', 'utf8'));
+          const rows = await collect({ manifest, fetchText, now: new Date().toISOString() });
+          for (const row of rows) validateRecord(row);
+          if (!rows.some(row => row.url.includes('/2026/10/05/'))) throw Error('Expected primary FEBA call missing');
+          if (rows.some(row => /отличи|партньори на представянето/i.test(row.title))) throw Error('False-positive alumni news');
+          console.log('FEBA QA verified '+rows.length+' records');
+          NODE
       - name: Collect reviewed source and build catalog
         run: node scripts/publish-source.js bg-feba-alumni data-source
       - name: Verify data-source artifacts before publication

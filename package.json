@@ -6,7 +6,7 @@
   "scripts": {
     "probe": "node scripts/probe-sources.js",
     "test": "node --test",
-    "validate": "node scripts/validate.js"
+    "validate": "node scripts/validate.js data-source"
   },
   "dependencies": {
     "html-entities": "2.6.0",
