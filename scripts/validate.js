@@ -5,7 +5,8 @@ for(const item of manifests){
  classifySource(item,true);
  if(!/^[a-z0-9-]+$/.test(item.source)||ids.has(item.source))throw new Error('Invalid or duplicate source');ids.add(item.source);
  for(const field of ['source_url','website_url'])if(new URL(item[field]).protocol!=='https:' || new URL(item[field]).username || new URL(item[field]).password || /^(localhost|127\.|0\.|10\.|172\.(1[6-9]|2[0-9]|3[01])\.|192\.168\.|169\.254\.|\[)/.test(new URL(item[field]).hostname))throw new Error('Source requires HTTPS');
- if(typeof item.enabled!=='boolean'||!['rss','reviewed-rss','reviewed-html','link-metadata','opportunity-html','campus-bourses'].includes(item.adapter)||typeof item.language!=='string')throw new Error('Invalid adapter manifest');
+ if(typeof item.enabled!=='boolean'||!['rss','reviewed-rss','reviewed-html','link-metadata','opportunity-html','campus-bourses','feba-wordpress'].includes(item.adapter)||typeof item.language!=='string')throw new Error('Invalid adapter manifest');
+ if(item.adapter==='feba-wordpress'&&(item.source!=='bg-feba-alumni'||new URL(item.source_url).hostname.replace(/^www\./,'')!=='febalumni.org'))throw Error('Unreviewed FEBA adapter host');
  if(item.adapter==='campus-bourses'&&(item.source!=='fr-campus-france'||new URL(item.source_url).origin!=='https://campusbourses.campusfrance.org'||item.api_url!=='https://bourses-api.campusfrance.org/sgetgrants/en'))throw Error('Invalid reviewed Campus Bourses API');
  if(item.infer_title_destinations!=null&&typeof item.infer_title_destinations!=='boolean')throw Error('Invalid destination inference configuration');
  if(item.adapter==='opportunity-html'){
