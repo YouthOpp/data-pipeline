@@ -547,6 +547,8 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 
 _OPENER = urllib.request.build_opener(NoRedirect)
 _ROBOTS = {}
+_PUBLISHER_NEXT_AT = 0
+_TRANSIENT = (429, 502, 503, 504)
 
 
 def utc_now():
@@ -591,6 +593,7 @@ def pace(url, interval=6):
     host = (
         (urllib.parse.urlsplit(url).hostname or "").lower().removeprefix("www.")
     )
+    interval = max(interval, 12 if host == "harno.ee" else 6)
     directory = os.path.join(
         tempfile.gettempdir(), SOURCE_ID + "-pacing-" + str(os.getuid())
     )
@@ -659,7 +662,11 @@ def save_budget(state, budget):
 
 
 def request_bytes(url, *, interval=6, method="GET", headers=None, payload=None):
+    global _PUBLISHER_NEXT_AT
     state, budget = pace(url, interval)
+    publisher = (urllib.parse.urlsplit(url).hostname or "").removeprefix(
+        "www."
+    ) == "harno.ee"
     try:
         request = urllib.request.Request(
             url,
@@ -687,10 +694,19 @@ def request_bytes(url, *, interval=6, method="GET", headers=None, payload=None):
                     save_budget(state, budget)
                 except (ValueError, TypeError, OverflowError):
                     pass
-            body = response.read(5_000_001)
-            if len(body) > 5_000_000:
-                raise AdapterError("Response exceeds 5 MB", "fetch")
-            return response.status, response.headers, body
+            if publisher and response.status in _TRANSIENT:
+                budget["until"] = max(budget["until"], time.time() + 60)
+                save_budget(state, budget)
+            try:
+                body = response.read(5_000_001)
+                if len(body) > 5_000_000:
+                    raise AdapterError("Response exceeds 5 MB", "fetch")
+                return response.status, response.headers, body
+            finally:
+                if publisher:
+                    _PUBLISHER_NEXT_AT = max(
+                        _PUBLISHER_NEXT_AT, time.time() + 120, budget["until"]
+                    )
     finally:
         state.close()
 
@@ -737,6 +753,8 @@ def fetch_source(url, min_interval=6):
                     if original.path != "/robots.txt":
                         min_interval = max(min_interval, check_robots(current))
                     continue
+                if status in _TRANSIENT and attempt == 0:
+                    break
                 if status != 200:
                     raise AdapterError(
                         f"Publisher returned HTTP {status} for "
@@ -1120,6 +1138,32 @@ def publish_files(snapshot, files):
                 )
 
 
+def wait_publisher_cooldown(previous):
+    """Carry publisher cooldown between separate serialized Action runners."""
+    global _PUBLISHER_NEXT_AT
+    if not previous:
+        return
+    value = previous.get("publisher_next_request_at")
+    if value is None:
+        # Old attempt/success clocks mark collection start, not the last request.
+        ready = time.time() + 120
+    else:
+        try:
+            if not isinstance(value, str) or not re.fullmatch(
+                r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}" r"(?:\.\d{1,6})?Z", value
+            ):
+                raise ValueError()
+            moment = datetime.fromisoformat(value.replace("Z", "+00:00"))
+            if moment.tzinfo is None or moment.utcoffset() != timedelta(0):
+                raise ValueError()
+            ready = moment.timestamp()
+        except (ValueError, TypeError, OverflowError):
+            raise AdapterError("Invalid publisher cooldown timestamp", "access")
+    _PUBLISHER_NEXT_AT = max(_PUBLISHER_NEXT_AT, ready)
+    while ready > time.time():
+        time.sleep(min(ready - time.time(), 60))
+
+
 def metadata(attempt, previous, records, error=None):
     result = {
         "source": SOURCE_ID,
@@ -1137,6 +1181,13 @@ def metadata(attempt, previous, records, error=None):
             previous.get("last_checked_at") if error else attempt
         ),
         "record_count": len(records),
+        "publisher_next_request_at": (
+            datetime.fromtimestamp(
+                _PUBLISHER_NEXT_AT or time.time() + 120, timezone.utc
+            )
+            .isoformat(timespec="milliseconds")
+            .replace("+00:00", "Z")
+        ),
         "message": (
             "Collection failed; last-good data preserved"
             if error
@@ -1181,6 +1232,8 @@ def main():
             )
     attempt, failure = utc_now(), None
     try:
+        if args.publish:
+            wait_publisher_cooldown(previous)
         records = collect()
         validate_records(records)
         prior = {record["id"]: record for record in old}
