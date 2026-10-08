@@ -98,3 +98,17 @@ A first failed collection creates no source folder; later failures preserve
 last good data and its durable success timestamp while recording failure
 metadata. The success timestamp advances only after successful publication of
 validated nonempty records. Local tests do not publish or run Actions.
+
+## Production access diagnostics
+
+The initial automatic and manual hosted-runner collections returned HTTP 403
+before any source folder was published. Timing indicates the first publisher
+request, but the original error did not identify its endpoint. Identical
+identifying requests succeed from this cloud environment; an IP-based access
+restriction has not been established. Robots requests now advertise plain text,
+matching the publisher response, while HTML requests retain their ordinary HTML
+Accept header. HTTP failures identify only the public HTTPS host and path,
+excluding queries and user information. This change supplies actionable hosted
+failure evidence; it does not prove that the hosted access refusal is resolved.
+The identifying user agent, TLS verification, robots enforcement and no-retry
+policy for HTTP 403 remain unchanged.
