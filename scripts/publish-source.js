@@ -3,7 +3,7 @@ import {join} from 'node:path';
 import {runPipeline} from './collect.js';
 import {buildCategoricalCatalog,validateCategoricalCatalog} from './taxonomy.js';
 
-// One invocation collects exactly one reviewed source.
+// One invocation collects exactly one reviewed source and fails without publishing on errors.
 const sourceId=process.argv[2];
 const root=process.argv[3]||'data-source';
 if(!sourceId||!/^[a-z0-9-]+$/.test(sourceId))throw Error('Supply one safe source ID');
