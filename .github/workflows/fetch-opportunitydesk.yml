@@ -1,8 +1,6 @@
-name: fetch-bg-feba-alumni
+name: fetch-opportunitydesk
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '13 0/6 * * *'
 permissions:
   contents: read
 concurrency:
@@ -30,4 +28,4 @@ jobs:
       - name: Collect and publish this source
         env:
           DATA_SOURCE_TOKEN: ${{ steps.data-token.outputs.token }}
-        run: python -B adapters/bg-feba-alumni/adapter.py --publish
+        run: python -B adapters/opportunitydesk/adapter.py --publish
