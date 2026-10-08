@@ -22,6 +22,10 @@ The trusted `main` branch in [YouthOpp/data-pipeline](https://github.com/YouthOp
 
 PR checks use read-only permissions, no secrets, fixture tests, and no remote collection. Collection and publishing execute only trusted default-branch code. Public RSS is capped at 5 MB and 25 seconds, HTTPS-only with bounded same-host redirects; unrelated hosts are rejected. GitHub limits still apply.
 
+## Contact and support
+
+Use [GitHub Discussions](https://github.com/orgs/YouthOpp/discussions) first for questions, ideas and general project conversation. Use [data-pipeline Issues](https://github.com/YouthOpp/data-pipeline/issues) for reproducible collection bugs, source problems and concrete work. When public GitHub communication is unsuitable, especially for private or sensitive matters, email **contact@youthopps.org**.
+
 ## Sources and contribution
 
 See the [adapter contribution guide](https://youthopps.org/docs/pipeline-adapters/). Every registered source has an explicit enabled switch; collection also respects documented policy and access gates. The current configuration enables 110 source definitions: reviewed feeds, HTML programme/listing adapters, and the public Campus Bourses API. Enabled means collection may be attempted; it does not assert a successful fetch, an open application, eligibility or rights to publisher prose. Source-health reports preserve successful, error and blocked outcomes. Link-metadata adapters publish only the reviewed factual title and original link; existing specialized adapters likewise retain no article prose. Portugal leaves original publication null when absent; modification is never publication. Exact-page adapters make one request to the reviewed page; publisher country does not imply applicant eligibility or destination. Feed or page access does not imply ownership of publisher content. YouthOpp publishes factual source titles and original links only; source inclusion can be paused or removed through the [documented issue/PR process](https://youthopps.org/docs/source-removal/). No institution endorsement or charitable registration is implied.
