@@ -27,7 +27,7 @@ jobs:
           app-id: ${{ vars.WEBSITE_APP_ID }}
           private-key: ${{ secrets.WEBSITE_APP_PRIVATE_KEY }}
           owner: YouthOpps
-          repositories: data-source
+          repositories: |\n            data-source\n            youthopps.github.io
           permission-contents: write
       - uses: actions/checkout@v4
         with:
