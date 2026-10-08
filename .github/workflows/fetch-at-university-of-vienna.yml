@@ -1,8 +1,8 @@
-name: Collect be-study-in-flanders
+name: fetch-at-university-of-vienna
 on:
   workflow_dispatch:
   schedule:
-    - cron: '35 0/6 * * *'
+    - cron: '31 0/6 * * *'
 permissions:
   contents: read
 concurrency:
@@ -36,13 +36,13 @@ jobs:
           path: data-source
           persist-credentials: true
       - name: Collect and validate only this source
-        run: node scripts/publish-source.js 'be-study-in-flanders' data-source
+        run: node scripts/publish-source.js 'at-university-of-vienna' data-source
       - name: Publish source and catalog in one commit
         run: |
           git -C data-source config user.name 'youthopps-bot'
           git -C data-source config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git -C data-source add sources/be-study-in-flanders/ catalog.json
+          git -C data-source add sources/at-university-of-vienna/ catalog.json
           if ! git -C data-source diff --cached --quiet; then
-            git -C data-source commit -m 'data: refresh be-study-in-flanders'
+            git -C data-source commit -m 'data: refresh at-university-of-vienna'
             git -C data-source push origin HEAD:main
           fi

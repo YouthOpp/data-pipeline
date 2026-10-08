@@ -1,4 +1,4 @@
-name: Collect cy-onek
+name: fetch-cy-onek
 on:
   workflow_dispatch:
   schedule:

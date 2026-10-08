@@ -1,8 +1,8 @@
-name: Collect cz-charles-university
+name: fetch-cz-study-in-czechia
 on:
   workflow_dispatch:
   schedule:
-    - cron: '15 1/6 * * *'
+    - cron: '7 1/6 * * *'
 permissions:
   contents: read
 concurrency:
@@ -36,13 +36,13 @@ jobs:
           path: data-source
           persist-credentials: true
       - name: Collect and validate only this source
-        run: node scripts/publish-source.js 'cz-charles-university' data-source
+        run: node scripts/publish-source.js 'cz-study-in-czechia' data-source
       - name: Publish source and catalog in one commit
         run: |
           git -C data-source config user.name 'youthopps-bot'
           git -C data-source config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git -C data-source add sources/cz-charles-university/ catalog.json
+          git -C data-source add sources/cz-study-in-czechia/ catalog.json
           if ! git -C data-source diff --cached --quiet; then
-            git -C data-source commit -m 'data: refresh cz-charles-university'
+            git -C data-source commit -m 'data: refresh cz-study-in-czechia'
             git -C data-source push origin HEAD:main
           fi
