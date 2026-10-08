@@ -16,9 +16,12 @@ administrative, search and account paths. Normal TLS verification, an identifyin
 `YouthOpp/1.0 (+https://github.com/YouthOpps/data-pipeline)` User-Agent, origin
 robots checks and bounded retries remain enabled. `harno.ee`/`www.harno.ee`
 redirects stay inside the verified HTTPS publisher. Requests, redirects,
-robots and retries share a process-locked publisher allowance of at least six
-seconds between starts and no more than ten starts in any rolling 60 seconds.
-Retry-After and stricter robots delays are respected. Separate machines must
+robots and retries share a process-locked publisher allowance of at least twelve
+seconds between Harno request starts and no more than ten starts in any rolling 60 seconds.
+Retry-After and stricter robots delays are respected. HTTP 429/502/503/504
+receive one bounded, paced retry, with at least 60 seconds cooldown when needed
+and any longer Retry-After preserved; 400/403 or policy failures are not retried.
+Separate machines must
 not overlap collections for this publisher.
 
 The footer's [personal-data policy](https://www.harno.ee/en/node/145) and
@@ -151,7 +154,16 @@ conflict-safe commit. First failure creates no source folder; later failure
 preserves last-good data and success timestamp and updates only failure
 metadata when safe. Sibling-source changes can rebase; newer own-source data
 cannot be overwritten. Only successfully published validated nonempty records
-advance durable success. Both fresh and prior Harno records use the strict
+advance durable success. Harno metadata also records `publisher_next_request_at`: at least 120 seconds
+after the last Harno response, or a longer explicit Retry-After. A later
+publication run reads and honors that timestamp before its first Harno request;
+GitHub API reads use their independent budget. Legacy metadata without this
+field waits 120 seconds from reading it, because older attempt/success clocks
+mark the start of collection and cannot establish the last request time. This
+addresses consecutive serialized Actions on separate runners, whose local
+pacing files are not shared. Failure metadata retains the cooldown too.
+
+Both fresh and prior Harno records use the strict
 600-unit validator; Charles University's source-specific historical-summary
 exception is not used here. Live collection/static mocked publication evidence
 does not itself claim production execution; maintainers verify after merge.
