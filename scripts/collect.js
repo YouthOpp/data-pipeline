@@ -1,6 +1,3 @@
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
-import { resolve } from 'node:path';
-import { pathToFileURL } from 'node:url';
 import { collect as collectRSS } from '../adapters/rss.js';
 import { collect as collectReviewedRSS } from '../adapters/reviewed-rss.js';
 import { collect as collectReviewedHTML } from '../adapters/reviewed-html.js';
@@ -67,21 +64,10 @@ export async function runPipeline(manifests,previous={opportunities:[],sources:[
       sources.push({...manifest,last_attempt_at:now,last_checked_at:now,last_success_at:now,status:'ok',record_count:items.length,error:null});successes++;
     }catch(error){sources.push({...manifest,last_attempt_at:now,last_checked_at:old?.last_checked_at||null,last_success_at:old?.last_success_at||null,status:'error',record_count:old?.record_count||0,error:String(error.message).slice(0,500),...(error.diagnostics?{diagnostics:error.diagnostics}:{})});}
   }
-  // Independent hosts can run together; each host is serialized with conservative spacing.
-  const groups=new Map();for(const manifest of enabled){const host=new URL(manifest.source_url).hostname;if(!groups.has(host))groups.set(host,[]);groups.get(host).push(manifest);}
-  const queue=[...groups.values()];let nextGroup=0;
-  await Promise.all(Array.from({length:Math.min(4,queue.length)},async()=>{while(nextGroup<queue.length){const group=queue[nextGroup++];for(let i=0;i<group.length;i++){if(i && !adapter && !group[i].collection_blocked_reason)await new Promise(resolve=>setTimeout(resolve,30000));await collectManifest(group[i]);}}}));
-  const sourceOrder=new Map(enabled.map((manifest,index)=>[manifest.source,index]));sources.sort((a,b)=>sourceOrder.get(a.source)-sourceOrder.get(b.source));
+  // A source is processed to completion before the next source starts.
+  for(const manifest of enabled)await collectManifest(manifest);
   if(!successes)throw new Error('All enabled sources failed: '+sources.map(s=>s.source+': '+s.error).join('; '));
   const active=new Set(enabled.map(m=>m.source));
   const opportunities=[...records.values()].filter(r=>active.has(r.source)&&!manifests.find(m=>m.source===r.source)?.excluded_record_urls?.includes(r.url)).map(r=>({...r,status:r.deadline ? (Date.parse(r.deadline)<Date.parse(now)?'expired':'open'):'unknown'})).sort((a,b)=>(b.published_at||'').localeCompare(a.published_at||'')||a.id.localeCompare(b.id));
   const result={schema_version:1,model_version:2,generated_at:now,opportunities,sources,...buildCategoricalCatalog(opportunities,manifests,registry)};validateCategoricalCatalog(result);return result;
 }
-async function main(){
- const manifests=JSON.parse(await readFile('data/sources/sources.json','utf8'));let previous;
- if(process.env.PREVIOUS_CATALOG)previous=JSON.parse(await readFile(process.env.PREVIOUS_CATALOG,'utf8'));
- const registry=JSON.parse(await readFile('data/sources/source-registry.json','utf8')).sources;
- const result=await runPipeline(manifests,previous,{registry});await mkdir('dist',{recursive:true});await writeFile('dist/catalog.json',JSON.stringify(result));await writeFile('dist/collection-report.json',JSON.stringify({generated_at:result.generated_at,sources:result.sources},null,2));
- console.log(JSON.stringify({records:result.opportunities.length,sources:result.sources.map(s=>({source:s.source,status:s.status,error:s.error}))},null,2));
-}
-if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href)main().catch(e=>{console.error(e.message);process.exitCode=1;});
