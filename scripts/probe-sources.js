@@ -1,7 +1,7 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { fetchText, trustedAdapters, validateRecord } from './collect.js';
+import { fetchText, trustedAdapters, validateRecord, sourceManifests } from './collect.js';
 
 const DEFAULT_CONCURRENCY = 4;
 const DEFAULT_HOST_DELAY_MS = 1_000;
@@ -46,8 +46,8 @@ function isRobotsBlock(error) {
 async function probeManifest(manifest, { adapters, load, now, validate }) {
   if (typeof manifest.collection_blocked_reason === 'string' && manifest.collection_blocked_reason.trim()) return blockedResult(manifest);
   try {
-    if (!Object.hasOwn(adapters, manifest.adapter)) throw new Error(`Untrusted or unknown adapter: ${manifest.adapter}`);
-    const adapter = adapters[manifest.adapter];
+    if (!Object.hasOwn(adapters, manifest.source)) throw new Error(`Untrusted or unknown adapter: ${manifest.adapter}`);
+    const adapter = adapters[manifest.source];
     if (typeof adapter !== 'function') throw new Error(`Untrusted or unknown adapter: ${manifest.adapter}`);
     const records = await adapter({ manifest, fetchText: load, now });
     if (!Array.isArray(records) || records.length === 0) throw new Error('Empty adapter output');
@@ -148,7 +148,7 @@ async function main() {
   const now = new Date().toISOString();
   let report;
   try {
-    const manifests = JSON.parse(await readFile('data/sources/sources.json', 'utf8'));
+    const manifests = sourceManifests;
     report = await probeSources(selectManifests(manifests, process.argv.slice(2)), { now });
   } catch (error) {
     report = {

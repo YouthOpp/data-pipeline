@@ -1,13 +1,19 @@
-import { collect as collectFEBA } from '../adapters/feba-wordpress.js';
-import { collect as collectRSS } from '../adapters/rss.js';
-import { collect as collectReviewedRSS } from '../adapters/reviewed-rss.js';
-import { collect as collectReviewedHTML } from '../adapters/reviewed-html.js';
-import { collect as collectLinkMetadata } from '../adapters/link-metadata.js';
-import { collect as collectOpportunityHTML } from '../adapters/opportunity-html.js';
-import { collect as collectCampusBourses } from '../adapters/campus-bourses.js';
+import { collect as collectAT, manifest as manifestAT } from '../adapters/at-oead-ernst-mach.js';
+import { collect as collectBG, manifest as manifestBG } from '../adapters/bg-feba-alumni.js';
+import { collect as collectDE, manifest as manifestDE } from '../adapters/de-fulbright-germany.js';
 import { titleDestinations } from './geography.js';
 import { categoryIds, classifyRecord, validateClassification, buildCategoricalCatalog, validateCategoricalCatalog } from './taxonomy.js';
-export const trustedAdapters = { 'feba-wordpress': collectFEBA, rss: collectRSS, 'reviewed-rss': collectReviewedRSS, 'reviewed-html': collectReviewedHTML, 'link-metadata': collectLinkMetadata, 'opportunity-html':collectOpportunityHTML,'campus-bourses':collectCampusBourses };
+export const trustedAdapters = Object.freeze({
+  [manifestAT.source]: collectAT,
+  [manifestBG.source]: collectBG,
+  [manifestDE.source]: collectDE
+});
+export const sourceManifests = Object.freeze([manifestAT, manifestBG, manifestDE]);
+export function sourceManifest(sourceId) {
+  const manifest = sourceManifests.find(source => source.source === sourceId);
+  if (!manifest) throw new Error(`Unknown action source: ${sourceId}`);
+  return manifest;
+}
 export function validateRecord(record) {
   for (const key of ['id','title','url','source','source_url','first_seen_at','last_seen_at','last_checked_at']) if (typeof record[key] !== 'string' || !record[key]) throw new Error(`Missing ${key}`);
   for (const key of ['url','source_url']) if (!['http:','https:'].includes(new URL(record[key]).protocol) || new URL(record[key]).username || new URL(record[key]).password) throw new Error('Unsafe URL');
@@ -52,8 +58,8 @@ export async function runPipeline(manifests,previous={opportunities:[],sources:[
     const old=(previous.sources||[]).find(s=>s.source===manifest.source);
     try {
       if(manifest.collection_blocked_reason)throw new Error(`Collection blocked: ${manifest.collection_blocked_reason}`);
-      if(!Object.hasOwn(trustedAdapters,manifest.adapter))throw new Error('Custom adapters require explicit trusted registration in scripts/collect.js');
-      const items=(await (adapter||trustedAdapters[manifest.adapter])({manifest,fetchText:load,now})).map(record=>{
+      if(!adapter && !Object.hasOwn(trustedAdapters,manifest.source))throw new Error('Unknown action adapter source');
+      const items=(await (adapter||trustedAdapters[manifest.source])({manifest,fetchText:load,now})).map(record=>{
         const classified=classifyRecord(record,manifest);
         const geography=classified.host_countries.length||manifest.infer_title_destinations===false?{}:titleDestinations(classified.title,classified.url);
         return geography.host_countries?.length?{...classified,...geography}:classified;

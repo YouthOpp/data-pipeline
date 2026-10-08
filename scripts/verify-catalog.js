@@ -1,7 +1,7 @@
 import {readFile,writeFile,appendFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {pathToFileURL} from 'node:url';
-import {validateRecord} from './collect.js';
+import {validateRecord,sourceManifests} from './collect.js';
 import {validateCategoricalCatalog} from './taxonomy.js';
 
 export function inspectCoverage(catalog,manifests){
@@ -23,7 +23,7 @@ export function inspectCoverage(catalog,manifests){
 async function main(){
  const input=process.argv[2]||'dist/catalog.json';
  const catalog=JSON.parse(await readFile(input,'utf8'));
- const manifests=JSON.parse(await readFile('data/sources/sources.json','utf8'));
+ const manifests=sourceManifests;
  const coverage=inspectCoverage(catalog,manifests);
  await writeFile('dist/collection-report.json',JSON.stringify({generated_at:catalog.generated_at,sources:catalog.sources,coverage},null,2)+'\n');
  console.log(JSON.stringify({...coverage,sources:undefined}));

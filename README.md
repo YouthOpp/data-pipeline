@@ -4,7 +4,7 @@ Source adapters and scheduled collection for [YouthOpps](https://youthopps.org).
 
 ## Repositories
 
-- [data-pipeline](https://github.com/YouthOpps/data-pipeline): source definitions, adapters, and collection workflows.
+- [data-pipeline](https://github.com/YouthOpps/data-pipeline): three action-specific adapters, each with embedded source configuration, and collection workflows.
 - [data-source](https://github.com/YouthOpps/data-source): source JSON snapshots and the unified `catalog.json`.
 - [youthopps.github.io](https://github.com/YouthOpps/youthopps.github.io): static website using `data-source` as a Git submodule.
 
@@ -24,7 +24,7 @@ npm run validate
 npm test
 ```
 
-For one source, check out `YouthOpps/data-source` into the `data-source/` subfolder and run `node scripts/publish-source.js <source-id> data-source`.
+Source metadata is defined inside `adapters/<source-id>.js`; there are no external source manifests. For one source, check out `YouthOpps/data-source` into the `data-source/` subfolder and run `node scripts/publish-source.js <source-id> data-source`.
 
 Preserve source provenance and never infer eligibility, deadlines, or source permissions without evidence.
 

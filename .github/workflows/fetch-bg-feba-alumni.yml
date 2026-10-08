@@ -8,7 +8,7 @@ on:
       - adapters/feba-wordpress.js
       - scripts/collect.js
       - scripts/validate.js
-      - data/sources/sources.json
+      - adapters/bg-feba-alumni.js
   schedule:
     - cron: '13 0/6 * * *'
 permissions:
@@ -34,9 +34,9 @@ jobs:
           npm test
           node --input-type=module <<'NODE'
           import { readFileSync } from 'node:fs';
-          import { collect } from './adapters/feba-wordpress.js';
+          import { collect, manifest } from './adapters/bg-feba-alumni.js';
           import { fetchText, validateRecord } from './scripts/collect.js';
-          const manifest = JSON.parse(readFileSync('data/sources/sources.json', 'utf8')).find(x => x.source === 'bg-feba-alumni');
+
           const rows = await collect({ manifest, fetchText, now: new Date().toISOString() });
           for (const row of rows) validateRecord(row);
           if (!rows.some(row => row.url.includes('/2026/10/05/'))) throw Error('Expected primary FEBA call missing');

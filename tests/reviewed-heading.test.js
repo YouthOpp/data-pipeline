@@ -1,14 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { collect } from '../adapters/reviewed-html.js';
+import { collect, manifest } from '../adapters/at-oead-ernst-mach.js';
 import { runPipeline, validateRecord } from '../scripts/collect.js';
 
 const url = 'https://studyinaustria.at/en/news/article/2026/08/ernst-mach-stipendium-weltweit-bewerbung-bis-1-dezember-2026';
 const title = 'Ernst Mach Scholarship – Worldwide: Application Deadline 1 December 2026';
-const manifests = JSON.parse(await readFile(new URL('../data/sources/sources.json', import.meta.url), 'utf8'));
-const manifest = manifests.find(source => source.source === 'at-oead-ernst-mach');
-const registry = JSON.parse(await readFile(new URL('../data/sources/source-registry.json', import.meta.url), 'utf8')).sources;
+const registry = [{id:'at-oead',attribution:'© OeAD',content_types:['scholarship']}];
 const fixture = await readFile(new URL('./fixtures/oead-notice-metadata.html', import.meta.url), 'utf8');
 const now = '2026-10-05T08:00:00.000Z';
 
