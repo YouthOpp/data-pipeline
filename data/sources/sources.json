@@ -845,7 +845,7 @@
       "https://campusbourses.campusfrance.org/js/iwangular.3f8721e3.js",
       "https://campusbourses.campusfrance.org/js/ilangular.b81726ae.js"
     ],
-    "diagnostic_api": "https://bourses-api.campusfrance.org/sgetgrants/"
+    "diagnostic_api": "https://bourses-api.campusfrance.org/sgetgrants/en"
   },
   {
     "source": "fr-1jeune1solution",
@@ -913,18 +913,25 @@
   {
     "source": "de-stipendiumplus",
     "research_source_id": "de-stipendiumplus",
-    "source_url": "https://stipendiumplus.de/",
+    "source_url": "https://stipendiumplus.de/studierende/was-bietet-mir-ein-stipendium/",
     "website_url": "https://stipendiumplus.de/",
     "enabled": true,
     "adapter": "opportunity-html",
     "language": "de/en",
     "default_tags": [],
     "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "scope": "Extract the live named Aufstiegsstipendium programme section from its reviewed original page; do not count provider profiles or general guidance as opportunities.",
     "publisher_country": "DE",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "reviewed_sections": [
+      {
+        "title": "Aufstiegsstipendium für Berufserfahrene",
+        "category": "scholarships",
+        "reviewed_at": "2026-10-08"
+      }
+    ]
   },
   {
     "source": "de-rausvonzuhaus",
