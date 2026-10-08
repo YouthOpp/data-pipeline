@@ -2,7 +2,8 @@ import { normalizeItem } from './rss.js';
 const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
 const relevant = /стипенд|scholarship|академи|академия|обучени|certificate|сертификат|training|стаж|internship|volunteer|добровол/i;
 const call = /обявява конкурс|краен срок|кандидатств|възможност за|записван|academy|академи|training|certificate|покана|отворена/i;
-const exclude = /победител|наградени|резултатите от|приключи|връчени|awarded|winners/i;
+const exclude = /победител|наградени|резултатите от|приключи|връчени|awarded|winners|отличи|партньори на представянето|проведе се|се проведе/i;
+const explicitCall = /обявява конкурс|краен срок|кандидатств|възможност за|записван|покана за кандидатстване|прием на кандидатури|applications? open|apply now|open call/i;
 const text = value => String(value||'').replace(/<[^>]*>/g,' ').replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number(n))).replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&nbsp;/g,' ').replace(/\s+/g,' ').trim();
 export function robotRules(value,path) {
   const groups=[]; let group={agents:[],rules:[],delay:0};
@@ -43,7 +44,7 @@ export async function collect({manifest,fetchText,now}){
     for(const post of posts){
       const title=text(post.title?.rendered);
       const snippet=text(post.content?.rendered).slice(0,500);
-      if(!relevant.test(title)||!call.test(title+' '+snippet)||exclude.test(title))continue;
+      if(!relevant.test(title)||!explicitCall.test(title)||exclude.test(title))continue;
       let url;try{url=new URL(post.link);}catch{continue;}
       if(url.protocol!=='https:'||url.hostname.replace(/^www\./,'')!=='febalumni.org'||!/^\/\d{4}\/\d{2}\/\d{2}\//.test(url.pathname))continue;
       const category=/стипенд|scholarship/i.test(title)?'scholarships':/академи|обучени|certificate|сертификат|training/i.test(title)?'training':/стаж|internship/i.test(title)?'internships':/volunteer|добровол/i.test(title)?'volunteering':'other';
