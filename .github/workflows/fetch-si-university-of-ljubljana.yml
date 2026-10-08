@@ -1,8 +1,8 @@
-name: Collect si-cmepius
+name: fetch-si-university-of-ljubljana
 on:
   workflow_dispatch:
   schedule:
-    - cron: '23 4/6 * * *'
+    - cron: '27 4/6 * * *'
 permissions:
   contents: read
 concurrency:
@@ -27,9 +27,7 @@ jobs:
           app-id: ${{ vars.WEBSITE_APP_ID }}
           private-key: ${{ secrets.WEBSITE_APP_PRIVATE_KEY }}
           owner: YouthOpps
-          repositories: |
-            data-source
-            youthopps.github.io
+          repositories: data-source
           permission-contents: write
       - uses: actions/checkout@v4
         with:
@@ -38,17 +36,13 @@ jobs:
           path: data-source
           persist-credentials: true
       - name: Collect and validate only this source
-        run: node scripts/publish-source.js 'si-cmepius' data-source
+        run: node scripts/publish-source.js 'si-university-of-ljubljana' data-source
       - name: Publish source and catalog in one commit
         run: |
           git -C data-source config user.name 'youthopps-bot'
           git -C data-source config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git -C data-source add sources/si-cmepius/ catalog.json
+          git -C data-source add sources/si-university-of-ljubljana/ catalog.json
           if ! git -C data-source diff --cached --quiet; then
-            git -C data-source commit -m 'data: refresh si-cmepius'
+            git -C data-source commit -m 'data: refresh si-university-of-ljubljana'
             git -C data-source push origin HEAD:main
           fi
-      - name: Notify website of new source snapshot
-        env:
-          WEBSITE_REPO_TOKEN: ${{ steps.data-token.outputs.token }}
-        run: node scripts/notify-source-website.js
