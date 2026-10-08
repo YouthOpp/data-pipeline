@@ -79,7 +79,7 @@ jobs:
           app-id: ${{ vars.WEBSITE_APP_ID }}
           private-key: ${{ secrets.WEBSITE_APP_PRIVATE_KEY }}
           owner: YouthOpps
-          repositories: youthopp.github.io
+          repositories: youthopps.github.io
           permission-contents: write
       - name: Update website catalog version
         env:
