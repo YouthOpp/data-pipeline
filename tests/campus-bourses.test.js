@@ -27,3 +27,14 @@ test('publisher/search country and embassy location never become an API programm
  const catalog=await runPipeline([manifest],undefined,{now,adapter:async()=>parseCampusList(data,manifest,now)});
  assert.deepEqual(catalog.opportunities[0].host_countries,[]);
 });
+
+test('successful API migration withdraws its old publisher directory while outages preserve it',async()=>{
+ const {normalizeItem}=await import('../adapters/rss.js');
+ const old=normalizeItem({title:'CampusBourses catalogue',link:manifest.source_url},manifest,now);
+ const previous={opportunities:[old],sources:[]};
+ const catalog=await runPipeline([manifest],previous,{now,adapter:async()=>parseCampusList(data,manifest,now)});
+ assert.equal(catalog.opportunities.length,1);assert.equal(catalog.opportunities[0].kind,'programme-overview');
+ const other={...manifest,source:'other',adapter:'rss',source_url:'https://other.example/feed'};
+ const outage=await runPipeline([manifest,other],previous,{now,adapter:async({manifest:m})=>{if(m.source===manifest.source)throw Error('Outage');return [normalizeItem({title:'Other programme',link:'https://other.example/item'},m,now)];}});
+ assert.ok(outage.opportunities.some(r=>r.id===old.id));
+});

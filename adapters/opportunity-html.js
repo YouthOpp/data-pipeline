@@ -86,13 +86,6 @@ export async function collect({manifest,fetchText,now}){
   error.diagnostics.page_bytes=Buffer.byteLength(html);
   error.diagnostics.scripts=[...html.matchAll(/<script\b[^>]*src=["']([^"']+)["']/gi)].map(m=>resourceUrl(m[1])).filter(Boolean).slice(0,20);
   error.diagnostics.frames=[...html.matchAll(/<iframe\b[^>]*src=["']([^"']+)["']/gi)].map(m=>resourceUrl(m[1])).filter(Boolean).slice(0,10);
-  if(manifest.diagnostic_api){
-   try{
-    const data=JSON.parse(await loadPage({manifest:{...manifest,source_url:manifest.diagnostic_api},fetchText}));
-    const shape=value=>Array.isArray(value)?{type:'array',length:value.length,item_keys:value[0]&&typeof value[0]==='object'?Object.keys(value[0]):[],sample:value.slice(0,1).map(item=>Object.fromEntries(Object.entries(item||{}).filter(([key,value])=>/^(?:id|bourse_id|title|name|url|total|count|page)$/i.test(key)&&['string','number'].includes(typeof value))))}:value&&typeof value==='object'?{type:'object',keys:Object.keys(value),fields:Object.fromEntries(Object.entries(value).filter(([,v])=>Array.isArray(v)||['number','boolean'].includes(typeof v)).map(([key,v])=>[key,Array.isArray(v)?shape(v):v]))}:{type:typeof value};
-    error.diagnostics.api_response={url:manifest.diagnostic_api,...shape(data)};
-   }catch(probe){error.diagnostics.api_response={url:manifest.diagnostic_api,error:String(probe.message).slice(0,200)};}
-  }
   if(manifest.diagnostic_scripts){
    error.diagnostics.application_paths=[];
    for(const script of manifest.diagnostic_scripts){
@@ -101,8 +94,7 @@ export async function collect({manifest,fetchText,now}){
      await new Promise(resolve=>setTimeout(resolve,30000));
      const code=await loadPage({manifest:{...manifest,source_url:script},fetchText});
      const paths=[...code.matchAll(/(["'])((?:\\.|(?!\1)[^\\\r\n]){1,200})\1/g)].map(m=>m[2].split(/[?#]/)[0]).filter(p=>!/[\s<>]/.test(p)&&/api|grant|scholar|bourse|search|filter|rest|country/i.test(p));
-     const requests=[...code.matchAll(/(?:["']sgetgrants\/["']|(?:factory|service)\(["']services\.transformer\.(?:ApiListResponse|apiProgramTransformer)["'])/g)].slice(0,4).map(m=>code.slice(Math.max(0,m.index-180),m.index+1000));
-     error.diagnostics.application_paths.push({script,paths:[...new Set(paths)].slice(0,100),...(requests.length?{request_contract:requests}:{})});
+     error.diagnostics.application_paths.push({script,paths:[...new Set(paths)].slice(0,100)});
     }catch(probe){error.diagnostics.application_paths.push({script,error:String(probe.message).slice(0,200)});}
    }
   }

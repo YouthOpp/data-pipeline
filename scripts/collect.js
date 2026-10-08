@@ -62,7 +62,7 @@ export async function runPipeline(manifests,previous={opportunities:[],sources:[
       });if(!items.length)throw new Error('Empty adapter output');
       const batchIds=new Set();for(const record of items){validateRecord(record);if(batchIds.has(record.id))throw new Error('Duplicate adapter record ID');batchIds.add(record.id);}
       // Replace obsolete directory-only rows once their listing adapter succeeds.
-      if(manifest.adapter==='opportunity-html')for(const [id,record] of records)if(record.source===manifest.source&&record.kind==='unknown'&&record.url===manifest.source_url&&!batchIds.has(id))records.delete(id);
+      if(['opportunity-html','campus-bourses'].includes(manifest.adapter))for(const [id,record] of records)if(record.source===manifest.source&&record.kind==='unknown'&&record.url===manifest.source_url&&!batchIds.has(id))records.delete(id);
       for(const record of items){const prior=records.get(record.id);const content=r=>JSON.stringify(Object.fromEntries(Object.entries(r).filter(([k])=>!['created_at','updated_at','first_seen_at','last_seen_at','last_checked_at'].includes(k))));records.set(record.id,{...record,created_at:prior?.created_at||now,first_seen_at:prior?.first_seen_at||now,updated_at:prior && content(prior)===content(record)?prior.updated_at:now});}
       sources.push({...manifest,last_attempt_at:now,last_checked_at:now,last_success_at:now,status:'ok',record_count:items.length,error:null});successes++;
     }catch(error){sources.push({...manifest,last_attempt_at:now,last_checked_at:old?.last_checked_at||null,last_success_at:old?.last_success_at||null,status:'error',record_count:old?.record_count||0,error:String(error.message).slice(0,500),...(error.diagnostics?{diagnostics:error.diagnostics}:{})});}
