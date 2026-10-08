@@ -1,12 +1,13 @@
 # YouthOpps data-pipeline
 
-Five independent source adapters for [YouthOpps](https://youthopps.org). Each adapter is a small standalone project with no shared runtime code or external packages.
+Six independent source adapters for [YouthOpps](https://youthopps.org). Each adapter is a small standalone project with no shared runtime code or external packages.
 
 ```text
 adapters/
   at-oead-ernst-mach/
   bg-feba-alumni/
   de-fulbright-germany/
+  ee-university-of-tartu/
   opportunitydesk/
   us-nasa-internships/
     adapter.py
@@ -15,7 +16,7 @@ adapters/
   fetch-<source-id>.yml
 ```
 
-Every source folder contains exactly `adapter.py` and `test_adapter.py`. Only these five implemented sources are installed. Add another source when its adapter is developed; do not create placeholder source folders.
+Every source folder contains exactly `adapter.py` and `test_adapter.py`. Only these six implemented sources are installed. Add another source when its adapter is developed; do not create placeholder source folders.
 
 ## Run one adapter
 
@@ -49,9 +50,9 @@ An unavailable or changed publisher fails the test. Tests do not write local or 
 
 ## GitHub Actions
 
-Each of the five files in `.github/workflows/` runs only its matching adapter with `--publish`. It obtains `DATA_SOURCE_TOKEN` using the existing `WEBSITE_APP_ID` variable and `WEBSITE_APP_PRIVATE_KEY` secret for the data-source GitHub App installation. Runs are limited to this repository's `main` branch and share a publication concurrency group.
+Each of the six files in `.github/workflows/` runs only its matching adapter with `--publish`. It obtains `DATA_SOURCE_TOKEN` using the existing `WEBSITE_APP_ID` variable and `WEBSITE_APP_PRIVATE_KEY` secret for the data-source GitHub App installation. Runs are limited to this repository's `main` branch and share a publication concurrency group.
 
-The existing six-hour schedules for OeAD, FEBA and Fulbright Germany are preserved. Opportunity Desk and NASA can be started manually. Actions do not install project dependencies or invoke test files.
+The existing six-hour schedules for OeAD, FEBA and Fulbright Germany are preserved. Opportunity Desk, NASA and University of Tartu can be started manually. Actions do not install project dependencies or invoke test files.
 
 The workflow folder is the sole code-layout exception to the independent adapter folders: [GitHub discovers workflows in `.github/workflows/`](https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows).
 
