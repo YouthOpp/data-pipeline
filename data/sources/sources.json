@@ -1,5 +1,30 @@
 [
   {
+    "source": "opportunitydesk",
+    "source_url": "https://opportunitydesk.org/feed/",
+    "website_url": "https://opportunitydesk.org/",
+    "enabled": true,
+    "adapter": "rss",
+    "language": "en",
+    "default_tags": [],
+    "added_at": "2026-10-04",
+    "scope": "international",
+    "publisher_type": "aggregator",
+    "publisher_country": null,
+    "categories": [
+      "scholarships",
+      "internships",
+      "volunteering",
+      "fellowships",
+      "training",
+      "competitions",
+      "grants",
+      "jobs",
+      "other"
+    ],
+    "research_source_id": "opportunity-desk"
+  },
+  {
     "source": "at-fulbright-austria",
     "research_source_id": "at-fulbright-austria",
     "source_url": "https://www.fulbright.at/programs/in-austria/students/full-time-study-research-grants",
@@ -1321,31 +1346,6 @@
         "reviewed_at": "2026-10-07"
       }
     ]
-  },
-  {
-    "source": "opportunitydesk",
-    "source_url": "https://opportunitydesk.org/feed/",
-    "website_url": "https://opportunitydesk.org/",
-    "enabled": true,
-    "adapter": "rss",
-    "language": "en",
-    "default_tags": [],
-    "added_at": "2026-10-04",
-    "scope": "international",
-    "publisher_type": "aggregator",
-    "publisher_country": null,
-    "categories": [
-      "scholarships",
-      "internships",
-      "volunteering",
-      "fellowships",
-      "training",
-      "competitions",
-      "grants",
-      "jobs",
-      "other"
-    ],
-    "research_source_id": "opportunity-desk"
   },
   {
     "source": "pl-eurodesk-polska",
