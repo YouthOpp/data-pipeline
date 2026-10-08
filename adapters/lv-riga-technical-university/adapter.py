@@ -947,8 +947,14 @@ def fetch_source(url, min_interval=6):
                     current,
                     interval=min_interval,
                     headers={
-                        ("Accept"): (
-                            "text/html,application/xhtml+xml;q=0.9,*/*;q=0" ".8"
+                        "Accept": (
+                            "text/plain,*/*;q=0.8"
+                            if urllib.parse.urlsplit(current).path
+                            == "/robots.txt"
+                            else (
+                                "text/html,application/xhtml+xml;q=0.9,"
+                                "*/*;q=0.8"
+                            )
                         )
                     },
                 )
@@ -964,7 +970,18 @@ def fetch_source(url, min_interval=6):
                     continue
                 if status != 200:
                     raise AdapterError(
-                        f"Publisher returned HTTP {status}", "fetch", status
+                        f"Publisher returned HTTP {status} at "
+                        + urllib.parse.urlunsplit(
+                            (
+                                "https",
+                                urllib.parse.urlsplit(current).hostname or "",
+                                urllib.parse.urlsplit(current).path,
+                                "",
+                                "",
+                            )
+                        ),
+                        "fetch",
+                        status,
                     )
                 return body.decode(headers.get_content_charset() or "utf-8")
         except AdapterError as error:
