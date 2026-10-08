@@ -2,7 +2,7 @@
 
 Open AI agent: built and maintained through transparent AI-assisted development.
 
-Canonical repositories: [YouthOpps/data-pipeline](https://github.com/YouthOpps/data-pipeline), [YouthOpps/youthopp.github.io](https://github.com/YouthOpps/youthopp.github.io) and [YouthOpps/.github](https://github.com/YouthOpps/.github).
+Canonical repositories: [YouthOpps/data-pipeline](https://github.com/YouthOpps/data-pipeline), [YouthOpps/youthopps.github.io](https://github.com/YouthOpps/youthopps.github.io) and [YouthOpps/.github](https://github.com/YouthOpps/.github).
 
 A community-contributed source adapter pipeline for YouthOpp, a nonprofit-minded, open-source opportunity index. Students and young graduates can discover original opportunities without browsing many separate publishers. Original publishers remain the authority for deadlines, eligibility and applications.
 
