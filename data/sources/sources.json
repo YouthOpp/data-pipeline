@@ -1,222 +1,25 @@
 [
   {
-    "source": "opportunitiesforyouth",
-    "source_url": "https://opportunitiesforyouth.org/feed/",
-    "website_url": "https://opportunitiesforyouth.org/",
-    "enabled": false,
-    "adapter": "rss",
-    "language": "en",
-    "default_tags": [],
-    "added_at": "2026-10-04",
-    "scope": "international",
-    "publisher_type": "aggregator",
-    "publisher_country": null,
-    "categories": [
-      "scholarships",
-      "internships",
-      "volunteering",
-      "fellowships",
-      "training",
-      "competitions",
-      "grants",
-      "jobs",
-      "other"
-    ],
-    "research_source_id": "opportunities-for-youth"
-  },
-  {
-    "source": "opportunitydesk",
-    "source_url": "https://opportunitydesk.org/feed/",
-    "website_url": "https://opportunitydesk.org/",
+    "source": "at-fulbright-austria",
+    "research_source_id": "at-fulbright-austria",
+    "source_url": "https://www.fulbright.at/programs/in-austria/students/full-time-study-research-grants",
+    "website_url": "https://www.fulbright.at/programs/in-austria/students/full-time-study-research-grants",
     "enabled": true,
-    "adapter": "rss",
-    "language": "en",
+    "adapter": "opportunity-html",
+    "language": "de/en",
     "default_tags": [],
-    "added_at": "2026-10-04",
-    "scope": "international",
-    "publisher_type": "aggregator",
-    "publisher_country": null,
-    "categories": [
-      "scholarships",
-      "internships",
-      "volunteering",
-      "fellowships",
-      "training",
-      "competitions",
-      "grants",
-      "jobs",
-      "other"
-    ],
-    "research_source_id": "opportunity-desk"
-  },
-  {
-    "source": "scholarshipscorner",
-    "source_url": "https://scholarshipscorner.website/feed/",
-    "website_url": "https://scholarshipscorner.website/",
-    "enabled": true,
-    "adapter": "rss",
-    "language": "en",
-    "default_tags": [],
-    "added_at": "2026-10-04",
-    "scope": "international",
-    "publisher_type": "aggregator",
-    "publisher_country": null,
-    "categories": [
-      "scholarships",
-      "internships",
-      "volunteering",
-      "fellowships",
-      "training",
-      "competitions",
-      "grants",
-      "jobs",
-      "other"
-    ],
-    "research_source_id": "scholarships-corner"
-  },
-  {
-    "source": "fulbright-czech-programmes",
-    "source_url": "https://fulbright.gov.cz/feed/",
-    "website_url": "https://fulbright.gov.cz/",
-    "enabled": false,
-    "adapter": "reviewed-rss",
-    "language": "cs",
-    "default_tags": [],
-    "added_at": "2026-10-04",
-    "scope": "reviewed programme metadata; availability and applicant eligibility unknown",
-    "reviewed_items": [
-      {
-        "url": "https://fulbright.gov.cz/intercountry-travel-grant-pozvete-si-americkeho-vedce-na-par-dni/",
-        "category": "grants",
-        "kind": "institutional-grant"
-      },
-      {
-        "url": "https://fulbright.gov.cz/nemusite-letet-na-mesic-muzete-letet-na-fulbrighta/",
-        "category": "scholarships",
-        "kind": "programme-overview"
-      }
-    ],
-    "publisher_type": "public-institution",
-    "publisher_country": "CZ",
-    "categories": [
-      "scholarships",
-      "grants"
-    ],
-    "research_source_id": "cz-fulbright-commission"
-  },
-  {
-    "source": "us-nasa-internships",
-    "source_url": "https://www.nasa.gov/learning-resources/internship-programs/",
-    "website_url": "https://www.nasa.gov/",
-    "enabled": true,
-    "adapter": "reviewed-html",
-    "language": "en",
-    "default_tags": [],
-    "added_at": "2026-10-05",
-    "scope": "reviewed programme overview metadata; individual application windows and eligibility unknown",
-    "reviewed_page": {
-      "url": "https://www.nasa.gov/learning-resources/internship-programs/",
-      "category": "internships",
-      "kind": "programme-overview"
-    },
-    "access_review": {
-      "reviewed_at": "2026-10-05",
-      "robots_url": "https://www.nasa.gov/robots.txt",
-      "policy_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "scope": "Factual programme title, original URL and publication date only; source acknowledgment, no endorsement, imagery or third-party content."
-    },
-    "research_source_id": "us-nasa-internships",
-    "categories": [
-      "internships"
-    ],
-    "publisher_country": "US",
-    "publisher_type": "public-institution"
-  },
-  {
-    "source": "pt-fulbright-masters",
-    "source_url": "https://www.fulbright.pt/bolsas/bolsa-fulbright-para-mestrado/",
-    "website_url": "https://www.fulbright.pt/",
-    "enabled": true,
-    "adapter": "reviewed-html",
-    "language": "pt",
-    "default_tags": [],
-    "added_at": "2026-10-05",
-    "scope": "exact reviewed programme overview metadata; individual application status and encoded eligibility unknown",
-    "reviewed_page": {
-      "url": "https://www.fulbright.pt/bolsas/bolsa-fulbright-para-mestrado/",
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "AT",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.fulbright.at/programs/in-austria/students/full-time-study-research-grants",
       "category": "scholarships",
       "kind": "programme-overview",
-      "metadata_format": "open-graph"
-    },
-    "access_review": {
-      "reviewed_at": "2026-10-05",
-      "robots_url": "https://www.fulbright.pt/robots.txt",
-      "policy_url": "https://www.fulbright.pt/politica-privacidade/",
-      "scope": "Factual programme title and original URL only; no descriptions, imagery or endorsement. No express indexing prohibition or reuse licence established in reviewed scope."
-    },
-    "research_source_id": "pt-fulbright-portugal",
-    "categories": [
-      "scholarships"
-    ],
-    "publisher_country": "PT",
-    "publisher_type": "public-institution"
-  },
-  {
-    "source": "nl-fulbright-doctoral",
-    "source_url": "https://fulbright.nl/naar-de-vs/promovendi/fulbright-beurzen-voor-promovendi/",
-    "website_url": "https://fulbright.nl/",
-    "enabled": true,
-    "adapter": "reviewed-html",
-    "language": "nl",
-    "default_tags": [],
-    "added_at": "2026-10-05",
-    "scope": "exact reviewed doctoral scholarship programme metadata; individual application status and encoded eligibility unknown",
-    "reviewed_page": {
-      "url": "https://fulbright.nl/naar-de-vs/promovendi/fulbright-beurzen-voor-promovendi/",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "metadata_format": "open-graph"
-    },
-    "access_review": {
-      "reviewed_at": "2026-10-05",
-      "robots_url": "https://fulbright.nl/robots.txt",
-      "policy_url": "https://fulbright.nl/over-ons/privacyverklaring/",
-      "scope": "Factual original programme title and canonical URL only; no prose, imagery, personal data or endorsement. No express title/link indexing prohibition or reuse licence established in reviewed scope. One page request per six-hour run; robots crawl-delay 10 seconds respected by singleton host selection."
-    },
-    "research_source_id": "nl-fulbright-netherlands",
-    "categories": [
-      "scholarships"
-    ],
-    "publisher_country": "NL",
-    "publisher_type": "public-institution"
-  },
-  {
-    "source": "lu-fnr-afdoc",
-    "source_url": "https://www.fnr.lu/funding-instruments/afdoc/",
-    "website_url": "https://www.fnr.lu/",
-    "enabled": true,
-    "adapter": "reviewed-html",
-    "language": "en",
-    "default_tags": [],
-    "added_at": "2026-10-05",
-    "scope": "exact reviewed doctoral programme metadata; individual application status and encoded eligibility unknown",
-    "reviewed_page": {
-      "url": "https://www.fnr.lu/funding-instruments/afdoc/",
-      "category": "scholarships",
-      "kind": "programme-overview"
-    },
-    "access_review": {
-      "reviewed_at": "2026-10-05",
-      "robots_url": "https://www.fnr.lu/robots.txt",
-      "policy_url": "https://www.fnr.lu/legal-notice/",
-      "scope": "Factual original programme title, canonical URL and original publication date only. Informational use and attributed hyperlinks expressly permitted; no prose, scientific references, media or endorsement. Scientific-reference reuse requires © Fonds National de la Recherche. One exact-page request per six-hour run."
-    },
-    "research_source_id": "lu-fnr-afdoc",
-    "categories": [
-      "scholarships"
-    ],
-    "publisher_country": "LU",
-    "publisher_type": "public-institution"
+      "reviewed_at": "2026-10-04"
+    }
   },
   {
     "source": "at-oead-ernst-mach",
@@ -248,25 +51,6 @@
     ],
     "publisher_country": "AT",
     "publisher_type": "public-institution"
-  },
-  {
-    "source": "at-grants-at",
-    "research_source_id": "at-grants-at",
-    "source_url": "https://grants.at/en",
-    "website_url": "https://grants.at/en",
-    "enabled": false,
-    "adapter": "opportunity-html",
-    "language": "de/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "AT",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "diagnostic_scripts": [
-      "https://grants.at/static/app/build/assets/app-BXezEdO3.js"
-    ]
   },
   {
     "source": "at-university-of-vienna",
@@ -335,22 +119,6 @@
     }
   },
   {
-    "source": "be-ares",
-    "research_source_id": "be-ares",
-    "source_url": "https://www.ares-ac.be/en/cooperation-au-developpement/bourses",
-    "website_url": "https://www.ares-ac.be/en/cooperation-au-developpement/bourses",
-    "enabled": false,
-    "adapter": "opportunity-html",
-    "language": "nl/fr/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "BE",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null
-  },
-  {
     "source": "bg-fulbright-bulgaria",
     "research_source_id": "bg-fulbright-bulgaria",
     "source_url": "https://www.fulbright.bg/en/research-grants-for-bulgarians/",
@@ -395,122 +163,6 @@
     }
   },
   {
-    "source": "bg-feba-alumni",
-    "research_source_id": "bg-feba-alumni",
-    "source_url": "https://www.febalumni.org/en/2026/06/17/feba-alumni-club-obyavyava-konkurs-za-mesechni-stipendii-visoki-akademichni-postizheniya-za-leten-semestr-na-akademichnata-20252026-g-kraen-srok-30-06-2026-g/",
-    "website_url": "https://www.febalumni.org/en/",
-    "enabled": false,
-    "adapter": "opportunity-html",
-    "language": "bg/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "BG",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.febalumni.org/en/2026/06/17/feba-alumni-club-obyavyava-konkurs-za-mesechni-stipendii-visoki-akademichni-postizheniya-za-leten-semestr-na-akademichnata-20252026-g-kraen-srok-30-06-2026-g/",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "hr-ampeu",
-    "research_source_id": "hr-ampeu",
-    "source_url": "https://en.ampeu.hr/open-calls",
-    "website_url": "https://en.ampeu.hr/open-calls",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "hr/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "HR",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "listing_path_pattern": "^/open-calls/[^/]+"
-  },
-  {
-    "source": "hr-croatian-ministry",
-    "research_source_id": "hr-croatian-ministry",
-    "source_url": "https://mzom.gov.hr/glavni-izbornik-368/highlights/calls-417/scholarships-of-the-republic-of-croatia-call-for-applications-in-the-academic-year-2026-2027/7588",
-    "website_url": "https://mzom.gov.hr/",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "hr/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "HR",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://mzom.gov.hr/glavni-izbornik-368/highlights/calls-417/scholarships-of-the-republic-of-croatia-call-for-applications-in-the-academic-year-2026-2027/7588",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "hr-study-in-croatia",
-    "research_source_id": "hr-study-in-croatia",
-    "source_url": "https://www.studyincroatia.hr/study-in-croatia/exchange-programmes/",
-    "website_url": "https://www.studyincroatia.hr/",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "hr/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Collect the live reviewed CEEPUS programme link; exclude general tuition guidance from opportunity records. Other programmes remain separately indexed from their original AMPEU source.",
-    "publisher_country": "HR",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_links": [
-      {
-        "title": "Central European Exchange Programme for University Studies",
-        "url": "https://en.ampeu.hr/ceepus",
-        "category": "scholarships",
-        "reviewed_at": "2026-10-08"
-      }
-    ],
-    "reviewed_page_identity": {
-      "heading": "Exchange Programmes",
-      "canonical_url": "https://www.studyincroatia.hr/exchange-programmes/",
-      "reviewed_at": "2026-10-08"
-    },
-    "reviewed_links_only": true,
-    "excluded_record_urls": [
-      "https://www.studyincroatia.hr/study-in-croatia/tuition-fees-and-scholarships/"
-    ]
-  },
-  {
-    "source": "cy-cyprus-state-scholarships-foundation",
-    "research_source_id": "cy-cyprus-state-scholarships-foundation",
-    "source_url": "https://www.gov.cy/mof-cssf/documents/prokiryxi-kratikon-ypotrofion-gia-proptychiakes-spoydes-2025-26/",
-    "website_url": "https://www.gov.cy/mof-cssf/",
-    "enabled": false,
-    "adapter": "opportunity-html",
-    "language": "el/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "CY",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.gov.cy/mof-cssf/documents/prokiryxi-kratikon-ypotrofion-gia-proptychiakes-spoydes-2025-26/",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
     "source": "cy-onek",
     "research_source_id": "cy-onek",
     "source_url": "https://youthfunds.onek.org.cy/en/services/youth-initiatives/",
@@ -533,32 +185,10 @@
     }
   },
   {
-    "source": "cy-cyprus-diaspora-scholarships",
-    "research_source_id": "cy-cyprus-diaspora-scholarships",
-    "source_url": "https://www.gov.cy/mfa/en/service-for-overseas-cypriots-and-repatriated-cypriots/",
-    "website_url": "https://www.gov.cy/mfa/en/service-for-overseas-cypriots-and-repatriated-cypriots/",
-    "enabled": false,
-    "adapter": "opportunity-html",
-    "language": "el/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "CY",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.gov.cy/mfa/en/service-for-overseas-cypriots-and-repatriated-cypriots/",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "cz-study-in-czechia",
-    "research_source_id": "cz-study-in-czechia",
-    "source_url": "https://studyin.gov.cz/scholarships/",
-    "website_url": "https://studyin.gov.cz/scholarships/",
+    "source": "cz-charles-university",
+    "research_source_id": "cz-charles-university",
+    "source_url": "https://cuni.cz/UKEN-927.html",
+    "website_url": "https://cuni.cz/UKEN-1617.html",
     "enabled": true,
     "adapter": "opportunity-html",
     "language": "cs/en",
@@ -593,10 +223,10 @@
     }
   },
   {
-    "source": "cz-charles-university",
-    "research_source_id": "cz-charles-university",
-    "source_url": "https://cuni.cz/UKEN-927.html",
-    "website_url": "https://cuni.cz/UKEN-1617.html",
+    "source": "cz-study-in-czechia",
+    "research_source_id": "cz-study-in-czechia",
+    "source_url": "https://studyin.gov.cz/scholarships/",
+    "website_url": "https://studyin.gov.cz/scholarships/",
     "enabled": true,
     "adapter": "opportunity-html",
     "language": "cs/en",
@@ -607,6 +237,111 @@
     "publisher_type": "unknown",
     "categories": [],
     "collection_blocked_reason": null
+  },
+  {
+    "source": "de-fulbright-germany",
+    "research_source_id": "de-fulbright-germany",
+    "source_url": "https://www.fulbright.de/stipendien/programm/studienstipendium-uni-und-haw",
+    "website_url": "https://www.fulbright.de/stipendien/programm/studienstipendium-uni-und-haw",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "de/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "DE",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.fulbright.de/stipendien/programm/studienstipendium-uni-und-haw",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "de-rausvonzuhaus",
+    "research_source_id": "de-rausvonzuhaus",
+    "source_url": "https://www.rausvonzuhaus.de/lastminute",
+    "website_url": "https://www.rausvonzuhaus.de/",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "de/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "DE",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null
+  },
+  {
+    "source": "de-stipendiumplus",
+    "research_source_id": "de-stipendiumplus",
+    "source_url": "https://stipendiumplus.de/studierende/was-bietet-mir-ein-stipendium/",
+    "website_url": "https://stipendiumplus.de/",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "de/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract the live named Aufstiegsstipendium programme section from its reviewed original page; do not count provider profiles or general guidance as opportunities.",
+    "publisher_country": "DE",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_sections": [
+      {
+        "title": "Aufstiegsstipendium für Berufserfahrene",
+        "category": "scholarships",
+        "reviewed_at": "2026-10-08"
+      }
+    ]
+  },
+  {
+    "source": "dk-dm-and-ma-travel-grant",
+    "research_source_id": "dk-dm-and-ma-travel-grant",
+    "source_url": "https://dm.dk/students/membership/travel-grant/",
+    "website_url": "https://dm.dk/students/membership/travel-grant/",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "da/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "DK",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://dm.dk/students/membership/travel-grant/",
+      "category": "grants",
+      "kind": "institutional-grant",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "dk-fulbright-center",
+    "research_source_id": "dk-fulbright-center",
+    "source_url": "https://fulbrightcenter.dk/go-to-the-us/fulbright-grants-for-danish-students/apply/",
+    "website_url": "https://fulbrightcenter.dk/go-to-the-us/fulbright-grants-for-danish-students/apply/",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "da/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "DK",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://fulbrightcenter.dk/go-to-the-us/fulbright-grants-for-danish-students/apply/",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
   },
   {
     "source": "dk-study-in-denmark",
@@ -655,28 +390,6 @@
         "reviewed_at": "2026-10-07"
       }
     ]
-  },
-  {
-    "source": "dk-dm-and-ma-travel-grant",
-    "research_source_id": "dk-dm-and-ma-travel-grant",
-    "source_url": "https://dm.dk/students/membership/travel-grant/",
-    "website_url": "https://dm.dk/students/membership/travel-grant/",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "da/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "DK",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://dm.dk/students/membership/travel-grant/",
-      "category": "grants",
-      "kind": "institutional-grant",
-      "reviewed_at": "2026-10-04"
-    }
   },
   {
     "source": "dk-university-of-copenhagen",
@@ -729,22 +442,6 @@
     }
   },
   {
-    "source": "ee-university-of-tartu",
-    "research_source_id": "ee-university-of-tartu",
-    "source_url": "https://ut.ee/en/open-calls",
-    "website_url": "https://ut.ee/en/scholarships-and-other-stipends",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "et/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "EE",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null
-  },
-  {
     "source": "ee-taltech",
     "research_source_id": "ee-taltech",
     "source_url": "https://taltech.ee/arengufond/stipendiumid/2026-sugis",
@@ -765,17 +462,17 @@
     "listing_allow_pdf": true
   },
   {
-    "source": "fi-study-in-finland",
-    "research_source_id": "fi-study-in-finland",
-    "source_url": "https://www.studyinfinland.fi/funding-your-studies/bachelors-and-masters-scholarships",
-    "website_url": "https://www.studyinfinland.fi/funding-your-studies/bachelors-and-masters-scholarships",
+    "source": "ee-university-of-tartu",
+    "research_source_id": "ee-university-of-tartu",
+    "source_url": "https://ut.ee/en/open-calls",
+    "website_url": "https://ut.ee/en/scholarships-and-other-stipends",
     "enabled": true,
     "adapter": "opportunity-html",
-    "language": "fi/en",
+    "language": "et/en",
     "default_tags": [],
     "added_at": "2026-10-06",
     "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "FI",
+    "publisher_country": "EE",
     "publisher_type": "unknown",
     "categories": [],
     "collection_blocked_reason": null
@@ -801,6 +498,44 @@
       "kind": "programme-overview",
       "reviewed_at": "2026-10-04"
     }
+  },
+  {
+    "source": "fi-fulbright-finland",
+    "research_source_id": "fi-fulbright-finland",
+    "source_url": "https://www.fulbright.fi/grant-programs-to-us/grants-masters-studies-us/fulbright-finnish-language-and-culture-teaching-assistant-program-flta",
+    "website_url": "https://www.fulbright.fi/grant-programs-to-us/grants-masters-studies-us/fulbright-finnish-language-and-culture-teaching-assistant-program-flta",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "fi/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "FI",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.fulbright.fi/grant-programs-to-us/grants-masters-studies-us/fulbright-finnish-language-and-culture-teaching-assistant-program-flta",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "fi-study-in-finland",
+    "research_source_id": "fi-study-in-finland",
+    "source_url": "https://www.studyinfinland.fi/funding-your-studies/bachelors-and-masters-scholarships",
+    "website_url": "https://www.studyinfinland.fi/funding-your-studies/bachelors-and-masters-scholarships",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "fi/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "FI",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null
   },
   {
     "source": "fi-university-of-helsinki",
@@ -843,11 +578,11 @@
     "infer_title_destinations": false
   },
   {
-    "source": "fr-1jeune1solution",
-    "research_source_id": "fr-1jeune1solution",
-    "source_url": "https://www.1jeune1solution.gouv.fr/stages",
-    "website_url": "https://www.1jeune1solution.gouv.fr/",
-    "enabled": false,
+    "source": "fr-fulbright-france",
+    "research_source_id": "fr-fulbright-france",
+    "source_url": "https://fulbright-france.org/fr/bourses/etudiantes-etudiants/programme-etudiant",
+    "website_url": "https://fulbright-france.org/fr/node/25",
+    "enabled": true,
     "adapter": "opportunity-html",
     "language": "fr/en",
     "default_tags": [],
@@ -856,7 +591,18 @@
     "publisher_country": "FR",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://fulbright-france.org/fr/bourses/etudiantes-etudiants/programme-etudiant",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "title": "Programme Étudiant",
+      "reviewed_at": "2026-10-07",
+      "host_countries": [
+        "US"
+      ],
+      "location_evidence": "Master ou Doctorat dans une université américaine"
+    }
   },
   {
     "source": "fr-service-civique",
@@ -884,72 +630,27 @@
     }
   },
   {
-    "source": "de-daad",
-    "research_source_id": "de-daad",
-    "source_url": "https://www2.daad.de/deutschland/stipendium/datenbank/de/21148-stipendiendatenbank/?detail=57742121",
-    "website_url": "https://www.daad.de/en/studying-in-germany/scholarships/",
-    "enabled": false,
+    "source": "global-visegrad-fund",
+    "research_source_id": "global-visegrad-fund",
+    "source_url": "https://www.visegradfund.org/scholarships",
+    "website_url": "https://www.visegradfund.org/scholarships",
+    "enabled": true,
     "adapter": "opportunity-html",
-    "language": "de/en",
+    "language": "en",
     "default_tags": [],
     "added_at": "2026-10-06",
     "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "DE",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www2.daad.de/deutschland/stipendium/datenbank/de/21148-stipendiendatenbank/?detail=57742121",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "de-stipendiumplus",
-    "research_source_id": "de-stipendiumplus",
-    "source_url": "https://stipendiumplus.de/studierende/was-bietet-mir-ein-stipendium/",
-    "website_url": "https://stipendiumplus.de/",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "de/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract the live named Aufstiegsstipendium programme section from its reviewed original page; do not count provider profiles or general guidance as opportunities.",
-    "publisher_country": "DE",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_sections": [
-      {
-        "title": "Aufstiegsstipendium für Berufserfahrene",
-        "category": "scholarships",
-        "reviewed_at": "2026-10-08"
-      }
-    ]
-  },
-  {
-    "source": "de-rausvonzuhaus",
-    "research_source_id": "de-rausvonzuhaus",
-    "source_url": "https://www.rausvonzuhaus.de/lastminute",
-    "website_url": "https://www.rausvonzuhaus.de/",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "de/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "DE",
+    "publisher_country": null,
     "publisher_type": "unknown",
     "categories": [],
     "collection_blocked_reason": null
   },
   {
-    "source": "gr-iky",
-    "research_source_id": "gr-iky",
-    "source_url": "https://www.iky.gr/en/",
-    "website_url": "https://www.iky.gr/en/",
-    "enabled": false,
+    "source": "gr-fulbright-greece",
+    "research_source_id": "gr-fulbright-greece",
+    "source_url": "https://www.fulbright.gr/el/news-events/1979-greek-scholarship-program-new-timeline",
+    "website_url": "https://www.fulbright.gr/en/",
+    "enabled": true,
     "adapter": "opportunity-html",
     "language": "el/en",
     "default_tags": [],
@@ -958,7 +659,13 @@
     "publisher_country": "GR",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": "Actual footer-linked IKY terms reviewed 2026-10-05. Section 3 explicitly prohibits public reproduction, republication, copying/storage and extracts or summaries without prior permission; personal-use exception does not cover a public catalogue. Section 8 permits ordinary hyperlinks. RSS/robots accessibility is not republication permission."
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.fulbright.gr/el/news-events/1979-greek-scholarship-program-new-timeline",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
   },
   {
     "source": "gr-onassis-foundation",
@@ -983,25 +690,146 @@
     }
   },
   {
-    "source": "gr-fulbright-greece",
-    "research_source_id": "gr-fulbright-greece",
-    "source_url": "https://www.fulbright.gr/el/news-events/1979-greek-scholarship-program-new-timeline",
-    "website_url": "https://www.fulbright.gr/en/",
+    "source": "hr-ampeu",
+    "research_source_id": "hr-ampeu",
+    "source_url": "https://en.ampeu.hr/open-calls",
+    "website_url": "https://en.ampeu.hr/open-calls",
     "enabled": true,
     "adapter": "opportunity-html",
-    "language": "el/en",
+    "language": "hr/en",
     "default_tags": [],
     "added_at": "2026-10-06",
     "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "GR",
+    "publisher_country": "HR",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "listing_path_pattern": "^/open-calls/[^/]+"
+  },
+  {
+    "source": "hr-croatian-ministry",
+    "research_source_id": "hr-croatian-ministry",
+    "source_url": "https://mzom.gov.hr/glavni-izbornik-368/highlights/calls-417/scholarships-of-the-republic-of-croatia-call-for-applications-in-the-academic-year-2026-2027/7588",
+    "website_url": "https://mzom.gov.hr/",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "hr/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "HR",
     "publisher_type": "unknown",
     "categories": [],
     "collection_blocked_reason": null,
     "reviewed_opportunity": {
-      "url": "https://www.fulbright.gr/el/news-events/1979-greek-scholarship-program-new-timeline",
+      "url": "https://mzom.gov.hr/glavni-izbornik-368/highlights/calls-417/scholarships-of-the-republic-of-croatia-call-for-applications-in-the-academic-year-2026-2027/7588",
       "category": "scholarships",
       "kind": "programme-overview",
       "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "hr-demography-language-scholarships",
+    "research_source_id": "hr-demography-language-scholarships",
+    "source_url": "https://mdu.gov.hr/javni-poziv-za-dodjelu-stipendija-za-ucenje-hrvatskoga-jezika-u-republici-hrvatskoj-za-akademsku-godinu-2026-2027-7582/7582",
+    "website_url": "https://mdu.gov.hr/javni-poziv-za-dodjelu-stipendija-za-ucenje-hrvatskoga-jezika-u-republici-hrvatskoj-za-akademsku-godinu-2026-2027-7582/7582",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "hr/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "HR",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://mdu.gov.hr/javni-poziv-za-dodjelu-stipendija-za-ucenje-hrvatskoga-jezika-u-republici-hrvatskoj-za-akademsku-godinu-2026-2027-7582/7582",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "hr-study-in-croatia",
+    "research_source_id": "hr-study-in-croatia",
+    "source_url": "https://www.studyincroatia.hr/study-in-croatia/exchange-programmes/",
+    "website_url": "https://www.studyincroatia.hr/",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "hr/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Collect the live reviewed CEEPUS programme link; exclude general tuition guidance from opportunity records. Other programmes remain separately indexed from their original AMPEU source.",
+    "publisher_country": "HR",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_links": [
+      {
+        "title": "Central European Exchange Programme for University Studies",
+        "url": "https://en.ampeu.hr/ceepus",
+        "category": "scholarships",
+        "reviewed_at": "2026-10-08"
+      }
+    ],
+    "reviewed_page_identity": {
+      "heading": "Exchange Programmes",
+      "canonical_url": "https://www.studyincroatia.hr/exchange-programmes/",
+      "reviewed_at": "2026-10-08"
+    },
+    "reviewed_links_only": true,
+    "excluded_record_urls": [
+      "https://www.studyincroatia.hr/study-in-croatia/tuition-fees-and-scholarships/"
+    ]
+  },
+  {
+    "source": "hu-corvinus-university",
+    "research_source_id": "hu-corvinus-university",
+    "source_url": "https://www.uni-corvinus.hu/post/hir/applications-are-now-open-for-the-study-scholarship-and-student-organization-scholarship/?lang=en",
+    "website_url": "https://www.uni-corvinus.hu/post/hir/applications-are-now-open-for-the-study-scholarship-and-student-organization-scholarship/?lang=en",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "hu/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "HU",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.uni-corvinus.hu/post/hir/applications-are-now-open-for-the-study-scholarship-and-student-organization-scholarship/?lang=en",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "hu-hungarian-diaspora-scholarship",
+    "research_source_id": "hu-hungarian-diaspora-scholarship",
+    "source_url": "https://diasporascholarship.hu/en/about/",
+    "website_url": "https://diasporascholarship.hu/",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "hu/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "HU",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://diasporascholarship.hu/en/about/",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "title": "About the Hungarian Diaspora Scholarship",
+      "reviewed_at": "2026-10-07",
+      "host_countries": [
+        "HU"
+      ],
+      "location_evidence": "While studying in Hungary"
     }
   },
   {
@@ -1040,33 +868,6 @@
       "category": "scholarships",
       "kind": "programme-overview",
       "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "hu-hungarian-diaspora-scholarship",
-    "research_source_id": "hu-hungarian-diaspora-scholarship",
-    "source_url": "https://diasporascholarship.hu/en/about/",
-    "website_url": "https://diasporascholarship.hu/",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "hu/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "HU",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://diasporascholarship.hu/en/about/",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "title": "About the Hungarian Diaspora Scholarship",
-      "reviewed_at": "2026-10-07",
-      "host_countries": [
-        "HU"
-      ],
-      "location_evidence": "While studying in Hungary"
     }
   },
   {
@@ -1124,6 +925,22 @@
     "collection_blocked_reason": null
   },
   {
+    "source": "it-eurodesk-italia",
+    "research_source_id": "it-eurodesk-italia",
+    "source_url": "https://www.eurodesk.it/notizie",
+    "website_url": "https://www.eurodesk.it/",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "it/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "IT",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null
+  },
+  {
     "source": "it-scambieuropei",
     "research_source_id": "it-scambieuropei",
     "source_url": "https://www.scambieuropei.info/",
@@ -1139,22 +956,6 @@
     "categories": [],
     "collection_blocked_reason": null,
     "listing_path_pattern": "^/(?!esperienze|magazine|guide|destinazioni|scadenze|offerte-di|category|tag)[a-z0-9-]{20,}/$"
-  },
-  {
-    "source": "it-eurodesk-italia",
-    "research_source_id": "it-eurodesk-italia",
-    "source_url": "https://www.eurodesk.it/notizie",
-    "website_url": "https://www.eurodesk.it/",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "it/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "IT",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null
   },
   {
     "source": "it-study-in-italy",
@@ -1179,70 +980,20 @@
     }
   },
   {
-    "source": "lv-viaa",
-    "research_source_id": "lv-viaa",
-    "source_url": "https://www.viaa.gov.lv/en/latvian-state-scholarships",
-    "website_url": "https://www.viaa.gov.lv/en/latvian-state-scholarships",
+    "source": "lt-kaunas-university-of-technology",
+    "research_source_id": "lt-kaunas-university-of-technology",
+    "source_url": "https://admissions.ktu.edu/",
+    "website_url": "https://admissions.ktu.edu/",
     "enabled": true,
     "adapter": "opportunity-html",
-    "language": "lv/en",
+    "language": "lt/en",
     "default_tags": [],
     "added_at": "2026-10-06",
     "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "LV",
+    "publisher_country": "LT",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.viaa.gov.lv/en/latvian-state-scholarships",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "lv-university-of-latvia",
-    "research_source_id": "lv-university-of-latvia",
-    "source_url": "https://eszf.lu.lv/en/studies/studies-abroad/erasmus/",
-    "website_url": "https://www.lu.lv/en/admission/scholarships-and-student-loans/fees-grants-and-scholarships/",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "lv/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "LV",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://eszf.lu.lv/en/studies/studies-abroad/erasmus/",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "lv-riga-technical-university",
-    "research_source_id": "lv-riga-technical-university",
-    "source_url": "https://www.rtu.lv/en/studies/doctoral-studies/scholarships-and-grants",
-    "website_url": "https://www.rtu.lv/en/studies/scholarships-2",
-    "enabled": false,
-    "adapter": "opportunity-html",
-    "language": "lv/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "LV",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.rtu.lv/en/studies/doctoral-studies/scholarships-and-grants",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
+    "collection_blocked_reason": null
   },
   {
     "source": "lt-study-in-lithuania",
@@ -1283,65 +1034,32 @@
     }
   },
   {
-    "source": "lt-kaunas-university-of-technology",
-    "research_source_id": "lt-kaunas-university-of-technology",
-    "source_url": "https://admissions.ktu.edu/",
-    "website_url": "https://admissions.ktu.edu/",
+    "source": "lu-fnr-afdoc",
+    "source_url": "https://www.fnr.lu/funding-instruments/afdoc/",
+    "website_url": "https://www.fnr.lu/",
     "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "lt/en",
+    "adapter": "reviewed-html",
+    "language": "en",
     "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "LT",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null
-  },
-  {
-    "source": "lu-university-of-luxembourg",
-    "research_source_id": "lu-university-of-luxembourg",
-    "source_url": "https://www.uni.lu/life-en/financial-support/scholarships/guillaume-dupaix-international-scholarship/",
-    "website_url": "https://www.uni.lu/life-en/financial-support/scholarships/",
-    "enabled": false,
-    "adapter": "opportunity-html",
-    "language": "fr/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "LU",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.uni.lu/life-en/financial-support/scholarships/guillaume-dupaix-international-scholarship/",
+    "added_at": "2026-10-05",
+    "scope": "exact reviewed doctoral programme metadata; individual application status and encoded eligibility unknown",
+    "reviewed_page": {
+      "url": "https://www.fnr.lu/funding-instruments/afdoc/",
       "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "lu-luxembourg-mfa-internships",
-    "research_source_id": "lu-luxembourg-mfa-internships",
-    "source_url": "https://mae.gouvernement.lu/en/directions-du-ministere/finances-ressources-humaines/stages.html",
-    "website_url": "https://mae.gouvernement.lu/en/directions-du-ministere/finances-ressources-humaines/stages.html",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "fr/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+      "kind": "programme-overview"
+    },
+    "access_review": {
+      "reviewed_at": "2026-10-05",
+      "robots_url": "https://www.fnr.lu/robots.txt",
+      "policy_url": "https://www.fnr.lu/legal-notice/",
+      "scope": "Factual original programme title, canonical URL and original publication date only. Informational use and attributed hyperlinks expressly permitted; no prose, scientific references, media or endorsement. Scientific-reference reuse requires © Fonds National de la Recherche. One exact-page request per six-hour run."
+    },
+    "research_source_id": "lu-fnr-afdoc",
+    "categories": [
+      "scholarships"
+    ],
     "publisher_country": "LU",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://mae.gouvernement.lu/en/directions-du-ministere/finances-ressources-humaines/stages.html",
-      "title": "Internships",
-      "category": "internships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-07"
-    }
+    "publisher_type": "public-institution"
   },
   {
     "source": "lu-luxembourg-cooperation",
@@ -1397,20 +1115,93 @@
     ]
   },
   {
-    "source": "mt-myscholarship",
-    "research_source_id": "mt-myscholarship",
-    "source_url": "https://myscholarship.gov.mt/en/",
-    "website_url": "https://myscholarship.gov.mt/en/",
-    "enabled": false,
+    "source": "lu-luxembourg-mfa-internships",
+    "research_source_id": "lu-luxembourg-mfa-internships",
+    "source_url": "https://mae.gouvernement.lu/en/directions-du-ministere/finances-ressources-humaines/stages.html",
+    "website_url": "https://mae.gouvernement.lu/en/directions-du-ministere/finances-ressources-humaines/stages.html",
+    "enabled": true,
     "adapter": "opportunity-html",
-    "language": "mt/en",
+    "language": "fr/en",
     "default_tags": [],
     "added_at": "2026-10-06",
     "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "MT",
+    "publisher_country": "LU",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": "The scholarship service footer links https://www.gov.mt/en/Pages/Terms-of-use.aspx (verified 2026-10-07), whose prohibited uses expressly exclude automated page scraping/monitoring. An approved feed/API or publisher authorization is required."
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://mae.gouvernement.lu/en/directions-du-ministere/finances-ressources-humaines/stages.html",
+      "title": "Internships",
+      "category": "internships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-07"
+    }
+  },
+  {
+    "source": "lu-snj-volontaires",
+    "research_source_id": "lu-snj-volontaires",
+    "source_url": "https://www.volontaires.lu/missions-svn/volontaire-en-soutien-a-lorganisation-devenements-et-a-la-communication/",
+    "website_url": "https://www.volontaires.lu/missions-svn/volontaire-en-soutien-a-lorganisation-devenements-et-a-la-communication/",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "fr/lu",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "LU",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.volontaires.lu/missions-svn/volontaire-en-soutien-a-lorganisation-devenements-et-a-la-communication/",
+      "category": "volunteering",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "lv-university-of-latvia",
+    "research_source_id": "lv-university-of-latvia",
+    "source_url": "https://eszf.lu.lv/en/studies/studies-abroad/erasmus/",
+    "website_url": "https://www.lu.lv/en/admission/scholarships-and-student-loans/fees-grants-and-scholarships/",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "lv/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "LV",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://eszf.lu.lv/en/studies/studies-abroad/erasmus/",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "lv-viaa",
+    "research_source_id": "lv-viaa",
+    "source_url": "https://www.viaa.gov.lv/en/latvian-state-scholarships",
+    "website_url": "https://www.viaa.gov.lv/en/latvian-state-scholarships",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "lv/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "LV",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.viaa.gov.lv/en/latvian-state-scholarships",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
   },
   {
     "source": "mt-university-of-malta",
@@ -1435,20 +1226,71 @@
     }
   },
   {
-    "source": "mt-malta-student-grants",
-    "research_source_id": "mt-malta-student-grants",
-    "source_url": "https://stipendsandgrants.gov.mt/en/",
-    "website_url": "https://stipendsandgrants.gov.mt/en/",
-    "enabled": false,
+    "source": "nl-fulbright-doctoral",
+    "source_url": "https://fulbright.nl/naar-de-vs/promovendi/fulbright-beurzen-voor-promovendi/",
+    "website_url": "https://fulbright.nl/",
+    "enabled": true,
+    "adapter": "reviewed-html",
+    "language": "nl",
+    "default_tags": [],
+    "added_at": "2026-10-05",
+    "scope": "exact reviewed doctoral scholarship programme metadata; individual application status and encoded eligibility unknown",
+    "reviewed_page": {
+      "url": "https://fulbright.nl/naar-de-vs/promovendi/fulbright-beurzen-voor-promovendi/",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "metadata_format": "open-graph"
+    },
+    "access_review": {
+      "reviewed_at": "2026-10-05",
+      "robots_url": "https://fulbright.nl/robots.txt",
+      "policy_url": "https://fulbright.nl/over-ons/privacyverklaring/",
+      "scope": "Factual original programme title and canonical URL only; no prose, imagery, personal data or endorsement. No express title/link indexing prohibition or reuse licence established in reviewed scope. One page request per six-hour run; robots crawl-delay 10 seconds respected by singleton host selection."
+    },
+    "research_source_id": "nl-fulbright-netherlands",
+    "categories": [
+      "scholarships"
+    ],
+    "publisher_country": "NL",
+    "publisher_type": "public-institution"
+  },
+  {
+    "source": "nl-leiden-university",
+    "research_source_id": "nl-leiden-university",
+    "source_url": "https://www.universiteitleiden.nl/en/scholarships/sea/leiden-university-excellence-scholarship-lexs",
+    "website_url": "https://www.universiteitleiden.nl/en/scholarships/sea/leiden-university-excellence-scholarship-lexs",
+    "enabled": true,
     "adapter": "opportunity-html",
-    "language": "mt/en",
+    "language": "nl/en",
     "default_tags": [],
     "added_at": "2026-10-06",
     "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "MT",
+    "publisher_country": "NL",
     "publisher_type": "unknown",
     "categories": [],
-    "collection_blocked_reason": "Footer-linked https://www.gov.mt/en/Pages/Terms-of-use.aspx inspected2026-10-05: express page-scrape/robot/spider/automatic monitoring prohibition; ordinary fair non-endorsing links permitted. Do not implement scraping."
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.universiteitleiden.nl/en/scholarships/sea/leiden-university-excellence-scholarship-lexs",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "nl-magnet-me",
+    "research_source_id": "nl-magnet-me",
+    "source_url": "https://magnet.me/en/internships/netherlands",
+    "website_url": "https://magnet.me/en/internships/netherlands",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "nl/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "NL",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null
   },
   {
     "source": "nl-study-in-nl",
@@ -1481,42 +1323,29 @@
     ]
   },
   {
-    "source": "nl-magnet-me",
-    "research_source_id": "nl-magnet-me",
-    "source_url": "https://magnet.me/en/internships/netherlands",
-    "website_url": "https://magnet.me/en/internships/netherlands",
+    "source": "opportunitydesk",
+    "source_url": "https://opportunitydesk.org/feed/",
+    "website_url": "https://opportunitydesk.org/",
     "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "nl/en",
+    "adapter": "rss",
+    "language": "en",
     "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "NL",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null
-  },
-  {
-    "source": "nl-leiden-university",
-    "research_source_id": "nl-leiden-university",
-    "source_url": "https://www.universiteitleiden.nl/en/scholarships/sea/leiden-university-excellence-scholarship-lexs",
-    "website_url": "https://www.universiteitleiden.nl/en/scholarships/sea/leiden-university-excellence-scholarship-lexs",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "nl/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "NL",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.universiteitleiden.nl/en/scholarships/sea/leiden-university-excellence-scholarship-lexs",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
+    "added_at": "2026-10-04",
+    "scope": "international",
+    "publisher_type": "aggregator",
+    "publisher_country": null,
+    "categories": [
+      "scholarships",
+      "internships",
+      "volunteering",
+      "fellowships",
+      "training",
+      "competitions",
+      "grants",
+      "jobs",
+      "other"
+    ],
+    "research_source_id": "opportunity-desk"
   },
   {
     "source": "pl-eurodesk-polska",
@@ -1533,6 +1362,27 @@
     "publisher_type": "unknown",
     "categories": [],
     "collection_blocked_reason": null
+  },
+  {
+    "source": "pl-frse",
+    "research_source_id": "pl-frse",
+    "source_url": "https://www.frse.org.pl/aktualnosci",
+    "website_url": "https://www.frse.org.pl/",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "pl/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "PL",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "listing_path_pattern": "^/aktualnosci/",
+    "listing_title_rules": {
+      "competitions": "^(?:Konkurs(?:\\s|:)|(?:[IVX]+\\s+)?edycja konkursu|Nabór)"
+    },
+    "listing_exclude_title_pattern": "laureat|wyniki|rozstrzygnię|zwycię"
   },
   {
     "source": "pl-nawa",
@@ -1557,25 +1407,77 @@
     }
   },
   {
-    "source": "pl-frse",
-    "research_source_id": "pl-frse",
-    "source_url": "https://www.frse.org.pl/aktualnosci",
-    "website_url": "https://www.frse.org.pl/",
+    "source": "pt-dges",
+    "research_source_id": "pt-dges",
+    "source_url": "https://dges.gov.pt/pt/pagina/prazos-de-candidatura",
+    "website_url": "https://www.dges.gov.pt/en",
     "enabled": true,
     "adapter": "opportunity-html",
-    "language": "pl/en",
+    "language": "pt/en",
     "default_tags": [],
     "added_at": "2026-10-06",
     "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "PL",
+    "publisher_country": "PT",
     "publisher_type": "unknown",
     "categories": [],
     "collection_blocked_reason": null,
-    "listing_path_pattern": "^/aktualnosci/",
-    "listing_title_rules": {
-      "competitions": "^(?:Konkurs(?:\\s|:)|(?:[IVX]+\\s+)?edycja konkursu|Nabór)"
+    "reviewed_opportunity": {
+      "url": "https://dges.gov.pt/pt/pagina/prazos-de-candidatura",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "pt-fct",
+    "research_source_id": "pt-fct",
+    "source_url": "https://www.fct.pt/en/financiamento/programas-de-financiamento/bolsas/",
+    "website_url": "https://www.fct.pt/en/financiamento/programas-de-financiamento/bolsas/",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "pt/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "PT",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.fct.pt/en/financiamento/programas-de-financiamento/bolsas/",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "pt-fulbright-masters",
+    "source_url": "https://www.fulbright.pt/bolsas/bolsa-fulbright-para-mestrado/",
+    "website_url": "https://www.fulbright.pt/",
+    "enabled": true,
+    "adapter": "reviewed-html",
+    "language": "pt",
+    "default_tags": [],
+    "added_at": "2026-10-05",
+    "scope": "exact reviewed programme overview metadata; individual application status and encoded eligibility unknown",
+    "reviewed_page": {
+      "url": "https://www.fulbright.pt/bolsas/bolsa-fulbright-para-mestrado/",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "metadata_format": "open-graph"
     },
-    "listing_exclude_title_pattern": "laureat|wyniki|rozstrzygnię|zwycię"
+    "access_review": {
+      "reviewed_at": "2026-10-05",
+      "robots_url": "https://www.fulbright.pt/robots.txt",
+      "policy_url": "https://www.fulbright.pt/politica-privacidade/",
+      "scope": "Factual programme title and original URL only; no descriptions, imagery or endorsement. No express indexing prohibition or reuse licence established in reviewed scope."
+    },
+    "research_source_id": "pt-fulbright-portugal",
+    "categories": [
+      "scholarships"
+    ],
+    "publisher_country": "PT",
+    "publisher_type": "public-institution"
   },
   {
     "source": "pt-ipdj",
@@ -1620,44 +1522,44 @@
     ]
   },
   {
-    "source": "pt-fct",
-    "research_source_id": "pt-fct",
-    "source_url": "https://www.fct.pt/en/financiamento/programas-de-financiamento/bolsas/",
-    "website_url": "https://www.fct.pt/en/financiamento/programas-de-financiamento/bolsas/",
+    "source": "ro-anpcdefp",
+    "research_source_id": "ro-anpcdefp",
+    "source_url": "https://www.anpcdefp.ro/ce-facem/ne-implicam/erasmus-si-fse/",
+    "website_url": "https://www.anpcdefp.ro/",
     "enabled": true,
     "adapter": "opportunity-html",
-    "language": "pt/en",
+    "language": "ro/en",
     "default_tags": [],
     "added_at": "2026-10-06",
     "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "PT",
+    "publisher_country": "RO",
     "publisher_type": "unknown",
     "categories": [],
     "collection_blocked_reason": null,
     "reviewed_opportunity": {
-      "url": "https://www.fct.pt/en/financiamento/programas-de-financiamento/bolsas/",
-      "category": "scholarships",
+      "url": "https://www.anpcdefp.ro/ce-facem/ne-implicam/erasmus-si-fse/",
+      "category": "training",
       "kind": "programme-overview",
       "reviewed_at": "2026-10-04"
     }
   },
   {
-    "source": "pt-dges",
-    "research_source_id": "pt-dges",
-    "source_url": "https://dges.gov.pt/pt/pagina/prazos-de-candidatura",
-    "website_url": "https://www.dges.gov.pt/en",
+    "source": "ro-fulbright-romania",
+    "research_source_id": "ro-fulbright-romania",
+    "source_url": "https://fulbright.ro/the-2027-2028-fulbright-us-student-competition/",
+    "website_url": "https://fulbright.ro/",
     "enabled": true,
     "adapter": "opportunity-html",
-    "language": "pt/en",
+    "language": "ro/en",
     "default_tags": [],
     "added_at": "2026-10-06",
     "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "PT",
+    "publisher_country": "RO",
     "publisher_type": "unknown",
     "categories": [],
     "collection_blocked_reason": null,
     "reviewed_opportunity": {
-      "url": "https://dges.gov.pt/pt/pagina/prazos-de-candidatura",
+      "url": "https://fulbright.ro/the-2027-2028-fulbright-us-student-competition/",
       "category": "scholarships",
       "kind": "programme-overview",
       "reviewed_at": "2026-10-04"
@@ -1683,47 +1585,201 @@
     ]
   },
   {
-    "source": "ro-fulbright-romania",
-    "research_source_id": "ro-fulbright-romania",
-    "source_url": "https://fulbright.ro/the-2027-2028-fulbright-us-student-competition/",
-    "website_url": "https://fulbright.ro/",
+    "source": "scholarshipscorner",
+    "source_url": "https://scholarshipscorner.website/feed/",
+    "website_url": "https://scholarshipscorner.website/",
+    "enabled": true,
+    "adapter": "rss",
+    "language": "en",
+    "default_tags": [],
+    "added_at": "2026-10-04",
+    "scope": "international",
+    "publisher_type": "aggregator",
+    "publisher_country": null,
+    "categories": [
+      "scholarships",
+      "internships",
+      "volunteering",
+      "fellowships",
+      "training",
+      "competitions",
+      "grants",
+      "jobs",
+      "other"
+    ],
+    "research_source_id": "scholarships-corner"
+  },
+  {
+    "source": "se-fulbright-sweden",
+    "research_source_id": "se-fulbright-sweden",
+    "source_url": "https://www.fulbright.se/scholar-program/",
+    "website_url": "https://www.fulbright.se/scholar-program/",
     "enabled": true,
     "adapter": "opportunity-html",
-    "language": "ro/en",
+    "language": "sv/en",
     "default_tags": [],
     "added_at": "2026-10-06",
     "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "RO",
+    "publisher_country": "SE",
     "publisher_type": "unknown",
     "categories": [],
     "collection_blocked_reason": null,
     "reviewed_opportunity": {
-      "url": "https://fulbright.ro/the-2027-2028-fulbright-us-student-competition/",
+      "url": "https://www.fulbright.se/scholar-program/",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "title": "Fulbright Swedish Scholar Program",
+      "reviewed_at": "2026-10-07",
+      "host_countries": [
+        "US"
+      ],
+      "location_evidence": "Research and/or lecture in the United States"
+    }
+  },
+  {
+    "source": "se-lund-university",
+    "research_source_id": "se-lund-university",
+    "source_url": "https://www.lunduniversity.lu.se/study/admission-degree-studies/scholarships-and-awards/lund-university-global-scholarship",
+    "website_url": "https://www.lunduniversity.lu.se/admissions/bachelors-and-masters-studies/scholarships-and-awards",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "sv/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "SE",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.lunduniversity.lu.se/study/admission-degree-studies/scholarships-and-awards/lund-university-global-scholarship",
       "category": "scholarships",
       "kind": "programme-overview",
       "reviewed_at": "2026-10-04"
     }
   },
   {
-    "source": "ro-anpcdefp",
-    "research_source_id": "ro-anpcdefp",
-    "source_url": "https://www.anpcdefp.ro/ce-facem/ne-implicam/erasmus-si-fse/",
-    "website_url": "https://www.anpcdefp.ro/",
+    "source": "se-study-in-sweden",
+    "research_source_id": "se-study-in-sweden",
+    "source_url": "https://studyinsweden.se/scholarships/",
+    "website_url": "https://studyinsweden.se/scholarships/",
     "enabled": true,
     "adapter": "opportunity-html",
-    "language": "ro/en",
+    "language": "sv/en",
     "default_tags": [],
     "added_at": "2026-10-06",
     "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "RO",
+    "publisher_country": "SE",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "listing_allowed_hosts": [
+      "www.educations.com",
+      "my.rotary.org",
+      "www.unesco.org"
+    ]
+  },
+  {
+    "source": "se-swedish-institute",
+    "research_source_id": "se-swedish-institute",
+    "source_url": "https://apply-scholarships.si.se/",
+    "website_url": "https://si.se/en/apply/scholarships/",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "sv/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "SE",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null
+  },
+  {
+    "source": "si-cmepius",
+    "research_source_id": "si-cmepius",
+    "source_url": "https://www.cmepius.si/mednarodno-sodelovanje/moznosti-sodelovanja/bilaterale/",
+    "website_url": "https://www.cmepius.si/mednarodno-sodelovanje/moznosti-sodelovanja/bilaterale/",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "sl/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "SI",
     "publisher_type": "unknown",
     "categories": [],
     "collection_blocked_reason": null,
     "reviewed_opportunity": {
-      "url": "https://www.anpcdefp.ro/ce-facem/ne-implicam/erasmus-si-fse/",
-      "category": "training",
+      "url": "https://www.cmepius.si/mednarodno-sodelovanje/moznosti-sodelovanja/bilaterale/",
+      "category": "scholarships",
       "kind": "programme-overview",
       "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "si-public-scholarship-fund",
+    "research_source_id": "si-public-scholarship-fund",
+    "source_url": "https://www.srips-rs.si/en/sklad/o-nas/javne-objave/javni-razpisi",
+    "website_url": "https://www.srips-rs.si/en/public-calls",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "sl/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "SI",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null
+  },
+  {
+    "source": "si-university-of-ljubljana",
+    "research_source_id": "si-university-of-ljubljana",
+    "source_url": "https://www.aluo.uni-lj.si/en/internationally/erasmus-traineeship/",
+    "website_url": "https://www.uni-lj.si/en/study",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "sl/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "SI",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.aluo.uni-lj.si/en/internationally/erasmus-traineeship/",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "sk-fulbright-slovakia",
+    "research_source_id": "sk-fulbright-slovakia",
+    "source_url": "https://fulbright.sk/en/us-student",
+    "website_url": "https://fulbright.sk/en/us-student",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "sk/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "SK",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://fulbright.sk/en/us-student",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "title": "Fulbright U.S. Student Program",
+      "reviewed_at": "2026-10-07",
+      "host_countries": [
+        "SK"
+      ],
+      "location_evidence": "Study or conduct research in Slovakia for one academic year"
     }
   },
   {
@@ -1741,6 +1797,549 @@
     "publisher_type": "unknown",
     "categories": [],
     "collection_blocked_reason": null
+  },
+  {
+    "source": "us-fulbright-us-student",
+    "research_source_id": "us-fulbright-us-student",
+    "source_url": "https://us.fulbrightonline.org/applicants/types-of-awards",
+    "website_url": "https://us.fulbrightonline.org/",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "US",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null
+  },
+  {
+    "source": "us-nasa-internships",
+    "source_url": "https://www.nasa.gov/learning-resources/internship-programs/",
+    "website_url": "https://www.nasa.gov/",
+    "enabled": true,
+    "adapter": "reviewed-html",
+    "language": "en",
+    "default_tags": [],
+    "added_at": "2026-10-05",
+    "scope": "reviewed programme overview metadata; individual application windows and eligibility unknown",
+    "reviewed_page": {
+      "url": "https://www.nasa.gov/learning-resources/internship-programs/",
+      "category": "internships",
+      "kind": "programme-overview"
+    },
+    "access_review": {
+      "reviewed_at": "2026-10-05",
+      "robots_url": "https://www.nasa.gov/robots.txt",
+      "policy_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "scope": "Factual programme title, original URL and publication date only; source acknowledgment, no endorsement, imagery or third-party content."
+    },
+    "research_source_id": "us-nasa-internships",
+    "categories": [
+      "internships"
+    ],
+    "publisher_country": "US",
+    "publisher_type": "public-institution"
+  },
+  {
+    "source": "us-nsf-reu",
+    "research_source_id": "us-nsf-reu",
+    "source_url": "https://www.nsf.gov/funding/initiatives/reu/students",
+    "website_url": "https://www.nsf.gov/funding/initiatives/reu/students",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "US",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.nsf.gov/funding/initiatives/reu/students",
+      "category": "internships",
+      "kind": "programme-overview",
+      "title": "NSF REU: Information for Students",
+      "reviewed_at": "2026-10-07"
+    }
+  },
+  {
+    "source": "us-usajobs-students",
+    "research_source_id": "us-usajobs-students",
+    "source_url": "https://recentgrad.usajobs.gov/search/results",
+    "website_url": "https://www.usajobs.gov/HiringPath/Students",
+    "enabled": true,
+    "adapter": "opportunity-html",
+    "language": "en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "US",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null
+  },
+  {
+    "source": "at-grants-at",
+    "research_source_id": "at-grants-at",
+    "source_url": "https://grants.at/en",
+    "website_url": "https://grants.at/en",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "de/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "AT",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "diagnostic_scripts": [
+      "https://grants.at/static/app/build/assets/app-BXezEdO3.js"
+    ]
+  },
+  {
+    "source": "be-ares",
+    "research_source_id": "be-ares",
+    "source_url": "https://www.ares-ac.be/en/cooperation-au-developpement/bourses",
+    "website_url": "https://www.ares-ac.be/en/cooperation-au-developpement/bourses",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "nl/fr/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "BE",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null
+  },
+  {
+    "source": "be-fulbright-belgium-luxembourg",
+    "research_source_id": "be-fulbright-belgium-luxembourg",
+    "source_url": "https://www.fulbright.be/news/2027-28-competition-open/",
+    "website_url": "https://www.fulbright.be/news/2027-28-competition-open/",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "BE",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.fulbright.be/news/2027-28-competition-open/",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "bg-feba-alumni",
+    "research_source_id": "bg-feba-alumni",
+    "source_url": "https://www.febalumni.org/en/2026/06/17/feba-alumni-club-obyavyava-konkurs-za-mesechni-stipendii-visoki-akademichni-postizheniya-za-leten-semestr-na-akademichnata-20252026-g-kraen-srok-30-06-2026-g/",
+    "website_url": "https://www.febalumni.org/en/",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "bg/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "BG",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.febalumni.org/en/2026/06/17/feba-alumni-club-obyavyava-konkurs-za-mesechni-stipendii-visoki-akademichni-postizheniya-za-leten-semestr-na-akademichnata-20252026-g-kraen-srok-30-06-2026-g/",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "cy-cyprus-diaspora-scholarships",
+    "research_source_id": "cy-cyprus-diaspora-scholarships",
+    "source_url": "https://www.gov.cy/mfa/en/service-for-overseas-cypriots-and-repatriated-cypriots/",
+    "website_url": "https://www.gov.cy/mfa/en/service-for-overseas-cypriots-and-repatriated-cypriots/",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "el/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "CY",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.gov.cy/mfa/en/service-for-overseas-cypriots-and-repatriated-cypriots/",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "cy-cyprus-state-scholarships-foundation",
+    "research_source_id": "cy-cyprus-state-scholarships-foundation",
+    "source_url": "https://www.gov.cy/mof-cssf/documents/prokiryxi-kratikon-ypotrofion-gia-proptychiakes-spoydes-2025-26/",
+    "website_url": "https://www.gov.cy/mof-cssf/",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "el/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "CY",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.gov.cy/mof-cssf/documents/prokiryxi-kratikon-ypotrofion-gia-proptychiakes-spoydes-2025-26/",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "de-daad",
+    "research_source_id": "de-daad",
+    "source_url": "https://www2.daad.de/deutschland/stipendium/datenbank/de/21148-stipendiendatenbank/?detail=57742121",
+    "website_url": "https://www.daad.de/en/studying-in-germany/scholarships/",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "de/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "DE",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www2.daad.de/deutschland/stipendium/datenbank/de/21148-stipendiendatenbank/?detail=57742121",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "es-fundaci-n-carolina",
+    "research_source_id": "es-fundaci-n-carolina",
+    "source_url": "https://www.fundacioncarolina.es/convocatoria-de-becas-2026-2027/",
+    "website_url": "https://www.fundacioncarolina.es/",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "es",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "ES",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": "Actual legal notice prohibits extraction/reuse/reproduction except legally permitted cases or written rights-holder authorization; also requests consent for hyperlinks. Publications-only CC BY-NC-ND notice does not license the general website.",
+    "reviewed_opportunity": {
+      "url": "https://www.fundacioncarolina.es/convocatoria-de-becas-2026-2027/",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-05"
+    }
+  },
+  {
+    "source": "es-injuve",
+    "research_source_id": "es-injuve",
+    "source_url": "https://www.injuve.es/convocatorias/becas-empleo/107-becas-sepi-de-iniciacion-en-la-empresa-2026",
+    "website_url": "https://www.injuve.es/convocatorias/becas?activas=si",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "es",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "ES",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null
+  },
+  {
+    "source": "es-la-caixa-foundation",
+    "research_source_id": "es-la-caixa-foundation",
+    "source_url": "https://fundacionlacaixa.org/es/becas",
+    "website_url": "https://fundacionlacaixa.org/es/becas",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "es",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "ES",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": "Actual footer-linked legal notice (updated 10 February 2026) requires prior express authorization for reproduction/exploitation and links to pages other than the portal homepage. Robots allows crawling but grants no reuse permission."
+  },
+  {
+    "source": "fr-1jeune1solution",
+    "research_source_id": "fr-1jeune1solution",
+    "source_url": "https://www.1jeune1solution.gouv.fr/stages",
+    "website_url": "https://www.1jeune1solution.gouv.fr/",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "fr/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "FR",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null
+  },
+  {
+    "source": "fulbright-czech-programmes",
+    "source_url": "https://fulbright.gov.cz/feed/",
+    "website_url": "https://fulbright.gov.cz/",
+    "enabled": false,
+    "adapter": "reviewed-rss",
+    "language": "cs",
+    "default_tags": [],
+    "added_at": "2026-10-04",
+    "scope": "reviewed programme metadata; availability and applicant eligibility unknown",
+    "reviewed_items": [
+      {
+        "url": "https://fulbright.gov.cz/intercountry-travel-grant-pozvete-si-americkeho-vedce-na-par-dni/",
+        "category": "grants",
+        "kind": "institutional-grant"
+      },
+      {
+        "url": "https://fulbright.gov.cz/nemusite-letet-na-mesic-muzete-letet-na-fulbrighta/",
+        "category": "scholarships",
+        "kind": "programme-overview"
+      }
+    ],
+    "publisher_type": "public-institution",
+    "publisher_country": "CZ",
+    "categories": [
+      "scholarships",
+      "grants"
+    ],
+    "research_source_id": "cz-fulbright-commission"
+  },
+  {
+    "source": "gr-iky",
+    "research_source_id": "gr-iky",
+    "source_url": "https://www.iky.gr/en/",
+    "website_url": "https://www.iky.gr/en/",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "el/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "GR",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": "Actual footer-linked IKY terms reviewed 2026-10-05. Section 3 explicitly prohibits public reproduction, republication, copying/storage and extracts or summaries without prior permission; personal-use exception does not cover a public catalogue. Section 8 permits ordinary hyperlinks. RSS/robots accessibility is not republication permission."
+  },
+  {
+    "source": "hr-university-of-zagreb",
+    "research_source_id": "hr-university-of-zagreb",
+    "source_url": "https://www.unizg.hr/studiji-i-studiranje/upisi-stipendije-priznavanja/stipendije/",
+    "website_url": "https://www.unizg.hr/studiji-i-studiranje/upisi-stipendije-priznavanja/stipendije/",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "hr/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "HR",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.unizg.hr/studiji-i-studiranje/upisi-stipendije-priznavanja/stipendije/",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "hu-fulbright-hungary",
+    "research_source_id": "hu-fulbright-hungary",
+    "source_url": "https://fulbright.hu/",
+    "website_url": "https://fulbright.hu/",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "hu/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "HU",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null
+  },
+  {
+    "source": "lu-university-of-luxembourg",
+    "research_source_id": "lu-university-of-luxembourg",
+    "source_url": "https://www.uni.lu/life-en/financial-support/scholarships/guillaume-dupaix-international-scholarship/",
+    "website_url": "https://www.uni.lu/life-en/financial-support/scholarships/",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "fr/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "LU",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.uni.lu/life-en/financial-support/scholarships/guillaume-dupaix-international-scholarship/",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "lv-riga-technical-university",
+    "research_source_id": "lv-riga-technical-university",
+    "source_url": "https://www.rtu.lv/en/studies/doctoral-studies/scholarships-and-grants",
+    "website_url": "https://www.rtu.lv/en/studies/scholarships-2",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "lv/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "LV",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://www.rtu.lv/en/studies/doctoral-studies/scholarships-and-grants",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "mt-arts-council",
+    "research_source_id": "mt-arts-council",
+    "source_url": "https://artscouncilmalta.gov.mt/en/funding-and-grants/artivisti/",
+    "website_url": "https://artscouncilmalta.gov.mt/en/funding-and-grants/artivisti/",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "mt/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "MT",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://artscouncilmalta.gov.mt/en/funding-and-grants/artivisti/",
+      "category": "training",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
+  },
+  {
+    "source": "mt-malta-student-grants",
+    "research_source_id": "mt-malta-student-grants",
+    "source_url": "https://stipendsandgrants.gov.mt/en/",
+    "website_url": "https://stipendsandgrants.gov.mt/en/",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "mt/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "MT",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": "Footer-linked https://www.gov.mt/en/Pages/Terms-of-use.aspx inspected2026-10-05: express page-scrape/robot/spider/automatic monitoring prohibition; ordinary fair non-endorsing links permitted. Do not implement scraping."
+  },
+  {
+    "source": "mt-myscholarship",
+    "research_source_id": "mt-myscholarship",
+    "source_url": "https://myscholarship.gov.mt/en/",
+    "website_url": "https://myscholarship.gov.mt/en/",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "mt/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "MT",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": "The scholarship service footer links https://www.gov.mt/en/Pages/Terms-of-use.aspx (verified 2026-10-07), whose prohibited uses expressly exclude automated page scraping/monitoring. An approved feed/API or publisher authorization is required."
+  },
+  {
+    "source": "opportunitiesforyouth",
+    "source_url": "https://opportunitiesforyouth.org/feed/",
+    "website_url": "https://opportunitiesforyouth.org/",
+    "enabled": false,
+    "adapter": "rss",
+    "language": "en",
+    "default_tags": [],
+    "added_at": "2026-10-04",
+    "scope": "international",
+    "publisher_type": "aggregator",
+    "publisher_country": null,
+    "categories": [
+      "scholarships",
+      "internships",
+      "volunteering",
+      "fellowships",
+      "training",
+      "competitions",
+      "grants",
+      "jobs",
+      "other"
+    ],
+    "research_source_id": "opportunities-for-youth"
+  },
+  {
+    "source": "pl-fulbright-poland",
+    "research_source_id": "pl-fulbright-poland",
+    "source_url": "https://fulbright.edu.pl/junior-research/",
+    "website_url": "https://fulbright.edu.pl/junior-research/",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "pl/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "PL",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null
+  },
+  {
+    "source": "sk-comenius-university",
+    "research_source_id": "sk-comenius-university",
+    "source_url": "https://zona.fmph.uniba.sk/detail-novinky/back_to_page/fmfi-uk-zona/article/vyzva-na-podavanie-ziadosti-o-jednorazove-mimoriadne-stipendium-call-for-applications-for-ex-9/",
+    "website_url": "https://zona.fmph.uniba.sk/detail-novinky/back_to_page/fmfi-uk-zona/article/vyzva-na-podavanie-ziadosti-o-jednorazove-mimoriadne-stipendium-call-for-applications-for-ex-9/",
+    "enabled": false,
+    "adapter": "opportunity-html",
+    "language": "sk/en",
+    "default_tags": [],
+    "added_at": "2026-10-06",
+    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "publisher_country": "SK",
+    "publisher_type": "unknown",
+    "categories": [],
+    "collection_blocked_reason": null,
+    "reviewed_opportunity": {
+      "url": "https://zona.fmph.uniba.sk/detail-novinky/back_to_page/fmfi-uk-zona/article/vyzva-na-podavanie-ziadosti-o-jednorazove-mimoriadne-stipendium-call-for-applications-for-ex-9/",
+      "category": "scholarships",
+      "kind": "programme-overview",
+      "reviewed_at": "2026-10-04"
+    }
   },
   {
     "source": "sk-national-scholarship-programme",
@@ -1781,218 +2380,6 @@
     "collection_blocked_reason": null
   },
   {
-    "source": "si-public-scholarship-fund",
-    "research_source_id": "si-public-scholarship-fund",
-    "source_url": "https://www.srips-rs.si/en/sklad/o-nas/javne-objave/javni-razpisi",
-    "website_url": "https://www.srips-rs.si/en/public-calls",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "sl/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "SI",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null
-  },
-  {
-    "source": "si-cmepius",
-    "research_source_id": "si-cmepius",
-    "source_url": "https://www.cmepius.si/mednarodno-sodelovanje/moznosti-sodelovanja/bilaterale/",
-    "website_url": "https://www.cmepius.si/mednarodno-sodelovanje/moznosti-sodelovanja/bilaterale/",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "sl/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "SI",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.cmepius.si/mednarodno-sodelovanje/moznosti-sodelovanja/bilaterale/",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "si-university-of-ljubljana",
-    "research_source_id": "si-university-of-ljubljana",
-    "source_url": "https://www.aluo.uni-lj.si/en/internationally/erasmus-traineeship/",
-    "website_url": "https://www.uni-lj.si/en/study",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "sl/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "SI",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.aluo.uni-lj.si/en/internationally/erasmus-traineeship/",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "es-injuve",
-    "research_source_id": "es-injuve",
-    "source_url": "https://www.injuve.es/convocatorias/becas-empleo/107-becas-sepi-de-iniciacion-en-la-empresa-2026",
-    "website_url": "https://www.injuve.es/convocatorias/becas?activas=si",
-    "enabled": false,
-    "adapter": "opportunity-html",
-    "language": "es",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "ES",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null
-  },
-  {
-    "source": "es-fundaci-n-carolina",
-    "research_source_id": "es-fundaci-n-carolina",
-    "source_url": "https://www.fundacioncarolina.es/convocatoria-de-becas-2026-2027/",
-    "website_url": "https://www.fundacioncarolina.es/",
-    "enabled": false,
-    "adapter": "opportunity-html",
-    "language": "es",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "ES",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": "Actual legal notice prohibits extraction/reuse/reproduction except legally permitted cases or written rights-holder authorization; also requests consent for hyperlinks. Publications-only CC BY-NC-ND notice does not license the general website.",
-    "reviewed_opportunity": {
-      "url": "https://www.fundacioncarolina.es/convocatoria-de-becas-2026-2027/",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-05"
-    }
-  },
-  {
-    "source": "es-la-caixa-foundation",
-    "research_source_id": "es-la-caixa-foundation",
-    "source_url": "https://fundacionlacaixa.org/es/becas",
-    "website_url": "https://fundacionlacaixa.org/es/becas",
-    "enabled": false,
-    "adapter": "opportunity-html",
-    "language": "es",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "ES",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": "Actual footer-linked legal notice (updated 10 February 2026) requires prior express authorization for reproduction/exploitation and links to pages other than the portal homepage. Robots allows crawling but grants no reuse permission."
-  },
-  {
-    "source": "se-swedish-institute",
-    "research_source_id": "se-swedish-institute",
-    "source_url": "https://apply-scholarships.si.se/",
-    "website_url": "https://si.se/en/apply/scholarships/",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "sv/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "SE",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null
-  },
-  {
-    "source": "se-study-in-sweden",
-    "research_source_id": "se-study-in-sweden",
-    "source_url": "https://studyinsweden.se/scholarships/",
-    "website_url": "https://studyinsweden.se/scholarships/",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "sv/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "SE",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "listing_allowed_hosts": [
-      "www.educations.com",
-      "my.rotary.org",
-      "www.unesco.org"
-    ]
-  },
-  {
-    "source": "se-lund-university",
-    "research_source_id": "se-lund-university",
-    "source_url": "https://www.lunduniversity.lu.se/study/admission-degree-studies/scholarships-and-awards/lund-university-global-scholarship",
-    "website_url": "https://www.lunduniversity.lu.se/admissions/bachelors-and-masters-studies/scholarships-and-awards",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "sv/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "SE",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.lunduniversity.lu.se/study/admission-degree-studies/scholarships-and-awards/lund-university-global-scholarship",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "us-usajobs-students",
-    "research_source_id": "us-usajobs-students",
-    "source_url": "https://recentgrad.usajobs.gov/search/results",
-    "website_url": "https://www.usajobs.gov/HiringPath/Students",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "US",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null
-  },
-  {
-    "source": "us-nsf-reu",
-    "research_source_id": "us-nsf-reu",
-    "source_url": "https://www.nsf.gov/funding/initiatives/reu/students",
-    "website_url": "https://www.nsf.gov/funding/initiatives/reu/students",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "US",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.nsf.gov/funding/initiatives/reu/students",
-      "category": "internships",
-      "kind": "programme-overview",
-      "title": "NSF REU: Information for Students",
-      "reviewed_at": "2026-10-07"
-    }
-  },
-  {
     "source": "us-careeronestop-scholarship-finder",
     "research_source_id": "us-careeronestop-scholarship-finder",
     "source_url": "https://www.careeronestop.org/toolkit/training/find-scholarships.aspx",
@@ -2007,392 +2394,5 @@
     "publisher_type": "unknown",
     "categories": [],
     "collection_blocked_reason": null
-  },
-  {
-    "source": "us-fulbright-us-student",
-    "research_source_id": "us-fulbright-us-student",
-    "source_url": "https://us.fulbrightonline.org/applicants/types-of-awards",
-    "website_url": "https://us.fulbrightonline.org/",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "US",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null
-  },
-  {
-    "source": "at-fulbright-austria",
-    "research_source_id": "at-fulbright-austria",
-    "source_url": "https://www.fulbright.at/programs/in-austria/students/full-time-study-research-grants",
-    "website_url": "https://www.fulbright.at/programs/in-austria/students/full-time-study-research-grants",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "de/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "AT",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.fulbright.at/programs/in-austria/students/full-time-study-research-grants",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "be-fulbright-belgium-luxembourg",
-    "research_source_id": "be-fulbright-belgium-luxembourg",
-    "source_url": "https://www.fulbright.be/news/2027-28-competition-open/",
-    "website_url": "https://www.fulbright.be/news/2027-28-competition-open/",
-    "enabled": false,
-    "adapter": "opportunity-html",
-    "language": "en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "BE",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.fulbright.be/news/2027-28-competition-open/",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "de-fulbright-germany",
-    "research_source_id": "de-fulbright-germany",
-    "source_url": "https://www.fulbright.de/stipendien/programm/studienstipendium-uni-und-haw",
-    "website_url": "https://www.fulbright.de/stipendien/programm/studienstipendium-uni-und-haw",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "de/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "DE",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.fulbright.de/stipendien/programm/studienstipendium-uni-und-haw",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "dk-fulbright-center",
-    "research_source_id": "dk-fulbright-center",
-    "source_url": "https://fulbrightcenter.dk/go-to-the-us/fulbright-grants-for-danish-students/apply/",
-    "website_url": "https://fulbrightcenter.dk/go-to-the-us/fulbright-grants-for-danish-students/apply/",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "da/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "DK",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://fulbrightcenter.dk/go-to-the-us/fulbright-grants-for-danish-students/apply/",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "fi-fulbright-finland",
-    "research_source_id": "fi-fulbright-finland",
-    "source_url": "https://www.fulbright.fi/grant-programs-to-us/grants-masters-studies-us/fulbright-finnish-language-and-culture-teaching-assistant-program-flta",
-    "website_url": "https://www.fulbright.fi/grant-programs-to-us/grants-masters-studies-us/fulbright-finnish-language-and-culture-teaching-assistant-program-flta",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "fi/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "FI",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.fulbright.fi/grant-programs-to-us/grants-masters-studies-us/fulbright-finnish-language-and-culture-teaching-assistant-program-flta",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "fr-fulbright-france",
-    "research_source_id": "fr-fulbright-france",
-    "source_url": "https://fulbright-france.org/fr/bourses/etudiantes-etudiants/programme-etudiant",
-    "website_url": "https://fulbright-france.org/fr/node/25",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "fr/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "FR",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://fulbright-france.org/fr/bourses/etudiantes-etudiants/programme-etudiant",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "title": "Programme Étudiant",
-      "reviewed_at": "2026-10-07",
-      "host_countries": [
-        "US"
-      ],
-      "location_evidence": "Master ou Doctorat dans une université américaine"
-    }
-  },
-  {
-    "source": "global-visegrad-fund",
-    "research_source_id": "global-visegrad-fund",
-    "source_url": "https://www.visegradfund.org/scholarships",
-    "website_url": "https://www.visegradfund.org/scholarships",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": null,
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null
-  },
-  {
-    "source": "hu-fulbright-hungary",
-    "research_source_id": "hu-fulbright-hungary",
-    "source_url": "https://fulbright.hu/",
-    "website_url": "https://fulbright.hu/",
-    "enabled": false,
-    "adapter": "opportunity-html",
-    "language": "hu/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "HU",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null
-  },
-  {
-    "source": "pl-fulbright-poland",
-    "research_source_id": "pl-fulbright-poland",
-    "source_url": "https://fulbright.edu.pl/junior-research/",
-    "website_url": "https://fulbright.edu.pl/junior-research/",
-    "enabled": false,
-    "adapter": "opportunity-html",
-    "language": "pl/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "PL",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null
-  },
-  {
-    "source": "se-fulbright-sweden",
-    "research_source_id": "se-fulbright-sweden",
-    "source_url": "https://www.fulbright.se/scholar-program/",
-    "website_url": "https://www.fulbright.se/scholar-program/",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "sv/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "SE",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.fulbright.se/scholar-program/",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "title": "Fulbright Swedish Scholar Program",
-      "reviewed_at": "2026-10-07",
-      "host_countries": [
-        "US"
-      ],
-      "location_evidence": "Research and/or lecture in the United States"
-    }
-  },
-  {
-    "source": "sk-fulbright-slovakia",
-    "research_source_id": "sk-fulbright-slovakia",
-    "source_url": "https://fulbright.sk/en/us-student",
-    "website_url": "https://fulbright.sk/en/us-student",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "sk/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "SK",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://fulbright.sk/en/us-student",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "title": "Fulbright U.S. Student Program",
-      "reviewed_at": "2026-10-07",
-      "host_countries": [
-        "SK"
-      ],
-      "location_evidence": "Study or conduct research in Slovakia for one academic year"
-    }
-  },
-  {
-    "source": "hu-corvinus-university",
-    "research_source_id": "hu-corvinus-university",
-    "source_url": "https://www.uni-corvinus.hu/post/hir/applications-are-now-open-for-the-study-scholarship-and-student-organization-scholarship/?lang=en",
-    "website_url": "https://www.uni-corvinus.hu/post/hir/applications-are-now-open-for-the-study-scholarship-and-student-organization-scholarship/?lang=en",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "hu/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "HU",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.uni-corvinus.hu/post/hir/applications-are-now-open-for-the-study-scholarship-and-student-organization-scholarship/?lang=en",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "sk-comenius-university",
-    "research_source_id": "sk-comenius-university",
-    "source_url": "https://zona.fmph.uniba.sk/detail-novinky/back_to_page/fmfi-uk-zona/article/vyzva-na-podavanie-ziadosti-o-jednorazove-mimoriadne-stipendium-call-for-applications-for-ex-9/",
-    "website_url": "https://zona.fmph.uniba.sk/detail-novinky/back_to_page/fmfi-uk-zona/article/vyzva-na-podavanie-ziadosti-o-jednorazove-mimoriadne-stipendium-call-for-applications-for-ex-9/",
-    "enabled": false,
-    "adapter": "opportunity-html",
-    "language": "sk/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "SK",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://zona.fmph.uniba.sk/detail-novinky/back_to_page/fmfi-uk-zona/article/vyzva-na-podavanie-ziadosti-o-jednorazove-mimoriadne-stipendium-call-for-applications-for-ex-9/",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "hr-university-of-zagreb",
-    "research_source_id": "hr-university-of-zagreb",
-    "source_url": "https://www.unizg.hr/studiji-i-studiranje/upisi-stipendije-priznavanja/stipendije/",
-    "website_url": "https://www.unizg.hr/studiji-i-studiranje/upisi-stipendije-priznavanja/stipendije/",
-    "enabled": false,
-    "adapter": "opportunity-html",
-    "language": "hr/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "HR",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.unizg.hr/studiji-i-studiranje/upisi-stipendije-priznavanja/stipendije/",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "hr-demography-language-scholarships",
-    "research_source_id": "hr-demography-language-scholarships",
-    "source_url": "https://mdu.gov.hr/javni-poziv-za-dodjelu-stipendija-za-ucenje-hrvatskoga-jezika-u-republici-hrvatskoj-za-akademsku-godinu-2026-2027-7582/7582",
-    "website_url": "https://mdu.gov.hr/javni-poziv-za-dodjelu-stipendija-za-ucenje-hrvatskoga-jezika-u-republici-hrvatskoj-za-akademsku-godinu-2026-2027-7582/7582",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "hr/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "HR",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://mdu.gov.hr/javni-poziv-za-dodjelu-stipendija-za-ucenje-hrvatskoga-jezika-u-republici-hrvatskoj-za-akademsku-godinu-2026-2027-7582/7582",
-      "category": "scholarships",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "lu-snj-volontaires",
-    "research_source_id": "lu-snj-volontaires",
-    "source_url": "https://www.volontaires.lu/missions-svn/volontaire-en-soutien-a-lorganisation-devenements-et-a-la-communication/",
-    "website_url": "https://www.volontaires.lu/missions-svn/volontaire-en-soutien-a-lorganisation-devenements-et-a-la-communication/",
-    "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "fr/lu",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "LU",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://www.volontaires.lu/missions-svn/volontaire-en-soutien-a-lorganisation-devenements-et-a-la-communication/",
-      "category": "volunteering",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
-  },
-  {
-    "source": "mt-arts-council",
-    "research_source_id": "mt-arts-council",
-    "source_url": "https://artscouncilmalta.gov.mt/en/funding-and-grants/artivisti/",
-    "website_url": "https://artscouncilmalta.gov.mt/en/funding-and-grants/artivisti/",
-    "enabled": false,
-    "adapter": "opportunity-html",
-    "language": "mt/en",
-    "default_tags": [],
-    "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
-    "publisher_country": "MT",
-    "publisher_type": "unknown",
-    "categories": [],
-    "collection_blocked_reason": null,
-    "reviewed_opportunity": {
-      "url": "https://artscouncilmalta.gov.mt/en/funding-and-grants/artivisti/",
-      "category": "training",
-      "kind": "programme-overview",
-      "reviewed_at": "2026-10-04"
-    }
   }
 ]
