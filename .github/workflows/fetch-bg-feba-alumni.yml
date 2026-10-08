@@ -8,7 +8,7 @@ on:
       - adapters/feba-wordpress.js
       - scripts/collect.js
       - scripts/validate.js
-      - sources/bg-feba-alumni/metadata.json
+      - scripts/source-store.js
   schedule:
     - cron: '13 0/6 * * *'
 permissions:
