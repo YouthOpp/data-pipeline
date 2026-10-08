@@ -12,7 +12,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   collect:
-    if: github.repository == 'YouthOpp/data-pipeline' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    if: github.repository == 'YouthOpps/data-pipeline' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -78,7 +78,7 @@ jobs:
         with:
           app-id: ${{ vars.WEBSITE_APP_ID }}
           private-key: ${{ secrets.WEBSITE_APP_PRIVATE_KEY }}
-          owner: YouthOpp
+          owner: YouthOpps
           repositories: youthopp.github.io
           permission-contents: write
       - name: Update website catalog version
