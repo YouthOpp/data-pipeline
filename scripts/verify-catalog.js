@@ -25,7 +25,7 @@ async function main(){
  const catalog=JSON.parse(await readFile(input,'utf8'));
  const manifests=JSON.parse(await readFile('data/sources/sources.json','utf8'));
  const coverage=inspectCoverage(catalog,manifests);
- await writeFile('dist/collection-report.json',JSON.stringify({generated_at:catalog.generated_at,sources:catalog.sources,coverage},null,2));
+ await writeFile('dist/collection-report.json',JSON.stringify({generated_at:catalog.generated_at,sources:catalog.sources,coverage},null,2)+'\n');
  console.log(JSON.stringify({...coverage,sources:undefined}));
  if(process.env.GITHUB_STEP_SUMMARY){const rows=coverage.sources.map(s=>`| ${s.source} | ${s.coverage} | ${s.fresh_listing_records} | ${s.retained_listing_records} | ${(s.error||'').replace(/[|\r\n]/g,' ')} |`).join('\n');await appendFile(process.env.GITHUB_STEP_SUMMARY,`## Catalog acceptance\n\n${coverage.collected_sources}/${coverage.total_sources} sources yielded freshly collected opportunity/programme records. ${coverage.failed_sources} collection errors; ${coverage.metadata_only_sources} sources yielded only metadata. Complete coverage: **${coverage.all_sources_have_opportunities}**.\n\n| Source | Coverage | Fresh listings | Retained listings | Error |\n|---|---|---:|---:|---|\n${rows}\n`);}
  if(process.env.REQUIRE_ALL_SOURCES==='1'&&!coverage.all_sources_have_opportunities)throw Error('Complete opportunity coverage has not been achieved');
