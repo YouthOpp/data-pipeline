@@ -4,6 +4,10 @@ This source starts at the official [Mobility Fund](https://cuni.cz/UKEN-927.html
 and follows its university's bounded
 [scholarship](https://cuni.cz/UKEN-1617.html) and student-mobility funding routes.
 It collects genuine named awards, funded programme overviews and dated calls.
+Public summaries satisfy the website consumer limit of 600 UTF-16 code units.
+The Mobility Fund summary retains its eligibility, principal grant amounts and
+clock/date precision; detailed category rates and conditions remain in its
+classification evidence, attributed to the same verified official page.
 External administrators are represented only where Charles University's own
 page gives substantive programme facts; their websites are not substituted as
 publishers. This is not a crawl of every faculty, course or university archive.

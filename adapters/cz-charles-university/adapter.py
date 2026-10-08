@@ -850,12 +850,29 @@ def parse_inventory(pages):
         records.append(result)
         return result
 
-    add(
+    mobility = add(
         "mobility",
         "mobility-autumn-2026",
         "Charles University Mobility Fund – Autumn 2026",
         ("October 30, 2026, 2:00 p.m.", "October 1, 2026", "Mobility Fund"),
         (
+            "Autumn 2026 partial worldwide mobility grant for full-time CU "
+            "BA/MA/PhD students within standard duration +1 year. "
+            "Study/internship ≥30 days; short PhD stays ≤29 days; medical "
+            "Master’s traineeships 21–29 days. Stays 1 Nov 2026–30 Sep 2027; "
+            "no retrospective or Erasmus+/GAUK funding. Acceptance/academic "
+            "approval required; study category needs B2 with exemptions. "
+            "Long stays: CZK 15,000/month Europe or 20,000 outside, "
+            "max 70,000; "
+            "short rates vary. Deadline 30 Oct 2026 at 14:00 (zone unstated, "
+            "date-only); faculty 20–30 Oct."
+        ),
+        deadline="2026-10-30",
+        opening="2026-10-01",
+    )
+    mobility["classification"]["evidence"].append(
+        "Detailed eligibility and benefits: "
+        + (
             "Autumn2026 partial mobility grant for full-time CU "
             "BA/MA/PhD students within standard study period plus one "
             "year. One application call covers study/internship of at "
@@ -870,9 +887,7 @@ def parse_inventory(pages):
             "Europe/15000–25000 outside. Faculty "
             "deadlines20–30October; central deadline October30,2026 "
             "at14:00, timezone unstated; date-only normalized."
-        ),
-        deadline="2026-10-30",
-        opening="2026-10-01",
+        )
     )
     add(
         "hub",
@@ -1906,7 +1921,7 @@ def validate_records(records):
             raise AdapterError("Invalid opportunity kind or status", "validate")
         if (
             not isinstance(record.get("summary"), str)
-            or len(record["summary"]) > 1200
+            or len(record["summary"].encode("utf-16-le")) // 2 > 600
             or re.search("<[^>]+>", record["summary"])
         ):
             raise AdapterError("Invalid plain summary", "validate")
