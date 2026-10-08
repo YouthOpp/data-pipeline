@@ -1,0 +1,38 @@
+name: fetch-ee-taltech
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'adapters/ee-taltech/**'
+      - '.github/workflows/fetch-ee-taltech.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '37 0/6 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: youthopps-source-publishing
+  cancel-in-progress: false
+jobs:
+  collect:
+    if: github.repository == 'YouthOpps/data-pipeline' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Create data-source publication token
+        id: data-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1
+        with:
+          app-id: ${{ vars.WEBSITE_APP_ID }}
+          private-key: ${{ secrets.WEBSITE_APP_PRIVATE_KEY }}
+          owner: YouthOpps
+          repositories: data-source
+          permission-contents: write
+      - name: Collect and publish this source
+        env:
+          DATA_SOURCE_TOKEN: ${{ steps.data-token.outputs.token }}
+        run: python -B adapters/ee-taltech/adapter.py --publish
