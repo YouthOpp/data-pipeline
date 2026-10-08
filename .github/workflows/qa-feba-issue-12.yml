@@ -5,6 +5,8 @@ on:
       - qa/issue-12-feba
     paths:
       - scripts/probe-feba.js
+      - adapters/feba-wordpress.js
+      - data/sources/sources.json
       - .github/workflows/qa-feba-issue-12.yml
   workflow_dispatch:
 permissions:
@@ -39,6 +41,7 @@ jobs:
           for (const item of items) validateRecord(item);
           const urls = new Set(items.map(item => item.url));
           if (urls.size !== items.length) throw Error('Duplicate FEBA URLs');
+          if (items.some(item => /отличи|партньори на представянето/i.test(item.title))) throw Error('Retrospective news incorrectly classified as opportunity');
           if (!items.some(item => item.url.includes('/2026/10/05/'))) throw Error('Known current October 2026 FEBA call missing');
           console.log(JSON.stringify({ source: manifest.source, validRecords: items.length, hasOctober2026Call: true, sample: items.slice(0, 8).map(({ title, url }) => ({ title, url })) }, null, 2));
           NODE
