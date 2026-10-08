@@ -5,7 +5,7 @@ import { collect } from '../adapters/reviewed-rss.js';
 import { runPipeline, validateRecord } from '../scripts/collect.js';
 
 const manifests = JSON.parse(await readFile(new URL('../data/sources/sources.json', import.meta.url), 'utf8'));
-const manifest = manifests.find(item => item.source === 'fulbright-czech-programmes');
+const manifest = { ...manifests.find(item => item.source === 'fulbright-czech-programmes'), enabled: true };
 const fixture = await readFile(new URL('./fixtures/fulbright-czech-metadata.xml', import.meta.url), 'utf8');
 const now = '2026-10-04T22:00:00.000Z';
 
