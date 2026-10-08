@@ -7,6 +7,7 @@ on:
       - .github/workflows/fetch-bg-feba-alumni.yml
       - adapters/feba-wordpress.js
       - scripts/collect.js
+      - scripts/validate.js
       - data/sources/sources.json
   schedule:
     - cron: '13 0/6 * * *'
