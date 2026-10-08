@@ -7,6 +7,14 @@ import {inspectCoverage} from '../scripts/verify-catalog.js';
 
 const now='2026-10-07T12:00:00Z';
 const manifest={source:'fixture',source_url:'https://example.org/',website_url:'https://example.org/',adapter:'opportunity-html',enabled:true,language:'en',publisher_country:'IT'};
+test('reviewed-only programme extraction excludes generic tuition guidance and withdraws known bad historical URLs',async()=>{
+ const url='https://example.org/tuition-fees-and-scholarships';
+ const selected={...manifest,reviewed_links_only:true,reviewed_links:[{url:'https://external.example/ceepus',title:'Central European Exchange Programme for University Studies',category:'scholarships',reviewed_at:'2026-10-08'}],excluded_record_urls:[url]};
+ const records=extractListing('<a href="https://external.example/ceepus">Central European Exchange Programme for University Studies</a><a href="/tuition-fees-and-scholarships">TUITION FEES AND SCHOLARSHIPS</a>',selected,now);
+ assert.equal(records.length,1);assert.equal(records[0].kind,'programme-overview');
+ const bad={...records[0],id:'bad-guidance',url,kind:'opportunity'};
+ const catalog=await runPipeline([selected],{opportunities:[bad],sources:[]},{now,adapter:async()=>records});assert.equal(catalog.opportunities.length,1);assert.ok(!catalog.opportunities.some(r=>r.url===url));
+});
 test('native publisher call titles exclude category/date wrappers and winner news',()=>{
  const selected={...manifest,listing_title_rules:{competitions:'^(?:Konkurs(?:\\s|:)|(?:[IVX]+\\s+)?edycja konkursu|Nabór)'},listing_exclude_title_pattern:'laureat|wyniki|rozstrzygnię|zwycię',listing_path_pattern:'^/aktualnosci/'};
  const html='<main><a href="/aktualnosci/discovereu"><span>Konkursy Młodzież 01.10.2026 r.</span><h3>Konkurs DiscoverEU: ruszyła runda jesienna!</h3></a><a href="/aktualnosci/winners"><span>Konkursy 01.10.2026 r.</span><h3>Poznaj laureatów EITA 2026!</h3></a><a href="/aktualnosci/closed"><h3>Konkurs rozstrzygnięty: wyniki edycji</h3></a><a href="/aktualnosci/school"><h3>Nabór uzupełniający: Profesjonalna Szkoła Roku</h3></a></main>';

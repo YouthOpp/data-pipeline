@@ -465,7 +465,7 @@
     "language": "hr/en",
     "default_tags": [],
     "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "scope": "Collect the live reviewed CEEPUS programme link; exclude general tuition guidance from opportunity records. Other programmes remain separately indexed from their original AMPEU source.",
     "publisher_country": "HR",
     "publisher_type": "unknown",
     "categories": [],
@@ -476,19 +476,17 @@
         "url": "https://en.ampeu.hr/ceepus",
         "category": "scholarships",
         "reviewed_at": "2026-10-08"
-      },
-      {
-        "title": "Bilateral Programme of Mobility in Higher Education",
-        "url": "https://en.ampeu.hr/bilateral-scolarships",
-        "category": "scholarships",
-        "reviewed_at": "2026-10-08"
       }
     ],
     "reviewed_page_identity": {
       "heading": "Exchange Programmes",
       "canonical_url": "https://www.studyincroatia.hr/exchange-programmes/",
       "reviewed_at": "2026-10-08"
-    }
+    },
+    "reviewed_links_only": true,
+    "excluded_record_urls": [
+      "https://www.studyincroatia.hr/study-in-croatia/tuition-fees-and-scholarships/"
+    ]
   },
   {
     "source": "cy-cyprus-state-scholarships-foundation",
@@ -832,20 +830,17 @@
     "source_url": "https://campusbourses.campusfrance.org/?lang=en",
     "website_url": "https://www.campusfrance.org/en/bursaries-foreign-students",
     "enabled": true,
-    "adapter": "opportunity-html",
-    "language": "fr/en",
+    "adapter": "campus-bourses",
+    "language": "en",
     "default_tags": [],
     "added_at": "2026-10-06",
-    "scope": "Extract factual opportunity title/link records from reviewed programme pages or publisher listings; no descriptions, imagery or applicant eligibility inferred.",
+    "scope": "All programmes in the official public English catalogue API; response count and unique IDs are verified. Factual titles and original programme routes only; no publisher prose or inferred nationality/destination/deadlines.",
     "publisher_country": "FR",
     "publisher_type": "unknown",
     "categories": [],
     "collection_blocked_reason": null,
-    "diagnostic_scripts": [
-      "https://campusbourses.campusfrance.org/js/iwangular.3f8721e3.js",
-      "https://campusbourses.campusfrance.org/js/ilangular.b81726ae.js"
-    ],
-    "diagnostic_api": "https://bourses-api.campusfrance.org/sgetgrants/en"
+    "api_url": "https://bourses-api.campusfrance.org/sgetgrants/en",
+    "infer_title_destinations": false
   },
   {
     "source": "fr-1jeune1solution",

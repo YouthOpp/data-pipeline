@@ -26,6 +26,7 @@ export function extractListing(html,manifest,now){
   const item=normalizeItem({title:selected.title,link:selected.url},manifest,now);
   records.set(item.id,{...item,category:selected.category,categories:[selected.category],kind:'programme-overview',classification:{method:'reviewed-live-programme-link',status:'classified',evidence:[manifest.source_url,selected.url]}});
  }
+ if(manifest.reviewed_links_only)return [...records.values()];
  const candidates=[...content.matchAll(/<a\b([^>]*?)>([\s\S]*?)<\/a\s*>/gi)].map(m=>({attributes:m[1],label:m[2].match(/<h[2-4]\b[^>]*>([\s\S]*?)<\/h[2-4]\s*>/i)?.[1]||m[2],heading:false}));
  // Publisher cards often put the programme title in a heading and use a generic link label.
  // Stop at the next heading so that a call never inherits a neighbouring card's link.
