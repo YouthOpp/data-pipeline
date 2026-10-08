@@ -2,7 +2,7 @@
 
 Open AI agent: built and maintained through transparent AI-assisted development.
 
-Canonical repositories: [YouthOpp/data-pipeline](https://github.com/YouthOpp/data-pipeline), [YouthOpp/youthopp.github.io](https://github.com/YouthOpp/youthopp.github.io) and [YouthOpp/.github](https://github.com/YouthOpp/.github).
+Canonical repositories: [YouthOpps/data-pipeline](https://github.com/YouthOpps/data-pipeline), [YouthOpps/youthopp.github.io](https://github.com/YouthOpps/youthopp.github.io) and [YouthOpps/.github](https://github.com/YouthOpps/.github).
 
 A community-contributed source adapter pipeline for YouthOpp, a nonprofit-minded, open-source opportunity index. Students and young graduates can discover original opportunities without browsing many separate publishers. Original publishers remain the authority for deadlines, eligibility and applications.
 
@@ -18,13 +18,13 @@ To preserve prior records locally, set `PREVIOUS_CATALOG=/path/to/catalog.json`.
 
 ## Publication
 
-The trusted `main` branch in [YouthOpp/data-pipeline](https://github.com/YouthOpp/data-pipeline) publishes releases; the default-branch schedule runs every six hours, and manual dispatch can refresh it. A versioned release (`catalog-<run-id>-<attempt>`) stores an auditable data snapshot; `catalog-latest` serves the most recent successful catalog. Frontend builds use the committed catalog-release.json pointer to pin and verify an immutable manifest and its catalog/contributor assets; catalog-latest is used only before the first website pointer exists. The pipeline restores verified state and retains the newest 30 published versioned snapshots, preserving the current release and latest pointer. See [Catalog operations](https://youthopps.org/docs/pipeline-operations/) for publication ordering, recovery and retention. No paid backend, API key or database is required. After successful release publication, the workflow commits a small immutable release pointer to website main using a short-lived GitHub App installation token scoped to the website repository (Actions variable `WEBSITE_APP_ID` and secret `WEBSITE_APP_PRIVATE_KEY`); Cloudflare's existing Git integration then rebuilds the site. No generated dataset is committed to the frontend. See [Cloudflare setup](https://youthopps.org/docs/cloudflare-pages/).
+The trusted `main` branch in [YouthOpps/data-pipeline](https://github.com/YouthOpps/data-pipeline) publishes releases; the default-branch schedule runs every six hours, and manual dispatch can refresh it. A versioned release (`catalog-<run-id>-<attempt>`) stores an auditable data snapshot; `catalog-latest` serves the most recent successful catalog. Frontend builds use the committed catalog-release.json pointer to pin and verify an immutable manifest and its catalog/contributor assets; catalog-latest is used only before the first website pointer exists. The pipeline restores verified state and retains the newest 30 published versioned snapshots, preserving the current release and latest pointer. See [Catalog operations](https://youthopps.org/docs/pipeline-operations/) for publication ordering, recovery and retention. No paid backend, API key or database is required. After successful release publication, the workflow commits a small immutable release pointer to website main using a short-lived GitHub App installation token scoped to the website repository (Actions variable `WEBSITE_APP_ID` and secret `WEBSITE_APP_PRIVATE_KEY`); Cloudflare's existing Git integration then rebuilds the site. No generated dataset is committed to the frontend. See [Cloudflare setup](https://youthopps.org/docs/cloudflare-pages/).
 
 PR checks use read-only permissions, no secrets, fixture tests, and no remote collection. Collection and publishing execute only trusted default-branch code. Public RSS is capped at 5 MB and 25 seconds, HTTPS-only with bounded same-host redirects; unrelated hosts are rejected. GitHub limits still apply.
 
 ## Contact and support
 
-Use [GitHub Discussions](https://github.com/orgs/YouthOpp/discussions) first for questions, ideas and general project conversation. Use [data-pipeline Issues](https://github.com/YouthOpp/data-pipeline/issues) for reproducible collection bugs, source problems and concrete work. When public GitHub communication is unsuitable, especially for private or sensitive matters, email **contact@youthopps.org**.
+Use [GitHub Discussions](https://github.com/orgs/YouthOpps/discussions) first for questions, ideas and general project conversation. Use [data-pipeline Issues](https://github.com/YouthOpps/data-pipeline/issues) for reproducible collection bugs, source problems and concrete work. When public GitHub communication is unsuitable, especially for private or sensitive matters, email **contact@youthopps.org**.
 
 ## Sources and contribution
 
