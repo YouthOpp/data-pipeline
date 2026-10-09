@@ -196,3 +196,21 @@ changes may rebase; newer own-source changes cannot be overwritten. Only valid
 nonempty successfully published records advance durable success. Test/static
 publication mocks are not production publication; maintainers verify after
 merge and coordinate the shared SAIA request allowance.
+
+## Production access diagnostic
+
+The cloud author and independent live collections retrieved empty HTTP 200
+robots policies and all six opportunities. The first production runs instead
+received HTTP 403 from `https://www.scholarships.sk/robots.txt`, before any
+programme collection or source publication. These observations establish an
+access difference; they do not identify its cause.
+
+As one bounded normal content-negotiation trial, requests for `/robots.txt`
+on the reviewed SAIA publisher family send `Accept: text/plain, */*;q=0.1`.
+The identifying project User-Agent, exact origin/path, TLS, shared pacing and
+all access checks remain the same. Programme/PDF and GitHub API requests do
+not receive this robots-specific header. HTTP 403 remains fatal, with no
+robots fallback, browser imitation, cookies or policy bypass. A successful
+cloud test does not establish that production access is resolved; maintainers
+must verify the changed request once in production and stop if it remains
+blocked.

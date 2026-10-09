@@ -684,12 +684,20 @@ def save_budget(state, budget):
 
 def request_bytes(url, *, interval=6, method="GET", headers=None, payload=None):
     state, budget = pace(url, interval)
+    parsed = urllib.parse.urlsplit(url)
+    host = (parsed.hostname or "").lower().removeprefix("www.")
+    request_headers = {"User-Agent": _USER_AGENT, **(headers or {})}
+    if parsed.path == "/robots.txt" and (
+        host in ("scholarships.sk", "stipendia.sk", "saia.sk")
+        or host.endswith(".saia.sk")
+    ):
+        request_headers["Accept"] = "text/plain, */*;q=0.1"
     try:
         request = urllib.request.Request(
             url,
             data=payload,
             method=method,
-            headers={"User-Agent": _USER_AGENT, **(headers or {})},
+            headers=request_headers,
         )
         try:
             response = _OPENER.open(request, timeout=30)
