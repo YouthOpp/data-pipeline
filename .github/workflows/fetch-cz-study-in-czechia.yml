@@ -1,0 +1,59 @@
+name: Fetch Study in Czechia
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - adapters/cz-study-in-czechia/**
+      - .github/workflows/fetch-cz-study-in-czechia.yml
+  schedule:
+    - cron: '10 4 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: youthopps-dzs-publisher-v1
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    if: >-
+      github.repository == 'YouthOpps/data-pipeline' &&
+      github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Authenticate data-source publication
+        id: token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.WEBSITE_APP_ID }}
+          private-key: ${{ secrets.WEBSITE_APP_PRIVATE_KEY }}
+          owner: YouthOpps
+          repositories: data-source
+          permission-contents: write
+      - name: Collect and publish reviewed source
+        run: python -B adapters/cz-study-in-czechia/adapter.py --publish
+        env:
+          DATA_SOURCE_TOKEN: ${{ steps.token.outputs.token }}
+          WEBSITE_APP_ID: ${{ vars.WEBSITE_APP_ID }}
+          WEBSITE_APP_PRIVATE_KEY: ${{ secrets.WEBSITE_APP_PRIVATE_KEY }}
+          WEBSITE_APP_INSTALLATION_ID: ${{ steps.token.outputs.installation-id }}
+          GITHUB_TOKEN: ${{ github.token }}
+          DZS_PACING_BOOTSTRAP: ${{ vars.DZS_PACING_BOOTSTRAP }}
+          DZS_PACING_ARTIFACT_PATH: ${{ runner.temp }}/pacing-state.json
+      - name: Preserve inert publisher pacing state
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dzs-pacing-state-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/pacing-state.json
+          if-no-files-found: error
+          retention-days: 90
