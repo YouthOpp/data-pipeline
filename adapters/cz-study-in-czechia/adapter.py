@@ -440,11 +440,12 @@ def request_bytes(url, method="GET", headers=None, payload=None,
             current = destination
             continue
         if publisher and status in (401, 403, 429):
-            raise AdapterError((
-                f"Publisher refused access: HTTP {status}"
-            ), (
-                "access"
-            ), status)
+            refused = urllib.parse.urlsplit(current)
+            provenance = urllib.parse.urlunsplit((
+                refused.scheme, refused.hostname or "", refused.path, "", ""))
+            raise AdapterError(
+                f"Publisher refused access: HTTP {status}: " + provenance,
+                "access", status)
         return status, response_headers, body
     raise AdapterError("Unresolved redirect", "access")
 
@@ -1105,7 +1106,12 @@ def validate_asset(key, body):
 
 def read_input(key):
     info = INPUTS[key]
-    status, headers, body = fetch_public(info["url"])
+    try:
+        status, headers, body = fetch_public(info["url"])
+    except AdapterError as error:
+        raise AdapterError(
+            f"Required public input {key}: " + safe_error(error),
+            error.stage, error.status) from None
     if info["format"] in ("pdf", "xlsx"):
         return validate_asset(key, body)
     try:

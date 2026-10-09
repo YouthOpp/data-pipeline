@@ -102,9 +102,10 @@ published URL, identifying agent, TLS/proxy and robots policy. The retry waits
 at least thirty seconds and honors any longer persisted `Retry-After`; a
 blocked state or insufficient remaining collection budget refuses access.
 Other statuses, including 403 and 429, and transport/parse errors are not
-retried. A final HTTP refusal identifies the input key and public origin/path
-without response bodies or query strings. The first actual nonpublishing run
-failed after 3726.598 seconds with HTTP 503; its cause remains unknown and it
+retried. A publisher access refusal identifies the owning input key and actual
+refusing public origin/path, including robots or redirect hops, without
+response bodies, credentials or query strings. The first actual nonpublishing
+run failed after 3726.598 seconds with HTTP 503; its cause remains unknown and it
 did not produce a validated whole-source result.
 
 The workflow serializes the DZS publisher family with cancellation disabled.
