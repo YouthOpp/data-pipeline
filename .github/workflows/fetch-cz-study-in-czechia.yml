@@ -47,7 +47,13 @@ jobs:
           WEBSITE_APP_PRIVATE_KEY: ${{ secrets.WEBSITE_APP_PRIVATE_KEY }}
           WEBSITE_APP_INSTALLATION_ID: ${{ steps.token.outputs.installation-id }}
           GITHUB_TOKEN: ${{ github.token }}
-          DZS_PACING_BOOTSTRAP: ${{ vars.DZS_PACING_BOOTSTRAP }}
+          DZS_PACING_BOOTSTRAP: >-
+            {
+            "schema": 1,
+            "family": "youthopps-dzs-publisher-v1",
+            "not_before": 1791564611.035954,
+            "evidence": "https://github.com/YouthOpps/data-pipeline/issues/55#issuecomment-6085237730"
+            }
           DZS_PACING_ARTIFACT_PATH: ${{ runner.temp }}/pacing-state.json
       - name: Preserve inert publisher pacing state
         if: always()
