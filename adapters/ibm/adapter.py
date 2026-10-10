@@ -57,6 +57,8 @@ EXPORT_TIMEOUT = 30
 _STATE_SCHEMA = 1
 _ARTIFACT_NAME = "ibm-pacing-state"
 _STATE_PATH = _STATE_LOCK = None
+_STATE_DIR_FD = _STATE_DIR_ID = None
+_STATE_INITIALIZING = False
 _COLLECTION_LOCK_FD = None
 _COLLECTION_STARTED = None
 _RESTORED = _PUBLISHING = _STATE_TRUSTED = False
@@ -329,76 +331,141 @@ def empty_budget(now):
     }
 
 
-def budget_file():
-    global _STATE_PATH, _STATE_LOCK
-    if _STATE_PATH:
-        return
-    directory = os.path.join(tempfile.gettempdir(), FAMILY + ("-") + str(os.getuid()))
-    try:
-        os.mkdir(directory, 0o700)
-    except FileExistsError:
-        pass
-    info = os.lstat(directory)
-    if not stat.S_ISDIR(info.st_mode) or info.st_uid != os.getuid():
-        raise AdapterError("Unsafe publisher pacing directory", "access")
-    if info.st_mode & 0o077:
-        raise AdapterError("Unsafe publisher pacing permissions", "access")
-    _STATE_PATH = os.path.join(directory, "state.json")
-    _STATE_LOCK = os.path.join(directory, "state.lock")
+def verify_state_directory():
+    """Bind the mature leaf to its retained descriptor before each operation."""
+    info = os.fstat(_STATE_DIR_FD)
+    current = os.stat(os.path.dirname(_STATE_PATH), follow_symlinks=False)
+    if (
+        not stat.S_ISDIR(info.st_mode)
+        or info.st_uid != os.getuid()
+        or stat.S_IMODE(info.st_mode) != 0o700
+        or info.st_nlink < 2
+        or (info.st_dev, info.st_ino) != _STATE_DIR_ID
+        or (current.st_dev, current.st_ino) != _STATE_DIR_ID
+    ):
+        raise AdapterError(
+            "Publisher state directory identity changed", "access"
+        )
 
 
-def locked_budget():
-    budget_file()
-    descriptor = os.open(_STATE_LOCK, os.O_RDWR | os.O_CREAT | os.O_NOFOLLOW, 0o600)
+def secure_file(name, flags):
+    verify_state_directory()
+    descriptor = os.open(
+        name, flags | os.O_NOFOLLOW, 0o600, dir_fd=_STATE_DIR_FD
+    )
     info = os.fstat(descriptor)
     if (
         info.st_uid != os.getuid()
         or not stat.S_ISREG(info.st_mode)
-        or info.st_mode & 0o077
+        or stat.S_IMODE(info.st_mode) != 0o600
         or info.st_nlink != 1
     ):
         os.close(descriptor)
-        raise AdapterError("Unsafe publisher pacing lock", "access")
+        raise AdapterError("Unsafe publisher state file", "access")
+    return descriptor
+
+
+def budget_file():
+    global _STATE_PATH, _STATE_LOCK, _STATE_DIR_FD, _STATE_DIR_ID
+    global _STATE_INITIALIZING
+    if _STATE_PATH:
+        verify_state_directory()
+        return
+    temporary = tempfile.gettempdir()
+    parent = os.open(temporary, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
+    try:
+        leaf = FAMILY + "-" + str(os.getuid())
+        created = False
+        try:
+            os.mkdir(leaf, 0o700, dir_fd=parent)
+            created = True
+        except FileExistsError:
+            pass
+        linked = os.stat(leaf, dir_fd=parent, follow_symlinks=False)
+        descriptor = os.open(
+            leaf, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW, dir_fd=parent
+        )
+        info = os.fstat(descriptor)
+        if (
+            not stat.S_ISDIR(info.st_mode)
+            or info.st_uid != os.getuid()
+            or stat.S_IMODE(info.st_mode) != 0o700
+            or info.st_nlink < 2
+            or (info.st_dev, info.st_ino) != (linked.st_dev, linked.st_ino)
+        ):
+            os.close(descriptor)
+            raise AdapterError("Unsafe publisher pacing directory", "access")
+        _STATE_INITIALIZING = created
+        _STATE_DIR_FD = descriptor
+        _STATE_DIR_ID = (info.st_dev, info.st_ino)
+        directory = os.path.join(temporary, leaf)
+        _STATE_PATH = os.path.join(directory, "state.json")
+        _STATE_LOCK = os.path.join(directory, "state.lock")
+        verify_state_directory()
+    finally:
+        os.close(parent)
+
+
+def locked_budget():
+    budget_file()
+    descriptor = secure_file(
+        "state.lock", os.O_RDWR | (os.O_CREAT if _STATE_INITIALIZING else 0)
+    )
     file = os.fdopen(descriptor, "a+")
-    fcntl.flock(file, fcntl.LOCK_EX)
+    try:
+        fcntl.flock(descriptor, fcntl.LOCK_EX)
+    except BaseException:
+        file.close()
+        raise
     return file
 
 
 def load_budget():
     try:
-        fd = os.open(_STATE_PATH, os.O_RDONLY | os.O_NOFOLLOW)
+        descriptor = secure_file("state.json", os.O_RDONLY)
     except FileNotFoundError:
+        if not _STATE_INITIALIZING:
+            raise AdapterError(
+                "Mature publisher state is missing", "access"
+            ) from None
         return empty_budget(time.time())
-    with os.fdopen(fd, "rb") as file:
-        info = os.fstat(file.fileno())
-        if (
-            info.st_uid != os.getuid()
-            or not stat.S_ISREG(info.st_mode)
-            or info.st_mode & 0o077
-            or info.st_nlink != 1
-        ):
-            raise AdapterError("Unsafe publisher pacing state owner", "access")
+    with os.fdopen(descriptor, "rb") as file:
         raw = file.read(16385)
     if len(raw) > 16384:
-        raise AdapterError("Oversized publisher pacing state", "access")
+        raise AdapterError("Oversized publisher state", "access")
     try:
         return validate_budget(json.loads(raw))
     except (ValueError, TypeError):
-        raise AdapterError("Corrupt publisher pacing state", "access") from None
+        raise AdapterError("Corrupt publisher state", "access") from None
 
 
 def save_budget(state):
+    global _STATE_INITIALIZING
     validate_budget(state)
-    fd, name = tempfile.mkstemp(prefix=("pending-"), dir=os.path.dirname(_STATE_PATH))
+    verify_state_directory()
+    name = "pending-" + str(os.getpid()) + "-" + str(time.time_ns())
+    descriptor = secure_file(name, os.O_WRONLY | os.O_CREAT | os.O_EXCL)
     try:
-        with os.fdopen(fd, "w") as file:
+        with os.fdopen(descriptor, "w") as file:
             json.dump(state, file, separators=(",", ":"))
             file.flush()
             os.fsync(file.fileno())
-        os.replace(name, _STATE_PATH)
+        verify_state_directory()
+        os.replace(
+            name,
+            "state.json",
+            src_dir_fd=_STATE_DIR_FD,
+            dst_dir_fd=_STATE_DIR_FD,
+        )
+        # Once a state has existed, missing state must never become fresh again,
+        # including if the following directory fsync fails.
+        _STATE_INITIALIZING = False
+        os.fsync(_STATE_DIR_FD)
     finally:
-        if os.path.exists(name):
-            os.unlink(name)
+        try:
+            os.unlink(name, dir_fd=_STATE_DIR_FD)
+        except FileNotFoundError:
+            pass
 
 
 def pace():
@@ -1272,8 +1339,9 @@ def prepare_collection():
     _COLLECTION_STARTED = time.time()
     budget_file()
     if _COLLECTION_LOCK_FD is None:
-        path = os.path.join(os.path.dirname(_STATE_PATH), "collection.lock")
-        descriptor = os.open(path, os.O_RDWR | os.O_CREAT | os.O_NOFOLLOW, 0o600)
+        descriptor = secure_file(
+            "collection.lock", os.O_RDWR | (os.O_CREAT if _STATE_INITIALIZING else 0)
+        )
         try:
             info = os.fstat(descriptor)
             if (
