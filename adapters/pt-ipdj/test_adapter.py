@@ -137,5 +137,77 @@ class TestDurablePublisherState(unittest.TestCase):
                 local.load_budget()
 
 
+class TestFiniteNews195Diagnostic(unittest.TestCase):
+    def test_target_headers_only_never_reads_or_follows_redirect(self):
+        with isolated_state_adapter() as (local, leaf):
+            local._DIAGNOSTIC_MODE = True
+            response = unittest.mock.MagicMock()
+            response.__enter__.return_value = response
+            response.status = 302
+            response.headers = {"Location": "https://user:private@unreviewed.example/path?secret=private"}
+            response.read.side_effect = AssertionError("Diagnostic body read")
+            with unittest.mock.patch.object(local, "request_timeout", return_value=1), unittest.mock.patch.object(local, "pace"), unittest.mock.patch.object(local, "check_deadline"), unittest.mock.patch.object(local, "record_retry_after"), unittest.mock.patch.object(local, "publisher_attempt", return_value=contextlib.nullcontext()), unittest.mock.patch.object(local._OPENER, "open", return_value=response) as opened:
+                status, headers, body = local.request_bytes(local._DIAGNOSTIC_URL, publisher=True, headers_only=True)
+                self.assertEqual((status, body), (302, b""))
+                self.assertEqual(local.diagnostic_location(headers["Location"]), "https://unreviewed.example/path")
+                opened.assert_called_once()
+                response.read.assert_not_called()
+                self.assertEqual(local._DIAGNOSTIC_STARTS, 1)
+
+    def test_third_physical_start_and_normal_mode_header_request_refused(self):
+        with isolated_state_adapter() as (local, leaf):
+            with unittest.mock.patch.object(local._OPENER, "open") as opened:
+                with self.assertRaises(local.AdapterError):
+                    local.request_bytes(local._DIAGNOSTIC_URL, publisher=True, headers_only=True)
+                local._DIAGNOSTIC_MODE = True
+                local._DIAGNOSTIC_STARTS = 2
+                with unittest.mock.patch.object(local, "check_deadline"):
+                    with self.assertRaises(local.AdapterError):
+                        local.request_bytes(local._DIAGNOSTIC_URL, publisher=True, headers_only=True)
+                opened.assert_not_called()
+
+    def test_policy_failure_exports_state_without_target_or_publication(self):
+        with isolated_state_adapter() as (local, leaf):
+            with unittest.mock.patch.object(local, "phase", return_value=contextlib.nullcontext()), unittest.mock.patch.object(local, "prepare_collection"), unittest.mock.patch.object(local, "check_robots", side_effect=local.AdapterError("Policy refusal", "access")), unittest.mock.patch.object(local, "request_bytes") as requested, unittest.mock.patch.object(local, "export_family_artifact") as exported, unittest.mock.patch.object(local, "publish_files") as published:
+                self.assertEqual(local.run_news195_diagnostic(), 1)
+                requested.assert_not_called()
+                exported.assert_called_once()
+                published.assert_not_called()
+                self.assertFalse(local._DIAGNOSTIC_MODE)
+
+
+    def test_robots_redirect_refused_without_follow(self):
+        with isolated_state_adapter() as (local, leaf):
+            local._DIAGNOSTIC_MODE = True
+            response = unittest.mock.MagicMock()
+            response.__enter__.return_value = response
+            response.status = 302
+            response.headers = {"Location": "/robots-replacement"}
+            with unittest.mock.patch.object(local, "request_timeout", return_value=1), unittest.mock.patch.object(local, "pace"), unittest.mock.patch.object(local, "check_deadline"), unittest.mock.patch.object(local, "record_retry_after"), unittest.mock.patch.object(local, "publisher_attempt", return_value=contextlib.nullcontext()), unittest.mock.patch.object(local._OPENER, "open", return_value=response) as opened:
+                with self.assertRaises(local.AdapterError):
+                    local.check_robots(local._DIAGNOSTIC_URL)
+                opened.assert_called_once()
+                response.read.assert_not_called()
+
+    def test_503_header_capture_does_not_retry_and_preserves_retry_after(self):
+        with isolated_state_adapter() as (local, leaf):
+            local._DIAGNOSTIC_MODE = True
+            response = unittest.mock.MagicMock()
+            response.__enter__.return_value = response
+            response.status = 503
+            response.headers = {"Retry-After": "120"}
+            with unittest.mock.patch.object(local, "request_timeout", return_value=1), unittest.mock.patch.object(local, "pace"), unittest.mock.patch.object(local, "check_deadline"), unittest.mock.patch.object(local, "record_retry_after") as embargo, unittest.mock.patch.object(local, "publisher_attempt", return_value=contextlib.nullcontext()), unittest.mock.patch.object(local._OPENER, "open", return_value=response) as opened:
+                self.assertEqual(local.request_bytes(local._DIAGNOSTIC_URL, publisher=True, headers_only=True)[0], 503)
+                embargo.assert_called_once_with("120")
+                opened.assert_called_once()
+                response.read.assert_not_called()
+
+    def test_export_failure_makes_diagnostic_unsuccessful(self):
+        with isolated_state_adapter() as (local, leaf):
+            with unittest.mock.patch.object(local, "phase", return_value=contextlib.nullcontext()), unittest.mock.patch.object(local, "prepare_collection"), unittest.mock.patch.object(local, "check_robots"), unittest.mock.patch.object(local, "request_bytes", return_value=(200, {}, b"")), unittest.mock.patch.object(local, "export_family_artifact", side_effect=OSError("Export finalization failure")):
+                self.assertEqual(local.run_news195_diagnostic(), 1)
+                self.assertFalse(local._DIAGNOSTIC_MODE)
+
+
 if __name__ == "__main__":
     unittest.main()
