@@ -9,6 +9,11 @@ on:
   schedule:
     - cron: '30 4 * * 2'
   workflow_dispatch:
+    inputs:
+      diagnose_news195:
+        description: Capture only reviewed news195 response headers without following redirects
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -33,6 +38,7 @@ jobs:
           python-version: '3.12'
       - name: Authenticate data-source publication
         id: token
+        if: ${{ !inputs.diagnose_news195 }}
         uses: actions/create-github-app-token@v2
         with:
           app-id: ${{ vars.WEBSITE_APP_ID }}
@@ -42,8 +48,14 @@ jobs:
           permission-contents: write
       - name: Collect and publish reviewed source
         id: collect
-        run: python -B adapters/pt-ipdj/adapter.py --publish
+        run: |
+          if [ "$IPDJ_DIAGNOSTIC" = "true" ]; then
+            python -B adapters/pt-ipdj/adapter.py --diagnose-news195
+          else
+            python -B adapters/pt-ipdj/adapter.py --publish
+          fi
         env:
+          IPDJ_DIAGNOSTIC: ${{ inputs.diagnose_news195 }}
           DATA_SOURCE_TOKEN: ${{ steps.token.outputs.token }}
           GITHUB_TOKEN: ${{ github.token }}
           IPDJ_PACING_BOOTSTRAP: '{"schema":1,"family":"youthopps-ipdj-publisher-v1","not_before":1791664900.344191,"evidence":"https://github.com/YouthOpps/data-pipeline/issues/38#issuecomment-6101961119"}'

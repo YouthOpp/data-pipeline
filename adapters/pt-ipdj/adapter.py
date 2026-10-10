@@ -573,6 +573,30 @@ def publisher_transport_error(error, url):
     )
 
 
+def reviewed_redirect(destination, current, status):
+    """Reject unchanged routes with bounded credential-free provenance."""
+    try:
+        return public_url(destination)
+    except AdapterError:
+        try:
+            parsed = urllib.parse.urlsplit(destination)
+            target = urllib.parse.urlunsplit(
+                (parsed.scheme, parsed.hostname or "", parsed.path, "", "")
+            )
+        except ValueError:
+            target = "invalid redirect destination"
+        raise AdapterError(
+            "Publisher redirect refused: HTTP " + str(status) + ": "
+            + safe_error(current) + " -> " + safe_error(target),
+            "access", status,
+        ) from None
+
+
+_DIAGNOSTIC_MODE = False
+_DIAGNOSTIC_STARTS = 0
+_DIAGNOSTIC_URL = "https://ipdj.gov.pt/-/programa-associa-te-candidaturas-2026-ate-12-de-maio"
+
+
 def request_bytes(
     url,
     method="GET",
@@ -580,20 +604,28 @@ def request_bytes(
     payload=None,
     publisher=False,
     byte_limit=8388608,
+    headers_only=False,
 ):
     """Bound response bytes; redirects are explicit and credential-safe."""
+    global _DIAGNOSTIC_STARTS
+    if headers_only and (not _DIAGNOSTIC_MODE or not publisher or url != _DIAGNOSTIC_URL or method != "GET" or payload is not None):
+        raise AdapterError("Invalid finite diagnostic request", "access")
     headers = {"User-Agent": _USER_AGENT, **(headers or {})}
     current = url
     for redirect in range(6):
         check_deadline()
         if publisher:
             public_url(current)
+            if _DIAGNOSTIC_MODE and (current not in ("https://ipdj.gov.pt/robots.txt", _DIAGNOSTIC_URL) or _DIAGNOSTIC_STARTS >= 2):
+                raise AdapterError("Finite diagnostic request ceiling", "access")
             pace()
         request = urllib.request.Request(
             current, data=payload, headers=headers, method=method
         )
         with publisher_attempt(publisher):
             try:
+                if publisher and _DIAGNOSTIC_MODE:
+                    _DIAGNOSTIC_STARTS += 1
                 response = _OPENER.open(
                     request, timeout=request_timeout(publisher)
                 )
@@ -625,11 +657,15 @@ def request_bytes(
                         f"Publisher refused access: HTTP {status}: " + provenance,
                         "access", status,
                     )
+                if headers_only:
+                    return status, response_headers, b""
+                if publisher and _DIAGNOSTIC_MODE and status in (301, 302, 303, 307, 308):
+                    raise AdapterError("Diagnostic robots redirect requires review", "access", status)
                 if publisher and status in (301, 302, 303, 307, 308):
                     if not location or redirect == 5:
                         raise AdapterError("Invalid redirect chain", "access")
                     destination = urllib.parse.urljoin(current, location)
-                    public_url(destination)
+                    reviewed_redirect(destination, current, status)
                     if urllib.parse.urlsplit(destination).scheme != "https":
                         raise AdapterError("Publisher redirect transport downgrade", "access")
                     body = b""
@@ -667,7 +703,7 @@ def request_bytes(
                 urllib.parse.urlsplit(destination),
             )
             if publisher:
-                public_url(destination)
+                reviewed_redirect(destination, current, status)
                 if old.scheme == "https" and new.scheme != "https":
                     raise AdapterError(
                         ("Publisher redirect transport downgrade"), ("access")
@@ -2067,13 +2103,56 @@ def run_lifecycle(publishing):
     return result
 
 
+def diagnostic_location(location):
+    if not location:
+        return None
+    try:
+        parsed = urllib.parse.urlsplit(urllib.parse.urljoin(_DIAGNOSTIC_URL, location))
+        return urllib.parse.urlunsplit((parsed.scheme, parsed.hostname or "", parsed.path, "", ""))[:500]
+    except ValueError:
+        return "invalid redirect destination"
+
+
+def run_news195_diagnostic():
+    """Two native starts maximum, same family; no body, follow, or publication."""
+    global _DIAGNOSTIC_MODE, _DIAGNOSTIC_STARTS
+    _DIAGNOSTIC_MODE = True
+    _DIAGNOSTIC_STARTS = 0
+    result = 1
+    try:
+        with phase("diagnostic", 210):
+            prepare_collection()
+            _ROBOTS.clear()
+            check_robots(_DIAGNOSTIC_URL)
+            status, headers, _ = request_bytes(_DIAGNOSTIC_URL, publisher=True, headers_only=True)
+            print(json.dumps({"diagnostic": "news195", "url": _DIAGNOSTIC_URL,
+                              "status": status, "location": diagnostic_location(headers.get("Location")),
+                              "physical_starts": _DIAGNOSTIC_STARTS}, sort_keys=True))
+            result = 0
+    except (Exception, PhaseExpired) as error:
+        print("Finite news195 diagnostic failed: " + safe_error(str(error)), file=sys.stderr)
+    finally:
+        try:
+            with phase("export", EXPORT_TIMEOUT):
+                export_family_artifact()
+        except (Exception, PhaseExpired):
+            result = 1
+        _DIAGNOSTIC_MODE = False
+    return result
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--publish", action="store_true")
+    global RUN_TIMEOUT
+    modes = parser.add_mutually_exclusive_group()
+    modes.add_argument("--publish", action="store_true")
+    modes.add_argument("--diagnose-news195", action="store_true")
     args = parser.parse_args()
+    if args.diagnose_news195:
+        RUN_TIMEOUT = 240
     try:
         with execution():
-            return run_lifecycle(args.publish)
+            return run_news195_diagnostic() if args.diagnose_news195 else run_lifecycle(args.publish)
     except PhaseExpired:
         return 1
 
