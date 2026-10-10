@@ -43,6 +43,25 @@ Awards and contests map to `competitions`; the actual Global Teacher Prize and
 Global Schools Prize articles corroborate their `Awards` taxonomy with prize,
 eligibility and application sections. Training, scholarships, fellowships,
 internships, volunteering, grants and jobs use the corresponding exact taxonomy.
+If category tags are absent, the reviewed programme fallback requires uniquely
+ordered Benefits, Eligibility and Application sections in the actual article.
+Explicit free online self-paced courses, expert workshops and competitive
+finalist grants must all appear as separate benefit statements before the call
+can be classified as `training` and `grants`. This handles the MENA Regenerative
+Agriculture Venture Programme announcement without assuming every applicant
+receives its conditional top-three finalist grants. A title, continent tags,
+incidental funding mention or incomplete benefit evidence cannot trigger the
+fallback; unresolved items still fail the entire collection.
+
+The UN Voluntary Fund for Indigenous Peoples call uses `Conferences` taxonomy
+but offers conditional financial support. Its grant classification requires the
+actual UNPFII and EMRIP session evidence, explicit selected-representative travel
+arrangements and stipend, Indigenous applicant eligibility, financial need,
+community mandate and application-form instructions. Both supported UN sessions
+remain one application announcement; the record does not promise funding to all
+applicants or infer nationality from Indigenous identity or meeting locations.
+Missing or contradictory material evidence remains an unresolved failure.
+
 A genuine conference/ambassador call with only `Conferences` taxonomy uses the
 existing `other` category with `kind=opportunity` and classified provenance, not
 an unknown kind. The reviewed Hamburg Sustainability Conference Youth Ambassador
