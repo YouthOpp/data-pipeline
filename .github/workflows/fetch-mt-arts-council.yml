@@ -1,0 +1,57 @@
+name: Fetch Arts Council Malta public programmes and calls
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - adapters/mt-arts-council/**
+      - .github/workflows/fetch-mt-arts-council.yml
+  schedule:
+    - cron: '45 5 * * 3'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: youthopps-artscouncilmalta-publisher-v1
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    if: >-
+      github.repository == 'YouthOpps/data-pipeline' &&
+      github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Authenticate data-source publication
+        id: token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.WEBSITE_APP_ID }}
+          private-key: ${{ secrets.WEBSITE_APP_PRIVATE_KEY }}
+          owner: YouthOpps
+          repositories: data-source
+          permission-contents: write
+      - name: Collect and publish reviewed source
+        run: python -B adapters/mt-arts-council/adapter.py --publish
+        env:
+          DATA_SOURCE_TOKEN: ${{ steps.token.outputs.token }}
+          GITHUB_TOKEN: ${{ github.token }}
+          ARTSCOUNCILMALTA_PACING_BOOTSTRAP: >-
+            {"schema":1,"family":"youthopps-artscouncilmalta-publisher-v1","not_before":1791654089.0215094,"evidence":"https://github.com/YouthOpps/data-pipeline/issues/25#issuecomment-6100373626"}
+          ARTSCOUNCILMALTA_PACING_ARTIFACT_PATH: ${{ runner.temp }}/pacing-state.json
+      - name: Preserve inert publisher pacing state
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: artscouncilmalta-pacing-state-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/pacing-state.json
+          if-no-files-found: error
+          retention-days: 90
