@@ -711,6 +711,147 @@ def collect():
         return collect_inventory()
 
 
+def material_programme_categories(article):
+    """Classify a narrowly evidenced training programme with finalist grants."""
+    headings = {}
+    for name in ("benefits", "eligibility", "application"):
+        positions = [
+            i
+            for i, block in enumerate(article.blocks)
+            if block.casefold() == name
+        ]
+        if len(positions) != 1:
+            return []
+        headings[name] = positions[0]
+    if not (
+        headings["benefits"] < headings["eligibility"] < headings["application"]
+    ):
+        return []
+    eligibility = article.blocks[
+        headings["eligibility"] + 1 : headings["application"]
+    ]
+    application = article.blocks[headings["application"] + 1 :]
+    if not any(
+        re.search(r"\b(?:eligible|eligibility|applicants)\b", block, re.I)
+        for block in eligibility
+    ) or not any(re.search(r"\bapply\b", block, re.I) for block in application):
+        return []
+    benefits = article.blocks[
+        headings["benefits"] + 1 : headings["eligibility"]
+    ]
+    courses = [
+        block
+        for block in benefits
+        if re.fullmatch(
+            r"Courses: Free access to (?:a range of )?online "
+            r"self-paced courses",
+            block,
+            re.I,
+        )
+    ]
+    workshops = [
+        block
+        for block in benefits
+        if re.fullmatch(r"Talks: Expert talks & workshops on .+", block, re.I)
+    ]
+    grants = [
+        block
+        for block in benefits
+        if re.fullmatch(
+            r"Grant: Top [1-9][0-9]* finalists win one of "
+            r"(?:[1-9][0-9]*|one|two|three) \$[1-9][0-9,]* grants",
+            block,
+            re.I,
+        )
+    ]
+    if len(courses) == len(workshops) == len(grants) == 1:
+        return ["training", "grants"]
+    return []
+
+
+def material_conference_grants(article):
+    """Recognize the UN fund's conditional representative travel support."""
+    blocks = article.blocks
+    headings = {}
+    for name in (
+        "Benefits",
+        "Eligibility",
+        "Selection Criteria",
+        "Application",
+    ):
+        positions = [i for i, block in enumerate(blocks) if block == name]
+        if len(positions) != 1:
+            return []
+        headings[name] = positions[0]
+    if not (
+        headings["Benefits"]
+        < headings["Eligibility"]
+        < headings["Selection Criteria"]
+        < headings["Application"]
+    ):
+        return []
+    benefits = blocks[headings["Benefits"] + 1 : headings["Eligibility"]]
+    eligibility = blocks[
+        headings["Eligibility"] + 1 : headings["Selection Criteria"]
+    ]
+    selection = blocks[
+        headings["Selection Criteria"] + 1 : headings["Application"]
+    ]
+    application = blocks[headings["Application"] + 1 :]
+    sessions = blocks[: headings["Benefits"]]
+    funding = [
+        block
+        for block in benefits
+        if re.fullmatch(
+            r"The UN Voluntary Fund for Indigenous Peoples will provide, "
+            r"in accordance with United Nations rules and procedures, "
+            r"a travel arrangement as well as a stipend to cover travel, "
+            r"accommodation, and related expenses for selected Indigenous "
+            r"representatives attending the abovementioned processes\.",
+            block,
+        )
+    ]
+    requirements = (
+        any(
+            re.search(
+                r"session of the UN Permanent Forum on Indigenous Issues "
+                r"\(UNPFII\)",
+                block,
+            )
+            for block in sessions
+        ),
+        any(
+            re.search(
+                r"session of the Expert Mechanism on the Rights of Indigenous "
+                r"Peoples \(EMRIP\)",
+                block,
+            )
+            for block in sessions
+        ),
+        "Applications are open to Indigenous individuals and "
+        "representatives of Indigenous Peoples’ organizations who:"
+        in eligibility,
+        "Are actively engaged in the promotion and protection of the "
+        "rights of Indigenous Peoples;" in eligibility,
+        "Require financial support to cover travel, accommodation and "
+        "related expenses." in eligibility,
+        any(
+            re.fullmatch(
+                r"Representation: Priority will be given to Indigenous "
+                r"representatives who have a clear mandate from their "
+                r"communities or organizations\.",
+                block,
+            )
+            for block in selection
+        ),
+        "Interested candidates must complete the application form "
+        "available at:" in application,
+    )
+    if len(benefits) == len(funding) == 1 and all(requirements):
+        return ["grants"]
+    return []
+
+
 def collect_inventory():
     _ROBOTS_CACHE.clear()
     delay = check_robots(SOURCE_URL)
@@ -774,10 +915,13 @@ def collect_inventory():
         ):
             raise AdapterError("Unresolved non-opportunity RSS article: " + url)
         if "Conferences" in tags and not categories:
-            if re.search(
+            categories = material_conference_grants(article)
+            if not categories and re.search(
                 r"\b(?:conference|ambassador|participants)\b", text, re.I
             ):
                 categories = ["other"]
+        if not categories:
+            categories = material_programme_categories(article)
         if not categories:
             raise AdapterError("Unreviewed publisher opportunity taxonomy")
         record = make_record(
