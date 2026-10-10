@@ -1253,6 +1253,14 @@ def validate_records(records):
                 raise AdapterError(
                     "Invalid record field: " + field, "validate"
                 )
+        if "summary_language" in record and (
+            not isinstance(record["summary_language"], str)
+            or not re.fullmatch(
+                r"[A-Za-z]{2,8}(?:-[A-Za-z0-9]{1,8})*",
+                record["summary_language"],
+            )
+        ):
+            raise AdapterError("Invalid summary language", "validate")
         classification = record.get("classification")
         if (
             not isinstance(classification, dict)
@@ -1572,6 +1580,7 @@ def parse_inventory(pages):
             (SOURCE_ID + "|" + profile["key"]).encode()
         ).hexdigest()[:24]
         record["summary"] = profile["summary"]
+        record["summary_language"] = "en"
         record["deadline"] = profile["deadline"]
         record["language"] = profile.get("language", LANGUAGE)
         record["eligible_countries"] = profile.get("eligible_countries", [])
