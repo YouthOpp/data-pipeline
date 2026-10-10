@@ -209,5 +209,21 @@ class TestFiniteNews195Diagnostic(unittest.TestCase):
                 self.assertFalse(local._DIAGNOSTIC_MODE)
 
 
+    def test_location_flags_distinguish_sanitized_same_path_without_secrets(self):
+        with isolated_state_adapter() as (local, leaf):
+            url = local._DIAGNOSTIC_URL
+            clean = local.diagnostic_location_flags(url)
+            queried = local.diagnostic_location_flags(url + "?secret=PRIVATE")
+            bad_port = local.diagnostic_location_flags(url.replace("ipdj.gov.pt", "ipdj.gov.pt:PRIVATE"))
+            self.assertEqual(local.diagnostic_location(url), local.diagnostic_location(url + "?secret=PRIVATE"))
+            self.assertTrue(clean["reviewed_route_allowed"])
+            self.assertTrue(queried["query_present"])
+            self.assertFalse(queried["reviewed_route_allowed"])
+            self.assertTrue(bad_port["explicit_port_present"])
+            self.assertTrue(bad_port["invalid"])
+            self.assertFalse(bad_port["reviewed_route_allowed"])
+            self.assertNotIn("PRIVATE", json.dumps([clean, queried, bad_port]))
+
+
 if __name__ == "__main__":
     unittest.main()
