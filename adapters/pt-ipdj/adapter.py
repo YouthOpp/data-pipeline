@@ -2150,7 +2150,7 @@ def run_news195_diagnostic():
     _DIAGNOSTIC_STARTS = 0
     result = 1
     try:
-        with phase("diagnostic", 210):
+        with phase("diagnostic", 420):
             prepare_collection()
             _ROBOTS.clear()
             check_robots(_DIAGNOSTIC_URL)
@@ -2180,7 +2180,7 @@ def main():
     modes.add_argument("--diagnose-news195", action="store_true")
     args = parser.parse_args()
     if args.diagnose_news195:
-        RUN_TIMEOUT = 240
+        RUN_TIMEOUT = 450
     try:
         with execution():
             return run_news195_diagnostic() if args.diagnose_news195 else run_lifecycle(args.publish)

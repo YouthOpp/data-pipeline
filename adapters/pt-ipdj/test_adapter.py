@@ -225,5 +225,66 @@ class TestFiniteNews195Diagnostic(unittest.TestCase):
             self.assertNotIn("PRIVATE", json.dumps([clean, queried, bad_port]))
 
 
+    def test_diagnostic_budget_preserves_native_reserve_after_slow_robots(self):
+        with isolated_state_adapter() as (local, leaf):
+            # Restore60 + startup60 + slow robots120 = 240 elapsed.
+            clock = [240.0]
+            local.time = types.SimpleNamespace(time=lambda: clock[0], monotonic=lambda: clock[0], sleep=lambda seconds: clock.__setitem__(0, clock[0] + seconds))
+            local._PHASE_END = 420.0
+            local._RUN_END = 450.0
+            local._COLLECTION_STARTED = 60.0
+            local._PUBLISHER_COMPLETED_MONOTONIC = 240.0
+            state = local.empty_budget(240.0)
+            state["starts"] = [240.0]
+            state["not_before"] = 246.0
+            with unittest.mock.patch.object(local, "locked_budget", return_value=contextlib.nullcontext()), unittest.mock.patch.object(local, "load_budget", return_value=state), unittest.mock.patch.object(local, "save_budget") as saved:
+                local.pace()
+                self.assertEqual(clock[0], 246.0)
+                saved.assert_called_once()
+                self.assertEqual(state["starts"], [240.0, 246.0])
+                self.assertGreaterEqual(local._PHASE_END - clock[0], 120)
+                state["not_before"] = 1000.0
+                with self.assertRaises(local.AdapterError):
+                    local.pace()
+                self.assertEqual(saved.call_count, 1)
+
+
+    def test_real_diagnostic_driver_budget_and_old_phase_negative(self):
+        import inspect
+        with isolated_state_adapter() as (local, leaf):
+            original_driver = local.run_news195_diagnostic
+            original_source = inspect.getsource(original_driver)
+            clock = [0.0]
+            local.time = types.SimpleNamespace(time=lambda: clock[0], monotonic=lambda: clock[0], sleep=lambda seconds: clock.__setitem__(0, clock[0] + seconds))
+            state = local.empty_budget(0.0)
+            local._RUN_END = 450.0
+            def prepare():
+                clock[0] += 120.0  # Restoration60 plus native startup recovery60.
+                local._COLLECTION_STARTED = 60.0
+            stronger_embargo = [False]
+            def robots(url):
+                clock[0] += 120.0
+                local._PUBLISHER_COMPLETED_MONOTONIC = clock[0]
+                state.update(observed_at=clock[0], not_before=1000.0 if stronger_embargo[0] else clock[0] + 6, starts=[clock[0]])
+            def target(url, **kwargs):
+                local.pace()
+                return 200, {}, b""
+            with unittest.mock.patch.object(local, "arm_alarm"), unittest.mock.patch.object(local, "prepare_collection", side_effect=prepare), unittest.mock.patch.object(local, "check_robots", side_effect=robots), unittest.mock.patch.object(local, "request_bytes", side_effect=target), unittest.mock.patch.object(local, "locked_budget", return_value=contextlib.nullcontext()), unittest.mock.patch.object(local, "load_budget", return_value=state), unittest.mock.patch.object(local, "save_budget"), unittest.mock.patch.object(local, "export_family_artifact"):
+                self.assertEqual(original_driver(), 0)
+                self.assertEqual(clock[0], 246.0)
+                clock[0] = 0.0
+                local._PUBLISHER_COMPLETED_MONOTONIC = None
+                stronger_embargo[0] = True
+                self.assertEqual(original_driver(), 1)
+                self.assertEqual(clock[0], 240.0)
+                stronger_embargo[0] = False
+                # Execute the real driver with its former phase constant, not a hardcoded fixture endpoint.
+                exec(compile(original_source.replace('phase("diagnostic", 420)', 'phase("diagnostic", 210)'), "old-diagnostic-driver-negative", "exec"), local.__dict__)
+                clock[0] = 0.0
+                local._PUBLISHER_COMPLETED_MONOTONIC = None
+                self.assertEqual(local.run_news195_diagnostic(), 1)
+                self.assertEqual(clock[0], 240.0)
+
+
 if __name__ == "__main__":
     unittest.main()
