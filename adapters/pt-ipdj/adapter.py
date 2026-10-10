@@ -2113,6 +2113,36 @@ def diagnostic_location(location):
         return "invalid redirect destination"
 
 
+def diagnostic_location_flags(location):
+    """Report route-admission structure without logging sensitive URI values."""
+    flags = {"location_present": bool(location), "query_present": False,
+             "credentials_present": False, "explicit_port_present": False,
+             "fragment_present": False, "invalid": False,
+             "reviewed_route_allowed": False}
+    if not location:
+        return flags
+    flags["location_SHA256"] = hashlib.sha256(location.encode("utf-8", "surrogatepass")).hexdigest()
+    try:
+        destination = urllib.parse.urljoin(_DIAGNOSTIC_URL, location)
+        parsed = urllib.parse.urlsplit(destination)
+        flags.update(query_present=bool(parsed.query),
+                     credentials_present=parsed.username is not None or parsed.password is not None,
+                     fragment_present=bool(parsed.fragment),
+                     explicit_port_present=(":" in parsed.netloc.rsplit("@", 1)[-1].lstrip("[").split("]")[-1]))
+        try:
+            parsed.port
+        except ValueError:
+            flags["invalid"] = True
+        try:
+            public_url(destination)
+            flags["reviewed_route_allowed"] = True
+        except (AdapterError, ValueError):
+            pass
+    except ValueError:
+        flags["invalid"] = True
+    return flags
+
+
 def run_news195_diagnostic():
     """Two native starts maximum, same family; no body, follow, or publication."""
     global _DIAGNOSTIC_MODE, _DIAGNOSTIC_STARTS
@@ -2127,7 +2157,8 @@ def run_news195_diagnostic():
             status, headers, _ = request_bytes(_DIAGNOSTIC_URL, publisher=True, headers_only=True)
             print(json.dumps({"diagnostic": "news195", "url": _DIAGNOSTIC_URL,
                               "status": status, "location": diagnostic_location(headers.get("Location")),
-                              "physical_starts": _DIAGNOSTIC_STARTS}, sort_keys=True))
+                              "physical_starts": _DIAGNOSTIC_STARTS,
+                              "location_flags": diagnostic_location_flags(headers.get("Location"))}, sort_keys=True))
             result = 0
     except (Exception, PhaseExpired) as error:
         print("Finite news195 diagnostic failed: " + safe_error(str(error)), file=sys.stderr)
