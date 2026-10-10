@@ -70,12 +70,14 @@ Unchanged substantive records retain their update timestamps; last-seen uses
 actual collection start and last-checked uses completion. Current availability
 remains unknown rather than falsely marking these programme overviews open.
 
-The latest completed family attempt's owned inert pacing artifact is mandatory.
-Missing or refused state cannot fall back to a fresh allowance. Bootstrap is
-intentionally unset here: root must bind an exhaustive first-family history audit
-and reviewed concrete embargo before any production release. That bootstrap is
-valid only for the first family run and cannot override a refusal or stronger
-interval. The workflow saves inert state after every attempt.
+The workflow includes the concrete first-family bootstrap recorded in the
+[reviewed history and pacing handoff](https://github.com/YouthOpps/data-pipeline/issues/119#issuecomment-6101428656).
+It applies only when exhaustive history finds no previously completed family
+attempt and cannot override a refusal or stronger interval. Once a completed
+family attempt exists, its newest owned, validated inert pacing artifact is
+mandatory, including after failure. Missing, expired or refused state cannot
+permit fresh bootstrap or an older fallback. The workflow uploads only healthy,
+validated pacing state authorized by the current collection step.
 
 ## Review evidence
 
