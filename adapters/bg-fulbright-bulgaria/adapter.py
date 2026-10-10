@@ -2,6 +2,7 @@
 
 import argparse
 import base64
+import copy
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 import fcntl
@@ -219,7 +220,90 @@ def substantive_text(key, root):
     return " ".join(parts).replace("\xad", "").replace("\u200b", "")
 
 
+def normalized_home_contact_question(root):
+    """Normalize only the reviewed public contact form's rotating question."""
+    question = one(
+        nodes(root, "span", "et_pb_contact_captcha_question"),
+        "home contact arithmetic question",
+    )
+    if (
+        question.attrs != {"class": "et_pb_contact_captcha_question"}
+        or len(question.children) != 1
+        or not isinstance(question.children[0], str)
+    ):
+        raise AdapterError("Changed home contact question shape", "parse")
+    match = re.fullmatch(
+        r"(0|[1-9][0-9]?) \+ (0|[1-9][0-9]?)", question.children[0]
+    )
+    if match is None:
+        raise AdapterError("Changed home contact arithmetic format", "parse")
+    field = one(
+        nodes(root, "input", "et_pb_contact_captcha"),
+        "home contact arithmetic field",
+    )
+    expected = {
+        "type": "text",
+        "size": "2",
+        "class": "input et_pb_contact_captcha",
+        "data-first_digit": match.group(1),
+        "data-second_digit": match.group(2),
+        "value": "",
+        "name": "et_pb_contact_captcha_0",
+        "data-required_mark": "required",
+        "autocomplete": "off",
+    }
+    if field.attrs != expected or field.children:
+        raise AdapterError("Changed home contact arithmetic field", "parse")
+    pair = one(
+        [
+            n
+            for n in nodes(root, "p")
+            if question in n.children and field in n.children
+        ],
+        "paired home contact question and field",
+    )
+    meaningful = [
+        child if isinstance(child, Node) else child.strip()
+        for child in pair.children
+        if isinstance(child, Node) or child.strip()
+    ]
+    if pair.attrs != {"class": "clearfix"} or meaningful != [
+        question,
+        "=",
+        field,
+    ]:
+        raise AdapterError("Changed home contact arithmetic pair", "parse")
+    wrapper = one(
+        [n for n in nodes(root, "div") if pair in n.children],
+        "home contact arithmetic wrapper",
+    )
+    if wrapper.attrs != {"class": "et_pb_contact_right"} or [
+        c for c in wrapper.children if isinstance(c, Node) or c.strip()
+    ] != [pair]:
+        raise AdapterError("Changed home contact arithmetic wrapper", "parse")
+    form = one(
+        [n for n in nodes(root, "form") if question in list(n.walk())],
+        "home public contact form",
+    )
+    if form.attrs != {
+        "class": "et_pb_contact_form clearfix",
+        "method": "post",
+        "action": PAGES["home"],
+    }:
+        raise AdapterError("Changed home contact form boundary", "parse")
+    # Work on a copy: the raw parsed document remains intact. No answer is
+    # computed, no input is populated and no form is submitted.
+    normalized = copy.deepcopy(root)
+    one(
+        nodes(normalized, "span", "et_pb_contact_captcha_question"),
+        "copied home contact arithmetic question",
+    ).children = ["REVIEWED_CONTACT_QUESTION"]
+    return normalized
+
+
 def source_facts(key, root):
+    if key == "home":
+        root = normalized_home_contact_question(root)
     observed = [
         n.attrs.get("href", "")
         for n in nodes(root, "link")
@@ -596,7 +680,7 @@ CONDITIONS = {
         "29aaf0f940f561dde4e83a83c4e8ecdf7d1b3484071dd92581b699de84e3a5" "f9"
     ),
     "home": (
-        "1992acc819032652ad59235cbad02f7b41eae29ed7a1fc432eea21cba281ea" "97"
+        "071f436829565f6e8797ceecb293882e69f4322e5476a0aa08751c50c21f654f"
     ),
     "humphrey": (
         "6ded6af39d2c8c040bd5ffae1170e91d5d088ac5e86714543b1de6146953d1" "0e"
