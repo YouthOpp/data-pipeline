@@ -15,6 +15,7 @@ import math
 import os
 import re
 import signal
+import ssl
 import stat
 import sys
 import tempfile
@@ -462,6 +463,29 @@ def record_retry_after(value):
         save_budget(state)
 
 
+def publisher_transport_error(error, url):
+    """Describe a publisher transport failure without logging exception text."""
+    cause = error.reason if isinstance(error, urllib.error.URLError) else error
+    if isinstance(cause, ssl.SSLCertVerificationError):
+        category = "TLS certificate verification failure"
+    elif isinstance(cause, ssl.SSLError):
+        category = "TLS handshake/read failure"
+    elif isinstance(cause, TimeoutError):
+        category = "Network timeout"
+    elif isinstance(cause, ConnectionError):
+        category = "Connection failure"
+    else:
+        category = "Network transport failure"
+    parsed = urllib.parse.urlsplit(url)
+    hop = urllib.parse.urlunsplit(
+        (parsed.scheme, parsed.hostname or "", parsed.path, "", "")
+    )
+    return AdapterError(
+        "Publisher transport failure at " + hop + " (" + category + ")",
+        "fetch",
+    )
+
+
 def request_bytes(
     url,
     method="GET",
@@ -487,6 +511,10 @@ def request_bytes(
             )
         except urllib.error.HTTPError as error:
             response = error
+        except (urllib.error.URLError, OSError) as error:
+            if publisher:
+                raise publisher_transport_error(error, current) from None
+            raise
         with response:
             status = response.status
             response_headers = response.headers
@@ -500,7 +528,12 @@ def request_bytes(
                 raise AdapterError(
                     ("Oversized or invalid response length"), ("fetch")
                 )
-            body = response.read(byte_limit + 1)
+            try:
+                body = response.read(byte_limit + 1)
+            except (urllib.error.URLError, OSError) as error:
+                if publisher:
+                    raise publisher_transport_error(error, current) from None
+                raise
             if (
                 len(body) > byte_limit
                 or declared
