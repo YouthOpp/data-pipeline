@@ -1,0 +1,60 @@
+name: Fetch Volkswagen AG youth individual opportunities
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - adapters/volkswagen-group/**
+      - .github/workflows/fetch-volkswagen-group.yml
+  schedule:
+    - cron: '43 5 * * 3'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: youthopps-volkswagen-group-publisher-v1
+  cancel-in-progress: false
+  queue: max
+
+jobs:
+  collect:
+    if: >-
+      github.repository == 'YouthOpps/data-pipeline' &&
+      github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Discover data-source App installation
+        id: publication
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.WEBSITE_APP_ID }}
+          private-key: ${{ secrets.WEBSITE_APP_PRIVATE_KEY }}
+          owner: YouthOpps
+          repositories: data-source
+          permission-contents: write
+      - name: Collect and publish reviewed source
+        id: collect
+        run: python -B adapters/volkswagen-group/adapter.py --publish
+        env:
+          WEBSITE_APP_ID: ${{ vars.WEBSITE_APP_ID }}
+          WEBSITE_APP_INSTALLATION_ID: ${{ steps.publication.outputs.installation-id }}
+          WEBSITE_APP_PRIVATE_KEY: ${{ secrets.WEBSITE_APP_PRIVATE_KEY }}
+          GITHUB_TOKEN: ${{ github.token }}
+          VOLKSWAGEN_GROUP_PACING_BOOTSTRAP: '{"schema":1,"family":"youthopps-volkswagen-group-publisher-v1","not_before":1791665770.16655,"evidence":"https://github.com/YouthOpps/data-pipeline/issues/117#issuecomment-6102086900"}'
+          VOLKSWAGEN_GROUP_PACING_ARTIFACT_PATH: ${{ runner.temp }}/pacing-state.json
+      - name: Preserve inert publisher pacing state
+        if: always() && steps.collect.outputs.pacing_ready == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: volkswagen-group-pacing-state-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/pacing-state.json
+          if-no-files-found: error
+          retention-days: 90
