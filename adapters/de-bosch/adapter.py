@@ -66,6 +66,7 @@ MAX_RESPONSE_BYTES = 8 * 1024 * 1024
 _REQUEST_STARTS = _PUBLISHER_BYTES = 0
 _STATE_PATH = _STATE_LOCK = None
 _STATE_DIR_FD = _STATE_DIR_ID = None
+_STATE_INITIALIZING = False
 _COLLECTION_LOCK_FD = None
 _COLLECTION_STARTED = None
 _LEGACY_FDS = []
@@ -1453,6 +1454,7 @@ def verify_state_directory():
 
 def budget_file():
     global _STATE_PATH, _STATE_LOCK, _STATE_DIR_FD, _STATE_DIR_ID
+    global _STATE_INITIALIZING
     if _STATE_PATH:
         verify_state_directory()
         return
@@ -1460,10 +1462,13 @@ def budget_file():
     parent = os.open(temporary, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
     try:
         leaf = FAMILY + "-" + str(os.getuid())
+        created = False
         try:
             os.mkdir(leaf, 0o700, dir_fd=parent)
+            created = True
         except FileExistsError:
             pass
+        linked = os.stat(leaf, dir_fd=parent, follow_symlinks=False)
         descriptor = os.open(
             leaf, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW, dir_fd=parent
         )
@@ -1473,9 +1478,11 @@ def budget_file():
             or info.st_uid != os.getuid()
             or stat.S_IMODE(info.st_mode) != 0o700
             or info.st_nlink < 2
+            or (info.st_dev, info.st_ino) != (linked.st_dev, linked.st_ino)
         ):
             os.close(descriptor)
             raise AdapterError("Unsafe publisher pacing directory", "access")
+        _STATE_INITIALIZING = created
         _STATE_DIR_FD = descriptor
         _STATE_DIR_ID = (info.st_dev, info.st_ino)
         directory = os.path.join(temporary, leaf)
@@ -1505,7 +1512,9 @@ def secure_file(name, flags):
 
 def locked_budget():
     budget_file()
-    descriptor = secure_file("state.lock", os.O_RDWR | os.O_CREAT)
+    descriptor = secure_file(
+        "state.lock", os.O_RDWR | (os.O_CREAT if _STATE_INITIALIZING else 0)
+    )
     try:
         fcntl.flock(descriptor, fcntl.LOCK_EX | fcntl.LOCK_NB)
     except OSError:
@@ -1518,6 +1527,10 @@ def load_budget():
     try:
         descriptor = secure_file("state.json", os.O_RDONLY)
     except FileNotFoundError:
+        if not _STATE_INITIALIZING:
+            raise AdapterError(
+                "Mature publisher state is missing", "access"
+            ) from None
         return empty_budget(time.time())
     with os.fdopen(descriptor, "rb") as file:
         raw = file.read(16385)
@@ -1530,6 +1543,7 @@ def load_budget():
 
 
 def save_budget(state):
+    global _STATE_INITIALIZING
     validate_budget(state)
     verify_state_directory()
     name = "pending-" + str(os.getpid()) + "-" + str(time.time_ns())
@@ -1546,6 +1560,9 @@ def save_budget(state):
             src_dir_fd=_STATE_DIR_FD,
             dst_dir_fd=_STATE_DIR_FD,
         )
+        # Once a state has existed, missing state must never become fresh again,
+        # including if the following directory fsync fails.
+        _STATE_INITIALIZING = False
         os.fsync(_STATE_DIR_FD)
     finally:
         try:
@@ -1676,7 +1693,9 @@ def prepare_collection():
     budget_file()
     if _COLLECTION_LOCK_FD is not None:
         raise AdapterError("Nested family collection refused", "access")
-    descriptor = secure_file("collection.lock", os.O_RDWR | os.O_CREAT)
+    descriptor = secure_file(
+        "collection.lock", os.O_RDWR | (os.O_CREAT if _STATE_INITIALIZING else 0)
+    )
     try:
         fcntl.flock(descriptor, fcntl.LOCK_EX | fcntl.LOCK_NB)
     except OSError:
