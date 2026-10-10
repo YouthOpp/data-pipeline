@@ -1,0 +1,49 @@
+# Study in Flanders scholarship adapter
+
+Official assigned source: https://www.studyinflanders.be/scholarships/master-mind-scholarships . Publisher: Study in Flanders, operated by VLUHR. This standalone Python standard-library adapter reads the complete finite own scholarship frontier; it does not crawl other publishers or submit applications.
+
+## Access and attribution
+
+Reviewed 10 October 2026: official robots excludes `/cpresources/`, `/vendor/` and `/.env`; all required public routes are permitted. The actual footer links [Privacy Policy](https://www.studyinflanders.be/privacy) and [Cookie Policy](https://www.studyinflanders.be/cookie-policy). These govern personal data/cookies and do not establish a prior-permission requirement or automation ban for factual summaries. Copyright is retained: this is not an open-licence claim. Publish original concise factual summaries, attribution and canonical publisher links, without images, protected full prose or applicant data. No form submission, login, contact or external catalogue access.
+
+Every run retrieves fresh robots and ten exact public HTML inputs: scholarship hub, MasterMind main/eligibility/application/host/payment pages, US funding overview, privacy, cookies and the linked Russian-mobility policy notice. Only one `main` article and its complete substantive text/links are fingerprinted; site navigation, footer copyright year and opaque client chrome are not opportunities. Exact canonical URLs and complete HTML are checked. A material change to facts, policy or the finite inventory stops the whole collection before publication; no partial stale subset is emitted. Unexpected publisher redirects are rejected before body reads or destination access.
+
+## Complete inventory and identifiers
+
+Four actual identities: `Master Mind Scholarship` (closed 2026–27 call), `Belgian American Education Foundation Fellowships (B.A.E.F.)`, `Fulbright U.S. Student Program` and `Fulbright U.S. Scholar Program`. The latter two are separately named and have separate application links in the own US overview; their joint activity description is not treated as track-specific eligibility. The three US records share the actual own page without invented anchors, but have distinct stable semantic identifiers prefixed `be-study-in-flanders-`. No programme instance is synthesized from capacity, priority country or host institution.
+
+The hub's external Erasmus Mundus and VLIR-UOS entries and nine institution/provider funding links are referrals, not own substantive schemes. Programme finder, GPA calculation manual, Russia policy news and host/application/payment pages support the primary record; they are not additional opportunities. The own hub/US page have no pagination or load-more controls. Twelve MasterMind institutions are one award framework, not twelve awards.
+
+All original titles and summaries are English; BE is a destination, not eligibility nationality. BAEF eligibility is US citizenship **or** US permanent residence, so no passport-only whitelist is emitted. Its undated own overview states one academic year of advanced study/research, up to ten fellowships, $27,000 for master's/PhD and $31,000 for postdoctoral fellows; it is not evidence of a current external call. Fulbright overviews explicitly require American citizenship and provide no own deadline, amount or detailed track criteria. Their status remains unknown. MasterMind's closed statement supports expired status with a null deadline: no single central public cutoff is supplied. The ten institution dates are not a synthesized central earliest/latest deadline.
+
+Public summaries contain major criteria and payment conflicts within 580 JavaScript UTF-16 code units; complete conditions remain on the linked source. Categories and kind are separate: MasterMind is `opportunity`/scholarships; the three standing records are `programme-overview`, BAEF fellowships and Fulbright scholarships. Null publication/deadline fields are retained when no source date exists. Actual UTC observation timestamps and source attribution are preserved.
+
+## All MasterMind material conditions
+
+60ECTS per academic year,60ECTSone-year or120ECTStwo-year master's; participating Flanders/Brussels host acceptance plus one host nomination (not direct central application), last-degree GPA3.5/4 measured with Scholaro. Prior qualifying degree cannot be from Flemish HEI; previous credit-mobility students eligible. Existing Flemish enrolment ineligible except exact Spring2026 preparatory route to September2026 master's. Preparatory/bridging/distance-learning award programmes excluded. At least half credits at Flemish host; outbound mobility allowed. All nationalities except Russian; JP3/MX3/PS2/US5 reserved priorities not whitelist. Maximum20applications per host not scholarship capacity. Cannot combine other Flemish government/Erasmus+/Erasmus Mundus/BAEF/Fulbright scholarships. Loss may require full tuition; incomplete programme may require grant refund.
+
+English proof <=3years old: university/university-of-sciences IELTS7/TOEFL94/C1 or recognized equivalent; arts IELTS6.5/TOEFL90/B2/equivalent. How-to-apply also permits host exemption letter; no unconditional waiver inferred. Application documents: ID/passport, CV/GPA, transcript and diploma with certified translations when not NL/FR/DE/EN, English motivation/two signed English recommendations, English proof/exemption, photo. Apply to participating host before its date; host preselects then creates Mobility Online file, student completes private-tool deadline, host validates central submission. No tool/form access.
+
+2026–27 grant EUR10225 per academic year plus fee waiver; permitted low tuition EUR136.50 (not zero-guarantee), ordinary housing/insurance/travel coverage not stated. Main notice under Ministry review for2027–28 new applicants, so no future edition or carried-forward new-call benefit. Payment leaf promises same10225 for second year of ALREADY submitted two-year award. First-year4600 arrival/registration (optional2000prior+2600arrival),4100Feb2027,1525completionJuly orresitSept/Oct2027. Second-year>=54ECTS continuation:6125prior,4100Feb2028,1525completion. These second-year listed installments sum11750, conflicting with annual10225; preserve contradiction in details and never silently derive a new benefit. First-year54ECTS failure loses final1525+year2 grant unless granted exception; master's completion required final installment; partial withdrawal refunds (one semester keeps4600example).
+
+Twelve hosts, ONEframework. Ten institution-specific date-only deadlines: Leuven2026-01-15, Antwerp02-01,Ghent04-01,Hasselt03-15,VUB04-01,AP03-01,HOGENT03-20,ErasmusBrussels04-13,KdG03-31,LUCA04-01. AntwerpMaritime/PXL contact-only, no inferred date/clock/zone. Unlisted host ineligible. Preserve table in details/README, no central date calculation.
+
+
+## Run and validate
+
+```sh
+python -B adapters/be-study-in-flanders/test_adapter.py
+python -B adapters/be-study-in-flanders/adapter.py --publish
+```
+
+The sole test retrieves nonempty real complete records without publishing and emits one complete JSON array on stdout; diagnostics go to stderr. Validate stdout in memory without saving collected records. Copying this folder outside the repository remains supported; Python standard library only. Publication requires `DATA_SOURCE_TOKEN`; collection tests must not receive it.
+
+## Pacing, deadlines and publication
+
+Family `youthopps-studyinflanders-publisher-v1` shares persistent local starts, embargo and refusal state across research/test/production. At most ten upstream starts per rolling minute and six seconds between all starts, including robots, retries and redirects. Honour Retry-After before reading bodies; explicit 401/403/429 persists refusal state and stops before denial-body consumption. No credential/proxy/TLS bypass or alternate-source recovery. Fresh family preparation waits sixty seconds; eleven physical starts have a minimum 120-second floor, not a completion guarantee.
+
+Collection and both prepublication gates are 900 seconds. Original whole-run cap is 1290 seconds: nonexport operational cap1260, publication180, nonrecursive failure180 and trusted state export30. All phase/read/sleep/parse/output deadlines clip the original absolute alarm; expired phases are not renewed. Source socket timeout60/API15 additionally clip phase time. The Action has a 30-minute job timeout and mints the source-scoped one-hour GitHub App token immediately before its sole application command. Export holds the local collector lock through cleanup.
+
+Production restores the newest completed real family workflow attempt from complete stable bounded repository history, including failed/cancelled/rerun attempts. Validate inert pacing artifact size/hash/envelope/repository/source/attempt/schema; missing newest state fails closed without older fallback or reset. First-family bootstrap requires a separately reviewed public evidence binding, not an author-invented default. Preserve refusal/backoff state; an explicit denial requires reviewed recovery before another publisher request.
+
+The single main-push/manual/weekly workflow publishes only `datas/be-study-in-flanders/{data,metadata}.json`. Success atomically creates/replaces both files through source-scoped non-force compare-and-swap, preserving all sibling sources. Validate prior complete own pair before changes. Initial failures create no folder; later failures preserve last-good data and last-success time, updating only safe failure metadata when possible. Uncertain commits are reconciled against exact desired bytes; newer own pairs are never overwritten. Logs distinguish unconfirmed durable outcome from saved failure. Source metadata is the durable status record after first success; pacing artifacts contain infrastructure state only.

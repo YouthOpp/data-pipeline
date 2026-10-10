@@ -1,0 +1,56 @@
+name: Fetch Study in Flanders scholarship opportunities
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - adapters/be-study-in-flanders/**
+      - .github/workflows/fetch-be-study-in-flanders.yml
+  schedule:
+    - cron: '30 4 * * 2'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: youthopps-studyinflanders-publisher-v1
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    if: >-
+      github.repository == 'YouthOpps/data-pipeline' &&
+      github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Authenticate data-source publication
+        id: token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.WEBSITE_APP_ID }}
+          private-key: ${{ secrets.WEBSITE_APP_PRIVATE_KEY }}
+          owner: YouthOpps
+          repositories: data-source
+          permission-contents: write
+      - name: Collect and publish reviewed source
+        run: python -B adapters/be-study-in-flanders/adapter.py --publish
+        env:
+          STUDYINFLANDERS_PACING_BOOTSTRAP: '{"schema":1,"family":"youthopps-studyinflanders-publisher-v1","not_before":1791615039.6179962,"evidence":"https://github.com/YouthOpps/data-pipeline/issues/48#issuecomment-6094817816"}'
+          DATA_SOURCE_TOKEN: ${{ steps.token.outputs.token }}
+          GITHUB_TOKEN: ${{ github.token }}
+          STUDYINFLANDERS_PACING_ARTIFACT_PATH: ${{ runner.temp }}/pacing-state.json
+      - name: Preserve inert publisher pacing state
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: studyinflanders-pacing-state-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/pacing-state.json
+          if-no-files-found: error
+          retention-days: 90
