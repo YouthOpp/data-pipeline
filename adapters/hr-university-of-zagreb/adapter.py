@@ -1461,15 +1461,46 @@ def html_fingerprint(body, key=None):
         href = scroll.attrs["href"]
         href_digest = hashlib.sha256(href.encode("utf-8", "surrogatepass")).hexdigest()
         route = "[redacted]"
-        # Only previously reviewed own relative paths and the public numeric
-        # catalogue parameter can be shown. Never print arbitrary URL components.
-        for alias in aliases[key]:
-            path = alias.split("?", 1)[0].split("#", 1)[0]
-            if re.fullmatch(
-                re.escape(path) + r"(?:\?IDX_Spectacle=[0-9]{1,20})?#0", href
-            ):
-                route = href[:300]
-                break
+        # This grammar exposes only public own-site routes, never arbitrary
+        # URL components. It diagnoses destinations without accepting/following them.
+        if (
+            len(href) <= 512
+            and not re.search(r"[\x00-\x20\x7f\\]", href)
+            and (href.startswith("/") and not href.startswith("//")
+                 or href.startswith("https://www.unizg.hr/"))
+        ):
+            try:
+                parts = urllib.parse.urlsplit(href)
+                path = parts.path
+                segments = path.split("/")
+                query = (
+                    "?" + parts.query
+                    if re.fullmatch(r"IDX_Spectacle=[0-9]{1,20}", parts.query)
+                    else "?[redacted]" if parts.query else ""
+                )
+                fragment = (
+                    "#0" if parts.fragment == "0"
+                    else "#[redacted]" if parts.fragment else ""
+                )
+                public = path + query + fragment
+                if (
+                    parts.scheme in ("", "https")
+                    and parts.netloc in ("", "www.unizg.hr")
+                    and path.startswith(("/o-sveucilistu/", "/istrazivanje/"))
+                    and re.fullmatch(r"/[a-z0-9._/-]+", path)
+                    and "//" not in path
+                    and not any(segment in (".", "..") for segment in segments)
+                    and not any(
+                        re.search(r"auth|session|token|secret|password|credential|login|passwd", segment)
+                        or len(segment) > 64
+                        or re.fullmatch(r"[a-f0-9]{32,}", segment)
+                        for segment in segments
+                    )
+                    and len(public) <= 300
+                ):
+                    route = public
+            except ValueError:
+                pass
         diagnostic = {
             "key": key,
             "material_sha256": digest,
@@ -1513,7 +1544,12 @@ def read_input(key):
 
 
 def read_pages():
-    return {key: read_input(key) for key in INPUTS}
+    first = ("lifelong-programmes", "research-closed")
+    fetched = {key: read_input(key) for key in first}
+    for key in INPUTS:
+        if key not in fetched:
+            fetched[key] = read_input(key)
+    return {key: fetched[key] for key in INPUTS}
 
 
 def parse_inventory(pages):
