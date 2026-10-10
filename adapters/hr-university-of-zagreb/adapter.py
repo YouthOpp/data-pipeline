@@ -1424,14 +1424,21 @@ def html_fingerprint(body, key=None):
         },
     }
     if key in aliases:
-        scroll = one(nodes(root, "a", "cd-top"), "reviewed Top scroll control")
+        scroll = one(
+            nodes(root, "a", "cd-top"), key + " reviewed Top scroll control"
+        )
         if (
             set(scroll.attrs) != {"href", "class"}
             or scroll.attrs["class"] != "cd-top"
-            or scroll.attrs["href"] not in aliases[key]
             or scroll.children != ["Top"]
         ):
-            raise AdapterError("Changed reviewed Top scroll control", "parse")
+            raise AdapterError(
+                key + ": changed Top structure attrs_exact="
+                + str(set(scroll.attrs) == {"href", "class"})
+                + " class_exact=" + str(scroll.attrs.get("class") == "cd-top")
+                + " plain_Top=" + str(scroll.children == ["Top"]),
+                "parse",
+            )
     links = sorted(
         {
             (
@@ -1441,7 +1448,7 @@ def html_fingerprint(body, key=None):
             )
             for tag in ("a", "link")
             for node in nodes(root, tag)
-            if node.attrs.get("href")
+            if node is scroll or node.attrs.get("href")
         }
     )
     facts = json.dumps(
@@ -1449,7 +1456,37 @@ def html_fingerprint(body, key=None):
         ensure_ascii=False,
         separators=(",", ":"),
     )
-    return hashlib.sha256(facts.encode()).hexdigest()
+    digest = hashlib.sha256(facts.encode()).hexdigest()
+    if scroll is not None and scroll.attrs["href"] not in aliases[key]:
+        href = scroll.attrs["href"]
+        href_digest = hashlib.sha256(href.encode("utf-8", "surrogatepass")).hexdigest()
+        route = "[redacted]"
+        # Only previously reviewed own relative paths and the public numeric
+        # catalogue parameter can be shown. Never print arbitrary URL components.
+        for alias in aliases[key]:
+            path = alias.split("?", 1)[0].split("#", 1)[0]
+            if re.fullmatch(
+                re.escape(path) + r"(?:\?IDX_Spectacle=[0-9]{1,20})?#0", href
+            ):
+                route = href[:300]
+                break
+        diagnostic = {
+            "key": key,
+            "material_sha256": digest,
+            "literal_href_sha256": href_digest,
+            "public_route": route,
+        }
+        try:
+            message = json.dumps(diagnostic, separators=(",", ":"))
+            if len(message.encode("utf-8")) <= 1024:
+                print(message, file=sys.stderr, flush=True)
+        except (OSError, ValueError):
+            pass
+        raise AdapterError(
+            key + " material_sha256=" + digest + ": unreviewed Top scroll destination",
+            "parse",
+        )
+    return digest
 
 
 def read_input(key):
