@@ -1422,6 +1422,10 @@ def html_fingerprint(body, key=None):
     root = document_root(body.decode("utf-8", "strict"))
     scroll = None
     aliases = {
+        "hub": {
+            "/studiji-i-studiranje/upisi-stipendije-priznavanja/stipendije/#0",
+            "/index.php?id=289#0",
+        },
         "lifelong-programmes": {
             "/o-sveucilistu/sveuciliste-jucer-danas-sutra/osiguravanje-kvalitete/cjelozivotno-obrazovanje/arhiva/arhiva-ljetne-skole/#0",
             "/o-sveucilistu/sveuciliste-jucer-danas-sutra/osiguravanje-kvalitete/cjelozivotno-obrazovanje/#0",
@@ -1552,7 +1556,7 @@ def read_input(key):
 
 
 def read_pages():
-    first = ("lifelong-programmes", "research-closed")
+    first = ("hub", "lifelong-programmes", "research-closed")
     fetched = {key: read_input(key) for key in first}
     for key in INPUTS:
         if key not in fetched:
@@ -2022,7 +2026,7 @@ INPUTS = {'academic2026-first-call': {'url': 'https://www.unizg.hr/fileadmin/rek
            'sha256': '36cbdec715f65207846fa309a4cd0ae6b22331311fc540b90776511332b12aac'},
  'hub': {'url': 'https://www.unizg.hr/studiji-i-studiranje/upisi-stipendije-priznavanja/stipendije/',
          'format': 'html',
-         'sha256': 'e0bb42a84489595c9b947ce6c5fcdd28a7e39f9d85efe404161b338b320093ea'},
+         'sha256': '3e89e9e53ad2074b3d92a327f8075e13ce5fed925692c9fe0ec5e3d3ed36001a'},
  'lifelong-programmes': {'url': 'https://www.unizg.hr/o-sveucilistu/sveuciliste-jucer-danas-sutra/osiguravanje-kvalitete/cjelozivotno-obrazovanje/',
                          'format': 'html',
                          'sha256': 'e3f27c20c6b9d7492157159dd465519b34ec9a40178c029750b5691e91448de9'},
