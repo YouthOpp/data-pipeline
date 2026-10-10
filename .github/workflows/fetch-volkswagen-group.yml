@@ -31,12 +31,21 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Discover data-source App installation
+        id: publication
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.WEBSITE_APP_ID }}
+          private-key: ${{ secrets.WEBSITE_APP_PRIVATE_KEY }}
+          owner: YouthOpps
+          repositories: data-source
+          permission-contents: write
       - name: Collect and publish reviewed source
         id: collect
         run: python -B adapters/volkswagen-group/adapter.py --publish
         env:
           WEBSITE_APP_ID: ${{ vars.WEBSITE_APP_ID }}
-          WEBSITE_APP_INSTALLATION_ID: ${{ vars.WEBSITE_APP_INSTALLATION_ID }}
+          WEBSITE_APP_INSTALLATION_ID: ${{ steps.publication.outputs.installation-id }}
           WEBSITE_APP_PRIVATE_KEY: ${{ secrets.WEBSITE_APP_PRIVATE_KEY }}
           GITHUB_TOKEN: ${{ github.token }}
           VOLKSWAGEN_GROUP_PACING_BOOTSTRAP: '{"schema":1,"family":"youthopps-volkswagen-group-publisher-v1","not_before":1791665770.16655,"evidence":"https://github.com/YouthOpps/data-pipeline/issues/117#issuecomment-6102086900"}'
